@@ -1,0 +1,531 @@
+---
+id: query-the-current-cut
+title: "Query the current cut"
+description: "Query the current cut"
+sidebar_label: "Query the current cut"
+hide_title: true
+hide_table_of_contents: true
+api: eJztWmlv8joW/itWNNLcqyE0YSvhG9CWsrTsUPrSQSZxEpfETmOHpYj/PrJD2Mrbe0ezaaSXD0C8PD7n+Nh+znG2CocOU0o/FDPiyltKCWAIfcRRKAq3CoE+UkqKD9cuwo7LlZSCiVJSPiIUbpSUYiFmhjjgmIrSJ7jGfuQDM+Igbg+oDbiLQIh4FBJkiSolpYToI8IhspSSDT2GUgozXeRDpbRV+CYQI2LCkYNCJaX4mAhQpaTtdm+iKwsoYYiJxhlNEz/nUgxcBMwoDBHh++FcBC2p0VZZqwFCoQotK/za85EyDiCxQEDDg+imhwUSZIDOGQqXyALzzV4pn3IECLWQcqYC5h5K4MqWFSLGvtgqHiuuBCYlHGKCiQPqnWXuIIOSSuzBeIiJo4gJ4hyFAuHv06m1ze3S135K06n1t78oKQWtoR9IaXQtnS2k9XS2lMsYxaKy+4PKtSq1DVWOfcQ49IPrphbVR1tRc3Gc8+/N02n36y9gcEBPfZ3789H6yKTEYoBhYiIQd0cBNd1TPfWCbuhaMZ/JnbnOeYti3rgtaLrU0nQhJis0V4Wg6hKFTI52TdV95YWCCcAVTc/m7szgmXRB2e1Siph5RLhoDYPAwyYU4928s1iGr1arSo8+l60acWBBDhkPI5OfSHgQrdypny27H8phPa+SPy5kLmJiEziIuVWW0IvkHxpiRyx9EnleKuldymq3RjFXKBxgSspcW00Cz3/Gg8pLdVX+7nMctLRV5EpOcPV81jAy2bhe7Df3sO+P+YzfmY2qUa7NnfHEWOuZ1jg/ur+7dWuOvfk01rN+diXsrH+HNWhE1QKxXejbd3n91mFB+dX/uDMiv3erk7LD+V0b64155VFiZb5i5Q5YOUxQdWyTth4SNI4qT63O58fAyzw+zNhrsAkGs+zg/tPOjlqmwMp+h/V63356qWQqm4/PVubRnoya9ddmmVCUW9VRI9OHHicvdzjMGwuBlftOR83Rwjbtf5LROFNp3FX8ptaarz8zmQeVrQevw+d6OGSzbnGCcgIr/x1WfjMbtFTTIw+z1X3rqdLcNBZa/7PYG/Xd1Wxe694PGlb4tCjflQVW4TusyaLbXBY6uVk19957yvY+mk3jYdxZ1wlCrU9v0ez2jfKg3J30pI6332G9z9yGgfHjrDzYoC5CvecsjGov7/PKGD84ZDDUrEmn/lk0m08Cq/id7dmtma3k86P5HesX7hsqMY1+fpFZPM877UqtXlyvH7LLoZOzcl2BZXzFyhyw5nTVtQvZdX9i0NVj023qmxpCma72QIqb1oxWW/B+SNRqjUp76Vcc/yhY1FGDx3Gu2wxHhv2s+95dbdWMIK7feY3x7XrSf9fJOJ+9f3ySE6lf8fwj2KDuIuf9VavdV2+zg5yvVUbRA7dbz7Wony/Uh+P7yDay5UZ+OJRgV1z/aH71Xf8wy33jganjrm9mx/fu56tRGNH3NfHq5czgIbA39WVWf2US7IrvH8H6am7w8eSMa15TX2SzLz1vaKy0lr0Ktd5y0c43yG2xHOltx5NzqX/r/Ot+NGzZqtrPDUJn8vxZzFgI1lzSaY1DJxu8LDakhoadYW0VT8C33v/OTCOMnKX5+HKHK+WIto3Ze7E3m8/eTZc3GsV5Pm8UcHE1kju8/q37fzAd3k+Ki/7aHlbms0ZvxFbLvDWpP/deKu+1BkdVtdCr6u673C70K/5/nM3156jyArvrT29oD0O4uHOCYBjNu5XeS81VhxvtsWI9Pa+qH7OJBPt2AeRG7cdO+WOF6aY/6W1My8s/rW1mdh9X3FutqmV+W970J92BIcmBfmUFHNXUO2HPyWgvm+4sY9pOre08N42man7UG/qyXVTLaq/h2c95X9PkIYgtpaRUKp+3TRSFkwHqau5Tbb4azrvVYs7szUcmNOldd7BBavZj8VKXLJRxSMyYnGJCENd0iRWENEAhx/GhkpxaJ6wDXWEWohBgYlNA5+/I5BdnJbaUlLLnahfnY1IqrEEZ3/PlYj6dyRbThpE2dMHZBJUrZTVNyyXadnotfzQ0TaP8mLU39tMEj1E1R0YZrOPHlamp8OkWl9tFV5f2PtdKIFzjJ3PIUCE3DD3w2wpzl0YcBNCyMHF+B4iY1EIW6D+WM/kCsDFxUBiEmCREd0r6/RYwxSi2oCEHUidoTRoMXMyACQmYIyA4AKDE2wB8bAIihtiUQEE+bGxi6IFqGTDsSNp/hJ2SK6xWIMK5MCkPI3TKcn9A9bOsvmqqMVPftrnsTpjjxOpnnCaZgb3J3y4Nd5yiS/OVgUWFIwFRDWgI6p2Ene919yPGhfLwvGVshSmJCSELkMnxcm8RzEDEBKmHYAk9bJ0Y5MLW6atWoQS1bRmH2TT0oWBXBw12qZNSHCxzX0oKyu5tlzjfpb4dEeGQyJ/L1fDzoEtPieAv/l/I57P5nfgcCeD14OsQ/mEm/YNFfuJNx7gQeh6Yi4CBHehqxNNTMmTQ2TsfZkASUMBcGnmWNP+SYgtZKTBHJowYApgzwJAPCccmAz7cTInpQuIggIlEtSMehWdudzW4PFLYazqdaBA3Yxcq7AeLA86fB21X3flIgvcdr+5CmiKIrSCkgkgKAiiImyBcgigJgiOIiSQUb5cbXJnsdzbAXciBDwMWBwegbjHAqZAdh6cOLNUCQjIRjU7J/lnqLm0pNhaBDr3O2Ro7RL+iq9iGwGnXL1tv+WKkCyeR4soWl/GLOGoOfni+Kf+byNTlZFzsJRLzMsj747k+ONm3mQ55LB7OuCuhZHwGXBTvdr+Ct1/B26/g7Vfw9it4+xW8/b8Fb/Gpd04PuuKiYc+sTlP6PuIuFSM7iMeHrpD9Jq6ME9fxDUYUeoI2cx6w0s0NDHA6SYqmTerfJA83WxjgUZzf3d0cpfqSak0yqvsmQIyFTSQyrGlQ5wB6jMpCxACjPgKIWAHFhB9YbifTka0li1rCEIvAh8UZ4ESEmITaMPLEqaylNXm2X9OGI8YJ4n9Gq31TLfdzrfZN/idabeNk9650c7ONQ6xdaSuil91P9NkmxUnJV3JJgIMICrEJztL8UicfbmKV4iAOAhbNGTrc+xw0vKLSMS1/VEdMiriIIILB/Uge5VQpIg6LVTrvc+mOylm8lrTSizm5bi/UPW906rKJDGI2VRGAeohTIq2zRB4NfHHjkDrrcvQNIes/64hbj8YXF7t/8+oSXjWnlDMewmCfiWiL2dq724kfwhDF02mlL6crke5cmYip6NRaybP4zex/s/Hval++2pevRLkd6vI7I79FyXugy++M/M7+q6b8zyzt/65JY8MJg6BI1kTiP5SGgkHmz5joTWzoZhRivumLdScFkOGRTU8Dzia0EIHgoPCzSMHEF18Xu0KnLhb5j7Mt4e23ZAYczN0oNvZCQqqY3py1/X1KpuQwDmZi7zChTGCBTkiprbZtdUzDBfitQ8e/i+tdhgiLGICeQ0PMXV/uQKInmRJZHS6hjLvRmiOS3DJWMDcpJn9l4BkuoE85PcGSobFsbrEpOTaNF/w+vD8MKIJ8P/I4DpK6JLEFPY+uGLBpOCUR8bCPObIADyFhML5N5G5II8cNIi6uvl0a4k9xYe15G6m3yHDJLKBMJwm59/jCTA8IWXNoLmRsP48cECKxw8nx4nM9vgE9JHwY5kh63gp5JvVRGnQ8BBmaEhogAiABmLEIAcjBD9khni+JyzCn4ebPTqXAgwG+kXjs9/0+n3iidD9xQexRR/rZ+TrFaew7USix5+XXh3LtIR3IBAD0OEdrfsUjWwJJJqkp4z6U7r7PGP+M55x57iHeF/g3gSfOk10qFmy750CHNzlEplA8brciLTwMvd1OFMdvbghmZGEmPPb4EsbFWIer6T//XsdV8RZoc/EKyT4voShibSfbilL68bZL3tWQAsYdy6aJgtNeX+7JBcqBD9buB8pu9w9mrWsO
+sidebar_class_name: "get api-method"
+info_path: docs/chainweb/kadena-chainweb-node-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import Heading from "@theme/Heading";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Query the current cut"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/cut"}
+>
+  
+</MethodEndpoint>
+
+
+
+Query the current cut
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<details
+  style={{"marginBottom":"1rem"}}
+  className={"openapi-markdown__details"}
+  data-collapsed={false}
+  open={true}
+>
+  <summary
+    style={{}}
+  >
+    <h3
+      className={"openapi-markdown__details-summary-header-params"}
+    >
+      Query Parameters
+    </h3>
+  </summary><div>
+    <ul>
+      <ParamsItem
+        className={"paramsItem"}
+        param={{"name":"maxheight","in":"query","description":"Maximum cut height of the returned cut","required":false,"schema":{"type":"integer","minimum":0}}}
+      >
+        
+      </ParamsItem>
+    </ul>
+  </div>
+</details><div>
+  <div>
+    <ApiTabs
+      label={undefined}
+      id={undefined}
+    >
+      <TabItem
+        label={"200"}
+        value={"200"}
+      >
+        <div>
+          
+          
+          The current cut
+          
+          
+        </div><details
+          style={{"textAlign":"left","marginBottom":"1rem"}}
+          className={"openapi-markdown__details"}
+          data-collapsed={true}
+          open={false}
+        >
+          <summary
+            style={{}}
+          >
+            <strong>
+              Response Headers
+            </strong>
+          </summary><ul
+            style={{"marginLeft":"1rem"}}
+          >
+            <li
+              className={"schemaItem"}
+            >
+              <summary
+                style={{}}
+              >
+                <strong>
+                  x-peer-addr
+                </strong><span
+                  style={{"opacity":"0.6"}}
+                >
+                   string
+                </span>
+              </summary><div>
+                <div
+                  style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                >
+                  Example: 10.36.1.3:42988
+                  
+                  Host and port of the client as observed by the remote node
+                  
+                  
+                </div>
+              </div>
+            </li><li
+              className={"schemaItem"}
+            >
+              <summary
+                style={{}}
+              >
+                <strong>
+                  x-server-timestamp
+                </strong><span
+                  style={{"opacity":"0.6"}}
+                >
+                   integer
+                </span>
+              </summary><div>
+                <div
+                  style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                >
+                  Example: 1618597601
+                  
+                  The time of the clock of the remote node
+                  
+                  
+                </div>
+              </div>
+            </li><li
+              className={"schemaItem"}
+            >
+              <summary
+                style={{}}
+              >
+                <strong>
+                  x-chainweb-node-version
+                </strong><span
+                  style={{"opacity":"0.6"}}
+                >
+                   string
+                </span>
+              </summary><div>
+                <div
+                  style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                >
+                  Example: 2.6
+                  
+                  The version of the remote chainweb node
+                  
+                  
+                </div>
+              </div>
+            </li>
+          </ul>
+        </details><div>
+          <MimeTabs
+            className={"openapi-tabs__mime"}
+            schemaType={"response"}
+          >
+            <TabItem
+              label={"application/json"}
+              value={"application/json"}
+            >
+              <SchemaTabs
+                className={"openapi-tabs__schema"}
+              >
+                <TabItem
+                  label={"Schema"}
+                  value={"Schema"}
+                >
+                  <details
+                    style={{}}
+                    className={"openapi-markdown__details response"}
+                    data-collapsed={false}
+                    open={true}
+                  >
+                    <summary
+                      style={{}}
+                      className={"openapi-markdown__details-summary-response"}
+                    >
+                      <strong>
+                        Schema
+                      </strong>
+                    </summary><div
+                      style={{"textAlign":"left","marginLeft":"1rem"}}
+                    >
+                      
+                    </div><ul
+                      style={{"marginLeft":"1rem"}}
+                    >
+                      <SchemaItem
+                        collapsible={true}
+                        className={"schemaItem"}
+                      >
+                        <details
+                          style={{}}
+                          className={"openapi-markdown__details"}
+                        >
+                          <summary
+                            style={{}}
+                          >
+                            <span
+                              className={"openapi-schema__container"}
+                            >
+                              <strong
+                                className={"openapi-schema__property"}
+                              >
+                                origin
+                              </strong><span
+                                className={"openapi-schema__name"}
+                              >
+                                 Peer
+                              </span>
+                            </span>
+                          </summary><div
+                            style={{"marginLeft":"1rem"}}
+                          >
+                            <div
+                              style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                            >
+                              
+                              
+                              Peer info object
+                              
+                              
+                            </div><SchemaItem
+                              collapsible={false}
+                              name={"id"}
+                              required={true}
+                              schemaName={"string"}
+                              qualifierMessage={"**Possible values:** Value must match regular expression `[a-zA-Z0-9_-]{43}`"}
+                              schema={{"description":"The base64Url (without padding) encoded SHA256 fingerprint of the\nSSL certificate of the node. This can be null only if the node uses\nan official CA signed certificate\n","type":"string","nullable":true,"pattern":"[a-zA-Z0-9_-]{43}"}}
+                            >
+                              
+                            </SchemaItem><SchemaItem
+                              collapsible={true}
+                              className={"schemaItem"}
+                            >
+                              <details
+                                style={{}}
+                                className={"openapi-markdown__details"}
+                              >
+                                <summary
+                                  style={{}}
+                                >
+                                  <span
+                                    className={"openapi-schema__container"}
+                                  >
+                                    <strong
+                                      className={"openapi-schema__property"}
+                                    >
+                                      address
+                                    </strong><span
+                                      className={"openapi-schema__name"}
+                                    >
+                                       
+                                    </span><span
+                                      className={"openapi-schema__divider"}
+                                    >
+                                      
+                                    </span><span
+                                      className={"openapi-schema__required"}
+                                    >
+                                      required
+                                    </span>
+                                  </span>
+                                </summary><div
+                                  style={{"marginLeft":"1rem"}}
+                                >
+                                  <SchemaItem
+                                    collapsible={true}
+                                    className={"schemaItem"}
+                                  >
+                                    <details
+                                      style={{}}
+                                      className={"openapi-markdown__details"}
+                                    >
+                                      <summary
+                                        style={{}}
+                                      >
+                                        <strong>
+                                          hostname
+                                        </strong><span
+                                          style={{"opacity":"0.6"}}
+                                        >
+                                           object
+                                        </span><strong
+                                          style={{"fontSize":"var(--ifm-code-font-size)","color":"var(--openapi-required)"}}
+                                        >
+                                           required
+                                        </strong>
+                                      </summary><div
+                                        style={{"marginLeft":"1rem"}}
+                                      >
+                                        <div
+                                          style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                                        >
+                                          
+                                          
+                                          A domain name or IP address. This must be a domain name only if
+                                          the respective node is using a valid CA signed SSL certificate.
+                                          
+                                          
+                                          
+                                        </div>
+                                      </div><div>
+                                        <span
+                                          className={"badge badge--info"}
+                                        >
+                                          oneOf
+                                        </span><SchemaTabs>
+                                          
+                                        </SchemaTabs>
+                                      </div>
+                                    </details>
+                                  </SchemaItem><SchemaItem
+                                    collapsible={false}
+                                    name={"port"}
+                                    required={true}
+                                    schemaName={"integer"}
+                                    qualifierMessage={"**Possible values:** `>= 1` and `<= 65535`"}
+                                    schema={{"description":"Port number","type":"integer","minimum":1,"maximum":65535}}
+                                  >
+                                    
+                                  </SchemaItem>
+                                </div>
+                              </details>
+                            </SchemaItem>
+                          </div>
+                        </details>
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"height"}
+                        required={true}
+                        schemaName={"integer"}
+                        qualifierMessage={undefined}
+                        schema={{"description":"The cut height is the sum of the height of all blocks of the cut.\nUsage of this value should be avoided, because its semantics may\nchange in the future\n","type":"integer","minimum":0}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"weight"}
+                        required={true}
+                        schemaName={"string"}
+                        qualifierMessage={"**Possible values:** Value must match regular expression `[a-zA-Z0-9_-]{43}`"}
+                        schema={{"description":"The sum of the weights of all blocks in the cut","type":"string","pattern":"[a-zA-Z0-9_-]{43}"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={true}
+                        className={"schemaItem"}
+                      >
+                        <details
+                          style={{}}
+                          className={"openapi-markdown__details"}
+                        >
+                          <summary
+                            style={{}}
+                          >
+                            <span
+                              className={"openapi-schema__container"}
+                            >
+                              <strong
+                                className={"openapi-schema__property"}
+                              >
+                                hashes
+                              </strong><span
+                                className={"openapi-schema__name"}
+                              >
+                                 object
+                              </span><span
+                                className={"openapi-schema__divider"}
+                              >
+                                
+                              </span><span
+                                className={"openapi-schema__required"}
+                              >
+                                required
+                              </span>
+                            </span>
+                          </summary><div
+                            style={{"marginLeft":"1rem"}}
+                          >
+                            <div
+                              style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                            >
+                              
+                              
+                              An object that maps chain Ids to their respective block hash and
+                              block height
+                              
+                              
+                              
+                            </div><SchemaItem
+                              collapsible={true}
+                              className={"schemaItem"}
+                            >
+                              <details
+                                style={{}}
+                                className={"openapi-markdown__details"}
+                              >
+                                <summary
+                                  style={{}}
+                                >
+                                  <span
+                                    className={"openapi-schema__container"}
+                                  >
+                                    <strong
+                                      className={"openapi-schema__property"}
+                                    >
+                                      property name*
+                                    </strong><span
+                                      className={"openapi-schema__name"}
+                                    >
+                                       Hash with block height
+                                    </span>
+                                  </span>
+                                </summary><div
+                                  style={{"marginLeft":"1rem"}}
+                                >
+                                  <div
+                                    style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                                  >
+                                    
+                                    
+                                    A block hash and the height of that block
+                                    
+                                    
+                                  </div><SchemaItem
+                                    collapsible={false}
+                                    name={"hash"}
+                                    required={true}
+                                    schemaName={"string"}
+                                    qualifierMessage={"**Possible values:** Value must match regular expression `[a-zA-Z0-9_-]{43}`"}
+                                    schema={{"type":"string","pattern":"[a-zA-Z0-9_-]{43}"}}
+                                  >
+                                    
+                                  </SchemaItem><SchemaItem
+                                    collapsible={false}
+                                    name={"height"}
+                                    required={true}
+                                    schemaName={"integer"}
+                                    qualifierMessage={undefined}
+                                    schema={{"type":"integer","minimum":0}}
+                                  >
+                                    
+                                  </SchemaItem>
+                                </div>
+                              </details>
+                            </SchemaItem>
+                          </div>
+                        </details>
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"instance"}
+                        required={false}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"id"}
+                        required={false}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string"}}
+                      >
+                        
+                      </SchemaItem>
+                    </ul>
+                  </details>
+                </TabItem><TabItem
+                  label={"Example (from schema)"}
+                  value={"Example (from schema)"}
+                >
+                  <ResponseSamples
+                    responseExample={"{\n  \"value\": {\n    \"origin\": null,\n    \"height\": 30798466,\n    \"weight\": \"b0wYplmNiTBXCwAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\",\n    \"hashes\": {\n      \"0\": {\n        \"height\": 1539923,\n        \"hash\": \"qEaSmWt_tDcJC9AGbgWY9x12LW5VED7hGgfyz9x_S3w\"\n      },\n      \"1\": {\n        \"height\": 1539923,\n        \"hash\": \"TJuC6nfhamfD517gspAZmqD9umR71nAgttDOi1JbBHw\"\n      },\n      \"2\": {\n        \"height\": 1539924,\n        \"hash\": \"4ineCWfnO1rneWuBMLPzqTl2HF_sZpypT_3TEzf3VLc\"\n      },\n      \"3\": {\n        \"height\": 1539924,\n        \"hash\": \"ZEOMXB2ByqzL2HfYVKIZKAnoe4wIeJ2SaltnXDir59k\"\n      },\n      \"4\": {\n        \"height\": 1539923,\n        \"hash\": \"0g0rOoSznVW2BJDBmK0Lbxz22F-sxTZUNIrUs_Q8Ye4\"\n      },\n      \"5\": {\n        \"height\": 1539923,\n        \"hash\": \"5y_TL-clnF_wELMBKyJk0Sz8RVShw_bGQETJdrMkADA\"\n      },\n      \"6\": {\n        \"height\": 1539923,\n        \"hash\": \"YkQKv6P4_C4jRM3RqKK9FWPxIneeLzlkKQS9ATAQYRk\"\n      },\n      \"7\": {\n        \"height\": 1539923,\n        \"hash\": \"j_hJ9iiH_ATyeQeeRN3auGXjbBWiFgnTU0dYPIz8cKM\"\n      },\n      \"8\": {\n        \"height\": 1539924,\n        \"hash\": \"s7c3B55VbDsS6EJ-nc9S5k2kNbPOBGI8xxF3vUg4d4Q\"\n      },\n      \"9\": {\n        \"height\": 1539922,\n        \"hash\": \"bowQf63xSY9owHKhK1yGee2Q0Fn8yL_oCLaEUn-CGoA\"\n      },\n      \"10\": {\n        \"height\": 1539924,\n        \"hash\": \"uP-pHW4QKrV9fN1mlDGwKuaiIDlJW7xYSj1nW53EHM4\"\n      },\n      \"11\": {\n        \"height\": 1539924,\n        \"hash\": \"TIhegjZ0GEC73T4m0BVuFtfLNGuS56IUWEuf93AJ5UU\"\n      },\n      \"12\": {\n        \"height\": 1539923,\n        \"hash\": \"-j1qcAS9Fs-WQmc3WEhzZ96VojxnlIA2TFpfyIv31Zs\"\n      },\n      \"13\": {\n        \"height\": 1539923,\n        \"hash\": \"S-4TqMgWGlK1k33XRlU9w0Lfwr0RvkO5Jn78Au1OglM\"\n      },\n      \"14\": {\n        \"height\": 1539923,\n        \"hash\": \"xSuULf--S4TrgYNz82deaGhnPLWrg3pXkynGeUPUGwA\"\n      },\n      \"15\": {\n        \"height\": 1539923,\n        \"hash\": \"jsc9rugvcHXDiBAuoO9_j8R_b_jchtJJ8b5596i8wVg\"\n      },\n      \"16\": {\n        \"height\": 1539923,\n        \"hash\": \"qs1aEY8kSxfUBb_JRVswv5dYINRXBjGJteC-6RC1hjc\"\n      },\n      \"17\": {\n        \"height\": 1539924,\n        \"hash\": \"xzVBXaQxzlUfUrakDgppUubQBRXGh-Uy0HBdMNwCq_Y\"\n      },\n      \"18\": {\n        \"height\": 1539924,\n        \"hash\": \"4VOHPAqwioySYRycdl5MxfscQHwtlwwCAt7AySYQT98\"\n      },\n      \"19\": {\n        \"height\": 1539923,\n        \"hash\": \"1PrRg20XyQ_2cfgGOgNK9K-cqIJ1vO8-A-RJlfN5m00\"\n      }\n    },\n    \"id\": \"BBz7KeurYTeQ0hMGbwUbQC84cRbVcacoDQTye-3qkXI\",\n    \"instance\": \"mainnet01\"\n  }\n}"}
+                    language={"json"}
+                  >
+                    
+                  </ResponseSamples>
+                </TabItem><TabItem
+                  label={"Example"}
+                  value={"Example"}
+                >
+                  <ResponseSamples
+                    responseExample={"{\n  \"value\": {\n    \"origin\": null,\n    \"height\": 30798466,\n    \"weight\": \"b0wYplmNiTBXCwAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\",\n    \"hashes\": {\n      \"0\": {\n        \"height\": 1539923,\n        \"hash\": \"qEaSmWt_tDcJC9AGbgWY9x12LW5VED7hGgfyz9x_S3w\"\n      },\n      \"1\": {\n        \"height\": 1539923,\n        \"hash\": \"TJuC6nfhamfD517gspAZmqD9umR71nAgttDOi1JbBHw\"\n      },\n      \"2\": {\n        \"height\": 1539924,\n        \"hash\": \"4ineCWfnO1rneWuBMLPzqTl2HF_sZpypT_3TEzf3VLc\"\n      },\n      \"3\": {\n        \"height\": 1539924,\n        \"hash\": \"ZEOMXB2ByqzL2HfYVKIZKAnoe4wIeJ2SaltnXDir59k\"\n      },\n      \"4\": {\n        \"height\": 1539923,\n        \"hash\": \"0g0rOoSznVW2BJDBmK0Lbxz22F-sxTZUNIrUs_Q8Ye4\"\n      },\n      \"5\": {\n        \"height\": 1539923,\n        \"hash\": \"5y_TL-clnF_wELMBKyJk0Sz8RVShw_bGQETJdrMkADA\"\n      },\n      \"6\": {\n        \"height\": 1539923,\n        \"hash\": \"YkQKv6P4_C4jRM3RqKK9FWPxIneeLzlkKQS9ATAQYRk\"\n      },\n      \"7\": {\n        \"height\": 1539923,\n        \"hash\": \"j_hJ9iiH_ATyeQeeRN3auGXjbBWiFgnTU0dYPIz8cKM\"\n      },\n      \"8\": {\n        \"height\": 1539924,\n        \"hash\": \"s7c3B55VbDsS6EJ-nc9S5k2kNbPOBGI8xxF3vUg4d4Q\"\n      },\n      \"9\": {\n        \"height\": 1539922,\n        \"hash\": \"bowQf63xSY9owHKhK1yGee2Q0Fn8yL_oCLaEUn-CGoA\"\n      },\n      \"10\": {\n        \"height\": 1539924,\n        \"hash\": \"uP-pHW4QKrV9fN1mlDGwKuaiIDlJW7xYSj1nW53EHM4\"\n      },\n      \"11\": {\n        \"height\": 1539924,\n        \"hash\": \"TIhegjZ0GEC73T4m0BVuFtfLNGuS56IUWEuf93AJ5UU\"\n      },\n      \"12\": {\n        \"height\": 1539923,\n        \"hash\": \"-j1qcAS9Fs-WQmc3WEhzZ96VojxnlIA2TFpfyIv31Zs\"\n      },\n      \"13\": {\n        \"height\": 1539923,\n        \"hash\": \"S-4TqMgWGlK1k33XRlU9w0Lfwr0RvkO5Jn78Au1OglM\"\n      },\n      \"14\": {\n        \"height\": 1539923,\n        \"hash\": \"xSuULf--S4TrgYNz82deaGhnPLWrg3pXkynGeUPUGwA\"\n      },\n      \"15\": {\n        \"height\": 1539923,\n        \"hash\": \"jsc9rugvcHXDiBAuoO9_j8R_b_jchtJJ8b5596i8wVg\"\n      },\n      \"16\": {\n        \"height\": 1539923,\n        \"hash\": \"qs1aEY8kSxfUBb_JRVswv5dYINRXBjGJteC-6RC1hjc\"\n      },\n      \"17\": {\n        \"height\": 1539924,\n        \"hash\": \"xzVBXaQxzlUfUrakDgppUubQBRXGh-Uy0HBdMNwCq_Y\"\n      },\n      \"18\": {\n        \"height\": 1539924,\n        \"hash\": \"4VOHPAqwioySYRycdl5MxfscQHwtlwwCAt7AySYQT98\"\n      },\n      \"19\": {\n        \"height\": 1539923,\n        \"hash\": \"1PrRg20XyQ_2cfgGOgNK9K-cqIJ1vO8-A-RJlfN5m00\"\n      }\n    },\n    \"id\": \"BBz7KeurYTeQ0hMGbwUbQC84cRbVcacoDQTye-3qkXI\",\n    \"instance\": \"mainnet01\"\n  }\n}"}
+                    language={"json"}
+                  >
+                    
+                  </ResponseSamples>
+                </TabItem>
+              </SchemaTabs>
+            </TabItem>
+          </MimeTabs>
+        </div>
+      </TabItem>
+    </ApiTabs>
+  </div>
+</div>
+      

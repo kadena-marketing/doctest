@@ -1,0 +1,349 @@
+---
+id: check-the-status-of-a-backup-job
+title: "Check the status of a backup job"
+description: "Check the status of a backup job"
+sidebar_label: "Check the status of a backup job"
+hide_title: true
+hide_table_of_contents: true
+api: eJztWOtv2zYQ/1cIYsAaVPIrbprom1usXbChMdZsHRp7Ay2dLTYSqZKnJK6m/304UrLl2G1T7PmhX/Q4Hu/xuwdPqjiKleXRFc+ljfk84IUwIgcEQ9SKK5EDj/hCxNdlcZ7wgEvFI14ITHnAE7CxkQVKTcTLFJhMQKFcSjBMLxmmwPxWtgCpVixOIb4GEmPgfSkNJDxCU0LAbZxCLnhUcZSYkc5nfuM7vehI3VcKd1iKrFWzx43rgoRZNFKtOPmHCIZ2XonwwyR8OwjPfg/nj3nA4U7kBakenoxPT06ejI+fDgaDup6TtbbQyoIlA0eDAd127Zh0LbiVmDJMBXbxgDtp0QYsBQNMWibRMosCS8sDnoJIHOYVvwsLABOKJDH7ar7XFplQCSu0wRbiOJOgkAnL9MKCuYGELdZuxUCuEZjSCfBDGDtxkyQxYO0etF6XX2SxViikoiCeT2/GGxs+CfFvs1lSjeveoVs0myWPv+nCzoeD3vFJb9g7jsajs9NTXn9m8S503poQZQ4WRV7sA0ZJSctbrHR83b58Dp7pxevzX9nlRvrGV6kQVgey8TXEWiWWWaliYH47FDpOd9NreDYcnD4ZjQOeSyXzMufRoN7lOH1y9vRkMHRexqmQ6hYWIRka3oCxTtshV5vFew62Ag54uhO7HcBHvRNe1wGnyINCxw132C8yIZ32T5bsJrM/nh2+YMJEK/ijeZYqLIxeUca1pKWQGSS8rsmW8WBM+r5Wy9dq+Z9Wy54S3+yV/tz5cGD3czotnWW+mshO0ZHDA54DpjrhEV8B+mRKecT77pwNPWe/ak/vmpxxOeAP99JkPOIpYmGjfl8Uste63ot13m9f+pUo5C8eqrqfC6kU4GC4F87nLW4NCyNdMgY2mZ732DkykVntiGCZ1TkwUEmhpULbRmA6mjrumeIBvxFGikXmD92tCT6US1FmyCM+6A2oNwSHvEGwqAAf4lXDOhh/3KuG5T/xqvI5WEf9fpVowreOKmoo9Uf8qVpyS9nza6LYChQYGbOdinE+5WLtXWJaZWsmmC0XFjYtdOPhAZe21bJ1h4JCNa2odq/aVxcqPqe0dy7t7rmfjlRuroXucA1Px6653XN3l6mbsq0NFM3QSrXKALVy6NxApoucjrpgZ8s2N8jWL03EKtOxIMzrv7m6KKsWWqNFIwrmQ3dB0WrSrZOHwoAPZ9K7H67Wul1nShtCF632ne6j5n7s77cN/bah3xJ9aYbuOnJXorwrhu46ctfjvwrlP1Pa/y6kHjgCBEq3UtKzcECJYvQQiObU0OPSSFy/prpzBtT0kbbU3aP5B5GAEmzj8CuduAa23xWm51TkVzstYf6ojcBKYlp6sK+dyFDq/g7v0UzN1EaPtNQ7YpEROGxqtF6GF8vwjTbX7NFUvzmiScmCsqVlIltpIzHNXQeinWqm3LK5EShvgMEdgmoP7GcSYy3Vt5a9Etci16g7stzZ6tgTO1NbVl/wvuFtFTLULC8zlEW7ZnvsMiUTskzfWrbUZqZKlclcIiQMjVBWxAQZw9TocpUWJdIUmWojP9Dsl2Vr5zdNgNQxVZkv/DdxI59gegGQ0NnsxsNFuWIGqMM5fX788qO3b7uSzEdwmXcLWaxz6LFpBsLCTOkCFBOKSWtLYALZldvg4+XkWonarB8aSpInCtl38uxR0+fbTHTpR7NWplcuz3brVPZkviqNk72YvH0xefmiV7hhV2RI3xAHMvJHklS7Hm8xFy7dm58PDxiDdpJ4M6d1PlfqwNtYNSPSFe+OSDzg0eYXxzzgqbZIPFW1EBZ+NlldE/l9CWbNo6v5tuDdHJVIS88Jj5Yis7BnzuYLij/6qfntccS+6G/JQYcaolBr14Gykt54wK9h3f1lU1Mf8V9Mzlq/PIljKLCzsSt73hksX353yev6T3JqNt8=
+sidebar_class_name: "get api-method"
+info_path: docs/chainweb/kadena-chainweb-node-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import Heading from "@theme/Heading";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Check the status of a backup job"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/check-backup/{backupId}"}
+>
+  
+</MethodEndpoint>
+
+
+
+Check the status of a backup job
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<details
+  style={{"marginBottom":"1rem"}}
+  className={"openapi-markdown__details"}
+  data-collapsed={false}
+  open={true}
+>
+  <summary
+    style={{}}
+  >
+    <h3
+      className={"openapi-markdown__details-summary-header-params"}
+    >
+      Path Parameters
+    </h3>
+  </summary><div>
+    <ul>
+      <ParamsItem
+        className={"paramsItem"}
+        param={{"name":"backupId","in":"path","description":"The identifier of the backup being checked","required":true,"schema":{"title":"Backup job identifier","description":"Textual backup job identifier","type":"string","pattern":"[a-zA-Z0-9_-]+","example":1648665437000}}}
+      >
+        
+      </ParamsItem>
+    </ul>
+  </div>
+</details><div>
+  <div>
+    <ApiTabs
+      label={undefined}
+      id={undefined}
+    >
+      <TabItem
+        label={"200"}
+        value={"200"}
+      >
+        <div>
+          
+          
+          A backup job with that identifier exists, here is its status
+          
+          
+        </div><details
+          style={{"textAlign":"left","marginBottom":"1rem"}}
+          className={"openapi-markdown__details"}
+          data-collapsed={true}
+          open={false}
+        >
+          <summary
+            style={{}}
+          >
+            <strong>
+              Response Headers
+            </strong>
+          </summary><ul
+            style={{"marginLeft":"1rem"}}
+          >
+            <li
+              className={"schemaItem"}
+            >
+              <summary
+                style={{}}
+              >
+                <strong>
+                  x-peer-addr
+                </strong><span
+                  style={{"opacity":"0.6"}}
+                >
+                   string
+                </span>
+              </summary><div>
+                <div
+                  style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                >
+                  Example: 10.36.1.3:42988
+                  
+                  Host and port of the client as observed by the remote node
+                  
+                  
+                </div>
+              </div>
+            </li><li
+              className={"schemaItem"}
+            >
+              <summary
+                style={{}}
+              >
+                <strong>
+                  x-server-timestamp
+                </strong><span
+                  style={{"opacity":"0.6"}}
+                >
+                   integer
+                </span>
+              </summary><div>
+                <div
+                  style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                >
+                  Example: 1618597601
+                  
+                  The time of the clock of the remote node
+                  
+                  
+                </div>
+              </div>
+            </li><li
+              className={"schemaItem"}
+            >
+              <summary
+                style={{}}
+              >
+                <strong>
+                  x-chainweb-node-version
+                </strong><span
+                  style={{"opacity":"0.6"}}
+                >
+                   string
+                </span>
+              </summary><div>
+                <div
+                  style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                >
+                  Example: 2.6
+                  
+                  The version of the remote chainweb node
+                  
+                  
+                </div>
+              </div>
+            </li>
+          </ul>
+        </details><div>
+          <MimeTabs
+            className={"openapi-tabs__mime"}
+            schemaType={"response"}
+          >
+            <TabItem
+              label={"text/plain"}
+              value={"text/plain"}
+            >
+              <SchemaTabs
+                className={"openapi-tabs__schema"}
+              >
+                <TabItem
+                  label={"Schema"}
+                  value={"Schema"}
+                >
+                  <details
+                    style={{}}
+                    className={"openapi-markdown__details response"}
+                    data-collapsed={false}
+                    open={true}
+                  >
+                    <summary
+                      style={{}}
+                      className={"openapi-markdown__details-summary-response"}
+                    >
+                      <strong>
+                        Schema
+                      </strong>
+                    </summary><div
+                      style={{"textAlign":"left","marginLeft":"1rem"}}
+                    >
+                      
+                    </div><ul
+                      style={{"marginLeft":"1rem"}}
+                    >
+                      <div
+                        style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                      >
+                        
+                        
+                        string
+                        
+                        <div
+                          style={{"paddingTop":"1rem"}}
+                        >
+                          
+                          
+                          **Possible values:** Value must match regular expression `backup-done|backup-in-progress|backup-failed`
+                          
+                          
+                        </div>
+                      </div>
+                    </ul>
+                  </details>
+                </TabItem>
+              </SchemaTabs>
+            </TabItem>
+          </MimeTabs>
+        </div>
+      </TabItem><TabItem
+        label={"404"}
+        value={"404"}
+      >
+        <div>
+          
+          
+          There is no backup job with that identifier
+          
+          
+        </div><details
+          style={{"textAlign":"left","marginBottom":"1rem"}}
+          className={"openapi-markdown__details"}
+          data-collapsed={true}
+          open={false}
+        >
+          <summary
+            style={{}}
+          >
+            <strong>
+              Response Headers
+            </strong>
+          </summary><ul
+            style={{"marginLeft":"1rem"}}
+          >
+            <li
+              className={"schemaItem"}
+            >
+              <summary
+                style={{}}
+              >
+                <strong>
+                  x-peer-addr
+                </strong><span
+                  style={{"opacity":"0.6"}}
+                >
+                   string
+                </span>
+              </summary><div>
+                <div
+                  style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                >
+                  Example: 10.36.1.3:42988
+                  
+                  Host and port of the client as observed by the remote node
+                  
+                  
+                </div>
+              </div>
+            </li><li
+              className={"schemaItem"}
+            >
+              <summary
+                style={{}}
+              >
+                <strong>
+                  x-server-timestamp
+                </strong><span
+                  style={{"opacity":"0.6"}}
+                >
+                   integer
+                </span>
+              </summary><div>
+                <div
+                  style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                >
+                  Example: 1618597601
+                  
+                  The time of the clock of the remote node
+                  
+                  
+                </div>
+              </div>
+            </li><li
+              className={"schemaItem"}
+            >
+              <summary
+                style={{}}
+              >
+                <strong>
+                  x-chainweb-node-version
+                </strong><span
+                  style={{"opacity":"0.6"}}
+                >
+                   string
+                </span>
+              </summary><div>
+                <div
+                  style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                >
+                  Example: 2.6
+                  
+                  The version of the remote chainweb node
+                  
+                  
+                </div>
+              </div>
+            </li>
+          </ul>
+        </details><div>
+          
+        </div>
+      </TabItem>
+    </ApiTabs>
+  </div>
+</div>
+      

@@ -171,6 +171,7 @@ const config: Config = {
       },
     } satisfies Preset.ThemeConfig,
 
+
   plugins: [
     [
       "docusaurus-plugin-openapi-docs",
@@ -178,16 +179,24 @@ const config: Config = {
         id: "openapi",
         docsPluginId: "classic",
         config: {
-          petstore: {
-            specPath: "examples/openapi.json",
+          chainweb: {  // First API spec
+            specPath: "examples/chainweb.openapi.yaml",
             outputDir: "docs/chainweb",
             sidebarOptions: {
               groupPathsBy: "tag",
               categoryLinkSource: "tag",
             },
-          } satisfies OpenApiPlugin.Options,
-        } satisfies Plugin.PluginOptions,
-      },
+          },
+          pact: {  // Second API spec
+            specPath: "examples/pact.openapi.yaml",
+            outputDir: "docs/pact",
+            sidebarOptions: {
+              groupPathsBy: "tag",
+              categoryLinkSource: "tag",
+            },
+          },
+        } satisfies OpenApiPlugin.Options,
+      } satisfies Plugin.PluginOptions,
     ],
   ],
 

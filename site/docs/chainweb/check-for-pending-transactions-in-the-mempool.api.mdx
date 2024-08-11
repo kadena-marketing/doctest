@@ -1,0 +1,374 @@
+---
+id: check-for-pending-transactions-in-the-mempool
+title: "Check for Pending Transactions in the Mempool"
+description: "Check for Pending Transactions in the Mempool"
+sidebar_label: "Check for Pending Transactions in the Mempool"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "post api-method"
+info_path: docs/chainweb/kadena-chainweb-node-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import Heading from "@theme/Heading";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Check for Pending Transactions in the Mempool"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/chain/{chain}/mempool/member"}
+>
+  
+</MethodEndpoint>
+
+
+
+Check for Pending Transactions in the Mempool
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<details
+  style={{"marginBottom":"1rem"}}
+  className={"openapi-markdown__details"}
+  data-collapsed={false}
+  open={true}
+>
+  <summary
+    style={{}}
+  >
+    <h3
+      className={"openapi-markdown__details-summary-header-params"}
+    >
+      Path Parameters
+    </h3>
+  </summary><div>
+    <ul>
+      <ParamsItem
+        className={"paramsItem"}
+        param={{"name":"chain","in":"path","description":"the id of the chain to which the request is sent","required":true,"schema":{"type":"integer","minimum":0,"example":0}}}
+      >
+        
+      </ParamsItem>
+    </ul>
+  </div>
+</details><MimeTabs
+  className={"openapi-tabs__mime"}
+>
+  <TabItem
+    label={"application/json"}
+    value={"application/json-schema"}
+  >
+    <details
+      style={{}}
+      className={"openapi-markdown__details mime"}
+      data-collapsed={false}
+      open={true}
+    >
+      <summary
+        style={{}}
+        className={"openapi-markdown__details-summary-mime"}
+      >
+        <h3
+          className={"openapi-markdown__details-summary-header-body"}
+        >
+          Body
+        </h3><span
+          style={{"opacity":"0.6"}}
+        >
+           array
+        </span>
+      </summary><div
+        style={{"textAlign":"left","marginLeft":"1rem"}}
+      >
+        <div
+          style={{"marginTop":"1rem","marginBottom":"1rem"}}
+        >
+          
+          
+          Array of request keys
+          
+          
+        </div>
+      </div><ul
+        style={{"marginLeft":"1rem"}}
+      >
+        <li>
+          <div
+            style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem","paddingBottom":".5rem"}}
+          >
+            Array [
+          </div>
+        </li><div
+          style={{"marginTop":".5rem","marginBottom":".5rem"}}
+        >
+          
+          
+          string
+          
+          <div
+            style={{"paddingTop":"1rem"}}
+          >
+            
+            
+            **Possible values:** `>= 43 characters` and `<= 43 characters`, Value must match regular expression `^[a-zA-Z0-9_-]{43}$`
+            
+            
+          </div>
+        </div><li>
+          <div
+            style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem"}}
+          >
+            ]
+          </div>
+        </li>
+      </ul>
+    </details>
+  </TabItem>
+</MimeTabs><div>
+  <div>
+    <ApiTabs
+      label={undefined}
+      id={undefined}
+    >
+      <TabItem
+        label={"200"}
+        value={"200"}
+      >
+        <div>
+          
+          
+          Array of boolean values that indicate whether the respective
+          transaction is in the mempool.
+          
+          The array has the same size as the request body.
+          
+          
+          
+        </div><details
+          style={{"textAlign":"left","marginBottom":"1rem"}}
+          className={"openapi-markdown__details"}
+          data-collapsed={true}
+          open={false}
+        >
+          <summary
+            style={{}}
+          >
+            <strong>
+              Response Headers
+            </strong>
+          </summary><ul
+            style={{"marginLeft":"1rem"}}
+          >
+            <li
+              className={"schemaItem"}
+            >
+              <summary
+                style={{}}
+              >
+                <strong>
+                  x-peer-addr
+                </strong><span
+                  style={{"opacity":"0.6"}}
+                >
+                   string
+                </span>
+              </summary><div>
+                <div
+                  style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                >
+                  Example: 10.36.1.3:42988
+                  
+                  Host and port of the client as observed by the remote node
+                  
+                  
+                </div>
+              </div>
+            </li><li
+              className={"schemaItem"}
+            >
+              <summary
+                style={{}}
+              >
+                <strong>
+                  x-server-timestamp
+                </strong><span
+                  style={{"opacity":"0.6"}}
+                >
+                   integer
+                </span>
+              </summary><div>
+                <div
+                  style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                >
+                  Example: 1618597601
+                  
+                  The time of the clock of the remote node
+                  
+                  
+                </div>
+              </div>
+            </li><li
+              className={"schemaItem"}
+            >
+              <summary
+                style={{}}
+              >
+                <strong>
+                  x-chainweb-node-version
+                </strong><span
+                  style={{"opacity":"0.6"}}
+                >
+                   string
+                </span>
+              </summary><div>
+                <div
+                  style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                >
+                  Example: 2.6
+                  
+                  The version of the remote chainweb node
+                  
+                  
+                </div>
+              </div>
+            </li>
+          </ul>
+        </details><div>
+          <MimeTabs
+            className={"openapi-tabs__mime"}
+            schemaType={"response"}
+          >
+            <TabItem
+              label={"application/json"}
+              value={"application/json"}
+            >
+              <SchemaTabs
+                className={"openapi-tabs__schema"}
+              >
+                <TabItem
+                  label={"Schema"}
+                  value={"Schema"}
+                >
+                  <details
+                    style={{}}
+                    className={"openapi-markdown__details response"}
+                    data-collapsed={false}
+                    open={true}
+                  >
+                    <summary
+                      style={{}}
+                      className={"openapi-markdown__details-summary-response"}
+                    >
+                      <strong>
+                        Schema
+                      </strong>
+                    </summary><div
+                      style={{"textAlign":"left","marginLeft":"1rem"}}
+                    >
+                      
+                    </div><ul
+                      style={{"marginLeft":"1rem"}}
+                    >
+                      <li>
+                        <div
+                          style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem","paddingBottom":".5rem"}}
+                        >
+                          Array [
+                        </div>
+                      </li><div
+                        style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                      >
+                        
+                        
+                        boolean
+                        
+                        
+                      </div><li>
+                        <div
+                          style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem"}}
+                        >
+                          ]
+                        </div>
+                      </li>
+                    </ul>
+                  </details>
+                </TabItem><TabItem
+                  label={"Example (from schema)"}
+                  value={"Example (from schema)"}
+                >
+                  <ResponseSamples
+                    responseExample={"[\n  true\n]"}
+                    language={"json"}
+                  >
+                    
+                  </ResponseSamples>
+                </TabItem><TabItem
+                  label={"hit"}
+                  value={"hit"}
+                >
+                  <Markdown>
+                     result for existing transaction
+                  </Markdown><ResponseSamples
+                    responseExample={"[\n  true\n]"}
+                    language={"json"}
+                  >
+                    
+                  </ResponseSamples>
+                </TabItem><TabItem
+                  label={"miss"}
+                  value={"miss"}
+                >
+                  <Markdown>
+                     result for missing transaction
+                  </Markdown><ResponseSamples
+                    responseExample={"[\n  false\n]"}
+                    language={"json"}
+                  >
+                    
+                  </ResponseSamples>
+                </TabItem><TabItem
+                  label={"empty"}
+                  value={"empty"}
+                >
+                  <Markdown>
+                     result from empty request body
+                  </Markdown><ResponseSamples
+                    responseExample={"[]"}
+                    language={"json"}
+                  >
+                    
+                  </ResponseSamples>
+                </TabItem>
+              </SchemaTabs>
+            </TabItem>
+          </MimeTabs>
+        </div>
+      </TabItem>
+    </ApiTabs>
+  </div>
+</div>
+      

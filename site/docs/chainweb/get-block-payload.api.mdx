@@ -1,0 +1,520 @@
+---
+id: get-block-payload
+title: "Get Block Payload"
+description: "Get Block Payload"
+sidebar_label: "Get Block Payload"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "get api-method"
+info_path: docs/chainweb/kadena-chainweb-node-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import Heading from "@theme/Heading";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get Block Payload"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/chain/{chain}/payload/{payloadHash}"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get Block Payload
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<details
+  style={{"marginBottom":"1rem"}}
+  className={"openapi-markdown__details"}
+  data-collapsed={false}
+  open={true}
+>
+  <summary
+    style={{}}
+  >
+    <h3
+      className={"openapi-markdown__details-summary-header-params"}
+    >
+      Path Parameters
+    </h3>
+  </summary><div>
+    <ul>
+      <ParamsItem
+        className={"paramsItem"}
+        param={{"name":"chain","in":"path","description":"the id of the chain to which the request is sent","required":true,"schema":{"type":"integer","minimum":0,"example":0}}}
+      >
+        
+      </ParamsItem><ParamsItem
+        className={"paramsItem"}
+        param={{"name":"payloadHash","in":"path","required":true,"description":"Payload hash of a block","schema":{"title":"Block Payload Hash","description":"Base64Url (without padding) encoded block payload hash","example":"GpaWbHkHrCjRhY8hKE0qZ1WsBBaG3Y_zkFLV2sYumQA","allOf":[{"title":"SHA256 Hash","type":"string","description":"Base64Url (without padding) encoded SHA256 hash","pattern":"^[a-zA-Z0-9_-]{43}$","minLength":43,"maxLength":43,"example":"y3aWL72-3wAy7vL9wcegGXnstH0lHi-q-cfxkhD5JCw"}]},"example":{"value":"GpaWbHkHrCjRhY8hKE0qZ1WsBBaG3Y_zkFLV2sYumQA"}}}
+      >
+        
+      </ParamsItem>
+    </ul>
+  </div>
+</details><details
+  style={{"marginBottom":"1rem"}}
+  className={"openapi-markdown__details"}
+  data-collapsed={false}
+  open={true}
+>
+  <summary
+    style={{}}
+  >
+    <h3
+      className={"openapi-markdown__details-summary-header-params"}
+    >
+      Query Parameters
+    </h3>
+  </summary><div>
+    <ul>
+      <ParamsItem
+        className={"paramsItem"}
+        param={{"name":"height","in":"query","description":"Height of a block","required":false,"schema":{"type":"integer","minimum":0},"example":3000000}}
+      >
+        
+      </ParamsItem>
+    </ul>
+  </div>
+</details><div>
+  <div>
+    <ApiTabs
+      label={undefined}
+      id={undefined}
+    >
+      <TabItem
+        label={"200"}
+        value={"200"}
+      >
+        <div>
+          
+          
+          The payload data of for the given block payload hash
+          
+          
+        </div><details
+          style={{"textAlign":"left","marginBottom":"1rem"}}
+          className={"openapi-markdown__details"}
+          data-collapsed={true}
+          open={false}
+        >
+          <summary
+            style={{}}
+          >
+            <strong>
+              Response Headers
+            </strong>
+          </summary><ul
+            style={{"marginLeft":"1rem"}}
+          >
+            <li
+              className={"schemaItem"}
+            >
+              <summary
+                style={{}}
+              >
+                <strong>
+                  x-peer-addr
+                </strong><span
+                  style={{"opacity":"0.6"}}
+                >
+                   string
+                </span>
+              </summary><div>
+                <div
+                  style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                >
+                  Example: 10.36.1.3:42988
+                  
+                  Host and port of the client as observed by the remote node
+                  
+                  
+                </div>
+              </div>
+            </li><li
+              className={"schemaItem"}
+            >
+              <summary
+                style={{}}
+              >
+                <strong>
+                  x-server-timestamp
+                </strong><span
+                  style={{"opacity":"0.6"}}
+                >
+                   integer
+                </span>
+              </summary><div>
+                <div
+                  style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                >
+                  Example: 1618597601
+                  
+                  The time of the clock of the remote node
+                  
+                  
+                </div>
+              </div>
+            </li><li
+              className={"schemaItem"}
+            >
+              <summary
+                style={{}}
+              >
+                <strong>
+                  x-chainweb-node-version
+                </strong><span
+                  style={{"opacity":"0.6"}}
+                >
+                   string
+                </span>
+              </summary><div>
+                <div
+                  style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                >
+                  Example: 2.6
+                  
+                  The version of the remote chainweb node
+                  
+                  
+                </div>
+              </div>
+            </li>
+          </ul>
+        </details><div>
+          <MimeTabs
+            className={"openapi-tabs__mime"}
+            schemaType={"response"}
+          >
+            <TabItem
+              label={"application/json"}
+              value={"application/json"}
+            >
+              <SchemaTabs
+                className={"openapi-tabs__schema"}
+              >
+                <TabItem
+                  label={"Schema"}
+                  value={"Schema"}
+                >
+                  <details
+                    style={{}}
+                    className={"openapi-markdown__details response"}
+                    data-collapsed={false}
+                    open={true}
+                  >
+                    <summary
+                      style={{}}
+                      className={"openapi-markdown__details-summary-response"}
+                    >
+                      <strong>
+                        Schema
+                      </strong>
+                    </summary><div
+                      style={{"textAlign":"left","marginLeft":"1rem"}}
+                    >
+                      
+                    </div><ul
+                      style={{"marginLeft":"1rem"}}
+                    >
+                      <SchemaItem
+                        collapsible={false}
+                        name={"transactions"}
+                        required={true}
+                        schemaName={"string[]"}
+                        qualifierMessage={"**Possible values:** Value must match regular expression `[a-zA-Z0-9_-]+`"}
+                        schema={{"type":"array","description":"Array of base64Url (without padding) encoded JSON texts of signed Pact transactions","items":{"type":"string","pattern":"[a-zA-Z0-9_-]+","description":"Base64Url (without padding) encoded JSON text of a signed Pact transaction"}}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"minerData"}
+                        required={true}
+                        schemaName={"string"}
+                        qualifierMessage={"**Possible values:** Value must match regular expression `[a-zA-Z0-9_-]+`"}
+                        schema={{"type":"string","pattern":"[a-zA-Z0-9_-]+","description":"Base64Url (without padding) encoded JSON text of the miner data of the payload"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"transactionsHash"}
+                        required={true}
+                        schemaName={"SHA256 Hash (string)"}
+                        qualifierMessage={"**Possible values:** `>= 43 characters` and `<= 43 characters`, Value must match regular expression `^[a-zA-Z0-9_-]{43}$`"}
+                        schema={{"title":"SHA256 Hash","type":"string","description":"Base64Url (without padding) encoded SHA256 hash","pattern":"^[a-zA-Z0-9_-]{43}$","minLength":43,"maxLength":43,"example":"y3aWL72-3wAy7vL9wcegGXnstH0lHi-q-cfxkhD5JCw"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"outputsHash"}
+                        required={true}
+                        schemaName={"SHA256 Hash (string)"}
+                        qualifierMessage={"**Possible values:** `>= 43 characters` and `<= 43 characters`, Value must match regular expression `^[a-zA-Z0-9_-]{43}$`"}
+                        schema={{"title":"SHA256 Hash","type":"string","description":"Base64Url (without padding) encoded SHA256 hash","pattern":"^[a-zA-Z0-9_-]{43}$","minLength":43,"maxLength":43,"example":"y3aWL72-3wAy7vL9wcegGXnstH0lHi-q-cfxkhD5JCw"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"payloadHash"}
+                        required={true}
+                        schemaName={"SHA256 Hash (string)"}
+                        qualifierMessage={"**Possible values:** `>= 43 characters` and `<= 43 characters`, Value must match regular expression `^[a-zA-Z0-9_-]{43}$`"}
+                        schema={{"title":"SHA256 Hash","type":"string","description":"Base64Url (without padding) encoded SHA256 hash","pattern":"^[a-zA-Z0-9_-]{43}$","minLength":43,"maxLength":43,"example":"y3aWL72-3wAy7vL9wcegGXnstH0lHi-q-cfxkhD5JCw"}}
+                      >
+                        
+                      </SchemaItem>
+                    </ul>
+                  </details>
+                </TabItem><TabItem
+                  label={"Example (from schema)"}
+                  value={"Example (from schema)"}
+                >
+                  <ResponseSamples
+                    responseExample={"{\n  \"value\": {\n    \"transactions\": [\n      \"eyJoYXNoIjoiMi16Q3dmRFZZR010WHljd2pTLXRlNzh5U3l3T3JXcjNSdUhiQlJnNDdhRSIsInNpZ3MiOlt7InNpZyI6ImZiMTVkNzkyYTNkNDM1MDI5ODJmOGQ1MGUyMzA1NTI5OWEwZjdhMWRmMWE4YjUyMmE5NTMxNWUyZDljY2MyNmE1MzI4M2I5YTNhNDM5ZWE0ZGY4MGM1ZTIwMjg4NDhjNjFhMWY0MGM5OWIyOTYzOWM0NGNkYTgwMzBmYmViYjBjIn1dLCJjbWQiOiJ7XCJuZXR3b3JrSWRcIjpcIm1haW5uZXQwMVwiLFwicGF5bG9hZFwiOntcImV4ZWNcIjp7XCJkYXRhXCI6e30sXCJjb2RlXCI6XCIoY29pbi50cmFuc2ZlciBcXFwiZTc1NzU4ZGQyYTFjNTk2NDRjMjJlMDQyYzZlYzA3NTI2ZWE0ZTU3MTU0ZjlkYmMyMDc2ZThhODRhYzE5NGYzMlxcXCIgXFxcIjQ2NzdhMDllYTE2MDJlNGUwOWZlMDFlYjExOTZjZjQ3YzBmNDRhYTQ0YWFjOTAzZDVmNjFiZTdkYTM0MjUxMjhcXFwiIDMuNzc2KVwifX0sXCJzaWduZXJzXCI6W3tcInB1YktleVwiOlwiZTc1NzU4ZGQyYTFjNTk2NDRjMjJlMDQyYzZlYzA3NTI2ZWE0ZTU3MTU0ZjlkYmMyMDc2ZThhODRhYzE5NGYzMlwiLFwiY2xpc3RcIjpbe1wiYXJnc1wiOltdLFwibmFtZVwiOlwiY29pbi5HQVNcIn0se1wiYXJnc1wiOltcImU3NTc1OGRkMmExYzU5NjQ0YzIyZTA0MmM2ZWMwNzUyNmVhNGU1NzE1NGY5ZGJjMjA3NmU4YTg0YWMxOTRmMzJcIixcIjQ2NzdhMDllYTE2MDJlNGUwOWZlMDFlYjExOTZjZjQ3YzBmNDRhYTQ0YWFjOTAzZDVmNjFiZTdkYTM0MjUxMjhcIiwzLjc3Nl0sXCJuYW1lXCI6XCJjb2luLlRSQU5TRkVSXCJ9XX1dLFwibWV0YVwiOntcImNyZWF0aW9uVGltZVwiOjE2MDIzODI4MTQsXCJ0dGxcIjoyODgwMCxcImdhc0xpbWl0XCI6NjAwLFwiY2hhaW5JZFwiOlwiMFwiLFwiZ2FzUHJpY2VcIjoxLjBlLTUsXCJzZW5kZXJcIjpcImU3NTc1OGRkMmExYzU5NjQ0YzIyZTA0MmM2ZWMwNzUyNmVhNGU1NzE1NGY5ZGJjMjA3NmU4YTg0YWMxOTRmMzJcIn0sXCJub25jZVwiOlwiXFxcIjIwMjAtMTAtMTFUMDI6MjE6MTQuMTk0WlxcXCJcIn0ifQ\"\n    ],\n    \"minerData\": \"eyJhY2NvdW50IjoiYTFiMzE0MGNiN2NjODk1YzBlMDkxNzAyZWQwNTU3OWZiZTA1YzZlNjc0NWY4MmNlNjAzNzQ2YjQwMGM4MTU0OCIsInByZWRpY2F0ZSI6ImtleXMtYWxsIiwicHVibGljLWtleXMiOlsiYTFiMzE0MGNiN2NjODk1YzBlMDkxNzAyZWQwNTU3OWZiZTA1YzZlNjc0NWY4MmNlNjAzNzQ2YjQwMGM4MTU0OCJdfQ\",\n    \"transactionsHash\": \"lWcQRlj3MV7FSem8P4G-8GMRf1-O7zQqi_AwmWnk-N0\",\n    \"outputsHash\": \"9BzXZbhjSSevp4K0bYFqi1GdLjeX_DB-4u1T5Em8abs\",\n    \"payloadHash\": \"jcQOWz7K9qKnkUv4Z883D2ZjkFFGgccoSroWGaoogLM\"\n  }\n}"}
+                    language={"json"}
+                  >
+                    
+                  </ResponseSamples>
+                </TabItem><TabItem
+                  label={"payload"}
+                  value={"payload"}
+                >
+                  <Markdown>
+                     Payload with one transaction
+                  </Markdown><ResponseSamples
+                    responseExample={"{\n  \"transactions\": [\n    \"eyJoYXNoIjoiMi16Q3dmRFZZR010WHljd2pTLXRlNzh5U3l3T3JXcjNSdUhiQlJnNDdhRSIsInNpZ3MiOlt7InNpZyI6ImZiMTVkNzkyYTNkNDM1MDI5ODJmOGQ1MGUyMzA1NTI5OWEwZjdhMWRmMWE4YjUyMmE5NTMxNWUyZDljY2MyNmE1MzI4M2I5YTNhNDM5ZWE0ZGY4MGM1ZTIwMjg4NDhjNjFhMWY0MGM5OWIyOTYzOWM0NGNkYTgwMzBmYmViYjBjIn1dLCJjbWQiOiJ7XCJuZXR3b3JrSWRcIjpcIm1haW5uZXQwMVwiLFwicGF5bG9hZFwiOntcImV4ZWNcIjp7XCJkYXRhXCI6e30sXCJjb2RlXCI6XCIoY29pbi50cmFuc2ZlciBcXFwiZTc1NzU4ZGQyYTFjNTk2NDRjMjJlMDQyYzZlYzA3NTI2ZWE0ZTU3MTU0ZjlkYmMyMDc2ZThhODRhYzE5NGYzMlxcXCIgXFxcIjQ2NzdhMDllYTE2MDJlNGUwOWZlMDFlYjExOTZjZjQ3YzBmNDRhYTQ0YWFjOTAzZDVmNjFiZTdkYTM0MjUxMjhcXFwiIDMuNzc2KVwifX0sXCJzaWduZXJzXCI6W3tcInB1YktleVwiOlwiZTc1NzU4ZGQyYTFjNTk2NDRjMjJlMDQyYzZlYzA3NTI2ZWE0ZTU3MTU0ZjlkYmMyMDc2ZThhODRhYzE5NGYzMlwiLFwiY2xpc3RcIjpbe1wiYXJnc1wiOltdLFwibmFtZVwiOlwiY29pbi5HQVNcIn0se1wiYXJnc1wiOltcImU3NTc1OGRkMmExYzU5NjQ0YzIyZTA0MmM2ZWMwNzUyNmVhNGU1NzE1NGY5ZGJjMjA3NmU4YTg0YWMxOTRmMzJcIixcIjQ2NzdhMDllYTE2MDJlNGUwOWZlMDFlYjExOTZjZjQ3YzBmNDRhYTQ0YWFjOTAzZDVmNjFiZTdkYTM0MjUxMjhcIiwzLjc3Nl0sXCJuYW1lXCI6XCJjb2luLlRSQU5TRkVSXCJ9XX1dLFwibWV0YVwiOntcImNyZWF0aW9uVGltZVwiOjE2MDIzODI4MTQsXCJ0dGxcIjoyODgwMCxcImdhc0xpbWl0XCI6NjAwLFwiY2hhaW5JZFwiOlwiMFwiLFwiZ2FzUHJpY2VcIjoxLjBlLTUsXCJzZW5kZXJcIjpcImU3NTc1OGRkMmExYzU5NjQ0YzIyZTA0MmM2ZWMwNzUyNmVhNGU1NzE1NGY5ZGJjMjA3NmU4YTg0YWMxOTRmMzJcIn0sXCJub25jZVwiOlwiXFxcIjIwMjAtMTAtMTFUMDI6MjE6MTQuMTk0WlxcXCJcIn0ifQ\"\n  ],\n  \"minerData\": \"eyJhY2NvdW50IjoiYTFiMzE0MGNiN2NjODk1YzBlMDkxNzAyZWQwNTU3OWZiZTA1YzZlNjc0NWY4MmNlNjAzNzQ2YjQwMGM4MTU0OCIsInByZWRpY2F0ZSI6ImtleXMtYWxsIiwicHVibGljLWtleXMiOlsiYTFiMzE0MGNiN2NjODk1YzBlMDkxNzAyZWQwNTU3OWZiZTA1YzZlNjc0NWY4MmNlNjAzNzQ2YjQwMGM4MTU0OCJdfQ\",\n  \"transactionsHash\": \"lWcQRlj3MV7FSem8P4G-8GMRf1-O7zQqi_AwmWnk-N0\",\n  \"outputsHash\": \"9BzXZbhjSSevp4K0bYFqi1GdLjeX_DB-4u1T5Em8abs\",\n  \"payloadHash\": \"jcQOWz7K9qKnkUv4Z883D2ZjkFFGgccoSroWGaoogLM\"\n}"}
+                    language={"json"}
+                  >
+                    
+                  </ResponseSamples>
+                </TabItem><TabItem
+                  label={"emptyPayload"}
+                  value={"emptyPayload"}
+                >
+                  <Markdown>
+                     Empty block payload
+                  </Markdown><ResponseSamples
+                    responseExample={"{\n  \"transactions\": [],\n  \"minerData\": \"eyJhY2NvdW50IjoiYTFiMzE0MGNiN2NjODk1YzBlMDkxNzAyZWQwNTU3OWZiZTA1YzZlNjc0NWY4MmNlNjAzNzQ2YjQwMGM4MTU0OCIsInByZWRpY2F0ZSI6ImtleXMtYWxsIiwicHVibGljLWtleXMiOlsiYTFiMzE0MGNiN2NjODk1YzBlMDkxNzAyZWQwNTU3OWZiZTA1YzZlNjc0NWY4MmNlNjAzNzQ2YjQwMGM4MTU0OCJdfQ\",\n  \"transactionsHash\": \"nT0j4xw2woMkdXXaopdurXIn24OG-jNMqQzUGfxV_MA\",\n  \"outputsHash\": \"4pXRrZ2K0_V0iGAxQCKrKdLjQTBZHBOQS7P-47kdnhY\",\n  \"payloadHash\": \"GpaWbHkHrCjRhY8hKE0qZ1WsBBaG3Y_zkFLV2sYumQA\"\n}"}
+                    language={"json"}
+                  >
+                    
+                  </ResponseSamples>
+                </TabItem>
+              </SchemaTabs>
+            </TabItem>
+          </MimeTabs>
+        </div>
+      </TabItem><TabItem
+        label={"404"}
+        value={"404"}
+      >
+        <div>
+          
+          
+          The block payload with that hash was not found
+          
+          
+        </div><details
+          style={{"textAlign":"left","marginBottom":"1rem"}}
+          className={"openapi-markdown__details"}
+          data-collapsed={true}
+          open={false}
+        >
+          <summary
+            style={{}}
+          >
+            <strong>
+              Response Headers
+            </strong>
+          </summary><ul
+            style={{"marginLeft":"1rem"}}
+          >
+            <li
+              className={"schemaItem"}
+            >
+              <summary
+                style={{}}
+              >
+                <strong>
+                  x-peer-addr
+                </strong><span
+                  style={{"opacity":"0.6"}}
+                >
+                   string
+                </span>
+              </summary><div>
+                <div
+                  style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                >
+                  Example: 10.36.1.3:42988
+                  
+                  Host and port of the client as observed by the remote node
+                  
+                  
+                </div>
+              </div>
+            </li><li
+              className={"schemaItem"}
+            >
+              <summary
+                style={{}}
+              >
+                <strong>
+                  x-server-timestamp
+                </strong><span
+                  style={{"opacity":"0.6"}}
+                >
+                   integer
+                </span>
+              </summary><div>
+                <div
+                  style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                >
+                  Example: 1618597601
+                  
+                  The time of the clock of the remote node
+                  
+                  
+                </div>
+              </div>
+            </li><li
+              className={"schemaItem"}
+            >
+              <summary
+                style={{}}
+              >
+                <strong>
+                  x-chainweb-node-version
+                </strong><span
+                  style={{"opacity":"0.6"}}
+                >
+                   string
+                </span>
+              </summary><div>
+                <div
+                  style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                >
+                  Example: 2.6
+                  
+                  The version of the remote chainweb node
+                  
+                  
+                </div>
+              </div>
+            </li>
+          </ul>
+        </details><div>
+          <MimeTabs
+            className={"openapi-tabs__mime"}
+            schemaType={"response"}
+          >
+            <TabItem
+              label={"application/json"}
+              value={"application/json"}
+            >
+              <SchemaTabs
+                className={"openapi-tabs__schema"}
+              >
+                <TabItem
+                  label={"Schema"}
+                  value={"Schema"}
+                >
+                  <details
+                    style={{}}
+                    className={"openapi-markdown__details response"}
+                    data-collapsed={false}
+                    open={true}
+                  >
+                    <summary
+                      style={{}}
+                      className={"openapi-markdown__details-summary-response"}
+                    >
+                      <strong>
+                        Schema
+                      </strong>
+                    </summary><div
+                      style={{"textAlign":"left","marginLeft":"1rem"}}
+                    >
+                      
+                    </div><ul
+                      style={{"marginLeft":"1rem"}}
+                    >
+                      <SchemaItem
+                        collapsible={false}
+                        name={"reason"}
+                        required={false}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","description":"Failure message"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"key"}
+                        required={false}
+                        schemaName={"SHA256 Hash (string)"}
+                        qualifierMessage={"**Possible values:** `>= 43 characters` and `<= 43 characters`, Value must match regular expression `^[a-zA-Z0-9_-]{43}$`"}
+                        schema={{"title":"SHA256 Hash","type":"string","description":"Base64Url (without padding) encoded SHA256 hash","pattern":"^[a-zA-Z0-9_-]{43}$","minLength":43,"maxLength":43,"example":"y3aWL72-3wAy7vL9wcegGXnstH0lHi-q-cfxkhD5JCw"}}
+                      >
+                        
+                      </SchemaItem>
+                    </ul>
+                  </details>
+                </TabItem><TabItem
+                  label={"Example (from schema)"}
+                  value={"Example (from schema)"}
+                >
+                  <ResponseSamples
+                    responseExample={"{\n  \"reason\": \"string\",\n  \"key\": \"y3aWL72-3wAy7vL9wcegGXnstH0lHi-q-cfxkhD5JCw\"\n}"}
+                    language={"json"}
+                  >
+                    
+                  </ResponseSamples>
+                </TabItem><TabItem
+                  label={"Example"}
+                  value={"Example"}
+                >
+                  <ResponseSamples
+                    responseExample={"{\n  \"reason\": \"key not found\",\n  \"key\": \"k1H3DsInAPvJ0W_zPxnrpkeSNdPUT0S9U8bqDLG739w\"\n}"}
+                    language={"json"}
+                  >
+                    
+                  </ResponseSamples>
+                </TabItem>
+              </SchemaTabs>
+            </TabItem>
+          </MimeTabs>
+        </div>
+      </TabItem>
+    </ApiTabs>
+  </div>
+</div>
+      

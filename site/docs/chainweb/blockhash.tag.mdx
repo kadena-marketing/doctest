@@ -1,0 +1,28 @@
+---
+id: blockhash
+title: "Block Hashes Endpoints"
+description: "Block Hashes Endpoints"
+custom_edit_url: null
+---
+
+
+
+These endpoints return block hashes from the chain database.
+
+Generally, block hashes are returned in ascending order and include hashes
+from orphaned blocks.
+
+For only querying blocks that are included in the winning branch of the
+chain the `branch` endpoint can be used, which returns blocks in descending
+order starting from the leafs of branches of the block chain.
+
+
+
+
+```mdx-code-block
+import DocCardList from '@theme/DocCardList';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+
+<DocCardList items={useCurrentSidebarCategory().items}/>
+```
+      

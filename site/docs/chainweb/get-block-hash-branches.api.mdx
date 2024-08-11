@@ -1,0 +1,615 @@
+---
+id: get-block-hash-branches
+title: "Get Block Hash Branches"
+description: "A page of block hashes from branches of the block chain in"
+sidebar_label: "Get Block Hash Branches"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "post api-method"
+info_path: docs/chainweb/kadena-chainweb-node-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import Heading from "@theme/Heading";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get Block Hash Branches"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/chain/{chain}/hash/branch"}
+>
+  
+</MethodEndpoint>
+
+
+
+A page of block hashes from branches of the block chain in
+**descending** order.
+
+Only blocks are returned that are ancestors of the some block in the
+set of upper bounds and are not ancestors of any block in the set of
+lower bounds.
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<details
+  style={{"marginBottom":"1rem"}}
+  className={"openapi-markdown__details"}
+  data-collapsed={false}
+  open={true}
+>
+  <summary
+    style={{}}
+  >
+    <h3
+      className={"openapi-markdown__details-summary-header-params"}
+    >
+      Path Parameters
+    </h3>
+  </summary><div>
+    <ul>
+      <ParamsItem
+        className={"paramsItem"}
+        param={{"name":"chain","in":"path","description":"the id of the chain to which the request is sent","required":true,"schema":{"type":"integer","minimum":0,"example":0}}}
+      >
+        
+      </ParamsItem>
+    </ul>
+  </div>
+</details><details
+  style={{"marginBottom":"1rem"}}
+  className={"openapi-markdown__details"}
+  data-collapsed={false}
+  open={true}
+>
+  <summary
+    style={{}}
+  >
+    <h3
+      className={"openapi-markdown__details-summary-header-params"}
+    >
+      Query Parameters
+    </h3>
+  </summary><div>
+    <ul>
+      <ParamsItem
+        className={"paramsItem"}
+        param={{"name":"limit","in":"query","description":"Maximum number of records that may be returned. The actual number may be\nlower.\n","required":false,"schema":{"type":"integer","minimum":0}}}
+      >
+        
+      </ParamsItem><ParamsItem
+        className={"paramsItem"}
+        param={{"name":"next","in":"query","description":"The cursor for the next page. This value can be found as value of the\n`next` property of the previous page.\n","required":false,"schema":{"type":"string"}}}
+      >
+        
+      </ParamsItem><ParamsItem
+        className={"paramsItem"}
+        param={{"name":"minheight","in":"query","description":"Minimum block height of the returned headers","required":false,"schema":{"type":"integer","minimum":0},"example":500000}}
+      >
+        
+      </ParamsItem><ParamsItem
+        className={"paramsItem"}
+        param={{"name":"maxheight","in":"query","description":"Maximum block height of the returned headers","required":false,"schema":{"type":"integer","minimum":0},"example":500000}}
+      >
+        
+      </ParamsItem>
+    </ul>
+  </div>
+</details><MimeTabs
+  className={"openapi-tabs__mime"}
+>
+  <TabItem
+    label={"application/json"}
+    value={"application/json-schema"}
+  >
+    <details
+      style={{}}
+      className={"openapi-markdown__details mime"}
+      data-collapsed={false}
+      open={true}
+    >
+      <summary
+        style={{}}
+        className={"openapi-markdown__details-summary-mime"}
+      >
+        <h3
+          className={"openapi-markdown__details-summary-header-body"}
+        >
+          Body
+        </h3>
+      </summary><div
+        style={{"textAlign":"left","marginLeft":"1rem"}}
+      >
+        <div
+          style={{"marginTop":"1rem","marginBottom":"1rem"}}
+        >
+          
+          
+          Upper and lower bounds of the queried branches
+          
+          
+        </div>
+      </div><ul
+        style={{"marginLeft":"1rem"}}
+      >
+        <SchemaItem
+          collapsible={false}
+          name={"lower"}
+          required={false}
+          schemaName={"object[]"}
+          qualifierMessage={undefined}
+          schema={{"description":"No block hashes are returned that are predecessors of any\nblock with a hash from this array.\n","type":"array","items":{"title":"Block Hash","description":"Base64Url (without padding) encoded block hash","example":"QxGCAz5AY1Y41nh1yWtgqhKhZ9pPiPRagFdIKNqBH7","allOf":[{"title":"SHA256 Hash","type":"string","description":"Base64Url (without padding) encoded SHA256 hash","pattern":"^[a-zA-Z0-9_-]{43}$","minLength":43,"maxLength":43,"example":"y3aWL72-3wAy7vL9wcegGXnstH0lHi-q-cfxkhD5JCw"}]}}}
+        >
+          
+        </SchemaItem><SchemaItem
+          collapsible={false}
+          name={"upper"}
+          required={false}
+          schemaName={"object[]"}
+          qualifierMessage={undefined}
+          schema={{"description":"Returned block hashes are predecessors of a block with an\nhash from this array. This includes blocks with hashes from\nthis array.\n","type":"array","items":{"title":"Block Hash","description":"Base64Url (without padding) encoded block hash","example":"QxGCAz5AY1Y41nh1yWtgqhKhZ9pPiPRagFdIKNqBH7","allOf":[{"title":"SHA256 Hash","type":"string","description":"Base64Url (without padding) encoded SHA256 hash","pattern":"^[a-zA-Z0-9_-]{43}$","minLength":43,"maxLength":43,"example":"y3aWL72-3wAy7vL9wcegGXnstH0lHi-q-cfxkhD5JCw"}]}}}
+        >
+          
+        </SchemaItem>
+      </ul>
+    </details>
+  </TabItem>
+</MimeTabs><div>
+  <div>
+    <ApiTabs
+      label={undefined}
+      id={undefined}
+    >
+      <TabItem
+        label={"200"}
+        value={"200"}
+      >
+        <div>
+          
+          
+          The requested block hashes
+          
+          
+        </div><details
+          style={{"textAlign":"left","marginBottom":"1rem"}}
+          className={"openapi-markdown__details"}
+          data-collapsed={true}
+          open={false}
+        >
+          <summary
+            style={{}}
+          >
+            <strong>
+              Response Headers
+            </strong>
+          </summary><ul
+            style={{"marginLeft":"1rem"}}
+          >
+            <li
+              className={"schemaItem"}
+            >
+              <summary
+                style={{}}
+              >
+                <strong>
+                  x-peer-addr
+                </strong><span
+                  style={{"opacity":"0.6"}}
+                >
+                   string
+                </span>
+              </summary><div>
+                <div
+                  style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                >
+                  Example: 10.36.1.3:42988
+                  
+                  Host and port of the client as observed by the remote node
+                  
+                  
+                </div>
+              </div>
+            </li><li
+              className={"schemaItem"}
+            >
+              <summary
+                style={{}}
+              >
+                <strong>
+                  x-server-timestamp
+                </strong><span
+                  style={{"opacity":"0.6"}}
+                >
+                   integer
+                </span>
+              </summary><div>
+                <div
+                  style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                >
+                  Example: 1618597601
+                  
+                  The time of the clock of the remote node
+                  
+                  
+                </div>
+              </div>
+            </li><li
+              className={"schemaItem"}
+            >
+              <summary
+                style={{}}
+              >
+                <strong>
+                  x-chainweb-node-version
+                </strong><span
+                  style={{"opacity":"0.6"}}
+                >
+                   string
+                </span>
+              </summary><div>
+                <div
+                  style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                >
+                  Example: 2.6
+                  
+                  The version of the remote chainweb node
+                  
+                  
+                </div>
+              </div>
+            </li>
+          </ul>
+        </details><div>
+          <MimeTabs
+            className={"openapi-tabs__mime"}
+            schemaType={"response"}
+          >
+            <TabItem
+              label={"application/json"}
+              value={"application/json"}
+            >
+              <SchemaTabs
+                className={"openapi-tabs__schema"}
+              >
+                <TabItem
+                  label={"Schema"}
+                  value={"Schema"}
+                >
+                  <details
+                    style={{}}
+                    className={"openapi-markdown__details response"}
+                    data-collapsed={false}
+                    open={true}
+                  >
+                    <summary
+                      style={{}}
+                      className={"openapi-markdown__details-summary-response"}
+                    >
+                      <strong>
+                        Schema
+                      </strong>
+                    </summary><div
+                      style={{"textAlign":"left","marginLeft":"1rem"}}
+                    >
+                      
+                    </div><ul
+                      style={{"marginLeft":"1rem"}}
+                    >
+                      <SchemaItem
+                        collapsible={false}
+                        name={"items"}
+                        required={true}
+                        schemaName={"Block Hash (string)[]"}
+                        qualifierMessage={"**Possible values:** `>= 43 characters` and `<= 43 characters`, Value must match regular expression `^[a-zA-Z0-9_-]{43}$`"}
+                        schema={{"description":"Array of block hashes","items":{"title":"Block Hash","description":"Base64Url (without padding) encoded block hash","example":true,"type":"string","pattern":"^[a-zA-Z0-9_-]{43}$","minLength":43,"maxLength":43}}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"limit"}
+                        required={true}
+                        schemaName={"array[]"}
+                        qualifierMessage={undefined}
+                        schema={{"description":"The number of items in the page. This number can be smaller but\nnever be larger than the number of requested items.\n","type":"integer","minimum":0,"items":{"description":"Items of the returned collection","type":"array"}}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={true}
+                        className={"schemaItem"}
+                      >
+                        <details
+                          style={{}}
+                          className={"openapi-markdown__details"}
+                        >
+                          <summary
+                            style={{}}
+                          >
+                            <strong>
+                              next
+                            </strong><span
+                              style={{"opacity":"0.6"}}
+                            >
+                               object
+                            </span><strong
+                              style={{"fontSize":"var(--ifm-code-font-size)","color":"var(--openapi-nullable)"}}
+                            >
+                               nullable
+                            </strong><strong
+                              style={{"fontSize":"var(--ifm-code-font-size)","color":"var(--openapi-required)"}}
+                            >
+                               required
+                            </strong>
+                          </summary><div
+                            style={{"marginLeft":"1rem"}}
+                          >
+                            <div
+                              style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                            >
+                              
+                              
+                              **Possible values:** Value must match regular expression `^(inclusive|exclusive):.*$`
+                              
+                              
+                            </div><div
+                              style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                            >
+                              
+                              
+                              A cursor that can be used to query the next page. It should be used
+                              literally as value for the `next` parameter in a follow-up request.
+                              
+                              
+                              
+                            </div>
+                          </div><div>
+                            <span
+                              className={"badge badge--info"}
+                            >
+                              oneOf
+                            </span><SchemaTabs>
+                              <TabItem
+                                label={"MOD2"}
+                                value={"1-item-properties"}
+                              >
+                                <div
+                                  style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                                >
+                                  
+                                  
+                                  string
+                                  
+                                  
+                                </div>
+                              </TabItem>
+                            </SchemaTabs>
+                          </div>
+                        </details>
+                      </SchemaItem>
+                    </ul>
+                  </details>
+                </TabItem><TabItem
+                  label={"Example (from schema)"}
+                  value={"Example (from schema)"}
+                >
+                  <ResponseSamples
+                    responseExample={"{\n  \"value\": {\n    \"next\": \"inclusive:o1S4NNFhKWg8T1HEkmDvsTH9Ut9l3_qHRpp00yRKZIk\",\n    \"items\": [\n      \"AAAAAAAAAABRoiLHW7EFAB2lwAatTykipYZ3CZNPzLe-f5S-zUt8COtu0H12f_OZAwAFAAAAMpic85rur2MYf3zli8s8bHxTFjriFoMPTr6ZPs8sjxMKAAAAVBKuhU_hQmuvKlx88A5o-FH0rzNo59NsdxmOGNBQ-ycPAAAAMItdqgHZxf7j6l0oE8X-G9-VyMbnQmZrtSniuRe_EJ9CtyxsSb7daPIIYAaXMgSEsQ3dkxY5GjJjLwAAAAAAABqWlmx5B6wo0YWPIShNKmdVrAQWht2P85BS1drGLpkAAAAAADUJ-ARn7blgHgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQEIPAAAAAAAFAAAA-na5gFuxBQAFL-3CY4YuAJNGp9KhDkbrKkIPWYyq8WvtAaNPoUFWC16louSx8YN5\",\n      \"AAAAAAAAAAA0slHKW7EFAJNGp9KhDkbrKkIPWYyq8WvtAaNPoUFWC16louSx8YN5AwAFAAAAALcxv1ZiwwQ_QX9eOBZMbzIop6n7XtveS1FqOFwyvGMKAAAAC76ElC60qXSJQCHePpzzJxsCYvvrqvmkoHPyZnex-4QPAAAAKv0sz_rTANjoiJwMrdZFCJNFwdH0U_M5ouwMr3BXBfpCtyxsSb7daPIIYAaXMgSEsQ3dkxY5GjJjLwAAAAAAALJlIg1vY3w_9L63bePn1yk_5agvdEbIBBjm3adxc5xWAAAAAGzpBzdiVL9gHgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQUIPAAAAAAAFAAAA-na5gFuxBQALiBhXgqaHAb4VWug3oddEVy0X9y_jEkE2Kmi_vyGP5ovr-fDIz_Uf\"\n    ],\n    \"limit\": 2\n  }\n}"}
+                    language={"json"}
+                  >
+                    
+                  </ResponseSamples>
+                </TabItem><TabItem
+                  label={"Example"}
+                  value={"Example"}
+                >
+                  <ResponseSamples
+                    responseExample={"{\n  \"value\": {\n    \"next\": \"inclusive:o1S4NNFhKWg8T1HEkmDvsTH9Ut9l3_qHRpp00yRKZIk\",\n    \"items\": [\n      \"QxGCAz5AY1Y41nh1yWtgqhKhZ9pPiPRagFdIKNqBH74\",\n      \"RClyuyZAacwvPpmLXKbTwrIRXWeUSjiNhJVP2esH8KM\"\n    ],\n    \"limit\": 2\n  }\n}"}
+                    language={"json"}
+                  >
+                    
+                  </ResponseSamples>
+                </TabItem>
+              </SchemaTabs>
+            </TabItem>
+          </MimeTabs>
+        </div>
+      </TabItem><TabItem
+        label={"404"}
+        value={"404"}
+      >
+        <div>
+          
+          
+          The requested block hashes could not be found
+          
+          
+        </div><details
+          style={{"textAlign":"left","marginBottom":"1rem"}}
+          className={"openapi-markdown__details"}
+          data-collapsed={true}
+          open={false}
+        >
+          <summary
+            style={{}}
+          >
+            <strong>
+              Response Headers
+            </strong>
+          </summary><ul
+            style={{"marginLeft":"1rem"}}
+          >
+            <li
+              className={"schemaItem"}
+            >
+              <summary
+                style={{}}
+              >
+                <strong>
+                  x-peer-addr
+                </strong><span
+                  style={{"opacity":"0.6"}}
+                >
+                   string
+                </span>
+              </summary><div>
+                <div
+                  style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                >
+                  Example: 10.36.1.3:42988
+                  
+                  Host and port of the client as observed by the remote node
+                  
+                  
+                </div>
+              </div>
+            </li><li
+              className={"schemaItem"}
+            >
+              <summary
+                style={{}}
+              >
+                <strong>
+                  x-server-timestamp
+                </strong><span
+                  style={{"opacity":"0.6"}}
+                >
+                   integer
+                </span>
+              </summary><div>
+                <div
+                  style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                >
+                  Example: 1618597601
+                  
+                  The time of the clock of the remote node
+                  
+                  
+                </div>
+              </div>
+            </li><li
+              className={"schemaItem"}
+            >
+              <summary
+                style={{}}
+              >
+                <strong>
+                  x-chainweb-node-version
+                </strong><span
+                  style={{"opacity":"0.6"}}
+                >
+                   string
+                </span>
+              </summary><div>
+                <div
+                  style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                >
+                  Example: 2.6
+                  
+                  The version of the remote chainweb node
+                  
+                  
+                </div>
+              </div>
+            </li>
+          </ul>
+        </details><div>
+          <MimeTabs
+            className={"openapi-tabs__mime"}
+            schemaType={"response"}
+          >
+            <TabItem
+              label={"application/json"}
+              value={"application/json"}
+            >
+              <SchemaTabs
+                className={"openapi-tabs__schema"}
+              >
+                <TabItem
+                  label={"Schema"}
+                  value={"Schema"}
+                >
+                  <details
+                    style={{}}
+                    className={"openapi-markdown__details response"}
+                    data-collapsed={false}
+                    open={true}
+                  >
+                    <summary
+                      style={{}}
+                      className={"openapi-markdown__details-summary-response"}
+                    >
+                      <strong>
+                        Schema
+                      </strong>
+                    </summary><div
+                      style={{"textAlign":"left","marginLeft":"1rem"}}
+                    >
+                      
+                    </div><ul
+                      style={{"marginLeft":"1rem"}}
+                    >
+                      <SchemaItem
+                        collapsible={false}
+                        name={"reason"}
+                        required={false}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"key"}
+                        required={false}
+                        schemaName={"SHA256 Hash (string)"}
+                        qualifierMessage={"**Possible values:** `>= 43 characters` and `<= 43 characters`, Value must match regular expression `^[a-zA-Z0-9_-]{43}$`"}
+                        schema={{"title":"SHA256 Hash","type":"string","description":"Base64Url (without padding) encoded SHA256 hash","pattern":"^[a-zA-Z0-9_-]{43}$","minLength":43,"maxLength":43,"example":"y3aWL72-3wAy7vL9wcegGXnstH0lHi-q-cfxkhD5JCw"}}
+                      >
+                        
+                      </SchemaItem>
+                    </ul>
+                  </details>
+                </TabItem><TabItem
+                  label={"Example (from schema)"}
+                  value={"Example (from schema)"}
+                >
+                  <ResponseSamples
+                    responseExample={"{\n  \"reason\": \"string\",\n  \"key\": \"y3aWL72-3wAy7vL9wcegGXnstH0lHi-q-cfxkhD5JCw\"\n}"}
+                    language={"json"}
+                  >
+                    
+                  </ResponseSamples>
+                </TabItem>
+              </SchemaTabs>
+            </TabItem>
+          </MimeTabs>
+        </div>
+      </TabItem>
+    </ApiTabs>
+  </div>
+</div>
+      

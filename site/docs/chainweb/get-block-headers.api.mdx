@@ -1,0 +1,915 @@
+---
+id: get-block-headers
+title: "Get Block Headers"
+description: "A page of a collection of block headers in **ascending** order"
+sidebar_label: "Get Block Headers"
+hide_title: true
+hide_table_of_contents: true
+api: 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
+sidebar_class_name: "get api-method"
+info_path: docs/chainweb/kadena-chainweb-node-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import Heading from "@theme/Heading";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get Block Headers"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/chain/{chain}/header"}
+>
+  
+</MethodEndpoint>
+
+
+
+A page of a collection of block headers in **ascending** order
+that satisfies query parameters. Any block header from the chain
+database is returned. **This includes headers of orphaned blocks.**
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<details
+  style={{"marginBottom":"1rem"}}
+  className={"openapi-markdown__details"}
+  data-collapsed={false}
+  open={true}
+>
+  <summary
+    style={{}}
+  >
+    <h3
+      className={"openapi-markdown__details-summary-header-params"}
+    >
+      Path Parameters
+    </h3>
+  </summary><div>
+    <ul>
+      <ParamsItem
+        className={"paramsItem"}
+        param={{"name":"chain","in":"path","description":"the id of the chain to which the request is sent","required":true,"schema":{"type":"integer","minimum":0,"example":0}}}
+      >
+        
+      </ParamsItem>
+    </ul>
+  </div>
+</details><details
+  style={{"marginBottom":"1rem"}}
+  className={"openapi-markdown__details"}
+  data-collapsed={false}
+  open={true}
+>
+  <summary
+    style={{}}
+  >
+    <h3
+      className={"openapi-markdown__details-summary-header-params"}
+    >
+      Query Parameters
+    </h3>
+  </summary><div>
+    <ul>
+      <ParamsItem
+        className={"paramsItem"}
+        param={{"name":"limit","in":"query","description":"Maximum number of records that may be returned. The actual number may be\nlower.\n","required":false,"schema":{"type":"integer","minimum":0}}}
+      >
+        
+      </ParamsItem><ParamsItem
+        className={"paramsItem"}
+        param={{"name":"next","in":"query","description":"The cursor for the next page. This value can be found as value of the\n`next` property of the previous page.\n","required":false,"schema":{"type":"string"}}}
+      >
+        
+      </ParamsItem><ParamsItem
+        className={"paramsItem"}
+        param={{"name":"minheight","in":"query","description":"Minimum block height of the returned headers","required":false,"schema":{"type":"integer","minimum":0},"example":500000}}
+      >
+        
+      </ParamsItem><ParamsItem
+        className={"paramsItem"}
+        param={{"name":"maxheight","in":"query","description":"Maximum block height of the returned headers","required":false,"schema":{"type":"integer","minimum":0},"example":500000}}
+      >
+        
+      </ParamsItem>
+    </ul>
+  </div>
+</details><div>
+  <div>
+    <ApiTabs
+      label={undefined}
+      id={undefined}
+    >
+      <TabItem
+        label={"200"}
+        value={"200"}
+      >
+        <div>
+          
+          
+          The requested block headers
+          
+          
+        </div><details
+          style={{"textAlign":"left","marginBottom":"1rem"}}
+          className={"openapi-markdown__details"}
+          data-collapsed={true}
+          open={false}
+        >
+          <summary
+            style={{}}
+          >
+            <strong>
+              Response Headers
+            </strong>
+          </summary><ul
+            style={{"marginLeft":"1rem"}}
+          >
+            <li
+              className={"schemaItem"}
+            >
+              <summary
+                style={{}}
+              >
+                <strong>
+                  x-peer-addr
+                </strong><span
+                  style={{"opacity":"0.6"}}
+                >
+                   string
+                </span>
+              </summary><div>
+                <div
+                  style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                >
+                  Example: 10.36.1.3:42988
+                  
+                  Host and port of the client as observed by the remote node
+                  
+                  
+                </div>
+              </div>
+            </li><li
+              className={"schemaItem"}
+            >
+              <summary
+                style={{}}
+              >
+                <strong>
+                  x-server-timestamp
+                </strong><span
+                  style={{"opacity":"0.6"}}
+                >
+                   integer
+                </span>
+              </summary><div>
+                <div
+                  style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                >
+                  Example: 1618597601
+                  
+                  The time of the clock of the remote node
+                  
+                  
+                </div>
+              </div>
+            </li><li
+              className={"schemaItem"}
+            >
+              <summary
+                style={{}}
+              >
+                <strong>
+                  x-chainweb-node-version
+                </strong><span
+                  style={{"opacity":"0.6"}}
+                >
+                   string
+                </span>
+              </summary><div>
+                <div
+                  style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                >
+                  Example: 2.6
+                  
+                  The version of the remote chainweb node
+                  
+                  
+                </div>
+              </div>
+            </li>
+          </ul>
+        </details><div>
+          <MimeTabs
+            className={"openapi-tabs__mime"}
+            schemaType={"response"}
+          >
+            <TabItem
+              label={"application/json"}
+              value={"application/json"}
+            >
+              <SchemaTabs
+                className={"openapi-tabs__schema"}
+              >
+                <TabItem
+                  label={"Schema"}
+                  value={"Schema"}
+                >
+                  <details
+                    style={{}}
+                    className={"openapi-markdown__details response"}
+                    data-collapsed={false}
+                    open={true}
+                  >
+                    <summary
+                      style={{}}
+                      className={"openapi-markdown__details-summary-response"}
+                    >
+                      <strong>
+                        Schema
+                      </strong>
+                    </summary><div
+                      style={{"textAlign":"left","marginLeft":"1rem"}}
+                    >
+                      
+                    </div><ul
+                      style={{"marginLeft":"1rem"}}
+                    >
+                      <SchemaItem
+                        collapsible={false}
+                        name={"items"}
+                        required={true}
+                        schemaName={"Base64Url Block Header (string)[]"}
+                        qualifierMessage={"**Possible values:** Value must match regular expression `[a-zA-Z0-9_-]+`"}
+                        schema={{"description":"Array of base64 encoded block headers","type":"array","items":{"title":"Base64Url Block Header","description":"Base64Url (without padding) encoded binary block header","type":"string","pattern":"[a-zA-Z0-9_-]+","example":{"value":"AAAAAAAAAABRoiLHW7EFAB2lwAatTykipYZ3CZNPzLe-f5S-zUt8COtu0H12f_OZAwAFAAAAMpic85rur2MYf3zli8s8bHxTFjriFoMPTr6ZPs8sjxMKAAAAVBKuhU_hQmuvKlx88A5o-FH0rzNo59NsdxmOGNBQ-ycPAAAAMItdqgHZxf7j6l0oE8X-G9-VyMbnQmZrtSniuRe_EJ9CtyxsSb7daPIIYAaXMgSEsQ3dkxY5GjJjLwAAAAAAABqWlmx5B6wo0YWPIShNKmdVrAQWht2P85BS1drGLpkAAAAAADUJ-ARn7blgHgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQEIPAAAAAAAFAAAA-na5gFuxBQAFL-3CY4YuAJNGp9KhDkbrKkIPWYyq8WvtAaNPoUFWC16louSx8YN5"}}}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"limit"}
+                        required={true}
+                        schemaName={"array[]"}
+                        qualifierMessage={undefined}
+                        schema={{"description":"The number of items in the page. This number can be smaller but\nnever be larger than the number of requested items.\n","type":"integer","minimum":0,"items":{"description":"Items of the returned collection","type":"array"}}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={true}
+                        className={"schemaItem"}
+                      >
+                        <details
+                          style={{}}
+                          className={"openapi-markdown__details"}
+                        >
+                          <summary
+                            style={{}}
+                          >
+                            <strong>
+                              next
+                            </strong><span
+                              style={{"opacity":"0.6"}}
+                            >
+                               object
+                            </span><strong
+                              style={{"fontSize":"var(--ifm-code-font-size)","color":"var(--openapi-nullable)"}}
+                            >
+                               nullable
+                            </strong><strong
+                              style={{"fontSize":"var(--ifm-code-font-size)","color":"var(--openapi-required)"}}
+                            >
+                               required
+                            </strong>
+                          </summary><div
+                            style={{"marginLeft":"1rem"}}
+                          >
+                            <div
+                              style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                            >
+                              
+                              
+                              **Possible values:** Value must match regular expression `^(inclusive|exclusive):.*$`
+                              
+                              
+                            </div><div
+                              style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                            >
+                              
+                              
+                              A cursor that can be used to query the next page. It should be used
+                              literally as value for the `next` parameter in a follow-up request.
+                              
+                              
+                              
+                            </div>
+                          </div><div>
+                            <span
+                              className={"badge badge--info"}
+                            >
+                              oneOf
+                            </span><SchemaTabs>
+                              <TabItem
+                                label={"MOD2"}
+                                value={"1-item-properties"}
+                              >
+                                <div
+                                  style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                                >
+                                  
+                                  
+                                  string
+                                  
+                                  
+                                </div>
+                              </TabItem>
+                            </SchemaTabs>
+                          </div>
+                        </details>
+                      </SchemaItem>
+                    </ul>
+                  </details>
+                </TabItem><TabItem
+                  label={"Example (from schema)"}
+                  value={"Example (from schema)"}
+                >
+                  <ResponseSamples
+                    responseExample={"{\n  \"value\": {\n    \"next\": \"inclusive:o1S4NNFhKWg8T1HEkmDvsTH9Ut9l3_qHRpp00yRKZIk\",\n    \"items\": [\n      \"AAAAAAAAAABRoiLHW7EFAB2lwAatTykipYZ3CZNPzLe-f5S-zUt8COtu0H12f_OZAwAFAAAAMpic85rur2MYf3zli8s8bHxTFjriFoMPTr6ZPs8sjxMKAAAAVBKuhU_hQmuvKlx88A5o-FH0rzNo59NsdxmOGNBQ-ycPAAAAMItdqgHZxf7j6l0oE8X-G9-VyMbnQmZrtSniuRe_EJ9CtyxsSb7daPIIYAaXMgSEsQ3dkxY5GjJjLwAAAAAAABqWlmx5B6wo0YWPIShNKmdVrAQWht2P85BS1drGLpkAAAAAADUJ-ARn7blgHgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQEIPAAAAAAAFAAAA-na5gFuxBQAFL-3CY4YuAJNGp9KhDkbrKkIPWYyq8WvtAaNPoUFWC16louSx8YN5\",\n      \"AAAAAAAAAAA0slHKW7EFAJNGp9KhDkbrKkIPWYyq8WvtAaNPoUFWC16louSx8YN5AwAFAAAAALcxv1ZiwwQ_QX9eOBZMbzIop6n7XtveS1FqOFwyvGMKAAAAC76ElC60qXSJQCHePpzzJxsCYvvrqvmkoHPyZnex-4QPAAAAKv0sz_rTANjoiJwMrdZFCJNFwdH0U_M5ouwMr3BXBfpCtyxsSb7daPIIYAaXMgSEsQ3dkxY5GjJjLwAAAAAAALJlIg1vY3w_9L63bePn1yk_5agvdEbIBBjm3adxc5xWAAAAAGzpBzdiVL9gHgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQUIPAAAAAAAFAAAA-na5gFuxBQALiBhXgqaHAb4VWug3oddEVy0X9y_jEkE2Kmi_vyGP5ovr-fDIz_Uf\"\n    ],\n    \"limit\": 2\n  }\n}"}
+                    language={"json"}
+                  >
+                    
+                  </ResponseSamples>
+                </TabItem><TabItem
+                  label={"Example"}
+                  value={"Example"}
+                >
+                  <ResponseSamples
+                    responseExample={"{\n  \"value\": {\n    \"next\": \"inclusive:o1S4NNFhKWg8T1HEkmDvsTH9Ut9l3_qHRpp00yRKZIk\",\n    \"items\": [\n      \"AAAAAAAAAABRoiLHW7EFAB2lwAatTykipYZ3CZNPzLe-f5S-zUt8COtu0H12f_OZAwAFAAAAMpic85rur2MYf3zli8s8bHxTFjriFoMPTr6ZPs8sjxMKAAAAVBKuhU_hQmuvKlx88A5o-FH0rzNo59NsdxmOGNBQ-ycPAAAAMItdqgHZxf7j6l0oE8X-G9-VyMbnQmZrtSniuRe_EJ9CtyxsSb7daPIIYAaXMgSEsQ3dkxY5GjJjLwAAAAAAABqWlmx5B6wo0YWPIShNKmdVrAQWht2P85BS1drGLpkAAAAAADUJ-ARn7blgHgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQEIPAAAAAAAFAAAA-na5gFuxBQAFL-3CY4YuAJNGp9KhDkbrKkIPWYyq8WvtAaNPoUFWC16louSx8YN5\",\n      \"AAAAAAAAAAA0slHKW7EFAJNGp9KhDkbrKkIPWYyq8WvtAaNPoUFWC16louSx8YN5AwAFAAAAALcxv1ZiwwQ_QX9eOBZMbzIop6n7XtveS1FqOFwyvGMKAAAAC76ElC60qXSJQCHePpzzJxsCYvvrqvmkoHPyZnex-4QPAAAAKv0sz_rTANjoiJwMrdZFCJNFwdH0U_M5ouwMr3BXBfpCtyxsSb7daPIIYAaXMgSEsQ3dkxY5GjJjLwAAAAAAALJlIg1vY3w_9L63bePn1yk_5agvdEbIBBjm3adxc5xWAAAAAGzpBzdiVL9gHgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQUIPAAAAAAAFAAAA-na5gFuxBQALiBhXgqaHAb4VWug3oddEVy0X9y_jEkE2Kmi_vyGP5ovr-fDIz_Uf\"\n    ],\n    \"limit\": 2\n  }\n}"}
+                    language={"json"}
+                  >
+                    
+                  </ResponseSamples>
+                </TabItem>
+              </SchemaTabs>
+            </TabItem><TabItem
+              label={"application/json;blockheader-encoding=object"}
+              value={"application/json;blockheader-encoding=object"}
+            >
+              <SchemaTabs
+                className={"openapi-tabs__schema"}
+              >
+                <TabItem
+                  label={"Schema"}
+                  value={"Schema"}
+                >
+                  <details
+                    style={{}}
+                    className={"openapi-markdown__details response"}
+                    data-collapsed={false}
+                    open={true}
+                  >
+                    <summary
+                      style={{}}
+                      className={"openapi-markdown__details-summary-response"}
+                    >
+                      <strong>
+                        Schema
+                      </strong>
+                    </summary><div
+                      style={{"textAlign":"left","marginLeft":"1rem"}}
+                    >
+                      
+                    </div><ul
+                      style={{"marginLeft":"1rem"}}
+                    >
+                      <SchemaItem
+                        collapsible={true}
+                        className={"schemaItem"}
+                      >
+                        <details
+                          style={{}}
+                          className={"openapi-markdown__details"}
+                        >
+                          <summary
+                            style={{}}
+                          >
+                            <span
+                              className={"openapi-schema__container"}
+                            >
+                              <strong
+                                className={"openapi-schema__property"}
+                              >
+                                items
+                              </strong><span
+                                className={"openapi-schema__name"}
+                              >
+                                 Block Header[]
+                              </span><span
+                                className={"openapi-schema__divider"}
+                              >
+                                
+                              </span><span
+                                className={"openapi-schema__required"}
+                              >
+                                required
+                              </span>
+                            </span>
+                          </summary><div
+                            style={{"marginLeft":"1rem"}}
+                          >
+                            <div
+                              style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                            >
+                              
+                              
+                              Array of JSON encoded block headers
+                              
+                              
+                            </div><li>
+                              <div
+                                style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem","paddingBottom":".5rem"}}
+                              >
+                                Array [
+                              </div>
+                            </li><SchemaItem
+                              collapsible={false}
+                              name={"creationTime"}
+                              required={true}
+                              schemaName={"POSIX Timestamp in Microseconds (integer)"}
+                              qualifierMessage={undefined}
+                              schema={{"title":"POSIX Timestamp in Microseconds","type":"integer","description":"Microseconds since POSIX epoch","example":1602382624629329,"minimum":0}}
+                            >
+                              
+                            </SchemaItem><SchemaItem
+                              collapsible={false}
+                              name={"parent"}
+                              required={true}
+                              schemaName={"Block Hash (string)"}
+                              qualifierMessage={"**Possible values:** `>= 43 characters` and `<= 43 characters`, Value must match regular expression `^[a-zA-Z0-9_-]{43}$`"}
+                              schema={{"title":"Block Hash","description":"Base64Url (without padding) encoded block hash","example":true,"type":"string","pattern":"^[a-zA-Z0-9_-]{43}$","minLength":43,"maxLength":43}}
+                            >
+                              
+                            </SchemaItem><SchemaItem
+                              collapsible={false}
+                              name={"height"}
+                              required={true}
+                              schemaName={"Block Height (integer)"}
+                              qualifierMessage={undefined}
+                              schema={{"title":"Block Height","description":"The height of a block is the number of its predecessors in the block chain\n","type":"integer","minimum":0,"example":1000000}}
+                            >
+                              
+                            </SchemaItem><SchemaItem
+                              collapsible={false}
+                              name={"hash"}
+                              required={true}
+                              schemaName={"Block Hash (string)"}
+                              qualifierMessage={"**Possible values:** `>= 43 characters` and `<= 43 characters`, Value must match regular expression `^[a-zA-Z0-9_-]{43}$`"}
+                              schema={{"title":"Block Hash","description":"Base64Url (without padding) encoded block hash","example":true,"type":"string","pattern":"^[a-zA-Z0-9_-]{43}$","minLength":43,"maxLength":43}}
+                            >
+                              
+                            </SchemaItem><SchemaItem
+                              collapsible={false}
+                              name={"chainId"}
+                              required={true}
+                              schemaName={"Chain ID (integer)"}
+                              qualifierMessage={undefined}
+                              schema={{"title":"Chain ID","description":"A Chainweb chain ID. In Kadena Chainweb chains are named by numbers\nstarting form 0. Valid values depend on the current graph at the\nrespective block height of the chainweb version.\n","type":"integer","minimum":0,"example":0}}
+                            >
+                              
+                            </SchemaItem><SchemaItem
+                              collapsible={false}
+                              name={"weight"}
+                              required={true}
+                              schemaName={"Block Weight (string)"}
+                              qualifierMessage={"**Possible values:** `>= 43 characters` and `<= 43 characters`, Value must match regular expression `^[a-zA-Z0-9_-]{43}$`"}
+                              schema={{"title":"Block Weight","description":"The POW weight of a block is the sum of the difficulties of the block\nand of all of its ancestors. The difficulty of a block is the maximum\ndifficulty divided by the target.\n\nIt represented as the base64Url (without padding) 256 bit little endian\nencoding of the numerical value.\n","type":"string","pattern":"^[a-zA-Z0-9_-]{43}$","minLength":43,"maxLength":43,"example":"iil_D0t2MGqjAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"}}
+                            >
+                              
+                            </SchemaItem><SchemaItem
+                              collapsible={false}
+                              name={"featureFlags"}
+                              required={true}
+                              schemaName={"integer"}
+                              qualifierMessage={undefined}
+                              schema={{"type":"integer","description":"A reserved value that must be 0."}}
+                            >
+                              
+                            </SchemaItem><SchemaItem
+                              collapsible={false}
+                              name={"epochStart"}
+                              required={true}
+                              schemaName={"POSIX Timestamp in Microseconds (integer)"}
+                              qualifierMessage={undefined}
+                              schema={{"title":"POSIX Timestamp in Microseconds","type":"integer","description":"Microseconds since POSIX epoch","example":1602382624629329,"minimum":0}}
+                            >
+                              
+                            </SchemaItem><SchemaItem
+                              collapsible={true}
+                              className={"schemaItem"}
+                            >
+                              <details
+                                style={{}}
+                                className={"openapi-markdown__details"}
+                              >
+                                <summary
+                                  style={{}}
+                                >
+                                  <span
+                                    className={"openapi-schema__container"}
+                                  >
+                                    <strong
+                                      className={"openapi-schema__property"}
+                                    >
+                                      adjacents
+                                    </strong><span
+                                      className={"openapi-schema__name"}
+                                    >
+                                       object
+                                    </span><span
+                                      className={"openapi-schema__divider"}
+                                    >
+                                      
+                                    </span><span
+                                      className={"openapi-schema__required"}
+                                    >
+                                      required
+                                    </span>
+                                  </span>
+                                </summary><div
+                                  style={{"marginLeft":"1rem"}}
+                                >
+                                  <div
+                                    style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                                  >
+                                    
+                                    
+                                    The block hashes of the adjacent parents of the block. This is
+                                    represented as an associative array that maps the adjancent chain
+                                    ids to the respective block hash.
+                                    
+                                    
+                                    
+                                  </div><SchemaItem
+                                    name={"property name*"}
+                                    required={false}
+                                    schemaName={"Block Hash (string)"}
+                                    qualifierMessage={undefined}
+                                    schema={{"title":"Block Hash","description":"Base64Url (without padding) encoded block hash","example":true,"type":"string","pattern":"^[a-zA-Z0-9_-]{43}$","minLength":43,"maxLength":43}}
+                                    collapsible={false}
+                                    discriminator={false}
+                                  >
+                                    
+                                  </SchemaItem>
+                                </div>
+                              </details>
+                            </SchemaItem><SchemaItem
+                              collapsible={false}
+                              name={"payloadHash"}
+                              required={true}
+                              schemaName={"Block Payload Hash (string)"}
+                              qualifierMessage={"**Possible values:** `>= 43 characters` and `<= 43 characters`, Value must match regular expression `^[a-zA-Z0-9_-]{43}$`"}
+                              schema={{"title":"Block Payload Hash","description":"Base64Url (without padding) encoded block payload hash","example":true,"type":"string","pattern":"^[a-zA-Z0-9_-]{43}$","minLength":43,"maxLength":43}}
+                            >
+                              
+                            </SchemaItem><SchemaItem
+                              collapsible={false}
+                              name={"chainwebVersion"}
+                              required={true}
+                              schemaName={"Chainweb Version"}
+                              qualifierMessage={"**Possible values:** [`test-singleton`, `development`, `mainnet01`, `testnet04`]"}
+                              schema={{"title":"Chainweb Version","description":"The version of the Chainweb network","enum":["test-singleton","development","mainnet01","testnet04"]}}
+                            >
+                              
+                            </SchemaItem><SchemaItem
+                              collapsible={false}
+                              name={"target"}
+                              required={true}
+                              schemaName={"PoW Target (string)"}
+                              qualifierMessage={"**Possible values:** `>= 43 characters` and `<= 43 characters`, Value must match regular expression `^[a-zA-Z0-9_-]{43}$`"}
+                              schema={{"title":"PoW Target","description":"The PoW target of a block represented as the base64Url (without\npadding) 256 bit little endian encoding of the numerical value.\n","type":"string","pattern":"^[a-zA-Z0-9_-]{43}$","minLength":43,"maxLength":43,"example":"2uMCnB4lWsErj9w1C1vAp1sHYd-sABf3kgcAAAAAAAA"}}
+                            >
+                              
+                            </SchemaItem><SchemaItem
+                              collapsible={false}
+                              name={"nonce"}
+                              required={true}
+                              schemaName={"PoW Nonce (string)"}
+                              qualifierMessage={"**Possible values:** `non-empty`, Value must match regular expression `[0-9]+`"}
+                              schema={{"title":"PoW Nonce","description":"PoW nonce of the block. This is computed by the miner such that the\nblock hash is smaller than the target.\n","type":"string","pattern":"[0-9]+","minLength":1}}
+                            >
+                              
+                            </SchemaItem><li>
+                              <div
+                                style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem"}}
+                              >
+                                ]
+                              </div>
+                            </li>
+                          </div>
+                        </details>
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"limit"}
+                        required={true}
+                        schemaName={"array[]"}
+                        qualifierMessage={undefined}
+                        schema={{"description":"The number of items in the page. This number can be smaller but\nnever be larger than the number of requested items.\n","type":"integer","minimum":0,"items":{"description":"Items of the returned collection","type":"array"}}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={true}
+                        className={"schemaItem"}
+                      >
+                        <details
+                          style={{}}
+                          className={"openapi-markdown__details"}
+                        >
+                          <summary
+                            style={{}}
+                          >
+                            <strong>
+                              next
+                            </strong><span
+                              style={{"opacity":"0.6"}}
+                            >
+                               object
+                            </span><strong
+                              style={{"fontSize":"var(--ifm-code-font-size)","color":"var(--openapi-nullable)"}}
+                            >
+                               nullable
+                            </strong><strong
+                              style={{"fontSize":"var(--ifm-code-font-size)","color":"var(--openapi-required)"}}
+                            >
+                               required
+                            </strong>
+                          </summary><div
+                            style={{"marginLeft":"1rem"}}
+                          >
+                            <div
+                              style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                            >
+                              
+                              
+                              **Possible values:** Value must match regular expression `^(inclusive|exclusive):.*$`
+                              
+                              
+                            </div><div
+                              style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                            >
+                              
+                              
+                              A cursor that can be used to query the next page. It should be used
+                              literally as value for the `next` parameter in a follow-up request.
+                              
+                              
+                              
+                            </div>
+                          </div><div>
+                            <span
+                              className={"badge badge--info"}
+                            >
+                              oneOf
+                            </span><SchemaTabs>
+                              <TabItem
+                                label={"MOD2"}
+                                value={"1-item-properties"}
+                              >
+                                <div
+                                  style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                                >
+                                  
+                                  
+                                  string
+                                  
+                                  
+                                </div>
+                              </TabItem>
+                            </SchemaTabs>
+                          </div>
+                        </details>
+                      </SchemaItem>
+                    </ul>
+                  </details>
+                </TabItem><TabItem
+                  label={"Example (from schema)"}
+                  value={"Example (from schema)"}
+                >
+                  <ResponseSamples
+                    responseExample={"{\n  \"value\": {\n    \"next\": \"inclusive:o1S4NNFhKWg8T1HEkmDvsTH9Ut9l3_qHRpp00yRKZIk\",\n    \"items\": [\n      \"AAAAAAAAAABRoiLHW7EFAB2lwAatTykipYZ3CZNPzLe-f5S-zUt8COtu0H12f_OZAwAFAAAAMpic85rur2MYf3zli8s8bHxTFjriFoMPTr6ZPs8sjxMKAAAAVBKuhU_hQmuvKlx88A5o-FH0rzNo59NsdxmOGNBQ-ycPAAAAMItdqgHZxf7j6l0oE8X-G9-VyMbnQmZrtSniuRe_EJ9CtyxsSb7daPIIYAaXMgSEsQ3dkxY5GjJjLwAAAAAAABqWlmx5B6wo0YWPIShNKmdVrAQWht2P85BS1drGLpkAAAAAADUJ-ARn7blgHgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQEIPAAAAAAAFAAAA-na5gFuxBQAFL-3CY4YuAJNGp9KhDkbrKkIPWYyq8WvtAaNPoUFWC16louSx8YN5\",\n      \"AAAAAAAAAAA0slHKW7EFAJNGp9KhDkbrKkIPWYyq8WvtAaNPoUFWC16louSx8YN5AwAFAAAAALcxv1ZiwwQ_QX9eOBZMbzIop6n7XtveS1FqOFwyvGMKAAAAC76ElC60qXSJQCHePpzzJxsCYvvrqvmkoHPyZnex-4QPAAAAKv0sz_rTANjoiJwMrdZFCJNFwdH0U_M5ouwMr3BXBfpCtyxsSb7daPIIYAaXMgSEsQ3dkxY5GjJjLwAAAAAAALJlIg1vY3w_9L63bePn1yk_5agvdEbIBBjm3adxc5xWAAAAAGzpBzdiVL9gHgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQUIPAAAAAAAFAAAA-na5gFuxBQALiBhXgqaHAb4VWug3oddEVy0X9y_jEkE2Kmi_vyGP5ovr-fDIz_Uf\"\n    ],\n    \"limit\": 2\n  }\n}"}
+                    language={"json"}
+                  >
+                    
+                  </ResponseSamples>
+                </TabItem><TabItem
+                  label={"Example"}
+                  value={"Example"}
+                >
+                  <ResponseSamples
+                    responseExample={"{\n  \"value\": {\n    \"next\": \"inclusive:o1S4NNFhKWg8T1HEkmDvsTH9Ut9l3_qHRpp00yRKZIk\",\n    \"items\": [\n      {\n        \"creationTime\": 1602382624629329,\n        \"parent\": \"HaXABq1PKSKlhncJk0_Mt75_lL7NS3wI627QfXZ_85k\",\n        \"height\": 1000000,\n        \"hash\": \"k0an0qEORusqQg9ZjKrxa-0Bo0-hQVYLXqWi5LHxg3k\",\n        \"chainId\": 0,\n        \"weight\": \"NQn4BGftuWAeAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\",\n        \"featureFlags\": 0,\n        \"epochStart\": 1602381443331834,\n        \"adjacents\": {\n          \"5\": \"Mpic85rur2MYf3zli8s8bHxTFjriFoMPTr6ZPs8sjxM\",\n          \"10\": \"VBKuhU_hQmuvKlx88A5o-FH0rzNo59NsdxmOGNBQ-yc\",\n          \"15\": \"MItdqgHZxf7j6l0oE8X-G9-VyMbnQmZrtSniuRe_EJ8\"\n        },\n        \"payloadHash\": \"GpaWbHkHrCjRhY8hKE0qZ1WsBBaG3Y_zkFLV2sYumQA\",\n        \"chainwebVersion\": \"mainnet01\",\n        \"target\": \"QrcsbEm-3WjyCGAGlzIEhLEN3ZMWORoyYy8AAAAAAAA\",\n        \"nonce\": \"13095611958898437\"\n      },\n      {\n        \"creationTime\": 1602382678045236,\n        \"parent\": \"k0an0qEORusqQg9ZjKrxa-0Bo0-hQVYLXqWi5LHxg3k\",\n        \"height\": 1000001,\n        \"hash\": \"vhVa6Deh10RXLRf3L-MSQTYqaL-_IY_mi-v58MjP9R8\",\n        \"chainId\": 0,\n        \"weight\": \"bOkHN2JUv2AeAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\",\n        \"featureFlags\": 0,\n        \"epochStart\": 1602381443331834,\n        \"adjacents\": {\n          \"5\": \"ALcxv1ZiwwQ_QX9eOBZMbzIop6n7XtveS1FqOFwyvGM\",\n          \"10\": \"C76ElC60qXSJQCHePpzzJxsCYvvrqvmkoHPyZnex-4Q\",\n          \"15\": \"Kv0sz_rTANjoiJwMrdZFCJNFwdH0U_M5ouwMr3BXBfo\"\n        },\n        \"payloadHash\": \"smUiDW9jfD_0vrdt4-fXKT_lqC90RsgEGObdp3FznFY\",\n        \"chainwebVersion\": \"mainnet01\",\n        \"target\": \"QrcsbEm-3WjyCGAGlzIEhLEN3ZMWORoyYy8AAAAAAAA\",\n        \"nonce\": \"110239794631051275\"\n      }\n    ],\n    \"limit\": 2\n  }\n}"}
+                    language={"shell"}
+                  >
+                    
+                  </ResponseSamples>
+                </TabItem>
+              </SchemaTabs>
+            </TabItem>
+          </MimeTabs>
+        </div>
+      </TabItem><TabItem
+        label={"404"}
+        value={"404"}
+      >
+        <div>
+          
+          
+          The `next` or `maxheight` parameter indicated a nonexistent block height.
+          
+          
+          
+        </div><details
+          style={{"textAlign":"left","marginBottom":"1rem"}}
+          className={"openapi-markdown__details"}
+          data-collapsed={true}
+          open={false}
+        >
+          <summary
+            style={{}}
+          >
+            <strong>
+              Response Headers
+            </strong>
+          </summary><ul
+            style={{"marginLeft":"1rem"}}
+          >
+            <li
+              className={"schemaItem"}
+            >
+              <summary
+                style={{}}
+              >
+                <strong>
+                  x-peer-addr
+                </strong><span
+                  style={{"opacity":"0.6"}}
+                >
+                   string
+                </span>
+              </summary><div>
+                <div
+                  style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                >
+                  Example: 10.36.1.3:42988
+                  
+                  Host and port of the client as observed by the remote node
+                  
+                  
+                </div>
+              </div>
+            </li><li
+              className={"schemaItem"}
+            >
+              <summary
+                style={{}}
+              >
+                <strong>
+                  x-server-timestamp
+                </strong><span
+                  style={{"opacity":"0.6"}}
+                >
+                   integer
+                </span>
+              </summary><div>
+                <div
+                  style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                >
+                  Example: 1618597601
+                  
+                  The time of the clock of the remote node
+                  
+                  
+                </div>
+              </div>
+            </li><li
+              className={"schemaItem"}
+            >
+              <summary
+                style={{}}
+              >
+                <strong>
+                  x-chainweb-node-version
+                </strong><span
+                  style={{"opacity":"0.6"}}
+                >
+                   string
+                </span>
+              </summary><div>
+                <div
+                  style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                >
+                  Example: 2.6
+                  
+                  The version of the remote chainweb node
+                  
+                  
+                </div>
+              </div>
+            </li>
+          </ul>
+        </details><div>
+          <MimeTabs
+            className={"openapi-tabs__mime"}
+            schemaType={"response"}
+          >
+            <TabItem
+              label={"application/json"}
+              value={"application/json"}
+            >
+              <SchemaTabs
+                className={"openapi-tabs__schema"}
+              >
+                <TabItem
+                  label={"Schema"}
+                  value={"Schema"}
+                >
+                  <details
+                    style={{}}
+                    className={"openapi-markdown__details response"}
+                    data-collapsed={false}
+                    open={true}
+                  >
+                    <summary
+                      style={{}}
+                      className={"openapi-markdown__details-summary-response"}
+                    >
+                      <strong>
+                        Schema
+                      </strong>
+                    </summary><div
+                      style={{"textAlign":"left","marginLeft":"1rem"}}
+                    >
+                      
+                    </div><ul
+                      style={{"marginLeft":"1rem"}}
+                    >
+                      <SchemaItem
+                        collapsible={false}
+                        name={"reason"}
+                        required={false}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"key"}
+                        required={false}
+                        schemaName={"SHA256 Hash (string)"}
+                        qualifierMessage={"**Possible values:** `>= 43 characters` and `<= 43 characters`, Value must match regular expression `^[a-zA-Z0-9_-]{43}$`"}
+                        schema={{"title":"SHA256 Hash","type":"string","description":"Base64Url (without padding) encoded SHA256 hash","pattern":"^[a-zA-Z0-9_-]{43}$","minLength":43,"maxLength":43,"example":"y3aWL72-3wAy7vL9wcegGXnstH0lHi-q-cfxkhD5JCw"}}
+                      >
+                        
+                      </SchemaItem>
+                    </ul>
+                  </details>
+                </TabItem><TabItem
+                  label={"Example (from schema)"}
+                  value={"Example (from schema)"}
+                >
+                  <ResponseSamples
+                    responseExample={"{\n  \"reason\": \"string\",\n  \"key\": \"y3aWL72-3wAy7vL9wcegGXnstH0lHi-q-cfxkhD5JCw\"\n}"}
+                    language={"json"}
+                  >
+                    
+                  </ResponseSamples>
+                </TabItem>
+              </SchemaTabs>
+            </TabItem>
+          </MimeTabs>
+        </div>
+      </TabItem>
+    </ApiTabs>
+  </div>
+</div>
+      

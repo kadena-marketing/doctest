@@ -1,0 +1,32 @@
+---
+id: block
+title: "Block Endpoints"
+description: "Block Endpoints"
+custom_edit_url: null
+---
+
+
+
+These endpoints return whole blocks, headers and payloads, from the chain
+database.
+
+Generally, blocks are returned in ascending order and include orphaned
+blocks.
+
+For only querying blocks that are included in the winning branch of the
+chain the `branch` endpoints can be used, which return blocks in descending
+order starting from the leafs of branches of the block chain.
+
+Blocks are returned in only one format, with block headers and payloads in
+JSON encoding.
+
+
+
+
+```mdx-code-block
+import DocCardList from '@theme/DocCardList';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+
+<DocCardList items={useCurrentSidebarCategory().items}/>
+```
+      

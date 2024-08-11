@@ -1,0 +1,26 @@
+---
+id: payload
+title: "Block Payload Endpoints"
+description: "Block Payload Endpoints"
+custom_edit_url: null
+---
+
+
+
+Raw literal Block Payloads in the form in which they are stored on the chain.
+By default only the payload data is returned which is sufficient for validating
+the blockchain Merkle Tree. It is also sufficient as input to Pact for
+executing the Pact transactions of the block and recomputing the outputs.
+
+It is also possible to query the transaction outputs along with the payload data.
+
+
+
+
+```mdx-code-block
+import DocCardList from '@theme/DocCardList';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+
+<DocCardList items={useCurrentSidebarCategory().items}/>
+```
+      

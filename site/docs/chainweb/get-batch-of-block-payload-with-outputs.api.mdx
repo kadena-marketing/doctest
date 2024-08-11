@@ -1,0 +1,458 @@
+---
+id: get-batch-of-block-payload-with-outputs
+title: "Get Batch of Block Payload With Outputs"
+description: "Get Batch of Block Payload With Outputs"
+sidebar_label: "Get Batch of Block Payload With Outputs"
+hide_title: true
+hide_table_of_contents: true
+api: eJztOmtvo8iyfwWhI91dXTsBbGcSf7NjQ3ACjm3eSe6oDR3TvAea2BD5v191Y5w4mdkzc8/ZvdLRRoqBflTXq6uqu+qVxWBTsMMHNgNVlAKPfeqwGchBDDHMSccrm4AYskPW9QFK2A6LEnbIZgD7bIf1YOHmKMMoJY3YhwzymPSZIW90PINTZusj16dNOfxWwgIzqGAKmGC2w5IWlEOPHeK8hB22cH0YA3b4yuIqI6uiBMMNzNkOG6MExWXMDrkOC3cgziLIDrn9/qmBAgs8Tr2KTD3FapQw6TqALmbKAnoEIS9l1gC7PnOgmflWwhzBosNsEfaZNKfPtMSMD9HGxwXbYd00wQTl4SsLsixCLiDgz4OCrPH6Du80gfNnyjeMMEGRvT+s4oPCZ0Ceg4rttOS1nweCCkr5NiWPFxCVkMIu4xjkFTtkFyXMKwZv0xZzgtlh3AMrZcBc34Q3+XWw9O1L/3bKfXN4sxiPgdSzv9aheGcIhV3GixHbYQN3MTfrL7dX326TUH/pO5eXvYngBKEoShvXTVd5akogTTd3Cvu033dYGGe4eofYw1PnE2pJin2UbNj9ft/5zICG6YTZFbt/2pNBbA6LLE2KhnKB474jP8KiVqmKNIZEQCCK2qaD8KHHrKPUDY+soUJ8TNISZyUuzpglLMoIMwjDuGBiUK3JVFzmCfQYlDAgqZg092B+9ki03IfAoxvgld11MwjzLvC8/DN2N2mBGZB4TJbm+Kj6EYIJZkDBpOsC5i8Et+qAbJxiyCSpB9kTbT+wioIbeV4Oi+LT/mrWajoZopAAJSjZMPL9S/+Iw5tuFTgnsiD7GWOYEwj/8/jovfb3Z997DB8fvf/+B/tuc7E8d9a7OOPPesO+cHV5ye7/SeeuS6nNuxjFsMAgzj4zTPMhQ7rfeEWEdpTlH7Pnfr6SLUY7Qu98NhOnq62gmyZewRQocSHTTIdZ6vrv6eQv+CueuxwI/fdWZn864nJw9eWC4ymV1LRt4bpLEO2+wLxAjRn4TOqh8wOBLYDvUHoiuxOGC2cXLNkyP22KPtgYqvnvuTmmrG93p0ls37zZLZ/42A5qDGQziNAEmAYIStyo9IgyEioVmIcRZPI0xQXznOaPCc5BUgCXQCuoqr5raOHRfffmEB7Y95MaBwDzCcCAiP1d1w0oiDgPUA5fBytw+HJTlKxBAYl3OzL0nYk9WYlatrfFhiysZr4tqC+eOeDkIEW2JiKlnnKKpCJVUIP5JOTtehwpk3Cn1qPKMRdbVdN7c9NBjjbi7dqJ1MDlVNPuK7EaqcGoVuuFYAeLrSIpfUXTufm1XMjJuHLMZWYLIues5As5xhG0FGybu0JGW+TeGGgtRcGdSdvRPCr+JFxm3vPie1wesonGBf3dVtimSuhZFkgzr8wtORH6c6kbqMq3Ra1LzzvjqzL6IJMh28+sZe4It9xXg0PSaLe4vs1vvbtgoY2dm/F8sfpy3+1/Cb3Etz9IcPiLzu0obyq8xCbMCkaFnMwit2cU3rV8AatZ7Uki55E+NKs9Uw0cS60Jox1J5GwigMirgLWM5BuVtwU1csxl5FzPru6uZ5VjiXeOFZK5MyD4qcEZ0kJQ9WUkaoo+UOzQSz0j3Lo3M3UZRHNnugwUY1PBKT9XJoauaWq4CgffVppqGHzmGMK2r04HliuE6O56VqwFrybK5vTUFIR8aIqz3JB2t3Ys70DkhAtzdrEyjIkrZYs1PxsvhGy6nu7qZT221HA2VYhCxXzkSeLUtpa+HGSlZ+6Ku+tZsBYGHDAHvG0ts7XQR/N4wK+lbSEny/7KXKB5MK3UWq5VbXxFTU6WpxnMMToEKCe75ZOd+YH7zgDKqc34bAt8iPLWCpw9Jiu0IU75Hrj48+DW+IAcMkTEF309j7owcVMPesfALQMesUaNL38zfKeIxiiRmy6hw8Zg9/ZxnAGSqo3mfuhUH0C3HnUdrnv1tfv0358YMG6RZH77gN3vTIv2bDVXGQx3uLGpxfcZwNKg6i/E47ORbuK2E/P4V6JEnAtdmvEABm1Le3TZf89ivbm71c1IGFwwB5fwEelfx+wAz28dzjHIOqH6td/b/6NRtjuYbLDPDvs9qm7vP9+8fNUD5t0XodvbjqovL3dXWxduJCsp8A0X3aDut677vAv9yWB2vSUEn1jY/3BaTzzCj8KYA8m/TuLJ6aGl9A3XX3NAIIo+nAL/AyXytH/vaf9KO9CuerBKrSGgImSbg+UfnajbE+zfEeDfEeDfEeDPRIA/3ikPhL+pbakpwVVB/MWi58VL0XGWHM+ZN1HgCZl2Zy0jtfYHei/qab2Z5QbqytN9tIhmiTrx/OWKKL+aOT2i1PgLfa/IBnCQohmhWoeVramhOlF4ZSIP5pNZPJcWvCLplVKPeFWTB3NzunUCz1fMZayY074d6JUSTweqpuxUU6+cSRTYglKp8ZRXarmvCPLA1lRfnSgDx5xyjmT3FUnhHU3eKsGmr078QA1EXzFtTpGUwdyUq7lm13NT4VRJDW1ts1XqcWzHBrKDcSAnvEd5S/iHZl+s61npWMveujfLV+bSlYPMlWPeB+agdKzFVjG26E7cIlcSB2vpynfELZon2JVjo++YKhlPYIREdhbR1x5XWFR2y4h8W9dyagtX2RoNODcWS1dwIheNXUvcIkdzebXW+460qGxNDFQtFNTJMlCCWaRMFhUxAnY96qmaLFDaNb1HNr4TRKEdK5UycQVH8/35ZOnb9XSgSnatRDvXupY3lrhz5WAhqLXnK5MosrWpoExmkSrp27npRMpEjOxguptrTuAEi55dj2OVwNEWnG2KwVwb1c7EiNVARI7mhbamcEqg75TAp7jLE6VUa1e4Nbbo2aI018D0Ssea1YRus4ddORnzdogjaGzRPPqz6G3kYwu7zO1R+a0hv0W2NUtcnqyLPdK/jkXsHPA4yONmYaiunHDFh/GuHOs9VXP5ubQMlXi6s2t9oAYLzq7lytFGnBIrgmMqW7XWKzU2fFXSebWe8qpkDxxpFijBqKfGet/WNpxtKru5toyVeubK6M+TiYy29V3g9tSIyqK0Tf6gf0QXo/IuWq4W+kBbhsbKup5dWRbf8MU0ONtodVqtHFPkgHlVGlLU8CsgOMr1fCL3FW1BYHOeROhIq/lks1Wud64ce77L7bK1GXFkTTUYbRuZ+GQfzeieibZIERtZOYJY6zezzBYMAmd3F4yjO02nOuSYg9CxZod9+CfJIWl4tBYGQasTzX4hNmWEFY38i7oykS+UYHqhaItS0ULOpHuLzkfU8b45Lb2nEM8fG7Vn7jhiFORE5WxrybvEQCaNY3J7CnEaYWPoU2T0Zpkn6Ru3ZwS2YESOZIQEOeoAdRxB4twCGcNQ7Tnh0jR1T/VEf2D3vG96xXOO5vahoQ487qoyenKtJ4Zsh7OVUy96tq6fOKiVzueAN0QnNiQQ9gdrcbFzuA22BEfVeG+yDKNc570LYKiacyMKcJr2vRV/QY3+v+qg6tkV+/R3uPbDcC0y3cUyCnqK8UVcwfjyvi91LyVl+cx351/qxTf0dbSNzSTsqtyncO1qXFvO2g9WK/iS9W+5tS1+Q7zk3QXQ+joZd/slrw2m8SVYF5/CtV/JL/3l4do6NPrmRAz1kL9YJRFaxv61afK3rn5laokTKtZYsGMM1rF6s7S8aJmMLd3Et16s6qY2Q8uQ29nccrXgHcMwT8O1leFyKrfYaZaoGOZVvEzU27WZpabkTZzET9aCWK+5neZyA9vRRTQXl/drQb1W/x3hWk3DNXIwe0vNHRJf9Or+JHf4T5N6U9LL5HQ+PVaRg9Xp0U2CmBnTvF76zPxhQiGG2E89kjtOC9ycDomenNNcyPkrfezPD8idHxTxnOYMSYaEJpaahHSZR+yQ9THOiuH5OcjQWZtPOXPT+Lz9OH8FGTKa/Mv+PAYoSSDm+E+nz+s2GXMYwpC1kAuZ0b18xsiYAVGR0kZYNAlImHhZipImBUIOnvfCPR1NrxtfQI7A+nD0fEOhyQ89A8LLIcudcYcs6WdqMCxwAvHPUHUYyvV/TNVhyP8LVa9NMmo/PD9/9VLC3/3wlWQp9z+g57Vtbls+3ycnzAYmMEcuc5KGozTFoGpIYtIkqshNarku4PF+4Ejhd0h6S5u9kUOEQnxxQhKCD+0nFRVL9lhD0umcj+pIL65IXvZkFH/ZpxnTD+SeDnqvsi0ORJrdAiWbCOI0odx5gVGaxU09xfspb7pBcP1VRXyN0iaxuP837y6iVWuSGcQ5yJhGdHMirYO6vdNDcsff5M/PPoqrxe6UmLLowvfcar/JUzg8e81ze2jfHtq3pP055+mvQH9JS5Dx9Fegv71/lZV/ztb+a1naMI4wBJa0pyTvgDIKZMLPsIh4GeiWOcLViuw7isC+w5Ic9vKtmGfa3kv+WnHLEylSek7f3xHfAg8mgDlyTk09agk/m5d7mViLhxPb8vRbK8oNwn7ZSC2kILsoPT8Z+/tj8pgc10EFMUIuiAiXmfs8TZ+78+eumeYh89t9av5O6jgKmBRlwYBok+YI+zE1ZWRm8pjQ7vwFYPQCGbjDMGnLCcYIk6jpvwpGBSGIU5y+g4V9gJvhXvGYvA1tLMehNuu4ICmKissIo6ztK84YzScoRFG6PeTwyyRCMSKFNu/zQtjP03Ljk1vYdcX4aY5qUpkSRRWluy0JSMp4DXN6d9vAJ2wSIfTWwA1pYm9dbpgcElNJ12uKQ5pSh8Z+k6oxhCFV4S2M3DSGZ8x9BEEBH5M0g6SGh0FFUUIGYOaBTmjkReEWCKd59bOiJPBAhs4pvOL3g8NoVZrqMakEidIN1bPTDY/OULwpcwp7PXLEkSSeZfRKHESY3GF/RyPvCCSaa00LHAO6bw6Vdz8fY53o8vFCnqx4nkXEVe07Daqvh/Dr4VjWN2xf2mza8TDAdtgmCnvqsD6J3YYP7Osridb1PNrvSXNT00Wjx9ak0EjNQwV599jhM4gK+AnBYykL+9vyUPjxO/N/KCP8LqFttjep3qrkWLbDhrA6ljPSULmp9aIIN33XDVpdjUB4m/up2oaY+mbGyHVhhv9w7NO7EPh+vtIIWw8FizGpAhqyOdiSChiwbfBMs2OGnba9shFINiXYkLENTPL3v4JFO5Y=
+sidebar_class_name: "post api-method"
+info_path: docs/chainweb/kadena-chainweb-node-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import Heading from "@theme/Heading";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get Batch of Block Payload With Outputs"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/chain/{chain}/payload/outputs/batch"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get Batch of Block Payload With Outputs
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<details
+  style={{"marginBottom":"1rem"}}
+  className={"openapi-markdown__details"}
+  data-collapsed={false}
+  open={true}
+>
+  <summary
+    style={{}}
+  >
+    <h3
+      className={"openapi-markdown__details-summary-header-params"}
+    >
+      Path Parameters
+    </h3>
+  </summary><div>
+    <ul>
+      <ParamsItem
+        className={"paramsItem"}
+        param={{"name":"chain","in":"path","description":"the id of the chain to which the request is sent","required":true,"schema":{"type":"integer","minimum":0,"example":0}}}
+      >
+        
+      </ParamsItem>
+    </ul>
+  </div>
+</details><MimeTabs
+  className={"openapi-tabs__mime"}
+>
+  <TabItem
+    label={"application/json"}
+    value={"application/json-schema"}
+  >
+    <details
+      style={{}}
+      className={"openapi-markdown__details mime"}
+      data-collapsed={false}
+      open={true}
+    >
+      <summary
+        style={{}}
+        className={"openapi-markdown__details-summary-mime"}
+      >
+        <h3
+          className={"openapi-markdown__details-summary-header-body"}
+        >
+          Body
+        </h3>
+      </summary><div
+        style={{"textAlign":"left","marginLeft":"1rem"}}
+      >
+        <div
+          style={{"marginTop":"1rem","marginBottom":"1rem"}}
+        >
+          
+          
+          An object used to do batch payload queries, with or without heights
+          
+          
+        </div>
+      </div><ul
+        style={{"marginLeft":"1rem"}}
+      >
+        <div>
+          <span
+            className={"badge badge--info"}
+          >
+            oneOf
+          </span><SchemaTabs>
+            <TabItem
+              label={"Payload hash array"}
+              value={"0-item-properties"}
+            >
+              <li>
+                <div
+                  style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem","paddingBottom":".5rem"}}
+                >
+                  Array [
+                </div>
+              </li><SchemaItem
+                collapsible={false}
+                name={"title"}
+                required={false}
+                schemaName={""}
+                qualifierMessage={undefined}
+                schema={"Block Payload Hash"}
+              >
+                
+              </SchemaItem><SchemaItem
+                collapsible={false}
+                name={"description"}
+                required={false}
+                schemaName={""}
+                qualifierMessage={undefined}
+                schema={"Base64Url (without padding) encoded block payload hash"}
+              >
+                
+              </SchemaItem><SchemaItem
+                collapsible={false}
+                name={"example"}
+                required={false}
+                schemaName={""}
+                qualifierMessage={undefined}
+                schema={"GpaWbHkHrCjRhY8hKE0qZ1WsBBaG3Y_zkFLV2sYumQA"}
+              >
+                
+              </SchemaItem><SchemaItem
+                collapsible={false}
+                name={"allOf"}
+                required={false}
+                schemaName={""}
+                qualifierMessage={undefined}
+                schema={[{"title":"SHA256 Hash","type":"string","description":"Base64Url (without padding) encoded SHA256 hash","pattern":"^[a-zA-Z0-9_-]{43}$","minLength":43,"maxLength":43,"example":"y3aWL72-3wAy7vL9wcegGXnstH0lHi-q-cfxkhD5JCw"}]}
+              >
+                
+              </SchemaItem><li>
+                <div
+                  style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem"}}
+                >
+                  ]
+                </div>
+              </li>
+            </TabItem><TabItem
+              label={"Payload batch query"}
+              value={"1-item-properties"}
+            >
+              <SchemaItem
+                collapsible={false}
+                name={"heights"}
+                required={false}
+                schemaName={"integer[]"}
+                qualifierMessage={undefined}
+                schema={{"title":"Heights","description":"List of block heights","type":"array","items":{"type":"integer"}}}
+              >
+                
+              </SchemaItem><SchemaItem
+                collapsible={false}
+                name={"hashes"}
+                required={false}
+                schemaName={"object[]"}
+                qualifierMessage={undefined}
+                schema={{"title":"Hashes","description":"List of payload hashes","type":"array","items":{"title":"Block Payload Hash","description":"Base64Url (without padding) encoded block payload hash","example":"GpaWbHkHrCjRhY8hKE0qZ1WsBBaG3Y_zkFLV2sYumQA","allOf":[{"title":"SHA256 Hash","type":"string","description":"Base64Url (without padding) encoded SHA256 hash","pattern":"^[a-zA-Z0-9_-]{43}$","minLength":43,"maxLength":43,"example":"y3aWL72-3wAy7vL9wcegGXnstH0lHi-q-cfxkhD5JCw"}]}}}
+              >
+                
+              </SchemaItem>
+            </TabItem>
+          </SchemaTabs>
+        </div>
+      </ul>
+    </details>
+  </TabItem>
+</MimeTabs><div>
+  <div>
+    <ApiTabs
+      label={undefined}
+      id={undefined}
+    >
+      <TabItem
+        label={"200"}
+        value={"200"}
+      >
+        <div>
+          
+          
+          Array of the some or all of the requested block payloads with
+          outputs. Result items maybe returned in any order.
+          
+          
+          
+        </div><details
+          style={{"textAlign":"left","marginBottom":"1rem"}}
+          className={"openapi-markdown__details"}
+          data-collapsed={true}
+          open={false}
+        >
+          <summary
+            style={{}}
+          >
+            <strong>
+              Response Headers
+            </strong>
+          </summary><ul
+            style={{"marginLeft":"1rem"}}
+          >
+            <li
+              className={"schemaItem"}
+            >
+              <summary
+                style={{}}
+              >
+                <strong>
+                  x-peer-addr
+                </strong><span
+                  style={{"opacity":"0.6"}}
+                >
+                   string
+                </span>
+              </summary><div>
+                <div
+                  style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                >
+                  Example: 10.36.1.3:42988
+                  
+                  Host and port of the client as observed by the remote node
+                  
+                  
+                </div>
+              </div>
+            </li><li
+              className={"schemaItem"}
+            >
+              <summary
+                style={{}}
+              >
+                <strong>
+                  x-server-timestamp
+                </strong><span
+                  style={{"opacity":"0.6"}}
+                >
+                   integer
+                </span>
+              </summary><div>
+                <div
+                  style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                >
+                  Example: 1618597601
+                  
+                  The time of the clock of the remote node
+                  
+                  
+                </div>
+              </div>
+            </li><li
+              className={"schemaItem"}
+            >
+              <summary
+                style={{}}
+              >
+                <strong>
+                  x-chainweb-node-version
+                </strong><span
+                  style={{"opacity":"0.6"}}
+                >
+                   string
+                </span>
+              </summary><div>
+                <div
+                  style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                >
+                  Example: 2.6
+                  
+                  The version of the remote chainweb node
+                  
+                  
+                </div>
+              </div>
+            </li>
+          </ul>
+        </details><div>
+          <MimeTabs
+            className={"openapi-tabs__mime"}
+            schemaType={"response"}
+          >
+            <TabItem
+              label={"application/json"}
+              value={"application/json"}
+            >
+              <SchemaTabs
+                className={"openapi-tabs__schema"}
+              >
+                <TabItem
+                  label={"Schema"}
+                  value={"Schema"}
+                >
+                  <details
+                    style={{}}
+                    className={"openapi-markdown__details response"}
+                    data-collapsed={false}
+                    open={true}
+                  >
+                    <summary
+                      style={{}}
+                      className={"openapi-markdown__details-summary-response"}
+                    >
+                      <strong>
+                        Schema
+                      </strong>
+                    </summary><div
+                      style={{"textAlign":"left","marginLeft":"1rem"}}
+                    >
+                      
+                    </div><ul
+                      style={{"marginLeft":"1rem"}}
+                    >
+                      <li>
+                        <div
+                          style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem","paddingBottom":".5rem"}}
+                        >
+                          Array [
+                        </div>
+                      </li><SchemaItem
+                        collapsible={false}
+                        name={"transactions"}
+                        required={true}
+                        schemaName={"array[]"}
+                        qualifierMessage={"**Possible values:** `>= 2`, `<= 2`"}
+                        schema={{"type":"array","description":"Array of pairs of transactions and their outputs.\nSigned Pact transactions and outputs are base64Url-encoded without padding.\n","items":{"type":"array","minItems":2,"maxItems":2,"items":{"anyOf":[{"type":"string","pattern":"[a-zA-Z0-9_-]+","description":"Base64Url (without padding) encoded JSON text of a signed Pact transaction"},{"type":"string","pattern":"[a-zA-Z0-9_-]+","description":"Base64Url (without padding) encoded JSON text of a transaction output"}]}}}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"minerData"}
+                        required={true}
+                        schemaName={"string"}
+                        qualifierMessage={"**Possible values:** Value must match regular expression `[a-zA-Z0-9_-]+`"}
+                        schema={{"type":"string","pattern":"[a-zA-Z0-9_-]+","description":"Base64Url (without padding) encoded JSON text of the miner data of the payload"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"transactionsHash"}
+                        required={true}
+                        schemaName={"SHA256 Hash (string)"}
+                        qualifierMessage={"**Possible values:** `>= 43 characters` and `<= 43 characters`, Value must match regular expression `^[a-zA-Z0-9_-]{43}$`"}
+                        schema={{"title":"SHA256 Hash","type":"string","description":"Base64Url (without padding) encoded SHA256 hash","pattern":"^[a-zA-Z0-9_-]{43}$","minLength":43,"maxLength":43,"example":"y3aWL72-3wAy7vL9wcegGXnstH0lHi-q-cfxkhD5JCw"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"outputsHash"}
+                        required={true}
+                        schemaName={"SHA256 Hash (string)"}
+                        qualifierMessage={"**Possible values:** `>= 43 characters` and `<= 43 characters`, Value must match regular expression `^[a-zA-Z0-9_-]{43}$`"}
+                        schema={{"title":"SHA256 Hash","type":"string","description":"Base64Url (without padding) encoded SHA256 hash","pattern":"^[a-zA-Z0-9_-]{43}$","minLength":43,"maxLength":43,"example":"y3aWL72-3wAy7vL9wcegGXnstH0lHi-q-cfxkhD5JCw"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"payloadHash"}
+                        required={true}
+                        schemaName={"SHA256 Hash (string)"}
+                        qualifierMessage={"**Possible values:** `>= 43 characters` and `<= 43 characters`, Value must match regular expression `^[a-zA-Z0-9_-]{43}$`"}
+                        schema={{"title":"SHA256 Hash","type":"string","description":"Base64Url (without padding) encoded SHA256 hash","pattern":"^[a-zA-Z0-9_-]{43}$","minLength":43,"maxLength":43,"example":"y3aWL72-3wAy7vL9wcegGXnstH0lHi-q-cfxkhD5JCw"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"coinbase"}
+                        required={true}
+                        schemaName={"string"}
+                        qualifierMessage={"**Possible values:** Value must match regular expression `[a-zA-Z0-9_-]+`"}
+                        schema={{"type":"string","pattern":"[a-zA-Z0-9_-]+","description":"Base64Url (without padding) encoded JSON text of coinbase output of the block"}}
+                      >
+                        
+                      </SchemaItem><li>
+                        <div
+                          style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem"}}
+                        >
+                          ]
+                        </div>
+                      </li>
+                    </ul>
+                  </details>
+                </TabItem><TabItem
+                  label={"Example (from schema)"}
+                  value={"Example (from schema)"}
+                >
+                  <ResponseSamples
+                    responseExample={"[\n  {\n    \"value\": {\n      \"transactions\": [],\n      \"minerData\": \"eyJhY2NvdW50IjoiYTFiMzE0MGNiN2NjODk1YzBlMDkxNzAyZWQwNTU3OWZiZTA1YzZlNjc0NWY4MmNlNjAzNzQ2YjQwMGM4MTU0OCIsInByZWRpY2F0ZSI6ImtleXMtYWxsIiwicHVibGljLWtleXMiOlsiYTFiMzE0MGNiN2NjODk1YzBlMDkxNzAyZWQwNTU3OWZiZTA1YzZlNjc0NWY4MmNlNjAzNzQ2YjQwMGM4MTU0OCJdfQ\",\n      \"transactionsHash\": \"nT0j4xw2woMkdXXaopdurXIn24OG-jNMqQzUGfxV_MA\",\n      \"outputsHash\": \"4pXRrZ2K0_V0iGAxQCKrKdLjQTBZHBOQS7P-47kdnhY\",\n      \"payloadHash\": \"GpaWbHkHrCjRhY8hKE0qZ1WsBBaG3Y_zkFLV2sYumQA\",\n      \"coinbase\": \"eyJnYXMiOjAsInJlc3VsdCI6eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6IldyaXRlIHN1Y2NlZWRlZCJ9LCJyZXFLZXkiOiJJa2hoV0VGQ2NURlFTMU5MYkdodVkwcHJNRjlOZERjMVgyeE1OMDVUTTNkSk5qSTNVV1pZV2w4NE5Xc2kiLCJsb2dzIjoiZ3Noak1kWFJrVGxKYmIxalZkQWJ6SVVDcGpQb1JBQ2pEbExzRzBXNkJEMCIsIm1ldGFEYXRhIjpudWxsLCJjb250aW51YXRpb24iOm51bGwsInR4SWQiOjEyNzIzNTB9\"\n    }\n  }\n]"}
+                    language={"json"}
+                  >
+                    
+                  </ResponseSamples>
+                </TabItem><TabItem
+                  label={"two"}
+                  value={"two"}
+                >
+                  <Markdown>
+                     Result with two payloads
+                  </Markdown><ResponseSamples
+                    responseExample={"{\n  \"value\": [\n    {\n      \"value\": {\n        \"transactions\": [],\n        \"minerData\": \"eyJhY2NvdW50IjoiYTFiMzE0MGNiN2NjODk1YzBlMDkxNzAyZWQwNTU3OWZiZTA1YzZlNjc0NWY4MmNlNjAzNzQ2YjQwMGM4MTU0OCIsInByZWRpY2F0ZSI6ImtleXMtYWxsIiwicHVibGljLWtleXMiOlsiYTFiMzE0MGNiN2NjODk1YzBlMDkxNzAyZWQwNTU3OWZiZTA1YzZlNjc0NWY4MmNlNjAzNzQ2YjQwMGM4MTU0OCJdfQ\",\n        \"transactionsHash\": \"nT0j4xw2woMkdXXaopdurXIn24OG-jNMqQzUGfxV_MA\",\n        \"outputsHash\": \"4pXRrZ2K0_V0iGAxQCKrKdLjQTBZHBOQS7P-47kdnhY\",\n        \"payloadHash\": \"GpaWbHkHrCjRhY8hKE0qZ1WsBBaG3Y_zkFLV2sYumQA\",\n        \"coinbase\": \"eyJnYXMiOjAsInJlc3VsdCI6eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6IldyaXRlIHN1Y2NlZWRlZCJ9LCJyZXFLZXkiOiJJa2hoV0VGQ2NURlFTMU5MYkdodVkwcHJNRjlOZERjMVgyeE1OMDVUTTNkSk5qSTNVV1pZV2w4NE5Xc2kiLCJsb2dzIjoiZ3Noak1kWFJrVGxKYmIxalZkQWJ6SVVDcGpQb1JBQ2pEbExzRzBXNkJEMCIsIm1ldGFEYXRhIjpudWxsLCJjb250aW51YXRpb24iOm51bGwsInR4SWQiOjEyNzIzNTB9\"\n      }\n    },\n    {\n      \"value\": {\n        \"transactions\": [\n          [\n            \"eyJoYXNoIjoiMi16Q3dmRFZZR010WHljd2pTLXRlNzh5U3l3T3JXcjNSdUhiQlJnNDdhRSIsInNpZ3MiOlt7InNpZyI6ImZiMTVkNzkyYTNkNDM1MDI5ODJmOGQ1MGUyMzA1NTI5OWEwZjdhMWRmMWE4YjUyMmE5NTMxNWUyZDljY2MyNmE1MzI4M2I5YTNhNDM5ZWE0ZGY4MGM1ZTIwMjg4NDhjNjFhMWY0MGM5OWIyOTYzOWM0NGNkYTgwMzBmYmViYjBjIn1dLCJjbWQiOiJ7XCJuZXR3b3JrSWRcIjpcIm1haW5uZXQwMVwiLFwicGF5bG9hZFwiOntcImV4ZWNcIjp7XCJkYXRhXCI6e30sXCJjb2RlXCI6XCIoY29pbi50cmFuc2ZlciBcXFwiZTc1NzU4ZGQyYTFjNTk2NDRjMjJlMDQyYzZlYzA3NTI2ZWE0ZTU3MTU0ZjlkYmMyMDc2ZThhODRhYzE5NGYzMlxcXCIgXFxcIjQ2NzdhMDllYTE2MDJlNGUwOWZlMDFlYjExOTZjZjQ3YzBmNDRhYTQ0YWFjOTAzZDVmNjFiZTdkYTM0MjUxMjhcXFwiIDMuNzc2KVwifX0sXCJzaWduZXJzXCI6W3tcInB1YktleVwiOlwiZTc1NzU4ZGQyYTFjNTk2NDRjMjJlMDQyYzZlYzA3NTI2ZWE0ZTU3MTU0ZjlkYmMyMDc2ZThhODRhYzE5NGYzMlwiLFwiY2xpc3RcIjpbe1wiYXJnc1wiOltdLFwibmFtZVwiOlwiY29pbi5HQVNcIn0se1wiYXJnc1wiOltcImU3NTc1OGRkMmExYzU5NjQ0YzIyZTA0MmM2ZWMwNzUyNmVhNGU1NzE1NGY5ZGJjMjA3NmU4YTg0YWMxOTRmMzJcIixcIjQ2NzdhMDllYTE2MDJlNGUwOWZlMDFlYjExOTZjZjQ3YzBmNDRhYTQ0YWFjOTAzZDVmNjFiZTdkYTM0MjUxMjhcIiwzLjc3Nl0sXCJuYW1lXCI6XCJjb2luLlRSQU5TRkVSXCJ9XX1dLFwibWV0YVwiOntcImNyZWF0aW9uVGltZVwiOjE2MDIzODI4MTQsXCJ0dGxcIjoyODgwMCxcImdhc0xpbWl0XCI6NjAwLFwiY2hhaW5JZFwiOlwiMFwiLFwiZ2FzUHJpY2VcIjoxLjBlLTUsXCJzZW5kZXJcIjpcImU3NTc1OGRkMmExYzU5NjQ0YzIyZTA0MmM2ZWMwNzUyNmVhNGU1NzE1NGY5ZGJjMjA3NmU4YTg0YWMxOTRmMzJcIn0sXCJub25jZVwiOlwiXFxcIjIwMjAtMTAtMTFUMDI6MjE6MTQuMTk0WlxcXCJcIn0ifQ\",\n            \"eyJnYXMiOjU3MiwicmVzdWx0Ijp7InN0YXR1cyI6InN1Y2Nlc3MiLCJkYXRhIjoiV3JpdGUgc3VjY2VlZGVkIn0sInJlcUtleSI6IjItekN3ZkRWWUdNdFh5Y3dqUy10ZTc4eVN5d09yV3IzUnVIYkJSZzQ3YUUiLCJsb2dzIjoiSU1ra1VFZmVGak45bFQxZ0gtX2ZNT1dDRklrU1d6aVNTZHF2eEo4dS16RSIsIm1ldGFEYXRhIjpudWxsLCJjb250aW51YXRpb24iOm51bGwsInR4SWQiOjEyNzIzNzJ9\"\n          ]\n        ],\n        \"minerData\": \"eyJhY2NvdW50IjoiYTFiMzE0MGNiN2NjODk1YzBlMDkxNzAyZWQwNTU3OWZiZTA1YzZlNjc0NWY4MmNlNjAzNzQ2YjQwMGM4MTU0OCIsInByZWRpY2F0ZSI6ImtleXMtYWxsIiwicHVibGljLWtleXMiOlsiYTFiMzE0MGNiN2NjODk1YzBlMDkxNzAyZWQwNTU3OWZiZTA1YzZlNjc0NWY4MmNlNjAzNzQ2YjQwMGM4MTU0OCJdfQ\",\n        \"transactionsHash\": \"lWcQRlj3MV7FSem8P4G-8GMRf1-O7zQqi_AwmWnk-N0\",\n        \"outputsHash\": \"9BzXZbhjSSevp4K0bYFqi1GdLjeX_DB-4u1T5Em8abs\",\n        \"payloadHash\": \"jcQOWz7K9qKnkUv4Z883D2ZjkFFGgccoSroWGaoogLM\",\n        \"coinbase\": \"eyJnYXMiOjAsInJlc3VsdCI6eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6IldyaXRlIHN1Y2NlZWRlZCJ9LCJyZXFLZXkiOiJJbkV4WDFkUk16SnliRmhCWW1KcU9WTnZkMXB2YmtabmNHRXdlRnBXUWtKdmNUWTJiRk0xY0RSQ1ZVVWkiLCJsb2dzIjoiSVc0N0QxTXFMVW9mRnNKbWpoWGdDZnhnb2Fzb0xTc05YZUFiOFRPb2NCNCIsIm1ldGFEYXRhIjpudWxsLCJjb250aW51YXRpb24iOm51bGwsInR4SWQiOjEyNzIzNzB9\"\n      }\n    }\n  ]\n}"}
+                    language={"json"}
+                  >
+                    
+                  </ResponseSamples>
+                </TabItem><TabItem
+                  label={"empty"}
+                  value={"empty"}
+                >
+                  <Markdown>
+                     Empty result
+                  </Markdown><ResponseSamples
+                    responseExample={"[]"}
+                    language={"json"}
+                  >
+                    
+                  </ResponseSamples>
+                </TabItem>
+              </SchemaTabs>
+            </TabItem>
+          </MimeTabs>
+        </div>
+      </TabItem>
+    </ApiTabs>
+  </div>
+</div>
+      

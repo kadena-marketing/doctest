@@ -28,8 +28,22 @@ const sidebars: SidebarsConfig = {
       },
       // @ts-ignore
       items: require("./docs/chainweb/sidebar.js")
+    },
+    {
+      type: "category",
+      label: "Pact",
+      link: {
+        type: "generated-index",
+        title: "Pact API",
+        description:
+          "Pact is a human-readable smart contract language for Chainweb.",
+        slug: "/category/pact-api"
+      },
+      // @ts-ignore
+      items: require("./docs/pact/sidebar.js")
     }
   ]
+
 
   // But you can create a sidebar manually
   /*

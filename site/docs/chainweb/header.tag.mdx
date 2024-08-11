@@ -1,0 +1,36 @@
+---
+id: header
+title: "Block Header Endpoints"
+description: "Block Header Endpoints"
+custom_edit_url: null
+---
+
+
+
+These endpoints return block headers from the chain database.
+
+Similar to the block endpoints, block headers are generally returned in
+ascending order and include headers of orphaned blocks.
+
+For only querying block headers that are included in the winning branch of
+the chain the `branch` endpoints can be used, which return block headers in
+descending order starting from the leafs of branches of the block chain.
+
+Block headers are returned in three different formats specified in the `accept` header of the request:
+*   `application/json`, returns block headers in base64Url (without padding)
+    encoded binary.
+*   `application/json;blockheader-encoding=object`, returns block headers in
+    JSON encoding.
+*   `application/octet-stream`, when supported by the endpoint, returns block
+    headers as binary.
+
+
+
+
+```mdx-code-block
+import DocCardList from '@theme/DocCardList';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+
+<DocCardList items={useCurrentSidebarCategory().items}/>
+```
+      

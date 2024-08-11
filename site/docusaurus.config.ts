@@ -127,7 +127,6 @@ const config: Config = {
       prism: {
         prism: {
           additionalLanguages: [
-            "csharp",
             "java",
             "json",
             "bash",
@@ -143,11 +142,6 @@ const config: Config = {
             highlight: "bash",
             language: "curl",
             logoClass: "bash",
-          },
-          {
-            highlight: "csharp",
-            language: "csharp",
-            logoClass: "csharp",
           },
           {
             highlight: "go",

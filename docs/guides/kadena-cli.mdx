@@ -1,0 +1,256 @@
+---
+title: Kadena CLI
+slug: /guides-kadena-cli
+---
+
+import React, { useState } from 'react';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import CodeBlock from '@theme/CodeBlock';
+import styles from '/src/styles/styles.module.css';
+
+export function Step({ stepNumber, title, children }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div style={{ marginBottom: '1em' }}>
+      <h3
+        onClick={() => setIsOpen(!isOpen)}
+        style={{
+          cursor: 'pointer',
+          padding: '0.5em',
+          borderRadius: '5px',
+          marginBottom: '0.5em',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+        }}
+        className="steps"
+      >
+        <span>Step {stepNumber}: {title}</span>
+        <span>{isOpen ? '▼' : '▶'}</span>
+      </h3>
+      {isOpen && <div style={{ padding: '1em', borderRadius: '5px' }} className="step">{children}</div>}
+    </div>
+  );
+}
+
+# Kadena Command-Line Reference
+
+The **Kadena command-line interface** (`kadena-cli`) provides direct access to the Kadena blockchain and commands to create, test, deploy, and manage applications for the Kadena network. You can use the Kadena command-line interface interactively or in scripts and automated workflows.
+
+## Prerequisites
+
+Before using the Kadena command-line interface, verify the following basic requirements:
+
+<Tabs>
+  <TabItem value="node" label="Node.js" default>
+    Install Node.js version 18 or later from the [official Node.js website](https://nodejs.org/).
+  </TabItem>
+  <TabItem value="pnpm" label="pnpm">
+    Install the pnpm package manager. You can install it using npm:
+
+    ```bash
+    npm install -g pnpm
+    ```
+  </TabItem>
+</Tabs>
+
+<Step stepNumber="1" title="Verify pnpm Installation">
+  Run the following command to verify pnpm is installed:
+
+  ```bash
+  pnpm --version
+  ```
+</Step>
+
+## Installation
+
+The Kadena CLI is packaged in a TypeScript library. You can install the Kadena CLI (`@kadena/kadena-cli`) using the npm or pnpm package manager.
+
+<Step stepNumber="2" title="Install Kadena CLI">
+  Choose your preferred package manager:
+
+  <Tabs>
+    <TabItem value="npm" label="npm" default>
+      Install globally using npm:
+
+      ```bash
+      npm install -g @kadena/kadena-cli
+      ```
+    </TabItem>
+    <TabItem value="pnpm" label="pnpm">
+      Install globally using pnpm:
+
+      ```bash
+      pnpm install -g @kadena/kadena-cli
+      ```
+    </TabItem>
+  </Tabs>
+</Step>
+
+<Step stepNumber="3" title="Verify Installation">
+  To verify the package is installed and display usage information, run:
+
+  ```bash
+  kadena
+  ```
+</Step>
+
+## Command Overview
+
+You can use the `kadena` parent command with different flags and subcommands to perform various operations. The basic syntax is:
+
+```bash
+kadena <subcommand> <action> [arguments] [flags]
+```
+
+<Tabs>
+  <TabItem value="Overview" label="Overview" default className={styles.customTabItem}>
+
+The Kadena CLI is organized into categories (subjects) that describe the action you want to perform. Here's a quick overview:
+
+```plaintext
+kadena <subject> [...<subject>] <action> [--flags] [args]
+```
+
+For example, to manage wallet-related information:
+
+```bash
+kadena wallet <action>
+```
+
+  </TabItem>
+
+  <TabItem value="Subjects" label="Available Subjects" className={styles.customTabItem}>
+
+### Available Subjects
+
+| Command Subject | Description |
+|-----------------|-------------|
+| **`config`**        | Configure the CLI. |
+| **`dapp`**          | Create and manage applications. |
+| **`wallet`**        | Manage wallets and keys. |
+| **`key`**           | Manage keys. |
+| **`account`**       | Manage accounts. |
+| **`network`**       | Manage network information. |
+| **`tx`**            | Manage transactions. |
+| **`help`**          | Display help. |
+| **`version`**       | Display version information. |
+
+  </TabItem>
+</Tabs>
+
+<Step stepNumber="4" title="Get Command-Specific Help">
+  To get help on a specific subject, use the `--help` flag:
+
+  ```bash
+  kadena <subject> --help
+  ```
+</Step>
+
+<Step stepNumber="5" title="Use Interactive Execution">
+  The Kadena CLI supports **interactive execution**. If you run a command without all required options, the CLI will prompt you for the missing information.
+
+  ### Example: Adding a New Wallet
+
+  To add a new wallet interactively:
+
+  ```bash
+  kadena wallet add
+  ```
+
+  The CLI will guide you through the necessary steps.
+</Step>
+
+## Global Flags
+
+Global flags can modify the behavior of commands across the Kadena CLI:
+
+| Flag        | Description                                                      |
+|-------------|------------------------------------------------------------------|
+| **`--help`**  | Display usage information.                                      |
+| **`--version`** | Display version information.                                 |
+| **`--quiet`**   | Eliminate interactive prompts and confirmations.             |
+| **`--json`**    | Format output in JSON.                                       |
+| **`--yaml`**    | Format output in YAML.                                       |
+
+<Step stepNumber="6" title="Use JSON or YAML Output">
+  You can format output from commands in **JSON** or **YAML** by using the `--json` or `--yaml` flag.
+
+  ### Example: Formatting Network Information in JSON
+
+  ```bash
+  kadena network list --json
+  ```
+
+  The output will be displayed as:
+
+  <CodeBlock language="json">
+  {`
+  {
+    "networks": [
+      {
+        "network": "devnet",
+        "networkId": "devnet01",
+        "networkHost": "https://localhost:8080",
+        "networkExplorerUrl": "http://localhost:8080/explorer/development/tx/"
+      },
+      {
+        "network": "mainnet",
+        "networkId": "mainnet01",
+        "networkHost": "https://api.chainweb.com",
+        "networkExplorerUrl": "https://explorer.chainweb.com/mainnet/tx/"
+      },
+      {
+        "network": "testnet",
+        "networkId": "testnet04",
+        "networkHost": "https://api.testnet.chainweb.com",
+        "networkExplorerUrl": "https://explorer.chainweb.com/testnet/tx/"
+      }
+    ]
+  }
+  `}
+  </CodeBlock>
+</Step>
+
+<Step stepNumber="7" title="Use Legacy Mode">
+  Use the `--legacy` flag to maintain compatibility with earlier cryptographic standards:
+
+  ```bash
+  kadena [command] --legacy
+  ```
+
+  Legacy mode is available for commands such as:
+
+  - `kadena wallet add`
+  - `kadena key generate`
+  - `kadena tx sign`
+</Step>
+
+## Troubleshooting
+
+If you encounter issues during installation or usage:
+
+<Tabs>
+  <TabItem value="dependencies" label="Check Dependencies" default>
+    Ensure Node.js and pnpm are properly installed. You can check their versions:
+    
+    ```bash
+    node --version
+    pnpm --version
+    ```
+  </TabItem>
+  <TabItem value="cli" label="CLI Issues">
+    If you're having trouble with specific CLI commands, use the `--help` flag for detailed usage information:
+
+    ```bash
+    kadena <command> --help
+    ```
+  </TabItem>
+  <TabItem value="github" label="Consult GitHub Issues">
+    For common problems and community solutions, visit the [Kadena CLI GitHub Issues](https://github.com/kadena-io/kadena-cli/issues) page.
+  </TabItem>
+</Tabs>
+
+For further assistance, refer to the [official Kadena documentation](https://docs.kadena.io/) or reach out to the Kadena community.

@@ -1,0 +1,34 @@
+/* src/styles/styles.module.css */
+.interactiveTable {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .interactiveTable th {
+    background-color: var(--k-grey-dk);
+    padding: 10px;
+    text-align: center;
+  }
+  html[data-theme='dark'] .interactiveTable th {
+    background-color: var(--k-dark-2); 
+  }
+  
+  .interactiveTable td {
+    padding: 10px;
+  }
+  
+  .interactiveTable tr {
+    transition: background-color 0.3s ease;
+  }
+  
+  .interactiveTable tr:hover {
+    background-color: var(--k-secondary);
+  }
+  
+  .customTabItem.selected {
+    color: var(--k-secondary);
+  }
+  summary::before {
+    border-color: var(--k-secondary);
+  }
+  

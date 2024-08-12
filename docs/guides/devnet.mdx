@@ -1,0 +1,149 @@
+---
+title: Devnet
+slug: /guides-devnet
+---
+
+import React, { useState } from 'react';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import CodeBlock from '@theme/CodeBlock';
+import styles from '/src/styles/styles.module.css';
+
+export function Step({ stepNumber, title, children }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div style={{ marginBottom: '1em' }}>
+      <h3
+        onClick={() => setIsOpen(!isOpen)}
+        style={{
+          cursor: 'pointer',
+          padding: '0.5em',
+          borderRadius: '5px',
+          marginBottom: '0.5em',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+        }}
+        className="steps"
+      >
+        <span>Step {stepNumber}: {title}</span>
+        <span>{isOpen ? '▼' : '▶'}</span>
+      </h3>
+      {isOpen && <div style={{ padding: '1em', borderRadius: '5px' }} className="step">{children}</div>}
+    </div>
+  );
+}
+
+# How to Install Kadena Devnet
+
+Setting up Kadena Devnet on your local machine allows you to develop and test your applications in a simulated environment before deploying them to the live Kadena network. Follow these steps to install Kadena Devnet using the official GitHub repository.
+
+## Prerequisites
+
+Before you start, make sure you have the following tools installed:
+
+<Tabs>
+  <TabItem value="jdk" label="Java Development Kit (JDK)" default>
+    Install JDK version 11 or later from the [Oracle website](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html).
+  </TabItem>
+  <TabItem value="git" label="Git">
+    Install Git for cloning the repository from the [Git website](https://git-scm.com/).
+  </TabItem>
+  <TabItem value="docker" label="Docker (Optional)">
+    Install Docker for containerized setup from [Docker Desktop](https://www.docker.com/products/docker-desktop).
+  </TabItem>
+</Tabs>
+
+## Steps to Install Kadena Devnet
+
+<Step stepNumber="1" title="Clone the Repository">
+  Begin by cloning the Kadena Devnet repository from GitHub. Open a terminal and run:
+
+  ```bash
+  git clone https://github.com/kadena-io/devnet.git
+  cd devnet
+  ```
+
+  This clones the repository and changes your current directory to the newly created `devnet` folder.
+</Step>
+
+<Step stepNumber="2" title="Build the Project">
+  The Devnet project uses Maven for building. Run the following command to compile and install the project:
+
+  ```bash
+  mvn clean install
+  ```
+
+  This command will download the required dependencies and build the project.
+</Step>
+
+<Step stepNumber="3" title="Configure Devnet">
+  Create a configuration file for Devnet. Start by copying the example configuration file:
+
+  ```bash
+  cp src/main/resources/devnet.conf.example src/main/resources/devnet.conf
+  ```
+
+  Edit `devnet.conf` to adjust the settings according to your environment.
+</Step>
+
+<Step stepNumber="4" title="Run Devnet">
+  To start the Devnet server, use the following Maven command:
+
+  ```bash
+  mvn exec:java -Dexec.mainClass="com.kadena.devnet.Devnet"
+  ```
+
+  You should see logs indicating that Devnet is starting up.
+</Step>
+
+<Step stepNumber="5" title="Access Devnet">
+  Once Devnet is running, you can interact with it through its HTTP API. By default, Devnet is available at:
+
+  - API Endpoint: `http://localhost:8080`
+
+  Use this endpoint to develop and test your decentralized applications (dApps).
+</Step>
+
+<Step stepNumber="6" title="Docker (Optional)">
+  If you prefer using Docker, you can build and run Devnet in a container. Ensure Docker is installed, then build the Docker image:
+
+  ```bash
+  docker build -t kadena-devnet .
+  ```
+
+  Run the Docker container:
+
+  ```bash
+  docker run -p 8080:8080 kadena-devnet
+  ```
+</Step>
+
+## Troubleshooting
+
+If you encounter issues during installation or usage:
+
+<Tabs>
+  <TabItem value="dependencies" label="Check Dependencies" default>
+    Ensure all dependencies are correctly installed. You can verify their installations by checking versions:
+    
+    ```bash
+    java -version
+    git --version
+    docker --version  # if using Docker
+    ```
+  </TabItem>
+  <TabItem value="config" label="Configuration">
+    Verify that the `devnet.conf` configuration file is correctly set up. Double-check the settings against the example file.
+  </TabItem>
+  <TabItem value="github" label="Consult GitHub Issues">
+    For common problems and community solutions, visit the [Kadena Devnet GitHub Issues](https://github.com/kadena-io/devnet/issues) page.
+  </TabItem>
+</Tabs>
+
+For further assistance, refer to the [official documentation](https://github.com/kadena-io/devnet) or reach out to the Kadena community.
+
+---
+
+Congratulations! You have successfully installed Kadena Devnet and are now ready to start developing and testing your blockchain applications. Enjoy exploring Kadena's powerful features!

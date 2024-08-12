@@ -1,0 +1,149 @@
+---
+title: Windows
+slug: /installation/windows
+---
+
+import React, { useState } from 'react';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import CodeBlock from '@theme/CodeBlock';
+import styles from '/src/styles/styles.module.css';
+
+export function Step({ stepNumber, title, children }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div style={{ marginBottom: '1em' }}>
+      <h3
+        onClick={() => setIsOpen(!isOpen)}
+        style={{
+          cursor: 'pointer',
+          padding: '0.5em',
+          borderRadius: '5px',
+          marginBottom: '0.5em',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+        }}
+        className="steps"
+      >
+        <span>Step {stepNumber}: {title}</span>
+        <span>{isOpen ? '▼' : '▶'}</span>
+      </h3>
+      {isOpen && <div style={{ padding: '1em', borderRadius: '5px' }} className="step">{children}</div>}
+    </div>
+  );
+}
+
+# Installing Pact on Windows
+
+Setting up Pact on Windows involves installing necessary tools and building the project. Follow these steps to get Pact installed and running on your Windows system.
+
+## Prerequisites
+
+Before installing Pact, ensure you have the following tools:
+
+<Tabs>
+  <TabItem value="jdk" label="Java Development Kit (JDK)" default>
+    Install JDK version 11 or later:
+
+    1. Download the JDK installer from the [Oracle website](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html).
+    2. Run the installer and follow the setup instructions.
+    3. Set up the JAVA_HOME environment variable:
+       - Open the Start Menu and search for "Environment Variables".
+       - Click "Edit the system environment variables".
+       - In the System Properties window, click "Environment Variables".
+       - Under "System variables", click "New" and add `JAVA_HOME` with the path to your JDK installation.
+
+    Verify the installation by running:
+
+    ```bash
+    java -version
+    ```
+  </TabItem>
+  <TabItem value="git" label="Git">
+    Install Git for cloning the repository:
+
+    1. Download Git from the [Git website](https://git-scm.com/).
+    2. Run the installer and follow the setup instructions.
+
+    Verify the installation by running:
+
+    ```bash
+    git --version
+    ```
+  </TabItem>
+  <TabItem value="maven" label="Maven">
+    Install Maven for building the project:
+
+    1. Download Maven from the [Apache Maven website](https://maven.apache.org/download.cgi).
+    2. Extract the archive to a directory of your choice.
+    3. Set up the M2_HOME environment variable:
+       - Open the Environment Variables settings (as described in the JDK step).
+       - Add a new system variable `M2_HOME` with the path to your Maven directory.
+       - Update the `Path` variable to include `%M2_HOME%\bin`.
+
+    Verify Maven installation by running:
+
+    ```bash
+    mvn -version
+    ```
+  </TabItem>
+</Tabs>
+
+## Installation Steps
+
+<Step stepNumber="1" title="Clone the Repository">
+  Open Command Prompt or PowerShell and execute:
+
+  ```bash
+  git clone https://github.com/kadena-io/pact.git
+  cd pact
+  ```
+
+  This clones the Pact repository and changes your current directory to the newly created `pact` folder.
+</Step>
+
+<Step stepNumber="2" title="Build Pact">
+  Compile the Pact project using Maven:
+
+  ```bash
+  mvn clean install
+  ```
+
+  This command builds Pact and installs it to your local Maven repository. The process may take a few minutes depending on your system.
+</Step>
+
+<Step stepNumber="3" title="Verify Installation">
+  To confirm Pact is correctly installed, run:
+
+  ```bash
+  mvn exec:java -Dexec.mainClass="pact.main.Main"
+  ```
+
+  This command should execute the Pact main class, indicating a successful installation. You should see output related to Pact's execution.
+</Step>
+
+## Usage
+
+After installation, you can start using Pact for smart contract development. For more information, refer to the [Pact Documentation](https://github.com/kadena-io/pact).
+
+## Troubleshooting
+
+If you encounter issues during installation or usage:
+
+<Tabs>
+  <TabItem value="dependencies" label="Check Dependencies" default>
+    Ensure JDK and Maven are properly installed and configured. You can check their versions:
+    
+    ```bash
+    java -version
+    mvn -version
+    ```
+  </TabItem>
+  <TabItem value="github" label="Consult GitHub Issues">
+    For common problems and community solutions, visit the [Pact GitHub Issues](https://github.com/kadena-io/pact/issues) page.
+  </TabItem>
+</Tabs>
+
+With these steps, you should have Pact installed on your Windows system and be ready to begin developing with Kadena's smart contract language!

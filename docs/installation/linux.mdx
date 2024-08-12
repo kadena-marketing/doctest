@@ -1,0 +1,113 @@
+---
+title: Linux
+slug: /installation/linux
+---
+
+import React, { useState } from 'react';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import CodeBlock from '@theme/CodeBlock';
+import styles from '/src/styles/styles.module.css';
+
+export function Step({ stepNumber, title, children }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div style={{ marginBottom: '1em' }}>
+      <h3
+        onClick={() => setIsOpen(!isOpen)}
+        style={{
+          cursor: 'pointer',
+          padding: '0.5em',
+          borderRadius: '5px',
+          marginBottom: '0.5em',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+        }}
+        className="steps"
+      >
+        <span>Step {stepNumber}: {title}</span>
+        <span>{isOpen ? '▼' : '▶'}</span>
+      </h3>
+      {isOpen && <div style={{ padding: '1em', borderRadius: '5px' }} className="step">{children}</div>}
+    </div>
+  );
+}
+
+# Installing Pact on Linux
+
+Pact is Kadena's smart contract language, and setting it up on Linux is straightforward. Follow the steps below to install Pact on your Linux system.
+
+## Prerequisites
+
+Before installing Pact, ensure you have the following prerequisites:
+
+<Tabs>
+  <TabItem value="jdk" label="Java Development Kit (JDK)" default>
+    Install JDK version 11 or later. You can download it from the [Oracle website](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html).
+  </TabItem>
+  <TabItem value="git" label="Git">
+    Install Git for cloning the repository. You can download it from the [Git website](https://git-scm.com/).
+  </TabItem>
+  <TabItem value="maven" label="Maven">
+    Install Maven for building the project. You can download it from the [Maven website](https://maven.apache.org/download.cgi).
+  </TabItem>
+</Tabs>
+
+## Installation Steps
+
+<Step stepNumber="1" title="Clone the Repository">
+  Open a terminal and run the following commands:
+
+  ```bash
+  git clone https://github.com/kadena-io/pact.git
+  cd pact
+  ```
+
+  This will clone the Pact repository and change your current directory to the newly created `pact` folder.
+</Step>
+
+<Step stepNumber="2" title="Build Pact">
+  Compile the Pact project using Maven:
+
+  ```bash
+  mvn clean install
+  ```
+
+  This command will build Pact and install it to your local Maven repository. The process may take a few minutes depending on your system.
+</Step>
+
+<Step stepNumber="3" title="Verify Installation">
+  To ensure Pact is installed correctly, run:
+
+  ```bash
+  mvn exec:java -Dexec.mainClass="pact.main.Main"
+  ```
+
+  This should execute the Pact main class, confirming that the installation was successful. You should see output related to Pact's execution.
+</Step>
+
+## Usage
+
+Once installed, you can use Pact for smart contract development and testing. For detailed usage instructions, refer to the [Pact Documentation](https://github.com/kadena-io/pact).
+
+## Troubleshooting
+
+If you encounter issues during installation or usage:
+
+<Tabs>
+  <TabItem value="dependencies" label="Check Dependencies" default>
+    Ensure that JDK and Maven are correctly installed and configured. You can verify their installation by running:
+    
+    ```bash
+    java -version
+    mvn -version
+    ```
+  </TabItem>
+  <TabItem value="github" label="Consult GitHub Issues">
+    For common problems and community solutions, visit the [Pact GitHub Issues](https://github.com/kadena-io/pact/issues) page.
+  </TabItem>
+</Tabs>
+
+You are now ready to start developing with Pact on your Linux system. Happy coding!

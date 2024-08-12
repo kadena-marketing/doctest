@@ -5,119 +5,98 @@ slug: /guides-devnet
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import CodeBlock from '@theme/CodeBlock';
-import styles from '/src/styles/styles.module.css';
-import { Step } from '/src/styles/Step'
 
-# How to Install Kadena Devnet
+# Set up Kadena Devnet
 
-Setting up Kadena Devnet on your local machine allows you to develop and test your applications in a simulated environment before deploying them to the live Kadena network. Follow these steps to install Kadena Devnet using the official GitHub repository.
+This guide will walk you through setting up a local Kadena development network (devnet) using Docker. You'll learn how to:
+
+- Install the necessary prerequisites
+- Set up and run the Kadena devnet
+- Access the block explorer
 
 ## Prerequisites
 
-Before you start, make sure you have the following tools installed:
+Before you begin, make sure you have the following installed on your local machine:
 
-<Tabs>
-  <TabItem value="jdk" label="Java Development Kit (JDK)" default>
-    Install JDK version 11 or later from the [Oracle website](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html).
-  </TabItem>
-  <TabItem value="git" label="Git">
-    Install Git for cloning the repository from the [Git website](https://git-scm.com/).
-  </TabItem>
-  <TabItem value="docker" label="Docker (Optional)">
-    Install Docker for containerized setup from [Docker Desktop](https://www.docker.com/products/docker-desktop).
-  </TabItem>
-</Tabs>
+- [Docker](https://docs.docker.com/get-docker/)
+- A web browser
 
-## Steps to Install Kadena Devnet
+## Set up the local development network
 
-<Step stepNumber="1" title="Clone the Repository">
-  Begin by cloning the Kadena Devnet repository from GitHub. Open a terminal and run:
+Follow these steps to set up and run the Kadena devnet on your local machine:
 
-  ```bash
-  git clone https://github.com/kadena-io/devnet.git
-  cd devnet
-  ```
+1. Open a terminal on your computer.
 
-  This clones the repository and changes your current directory to the newly created `devnet` folder.
-</Step>
+2. Create a new Docker volume by running the following command:
 
-<Step stepNumber="2" title="Build the Project">
-  The Devnet project uses Maven for building. Run the following command to compile and install the project:
+   ```shell
+   docker volume create kadena_devnet
+   ```
 
-  ```bash
-  mvn clean install
-  ```
+3. Pull the `kadena_devnet` image and start the `devnet` container:
 
-  This command will download the required dependencies and build the project.
-</Step>
+   ```shell
+   docker run --rm -it -p 8080:8080 -v kadena_devnet:/data --name devnet kadena/devnet
+   ```
 
-<Step stepNumber="3" title="Configure Devnet">
-  Create a configuration file for Devnet. Start by copying the example configuration file:
+   This command does the following:
+   - `--rm`: Automatically remove the container when it exits
+   - `-it`: Run the container interactively with a pseudo-TTY
+   - `-p 8080:8080`: Map port 8080 from the container to your local machine
+   - `-v kadena_devnet:/data`: Mount the `kadena_devnet` volume to `/data` in the container
+   - `--name devnet`: Name the container "devnet"
+   - `kadena/devnet`: Use the official Kadena devnet Docker image
 
-  ```bash
-  cp src/main/resources/devnet.conf.example src/main/resources/devnet.conf
-  ```
+4. Wait for the image to download and the container to start. You'll see output in your terminal showing the devnet processes starting up.
 
-  Edit `devnet.conf` to adjust the settings according to your environment.
-</Step>
+## View the development network
 
-<Step stepNumber="4" title="Run Devnet">
-  To start the Devnet server, use the following Maven command:
+The `devnet` container includes a block explorer that connects to the network. You can use this to view blocks as they're added to the blockchain and the transactions within them.
 
-  ```bash
-  mvn exec:java -Dexec.mainClass="com.kadena.devnet.Devnet"
-  ```
+To access the block explorer:
 
-  You should see logs indicating that Devnet is starting up.
-</Step>
+1. Open a web browser on your local computer.
+2. Navigate to [http://localhost:8080/explorer/](http://localhost:8080/explorer/).
 
-<Step stepNumber="5" title="Access Devnet">
-  Once Devnet is running, you can interact with it through its HTTP API. By default, Devnet is available at:
+You should now see the Kadena development network block explorer. Notice that blocks are added every five seconds, which is faster than the 30-second block time on the Kadena main network. This optimized block time helps streamline the development workflow.
 
-  - API Endpoint: ``http://localhost:8080``
+## Next steps
 
-  Use this endpoint to develop and test your decentralized applications (dApps).
-</Step>
+Now that you have your Kadena devnet running, you're ready to start developing and testing your blockchain applications. Here are some suggested next steps:
 
-<Step stepNumber="6" title="Docker (Optional)">
-  If you prefer using Docker, you can build and run Devnet in a container. Ensure Docker is installed, then build the Docker image:
+- Create a wallet and fund it with test tokens
+- Deploy a simple smart contract
+- Interact with your deployed contract using the devnet
 
-  ```bash
-  docker build -t kadena-devnet .
-  ```
-
-  Run the Docker container:
-
-  ```bash
-  docker run -p 8080:8080 kadena-devnet
-  ```
-</Step>
+For more detailed guides on these topics, check out our other documentation pages.
 
 ## Troubleshooting
 
-If you encounter issues during installation or usage:
+If you encounter any issues while setting up or running the devnet:
 
 <Tabs>
-  <TabItem value="dependencies" label="Check Dependencies" default>
-    Ensure all dependencies are correctly installed. You can verify their installations by checking versions:
-    
-    ```bash
-    java -version
-    git --version
-    docker --version  # if using Docker
+  <TabItem value="docker" label="Docker Issues" default>
+    Ensure Docker is running correctly on your system:
+    ```shell
+    docker --version
+    docker info
     ```
+    If you see any errors, consult the [Docker documentation](https://docs.docker.com/config/daemon/#troubleshoot-the-daemon) for troubleshooting steps.
   </TabItem>
-  <TabItem value="config" label="Configuration">
-    Verify that the `devnet.conf` configuration file is correctly set up. Double-check the settings against the example file.
+  <TabItem value="network" label="Network Issues">
+    If you can't access the block explorer, check if the container is running and the port is correctly mapped:
+    ```shell
+    docker ps
+    ```
+    You should see the `devnet` container listed with port 8080 mapped.
   </TabItem>
-  <TabItem value="github" label="Consult GitHub Issues">
-    For common problems and community solutions, visit the [Kadena Devnet GitHub Issues](https://github.com/kadena-io/devnet/issues) page.
+  <TabItem value="explorer" label="Explorer Not Loading">
+    If the explorer doesn't load, try accessing the API directly:
+    ```
+    http://localhost:8080/chainweb/0.0/devnet/chain/0/block
+    ```
+    If this works, the issue might be with your browser. Try clearing your cache or using a different browser.
   </TabItem>
 </Tabs>
 
-For further assistance, refer to the [official documentation](https://github.com/kadena-io/devnet) or reach out to the Kadena community.
-
----
-
-Congratulations! You have successfully installed Kadena Devnet and are now ready to start developing and testing your blockchain applications. Enjoy exploring Kadena's powerful features!
+For further assistance, consult the [Kadena Discord community](https://discord.io/kadena) or the [GitHub issues page](https://github.com/kadena-io/chainweb-node/issues).

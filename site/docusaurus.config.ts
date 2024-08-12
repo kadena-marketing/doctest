@@ -7,18 +7,18 @@ import type * as Plugin from "@docusaurus/types/src/plugin";
 import type * as OpenApiPlugin from "docusaurus-plugin-openapi-docs";
 
 const config: Config = {
-  title: "My Site",
-  tagline: "Dinosaurs are cool",
-  url: "https://your-docusaurus-test-site.com",
+  title: "Kadena Docs",
+  tagline: "",
+  url: "https://docs.kadena.io",
   baseUrl: "/",
-  onBrokenLinks: "throw",
+  onBrokenLinks: "log",
   onBrokenMarkdownLinks: "warn",
-  favicon: "img/favicon.ico",
+  favicon: "img/kadena-favicon.png",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "facebook", // Usually your GitHub org/user name.
-  projectName: "docusaurus", // Usually your repo name.
+  organizationName: "kadena-marketing", // Usually your GitHub org/user name.
+  projectName: "doctest", // Usually your repo name.
 
   presets: [
     [
@@ -29,7 +29,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+            "https://github.com/kadena-marketing/doctest/blob/main/",
           docItemComponent: "@theme/ApiItem", // Derived from docusaurus-theme-openapi
         },
         blog: {
@@ -37,7 +37,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+            "https://github.com/kadena-marketing/doctest/blob/main/",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
@@ -54,10 +54,10 @@ const config: Config = {
         },
       },
       navbar: {
-        title: "My Site",
+        title: "Kadena Docs",
         logo: {
-          alt: "My Site Logo",
-          src: "img/logo.svg",
+          alt: "Kadena Developer Documentation",
+          src: "img/kadena-docs-light.png",
         },
         items: [
           {
@@ -66,17 +66,18 @@ const config: Config = {
             position: "left",
             label: "Tutorial",
           },
-          { to: "/blog", label: "Blog", position: "left" },
+          {
+          label: "Pact",
+          position: "left",
+          to: "/docs/category/pact-api",
+          },
           {
             label: "Chainweb API",
             position: "left",
             to: "/docs/category/chainweb-api",
           },
-          {
-            href: "https://github.com/facebook/docusaurus",
-            label: "GitHub",
-            position: "right",
-          },
+          {to: 'https://academy.kadena.io', label: 'Academy', position: 'left'},
+          {to: 'https://discord.com/invite/kadena', label: 'Support', position: 'left'}
         ],
       },
       footer: {
@@ -153,14 +154,14 @@ const config: Config = {
             language: "nodejs",
             logoClass: "nodejs",
           },
-        
+
           {
             highlight: "java",
             language: "java",
             logoClass: "java",
             variant: "unirest",
           },
-        
+
         ],
       },
     } satisfies Preset.ThemeConfig,

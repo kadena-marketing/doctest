@@ -18,7 +18,7 @@ const sidebars: SidebarsConfig = {
   openApiSidebar: [
     {
       type: "category",
-      label: "Chainweb",
+      label: "Chainweb API",
       link: {
         type: "generated-index",
         title: "Chainweb API",
@@ -31,7 +31,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: "category",
-      label: "Pact",
+      label: "Pact API",
       link: {
         type: "generated-index",
         title: "Pact API",

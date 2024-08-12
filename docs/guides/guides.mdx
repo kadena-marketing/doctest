@@ -1,0 +1,59 @@
+---
+title: How to Guides
+slug: /how-to-guides
+---
+
+import { InteractiveSection } from '/src/styles/InteractiveSection'
+
+# How to Guides
+
+Welcome to our **How to Guides** section! This section is designed to guide you through the essential steps for working with **Kadena**. Whether you’re setting up your development environment, getting familiar with the CLI, or crafting API calls, these guides provide the foundational knowledge you need.
+
+<InteractiveSection />
+
+Explore the following topics to get started:
+
+- **Setting up Devnet**: Learn how to set up a local Kadena Devnet for development and testing.
+- **Setting up Kadena CLI**: Understand how to install and use the Kadena Command Line Interface.
+- **Crafting an API Call**: Discover how to create and send API calls to interact with the Kadena blockchain.
+
+These guides will help you get up and running quickly, providing the tools you need to start building on Kadena. Dive into each topic to learn more!
+import React from 'react';
+import { InteractiveSection } from './InteractiveSection';
+
+export default function HowToGuides() {
+  const topics = ['Devnet', 'Kadena CLI', 'Craft an API Call'];
+
+  const content = {
+    'Devnet': (
+      <div>
+        <h2>Setting up Devnet</h2>
+        <p>Learn how to set up your own Kadena Devnet environment to start developing and testing on the Kadena blockchain.</p>
+        {/* Add detailed steps for Devnet setup here */}
+      </div>
+    ),
+    'Kadena CLI': (
+      <div>
+        <h2>Setting up Kadena CLI</h2>
+        <p>Get started with the Kadena Command Line Interface (CLI) to manage your blockchain projects efficiently from the terminal.</p>
+        {/* Add detailed steps for Kadena CLI setup here */}
+      </div>
+    ),
+    'Craft an API Call': (
+      <div>
+        <h2>Crafting an API Call</h2>
+        <p>Understand the process of crafting an API call to interact with Kadena’s blockchain, enabling seamless integration with your applications.</p>
+        {/* Add detailed steps for crafting an API call here */}
+      </div>
+    ),
+  };
+
+  return (
+    <div>
+      <h1>How to Guides</h1>
+      <h4>Explore the following topics to get started:</h4>
+      <p>Welcome to our <strong>How to Guides</strong> section! This section is designed to guide you through the essential steps for working with <strong>Kadena</strong>. Whether you’re setting up your development environment, getting familiar with the CLI, or crafting API calls, these guides provide the foundational knowledge you need.</p>
+      <InteractiveSection topics={topics} content={content} />
+    </div>
+  );
+}

@@ -1,113 +1,120 @@
 ---
-title: Linux
+title: Linux (Binary)
 slug: /installation/linux
 ---
 
-import React, { useState } from 'react';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import CodeBlock from '@theme/CodeBlock';
 import styles from '/src/styles/styles.module.css';
-
-export function Step({ stepNumber, title, children }) {
-  const [isOpen, setIsOpen] = useState(false);
-
-  return (
-    <div style={{ marginBottom: '1em' }}>
-      <h3
-        onClick={() => setIsOpen(!isOpen)}
-        style={{
-          cursor: 'pointer',
-          padding: '0.5em',
-          borderRadius: '5px',
-          marginBottom: '0.5em',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-        }}
-        className="steps"
-      >
-        <span>Step {stepNumber}: {title}</span>
-        <span>{isOpen ? '▼' : '▶'}</span>
-      </h3>
-      {isOpen && <div style={{ padding: '1em', borderRadius: '5px' }} className="step">{children}</div>}
-    </div>
-  );
-}
+import { Step } from '/src/styles/Step'
 
 # Installing Pact on Linux
 
-Pact is Kadena's smart contract language, and setting it up on Linux is straightforward. Follow the steps below to install Pact on your Linux system.
+To set up Pact on Linux, you'll need to download the binary and configure your system path. Follow the steps below to get Pact up and running on your Linux machine.
 
 ## Prerequisites
 
-Before installing Pact, ensure you have the following prerequisites:
+Before installing Pact, ensure you have the following prerequisites installed:
 
 <Tabs>
-  <TabItem value="jdk" label="Java Development Kit (JDK)" default>
-    Install JDK version 11 or later. You can download it from the [Oracle website](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html).
-  </TabItem>
-  <TabItem value="git" label="Git">
-    Install Git for cloning the repository. You can download it from the [Git website](https://git-scm.com/).
-  </TabItem>
-  <TabItem value="maven" label="Maven">
-    Install Maven for building the project. You can download it from the [Maven website](https://maven.apache.org/download.cgi).
+  <TabItem value="z3" label="Z3" default>
+    Install Z3, which is required by Pact:
+
+    ```bash
+    sudo apt update
+    sudo apt install z3
+    ```
+
+    Verify Z3 installation:
+
+    ```bash
+    z3 --version
+    ```
   </TabItem>
 </Tabs>
 
 ## Installation Steps
 
-<Step stepNumber="1" title="Clone the Repository">
-  Open a terminal and run the following commands:
-
-  ```bash
-  git clone https://github.com/kadena-io/pact.git
-  cd pact
-  ```
-
-  This will clone the Pact repository and change your current directory to the newly created `pact` folder.
-</Step>
-
-<Step stepNumber="2" title="Build Pact">
-  Compile the Pact project using Maven:
-
-  ```bash
-  mvn clean install
-  ```
-
-  This command will build Pact and install it to your local Maven repository. The process may take a few minutes depending on your system.
-</Step>
-
-<Step stepNumber="3" title="Verify Installation">
-  To ensure Pact is installed correctly, run:
-
-  ```bash
-  mvn exec:java -Dexec.mainClass="pact.main.Main"
-  ```
-
-  This should execute the Pact main class, confirming that the installation was successful. You should see output related to Pact's execution.
-</Step>
-
-## Usage
-
-Once installed, you can use Pact for smart contract development and testing. For detailed usage instructions, refer to the [Pact Documentation](https://github.com/kadena-io/pact).
-
-## Troubleshooting
-
-If you encounter issues during installation or usage:
-
 <Tabs>
-  <TabItem value="dependencies" label="Check Dependencies" default>
-    Ensure that JDK and Maven are correctly installed and configured. You can verify their installation by running:
-    
-    ```bash
-    java -version
-    mvn -version
-    ```
-  </TabItem>
-  <TabItem value="github" label="Consult GitHub Issues">
-    For common problems and community solutions, visit the [Pact GitHub Issues](https://github.com/kadena-io/pact/issues) page.
+  <TabItem value="binary" label="Download Binary" default>
+    <Step stepNumber="1" title="Download the Binary">
+      Download a pre-built binary from the [Pact Releases](https://github.com/kadena-io/pact/releases) page. Look for the latest release and download the appropriate `.tar.gz` file for Linux.
+
+    </Step>
+
+    <Step stepNumber="2" title="Extract the Binary">
+      Extract the downloaded archive:
+
+      ```bash
+      tar -xzf pact-<version>-linux-x86_64.tar.gz
+      ```
+
+      Navigate to the extracted directory:
+
+      ```bash
+      cd pact-<version>-linux-x86_64
+      ```
+    </Step>
+
+    <Step stepNumber="3" title="Place Binary in System Path">
+      Move the `pact` binary to a directory in your system PATH, or update your PATH variable. For example, add the directory to your PATH:
+
+      ```bash
+      export PATH="/path/to/pact-directory:$PATH"
+      ```
+
+      To make this change permanent, add the above line to your `~/.bashrc` or `~/.zshrc` file:
+
+      ```bash
+      nano ~/.bashrc
+      # Add the line at the end of the file
+      export PATH="/path/to/pact-directory:$PATH"
+      # Save and exit
+      ```
+
+      Reload the shell configuration:
+
+      ```bash
+      source ~/.bashrc
+      ```
+
+      **Note:** Replace `~/.bashrc` with `~/.zshrc` if you use Zsh.
+
+    </Step>
+
+    <Step stepNumber="4" title="Verify the Installation">
+      Verify the installation by checking the Pact version or ensuring the binary is in your PATH:
+
+      ```bash
+      pact --version
+      echo $PATH
+      ```
+
+      Ensure that the output includes the path to your `pact` binary.
+    </Step>
   </TabItem>
 </Tabs>
 
-You are now ready to start developing with Pact on your Linux system. Happy coding!
+## Usage
+
+Once installed, you can start using Pact for smart contract development and testing. For detailed usage instructions, refer to the [Pact Documentation](https://github.com/kadena-io/pact).
+
+## Troubleshooting
+
+If you encounter issues:
+
+<Tabs>
+  <TabItem value="dependencies" label="Check Dependencies" default>
+    Ensure Z3 and Pact are correctly installed. Verify their versions with:
+
+    ```bash
+    pact --version
+    ```
+  </TabItem>
+  <TabItem value="github" label="Consult GitHub Issues">
+    Visit the [Pact GitHub Issues](https://github.com/kadena-io/pact/issues) page for common problems and solutions.
+  </TabItem>
+</Tabs>
+
+You are now ready to start developing with Pact on your Linux system. Enjoy coding!

@@ -1,149 +1,144 @@
 ---
-title: Windows
-slug: /installation/windows
+title: Windows (WSL)
+slug: /installation/windows-wsl
 ---
 
-import React, { useState } from 'react';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import CodeBlock from '@theme/CodeBlock';
 import styles from '/src/styles/styles.module.css';
+import { Step } from '/src/styles/Step'
 
-export function Step({ stepNumber, title, children }) {
-  const [isOpen, setIsOpen] = useState(false);
+# Installing Pact on Windows with WSL
 
-  return (
-    <div style={{ marginBottom: '1em' }}>
-      <h3
-        onClick={() => setIsOpen(!isOpen)}
-        style={{
-          cursor: 'pointer',
-          padding: '0.5em',
-          borderRadius: '5px',
-          marginBottom: '0.5em',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-        }}
-        className="steps"
-      >
-        <span>Step {stepNumber}: {title}</span>
-        <span>{isOpen ? '▼' : '▶'}</span>
-      </h3>
-      {isOpen && <div style={{ padding: '1em', borderRadius: '5px' }} className="step">{children}</div>}
-    </div>
-  );
-}
+To install Pact on Windows, you'll need to set up Windows Subsystem for Linux (WSL) and use a Linux environment to install Pact. Follow these steps to get Pact up and running on your Windows machine.
 
-# Installing Pact on Windows
+## Step 1: Install Windows Subsystem for Linux (WSL)
 
-Setting up Pact on Windows involves installing necessary tools and building the project. Follow these steps to get Pact installed and running on your Windows system.
+1. **Enable WSL**
+   - Open PowerShell as Administrator and run the following command to enable WSL and install the default Linux distribution:
+
+     ```powershell
+     wsl --install
+     ```
+
+   - If the command does not automatically install Ubuntu, you can manually install it from the Microsoft Store.
+
+2. **Restart Your Computer**
+   - Restart your computer to complete the WSL installation.
+
+3. **Install Ubuntu (Recommended)**
+   - Open the [Microsoft Store](https://www.microsoft.com/store/productId/9NBLGGH4QHMC) and search for "Ubuntu".
+   - Select the latest Ubuntu version (e.g., Ubuntu 22.04 LTS) and click "Install".
+
+4. **Set Up Ubuntu**
+   - After installation, open Ubuntu from the Start menu and follow the on-screen instructions to complete the setup, including creating a user account.
+
+   **Quick Tip:** For detailed WSL installation instructions and troubleshooting, use [this guide](https://learn.microsoft.com/en-us/windows/wsl/install).
 
 ## Prerequisites
 
-Before installing Pact, ensure you have the following tools:
+Once WSL is set up with Ubuntu, ensure you have the following prerequisites installed within your Ubuntu environment:
 
 <Tabs>
-  <TabItem value="jdk" label="Java Development Kit (JDK)" default>
-    Install JDK version 11 or later:
-
-    1. Download the JDK installer from the [Oracle website](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html).
-    2. Run the installer and follow the setup instructions.
-    3. Set up the JAVA_HOME environment variable:
-       - Open the Start Menu and search for "Environment Variables".
-       - Click "Edit the system environment variables".
-       - In the System Properties window, click "Environment Variables".
-       - Under "System variables", click "New" and add `JAVA_HOME` with the path to your JDK installation.
-
-    Verify the installation by running:
+  <TabItem value="z3" label="Z3" default>
+    Install Z3, which is required by Pact:
 
     ```bash
-    java -version
+    sudo apt update
+    sudo apt install z3
     ```
-  </TabItem>
-  <TabItem value="git" label="Git">
-    Install Git for cloning the repository:
 
-    1. Download Git from the [Git website](https://git-scm.com/).
-    2. Run the installer and follow the setup instructions.
-
-    Verify the installation by running:
+    Verify Z3 installation:
 
     ```bash
-    git --version
-    ```
-  </TabItem>
-  <TabItem value="maven" label="Maven">
-    Install Maven for building the project:
-
-    1. Download Maven from the [Apache Maven website](https://maven.apache.org/download.cgi).
-    2. Extract the archive to a directory of your choice.
-    3. Set up the M2_HOME environment variable:
-       - Open the Environment Variables settings (as described in the JDK step).
-       - Add a new system variable `M2_HOME` with the path to your Maven directory.
-       - Update the `Path` variable to include `%M2_HOME%\bin`.
-
-    Verify Maven installation by running:
-
-    ```bash
-    mvn -version
+    z3 --version
     ```
   </TabItem>
 </Tabs>
 
 ## Installation Steps
 
-<Step stepNumber="1" title="Clone the Repository">
-  Open Command Prompt or PowerShell and execute:
-
-  ```bash
-  git clone https://github.com/kadena-io/pact.git
-  cd pact
-  ```
-
-  This clones the Pact repository and changes your current directory to the newly created `pact` folder.
-</Step>
-
-<Step stepNumber="2" title="Build Pact">
-  Compile the Pact project using Maven:
-
-  ```bash
-  mvn clean install
-  ```
-
-  This command builds Pact and installs it to your local Maven repository. The process may take a few minutes depending on your system.
-</Step>
-
-<Step stepNumber="3" title="Verify Installation">
-  To confirm Pact is correctly installed, run:
-
-  ```bash
-  mvn exec:java -Dexec.mainClass="pact.main.Main"
-  ```
-
-  This command should execute the Pact main class, indicating a successful installation. You should see output related to Pact's execution.
-</Step>
-
-## Usage
-
-After installation, you can start using Pact for smart contract development. For more information, refer to the [Pact Documentation](https://github.com/kadena-io/pact).
-
-## Troubleshooting
-
-If you encounter issues during installation or usage:
-
 <Tabs>
-  <TabItem value="dependencies" label="Check Dependencies" default>
-    Ensure JDK and Maven are properly installed and configured. You can check their versions:
-    
-    ```bash
-    java -version
-    mvn -version
-    ```
-  </TabItem>
-  <TabItem value="github" label="Consult GitHub Issues">
-    For common problems and community solutions, visit the [Pact GitHub Issues](https://github.com/kadena-io/pact/issues) page.
+  <TabItem value="binary" label="Download Binary" default>
+    <Step stepNumber="1" title="Download the Binary">
+      Download a pre-built binary from the [Pact Releases](https://github.com/kadena-io/pact/releases) page. Look for the latest release and download the appropriate `.tar.gz` file for Linux.
+
+    </Step>
+
+    <Step stepNumber="2" title="Extract the Binary">
+      Extract the downloaded archive:
+
+      ```bash
+      tar -xzf pact-<version>-linux-x86_64.tar.gz
+      ```
+
+      Navigate to the extracted directory:
+
+      ```bash
+      cd pact-<version>-linux-x86_64
+      ```
+    </Step>
+
+    <Step stepNumber="3" title="Place Binary in System Path">
+      Move the `pact` binary to a directory in your system PATH, or update your PATH variable. For example, add the directory to your PATH:
+
+      ```bash
+      export PATH="/path/to/pact-directory:$PATH"
+      ```
+
+      To make this change permanent, add the above line to your `~/.bashrc` or `~/.zshrc` file:
+
+      ```bash
+      nano ~/.bashrc
+      # Add the line at the end of the file
+      export PATH="/path/to/pact-directory:$PATH"
+      # Save and exit
+      ```
+
+      Reload the shell configuration:
+
+      ```bash
+      source ~/.bashrc
+      ```
+
+      **Note:** Replace `~/.bashrc` with `~/.zshrc` if you use Zsh.
+
+    </Step>
+
+    <Step stepNumber="4" title="Verify the Installation">
+      Verify the installation by checking the Pact version or ensuring the binary is in your PATH:
+
+      ```bash
+      pact --version
+      echo $PATH
+      ```
+
+      Ensure that the output includes the path to your `pact` binary.
+    </Step>
   </TabItem>
 </Tabs>
 
-With these steps, you should have Pact installed on your Windows system and be ready to begin developing with Kadena's smart contract language!
+## Usage
+
+Once installed, you can start using Pact for smart contract development and testing. For detailed usage instructions, refer to the [Pact Documentation](https://github.com/kadena-io/pact).
+
+## Troubleshooting
+
+If you encounter issues:
+
+<Tabs>
+  <TabItem value="dependencies" label="Check Dependencies" default>
+    Ensure Z3 and Pact are correctly installed. Verify their versions with:
+
+    ```bash
+    z3 --version
+    pact --version
+    ```
+  </TabItem>
+  <TabItem value="github" label="Consult GitHub Issues">
+    Visit the [Pact GitHub Issues](https://github.com/kadena-io/pact/issues) page for common problems and solutions.
+  </TabItem>
+</Tabs>
+
+You are now ready to start developing with Pact on your Windows system using WSL. Enjoy coding!

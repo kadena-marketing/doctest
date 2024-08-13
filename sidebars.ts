@@ -459,7 +459,20 @@ const sidebars: SidebarsConfig = {
                },
                items: [
                     'guides/craft-api-call',
-                    'guides/kadena-cli'
+                    'guides/kadena-cli',
+                    {
+                      type: 'category',
+                      label: 'Nodes',
+                      link: {
+                           type: 'generated-index',
+                           slug: 'guides/nodes',
+                      },
+                      items: [
+                           'guides/nodes/compaction',
+                           'guides/nodes/configure',
+                           'guides/nodes/monitoring',
+                      ],
+                 }
                ],
           },
           {

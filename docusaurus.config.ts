@@ -125,9 +125,9 @@ const config: Config = {
                }
           ],
           algolia: {
-               appId: 'YOUR_APP_ID',//NESUIAE93R
-               apiKey: 'YOUR_SEARCH_API_KEY',//71741e300f450f509b80b98d9a15d02b
-               indexName: 'YOUR_INDEX_NAME',//marketingvercel
+               appId: 'NESUIAE93R',
+               apiKey: '71741e300f450f509b80b98d9a15d02b',
+               indexName: 'marketingvercel',
 
                contextualSearch: true,
                externalUrlRegex: 'external\\.com|domain\\.com',

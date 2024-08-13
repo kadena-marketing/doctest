@@ -66,99 +66,75 @@ const config: Config = {
                          label: "Get Started",
                     },
                     {
-                         to: 'https://academy.kadena.io',
+                         href: 'https://academy.kadena.io',
                          label: 'Academy',
                          position: 'left'
                     },
                     {
-                         to: 'https://discord.com/invite/kadena',
+                         href: 'https://github.com/kadena-io',
+                         label: 'GitHub',
+                         position: 'left',
+                         className: 'header-github-link'
+                    },
+                    {
+                         href: 'https://discord.com/invite/kadena',
                          label: 'Support',
                          position: 'left'
-                    }
+                    },
+                    /**{
+                         type: 'docsVersionDropdown',
+                         position: 'right',
+                    },
+                    {
+                         type: 'localeDropdown',
+                         position: 'right',
+                    }*/
                ],
           },
           footer: {
                style: "dark",
-               links: [
-                    {
-                         title: "Docs",
-                         items: [
-                              {
-                                   label: "Tutorial",
-                                   to: "/docs/start",
-                              },
-                         ],
-                    },
-                    {
-                         title: "Community",
-                         items: [
-                              {
-                                   label: "Stack Overflow",
-                                   href: "https://stackoverflow.com/questions/tagged/docusaurus",
-                              },
-                              {
-                                   label: "Discord",
-                                   href: "https://discordapp.com/invite/docusaurus",
-                              },
-                              {
-                                   label: "Twitter",
-                                   href: "https://twitter.com/docusaurus",
-                              },
-                         ],
-                    },
-                    {
-                         title: "More",
-                         items: [
-                              {
-                                   label: "Blog",
-                                   to: "/blog",
-                              },
-                              {
-                                   label: "GitHub",
-                                   href: "https://github.com/facebook/docusaurus",
-                              },
-                         ],
-                    },
-               ],
+
                copyright: `Copyright © ${new Date().getFullYear()} Kadena LLC`,
           },
-          prism: {
-               prism: {
-                    additionalLanguages: [
-                         "java",
-                         "json",
-                         "bash",
-                    ],
+          languageTabs: [
+               {
+                    highlight: "python",
+                    language: "python",
+                    logoClass: "python",
                },
-               languageTabs: [
-                    {
-                         highlight: "python",
-                         language: "python",
-                         logoClass: "python",
-                    },
-                    {
-                         highlight: "bash",
-                         language: "curl",
-                         logoClass: "bash",
-                    },
-                    {
-                         highlight: "go",
-                         language: "go",
-                         logoClass: "go",
-                    },
-                    {
-                         highlight: "javascript",
-                         language: "nodejs",
-                         logoClass: "nodejs",
-                    },
-                    {
-                         highlight: "java",
-                         language: "java",
-                         logoClass: "java",
-                         variant: "unirest",
-                    },
-               ],
-          },
+               {
+                    highlight: "bash",
+                    language: "curl",
+                    logoClass: "bash",
+               },
+               {
+                    highlight: "go",
+                    language: "go",
+                    logoClass: "go",
+               },
+               {
+                    highlight: "javascript",
+                    language: "nodejs",
+                    logoClass: "nodejs",
+               },
+               {
+                    highlight: "java",
+                    language: "java",
+                    logoClass: "java",
+                    variant: "unirest",
+               }
+          ],
+          algolia: {
+               appId: 'YOUR_APP_ID',//NESUIAE93R
+               apiKey: 'YOUR_SEARCH_API_KEY',//71741e300f450f509b80b98d9a15d02b
+               indexName: 'YOUR_INDEX_NAME',//marketingvercel
+
+               contextualSearch: true,
+               externalUrlRegex: 'external\\.com|domain\\.com',
+               searchParameters: {},
+               searchPagePath: 'search',
+               insights: false,
+             },
      } satisfies Preset.ThemeConfig,
      plugins: [
           [
@@ -174,7 +150,7 @@ const config: Config = {
                                    groupPathsBy: "tag",
                                    categoryLinkSource: "tag",
                               },
-                         },
+                         } satisfies OpenApiPlugin.Options,
                          pact: {  // Second API spec
                               specPath: "examples/pact.openapi.yaml",
                               outputDir: "docs/pact",
@@ -182,13 +158,15 @@ const config: Config = {
                                    groupPathsBy: "tag",
                                    categoryLinkSource: "tag",
                               },
-                         },
-                    } satisfies OpenApiPlugin.Options,
+                         } satisfies OpenApiPlugin.Options,
+                    },
                } satisfies Plugin.PluginOptions,
           ],
      ],
 
-     themes: ["docusaurus-theme-openapi-docs"],
+     themes: [
+          "docusaurus-theme-openapi-docs"
+     ],
 };
 
 export default async function createConfig() {

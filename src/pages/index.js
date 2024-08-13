@@ -46,19 +46,12 @@ export default function Home() {
 
                               <li className="front_main_option">
 
-                                   <a className="front_main_option_title" href="./pact-api">Pact API</a>
+                                   <a className="front_main_option_title" href="./api">API</a>
 
-                                   <span className="front_main_option_summary">Pact is an open-source, Turing-incomplete smart contract language. Pact focuses on facilitating transactional logic with the optimal mix of functionality in authorization, data management, and workflow.</span>
-
-                              </li>
-
-                              <li className="front_main_option">
-
-                                   <a className="front_main_option_title" href="./chainweb-api">Chainweb API</a>
-
-                                   <span className="front_main_option_summary">Chainweb is a braided, parallelized Proof Of Work consensus mechanism that improves throughput and scalability in executing transactions on the blockchain while maintaining the security and integrity found in Bitcoin.</span>
+                                   <span className="front_main_option_summary">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
 
                               </li>
+
 
                               <li className="front_main_option">
 
@@ -78,7 +71,7 @@ export default function Home() {
 
                               <li className="front_main_option">
 
-                                   <a className="front_main_option_title" href="./resources/changelogs">Resources</a>
+                                   <a className="front_main_option_title" href="./resources">Resources</a>
 
                                    <span className="front_main_option_summary">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
 

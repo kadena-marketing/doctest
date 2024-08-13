@@ -1,10 +1,10 @@
 ---
-title: Linux (Binary)
-slug: linux
+title: Mac (Brew and Binary)
+slug: mac
 ---
 
 <head>
-  <title>Installation: Linux (Binary)</title>
+  <title>Installation: Pact on Mac (Brew and Binary)</title>
   <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
 </head>
 
@@ -14,21 +14,33 @@ import CodeBlock from '@theme/CodeBlock';
 import styles from '/src/styles/styles.module.css';
 import { Step } from '/src/styles/Step'
 
-# Installing Pact on Linux
+# Installing Pact on macOS
 
-To set up Pact on Linux, you'll need to download the binary and configure your system path. Follow the steps below to get Pact up and running on your Linux machine.
+Setting up Pact on macOS can be done through Homebrew for a streamlined installation or by downloading the binary manually. Follow the instructions below for each method.
 
 ## Prerequisites
 
-Before installing Pact, ensure you have the following prerequisites installed:
+Before installing Pact, ensure you have the following tools installed:
 
 <Tabs>
-  <TabItem value="z3" label="Z3" default>
+  <TabItem value="brew" label="Homebrew" default>
+    Install Homebrew for package management if you haven't already:
+
+    ```bash
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    ```
+
+    Verify Homebrew installation:
+
+    ```bash
+    brew --version
+    ```
+  </TabItem>
+  <TabItem value="z3" label="Z3">
     Install Z3, which is required by Pact:
 
     ```bash
-    sudo apt update
-    sudo apt install z3
+    brew install z3
     ```
 
     Verify Z3 installation:
@@ -42,9 +54,32 @@ Before installing Pact, ensure you have the following prerequisites installed:
 ## Installation Steps
 
 <Tabs>
-  <TabItem value="binary" label="Download Binary" default>
+  <TabItem value="brew" label="Install via Homebrew" default>
+    <Step stepNumber="1" title="Install Pact with Homebrew">
+      Use Homebrew to install Pact:
+
+      ```bash
+      brew tap kadena-io/tap
+      brew install pact
+      ```
+
+      This will install Pact and handle all dependencies.
+    </Step>
+
+    <Step stepNumber="2" title="Verify Installation">
+      To confirm Pact is installed correctly, run:
+
+      ```bash
+      pact --version
+      ```
+
+      You should see Pact’s version information.
+    </Step>
+  </TabItem>
+
+  <TabItem value="binary" label="Download Binary">
     <Step stepNumber="1" title="Download the Binary">
-      Download a pre-built binary from the [Pact Releases](https://github.com/kadena-io/pact/releases) page. Look for the latest release and download the appropriate `.tar.gz` file for Linux.
+      Download a pre-built binary from the [Pact Releases](https://github.com/kadena-io/pact/releases) page. Look for the latest release and download the appropriate `.tar.gz` file for macOS.
 
     </Step>
 
@@ -52,13 +87,13 @@ Before installing Pact, ensure you have the following prerequisites installed:
       Extract the downloaded archive:
 
       ```bash
-      tar -xzf pact-<version>-linux-x86_64.tar.gz
+      tar -xzf pact-<version>-mac-x86_64.tar.gz
       ```
 
       Navigate to the extracted directory:
 
       ```bash
-      cd pact-<version>-linux-x86_64
+      cd pact-<version>-mac-x86_64
       ```
     </Step>
 
@@ -69,10 +104,10 @@ Before installing Pact, ensure you have the following prerequisites installed:
       export PATH="/path/to/pact-directory:$PATH"
       ```
 
-      To make this change permanent, add the above line to your `~/.bashrc` or `~/.zshrc` file:
+      To make this change permanent, add the above line to your `~/.zshrc` file (or `~/.bashrc` if using Bash):
 
       ```bash
-      nano ~/.bashrc
+      nano ~/.zshrc
       # Add the line at the end of the file
       export PATH="/path/to/pact-directory:$PATH"
       # Save and exit
@@ -81,10 +116,10 @@ Before installing Pact, ensure you have the following prerequisites installed:
       Reload the shell configuration:
 
       ```bash
-      source ~/.bashrc
+      source ~/.zshrc
       ```
 
-      **Note:** Replace `~/.bashrc` with `~/.zshrc` if you use Zsh.
+      **Note:** If you use Bash, replace `~/.zshrc` with `~/.bashrc`.
 
     </Step>
 
@@ -114,6 +149,7 @@ If you encounter issues:
     Ensure Z3 and Pact are correctly installed. Verify their versions with:
 
     ```bash
+    z3 --version
     pact --version
     ```
   </TabItem>
@@ -122,4 +158,4 @@ If you encounter issues:
   </TabItem>
 </Tabs>
 
-You are now ready to start developing with Pact on your Linux system. Enjoy coding!
+You are now ready to start developing with Pact on macOS. Enjoy coding!

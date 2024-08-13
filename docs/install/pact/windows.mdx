@@ -1,10 +1,10 @@
 ---
-title: Mac (Brew and Binary)
-slug: mac
+title: Windows (WSL)
+slug: windows
 ---
 
 <head>
-  <title>Installation: Brew and Binary</title>
+  <title>Installation: Pact on Windows with WSL</title>
   <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
 </head>
 
@@ -14,33 +14,44 @@ import CodeBlock from '@theme/CodeBlock';
 import styles from '/src/styles/styles.module.css';
 import { Step } from '/src/styles/Step'
 
-# Installing Pact on macOS
+# Installing Pact on Windows with WSL
 
-Setting up Pact on macOS can be done through Homebrew for a streamlined installation or by downloading the binary manually. Follow the instructions below for each method.
+To install Pact on Windows, you'll need to set up Windows Subsystem for Linux (WSL) and use a Linux environment to install Pact. Follow these steps to get Pact up and running on your Windows machine.
+
+## Step 1: Install Windows Subsystem for Linux (WSL)
+
+1. **Enable WSL**
+   - Open PowerShell as Administrator and run the following command to enable WSL and install the default Linux distribution:
+
+     ```powershell
+     wsl --install
+     ```
+
+   - If the command does not automatically install Ubuntu, you can manually install it from the Microsoft Store.
+
+2. **Restart Your Computer**
+   - Restart your computer to complete the WSL installation.
+
+3. **Install Ubuntu (Recommended)**
+   - Open the [Microsoft Store](https://www.microsoft.com/store/productId/9NBLGGH4QHMC) and search for "Ubuntu".
+   - Select the latest Ubuntu version (e.g., Ubuntu 22.04 LTS) and click "Install".
+
+4. **Set Up Ubuntu**
+   - After installation, open Ubuntu from the Start menu and follow the on-screen instructions to complete the setup, including creating a user account.
+
+   **Quick Tip:** For detailed WSL installation instructions and troubleshooting, use [this guide](https://learn.microsoft.com/en-us/windows/wsl/install).
 
 ## Prerequisites
 
-Before installing Pact, ensure you have the following tools installed:
+Once WSL is set up with Ubuntu, ensure you have the following prerequisites installed within your Ubuntu environment:
 
 <Tabs>
-  <TabItem value="brew" label="Homebrew" default>
-    Install Homebrew for package management if you haven't already:
-
-    ```bash
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    ```
-
-    Verify Homebrew installation:
-
-    ```bash
-    brew --version
-    ```
-  </TabItem>
-  <TabItem value="z3" label="Z3">
+  <TabItem value="z3" label="Z3" default>
     Install Z3, which is required by Pact:
 
     ```bash
-    brew install z3
+    sudo apt update
+    sudo apt install z3
     ```
 
     Verify Z3 installation:
@@ -54,32 +65,9 @@ Before installing Pact, ensure you have the following tools installed:
 ## Installation Steps
 
 <Tabs>
-  <TabItem value="brew" label="Install via Homebrew" default>
-    <Step stepNumber="1" title="Install Pact with Homebrew">
-      Use Homebrew to install Pact:
-
-      ```bash
-      brew tap kadena-io/tap
-      brew install pact
-      ```
-
-      This will install Pact and handle all dependencies.
-    </Step>
-
-    <Step stepNumber="2" title="Verify Installation">
-      To confirm Pact is installed correctly, run:
-
-      ```bash
-      pact --version
-      ```
-
-      You should see Pact’s version information.
-    </Step>
-  </TabItem>
-
-  <TabItem value="binary" label="Download Binary">
+  <TabItem value="binary" label="Download Binary" default>
     <Step stepNumber="1" title="Download the Binary">
-      Download a pre-built binary from the [Pact Releases](https://github.com/kadena-io/pact/releases) page. Look for the latest release and download the appropriate `.tar.gz` file for macOS.
+      Download a pre-built binary from the [Pact Releases](https://github.com/kadena-io/pact/releases) page. Look for the latest release and download the appropriate `.tar.gz` file for Linux.
 
     </Step>
 
@@ -87,13 +75,13 @@ Before installing Pact, ensure you have the following tools installed:
       Extract the downloaded archive:
 
       ```bash
-      tar -xzf pact-<version>-mac-x86_64.tar.gz
+      tar -xzf pact-<version>-linux-x86_64.tar.gz
       ```
 
       Navigate to the extracted directory:
 
       ```bash
-      cd pact-<version>-mac-x86_64
+      cd pact-<version>-linux-x86_64
       ```
     </Step>
 
@@ -104,10 +92,10 @@ Before installing Pact, ensure you have the following tools installed:
       export PATH="/path/to/pact-directory:$PATH"
       ```
 
-      To make this change permanent, add the above line to your `~/.zshrc` file (or `~/.bashrc` if using Bash):
+      To make this change permanent, add the above line to your `~/.bashrc` or `~/.zshrc` file:
 
       ```bash
-      nano ~/.zshrc
+      nano ~/.bashrc
       # Add the line at the end of the file
       export PATH="/path/to/pact-directory:$PATH"
       # Save and exit
@@ -116,10 +104,10 @@ Before installing Pact, ensure you have the following tools installed:
       Reload the shell configuration:
 
       ```bash
-      source ~/.zshrc
+      source ~/.bashrc
       ```
 
-      **Note:** If you use Bash, replace `~/.zshrc` with `~/.bashrc`.
+      **Note:** Replace `~/.bashrc` with `~/.zshrc` if you use Zsh.
 
     </Step>
 
@@ -158,4 +146,4 @@ If you encounter issues:
   </TabItem>
 </Tabs>
 
-You are now ready to start developing with Pact on macOS. Enjoy coding!
+You are now ready to start developing with Pact on your Windows system using WSL. Enjoy coding!

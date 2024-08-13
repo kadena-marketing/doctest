@@ -7,6 +7,10 @@ const sidebars: SidebarsConfig = {
           {
                type: 'category',
                label: 'Introduction',
+               link: {
+                    type: 'generated-index',
+                    slug: 'intro',
+               },
                items: [
                     'intro/why-kadena',
                     'intro/gas-fees'
@@ -15,6 +19,10 @@ const sidebars: SidebarsConfig = {
           {
                type: 'category',
                label: 'Pact',
+               link: {
+                    type: 'generated-index',
+                    slug: 'pact',
+               },
                items: [
                     'pact/reference',
                     'pact/builtin-functions',
@@ -27,13 +35,19 @@ const sidebars: SidebarsConfig = {
           {
                type: 'category',
                label: 'API',
+               link: {
+                    type: 'generated-index',
+                    slug: 'api',
+               },
                items: [
-                    'api/api',
                     {
                          type: 'category',
                          label: 'Pact Rest API',
+                         link: {
+                              type: 'generated-index',
+                              slug: 'pact-rest',
+                         },
                          items: [
-                              'api/pact-rest/pact-rest',
                               {
                                    type: "category",
                                    label: "Batch polling for results",
@@ -135,8 +149,11 @@ const sidebars: SidebarsConfig = {
                     {
                          type: 'category',
                          label: 'Chainweb API',
+                         link: {
+                              type: 'generated-index',
+                              slug: 'chainweb',
+                         },
                          items: [
-                              'api/chainweb/chainweb',
                               {
                                    type: "category",
                                    label: "Block Endpoints",
@@ -436,8 +453,11 @@ const sidebars: SidebarsConfig = {
           {
                type: 'category',
                label: 'How-To Guides',
+               link: {
+                    type: 'generated-index',
+                    slug: 'guides',
+               },
                items: [
-                    'guides/guides',
                     'guides/craft-api-call',
                     'guides/kadena-cli'
                ],
@@ -445,13 +465,20 @@ const sidebars: SidebarsConfig = {
           {
                type: 'category',
                label: 'Installation',
+               link: {
+                    type: 'generated-index',
+                    slug: 'install',
+               },
                items: [
-                    'install/install',
                     'install/devnet',
                     'install/nodes',
                     {
                          type: 'category',
                          label: 'Install Pact',
+                         link: {
+                              type: 'generated-index',
+                              slug: 'install/pact',
+                         },
                          items: [
                               'install/pact/linux',
                               'install/pact/mac-brew',
@@ -463,8 +490,11 @@ const sidebars: SidebarsConfig = {
           {
                type: 'category',
                label: 'Resources',
+               link: {
+                    type: 'generated-index',
+                    slug: 'resources',
+               },
                items: [
-                    'resources/resources',
                     'resources/changelogs',
                     'resources/contributors',
                     {

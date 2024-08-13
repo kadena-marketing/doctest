@@ -1,6 +1,6 @@
 ---
 title: Installation
-slug: /install
+slug: install
 ---
 
 <head>

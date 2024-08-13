@@ -30,7 +30,7 @@ export default function Home() {
 
                               <li className="front_main_option">
 
-                                   <a className="front_main_option_title" href="./intro/why-kadena">Introduction</a>
+                                   <a className="front_main_option_title" href="./intro">Introduction</a>
 
                                    <span className="front_main_option_summary">Start here to learn the basics, including blockchain fundamentals and the core concepts of the Kadena network.</span>
 
@@ -38,7 +38,7 @@ export default function Home() {
 
                               <li className="front_main_option">
 
-                                   <a className="front_main_option_title" href="./pact/reference">Pact</a>
+                                   <a className="front_main_option_title" href="./pact">Pact</a>
 
                                    <span className="front_main_option_summary">Pact is an open-source, Turing-incomplete smart contract language. Pact focuses on facilitating transactional logic with the optimal mix of functionality in authorization, data management, and workflow.</span>
 

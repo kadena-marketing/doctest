@@ -450,6 +450,7 @@ const sidebars: SidebarsConfig = {
                type: 'category',
                label: 'Resources',
                items: [
+                    'resources/changelogs',
                     'resources/contributors',
                     'resources/solutions-tools'
                ],

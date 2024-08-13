@@ -78,7 +78,7 @@ export default function Home() {
 
                               <li className="front_main_option">
 
-                                   <a className="front_main_option_title" href="./resources/contributors">Resources</a>
+                                   <a className="front_main_option_title" href="./resources/changelogs">Resources</a>
 
                                    <span className="front_main_option_summary">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
 

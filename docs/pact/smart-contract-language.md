@@ -19,16 +19,14 @@ use-case: for private, confidential transactions it enables single-actor process
 with automatic rollbacks; for public, "trustless" two-party escrow with rules preventing early cancel
 by the debtor.
 
-Motivation: Sequenced Private Transactions
-===
+## Motivation: Sequenced Private Transactions
 
 For private transactions, pacts provide the ability to sequence transactions such that they may
 be modeled as a compound operation, designed to only allow a single "entity" operate at a time.
 This comes from Kadena's "encrypted messaging" approach to smart contracts with entities representing
 cryptographic identities (Bob, Alice) communicating with symmetric encryption in a DH scheme.
 
-Entities
----
+### Entities
 
 An entity is an identity as a keypair for symmetric DH communications. Entities are intended
 to be highly-available, which means that a keypair must be replicated across local nodes, along with an
@@ -38,8 +36,7 @@ Entities are intended mainly for private use, but there is an application for en
 on a public blockchain for execution in a separate, local runtime that has read-access to the global
 blockchain.
 
-Considerations regarding disjointedness
----
+### Considerations regarding disjointedness
 
 An encrypted transaction on a blockchain is ignored by all who cannot read the plaintext,
 and will only impact the application state of those who can read it. Insofar as the blockchain
@@ -67,8 +64,7 @@ the former "global" case must be "stateless", ie argument-driven not db-driven, 
 must only happen for a single participant at a key "owned" by them. Without this guarantee, in fact it is
 safer to not allow global cases, as these could unexpectedly fail disjointly.
 
-Public/Private data hygeine
----
+### Public/Private data hygeine
 
 Clearly a "chinese wall" must divide public blockchain data from anything in private, most likely
 resulting in private transactions having read-only access to public data. This concept could be
@@ -78,8 +74,7 @@ only permitting "local" updates.
 Public code can provide a higher level of trust for executing pacts, as the public store guarantees
 all parties cannot run disjoint code.
 
-Transaction success consistency
----
+### Transaction success consistency
 
 With single-actor disjoint execution, the active actor succeeds or fails, while the
 inactive actors are no-ops, and in fact have no knowledge whether the tx succeeded or not. The need
@@ -93,8 +88,7 @@ more parties (one party being "self encryption", which succeeds or fails as a un
 even here an ack transaction is harmless, however wasteful). Automation becomes attractive to correctly
 service the ack transaction, and even "guarantee" acking (within some SLA).
 
-Multi-step execution
----
+### Multi-step execution
 
 Once in place, ack automation directly leads to the automation/orchestration of multi-step transactions.
 This serves to address the awkwardness of single-actor disjoint execution, where all activity must be _serialized_ with
@@ -115,8 +109,7 @@ messaged from the sole entity executing a step.
 As will be seen, automatic rollback is private-only; currently it is hardcoded into pact syntax.
 
 
-Motivation: Public Oracle and Escrow transactions
-====
+## Motivation: Public Oracle and Escrow transactions
 
 In public, we no longer need automated servicing of the pact flow: ack transactions become pure RESUME messages
 sent from outside, as are CANCEL messages.
@@ -139,8 +132,7 @@ to explicitly scope the capability import, ie `(import-capabilities step action)
 allow the CANCEL authorization scheme to enforce against the current signatures, before importing
 capabilities to effect the cancel.
 
-Conditional enforcement
----
+### Conditional enforcement
 
 A CANCEL with different rules for initiator (like a timeout) vs respondent (just keyset) requires
 us to deviate from the "enforce failure kills the transaction" model Pact currently uses, and allow
@@ -157,8 +149,7 @@ on the way to finding the first one that succeeds. We call this `enforce-one`:
 Here the initiator has a timeout before a cancel, OR the respondent can cancel at any time.
 
 
-Yield/Resume and application style
----
+### Yield/Resume and application style
 
 In Public, yield  provides for unforgeable messaging between steps for both public and private.
 However, public has the additional need to inject more data in as part of a RESUME, in such a way
@@ -181,8 +172,7 @@ requiring a loosey-goosey notion of application
 (assuming that the arguments should match the step function being executed). Instead, RESUME should
 simply avail itself of the JSON payload only.
 
-Pact-local and contract-local capabilities
----
+### Pact-local and contract-local capabilities
 
 Pact-local capabilities must be unforgeable, like yield/resume and the step counter.
 Direct reification in the database is problematic, as these must not be reifiable from outside the system,
@@ -196,8 +186,7 @@ can simply `(enforce-module persisted-modulename)` where again the name alone do
 The CAP-TYPE field could simply accept `(keyset|pact|module)`. Enum support would be nice for this.
 
 
-Runtime Model
-===
+## Runtime Model
 
 The unforgeable aspects of pact execution require an in-memory model (or at least distinct from the
 user application db) of:
@@ -218,8 +207,7 @@ user application db) of:
 
 - In Pact environment, entity name as a Maybe, which doubles as a "is-public".
 
-Reconciling public and private
----
+### Reconciling public and private
 
 Currently, rollback and entity selection are in syntax. Public needs no
 special meta-programming, which might indicate a private-oriented syntax, with
@@ -260,8 +248,8 @@ validate via syntax that steps in a given pact cannot mix public and private
 constructions.
 
 
-Considerations of using private messaging over a public blockchain
----
+### Considerations of using private messaging over a public blockchain
+
 This would require the chinese-wall to be implemented, which is hygeinic for private but clearly
 essential for public: the execution environment must be entirely distinct, and even off-thread/pipelined as the
 public ledger has already signed off on this payload as an ENCRYPTED no-op.
@@ -272,8 +260,8 @@ analysis: any table that is touched under a pact must be private. Instead probab
 will not be writable within a private pact execution.
 
 
-Considerations of using public-style pacts in a private blockchain
----
+### Considerations of using public-style pacts in a private blockchain
+
 Generally, this seems unnecessary as private trust contexts don't require magic assurance of e.g. an escrow flow.
 However there seems to be no reason not to allow it. Private would need to add a system time oracle for timeouts,
 or just blow up when attempting to get system time.

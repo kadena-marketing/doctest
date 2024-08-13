@@ -20,8 +20,7 @@ or the [pact home page](http://kadena.io/#pactModal).
 Copyright (c) 2016 - 2018, Stuart Popejoy. All Rights Reserved.
 
 
-Rest API
-=======
+## Rest API
 See (https://api.chainweb.com/openapi/pact.html) for latest OpenAPI docs.
 
 ### Pact built-in server

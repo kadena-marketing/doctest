@@ -18,7 +18,7 @@ const sidebars: SidebarsConfig = {
                items: [
                     'pact/reference',
                     'pact/builtin-functions',
-                    'pact/functions',
+                    // 'pact/functions',
                     'pact/properties',
                     'pact/properties-api',
                     'pact/smart-contract-language'
@@ -450,6 +450,7 @@ const sidebars: SidebarsConfig = {
                type: 'category',
                label: 'Resources',
                items: [
+                    'resources/resources',
                     'resources/changelogs',
                     'resources/contributors',
                     'resources/solutions-tools'

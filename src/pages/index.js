@@ -3,38 +3,94 @@ import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import styles from './index.module.css';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 
-function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
-  return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <h1 className="hero__title">{siteConfig.title}</h1>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/intro">
-            Docusaurus Tutorial - 5min ⏱️
-          </Link>
-        </div>
-      </div>
-    </header>
-  );
-}
 
 export default function Home() {
-  const {siteConfig} = useDocusaurusContext();
-  return (
-    <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
-      <HomepageHeader />
-      <main>
-        <HomepageFeatures />
-      </main>
-    </Layout>
-  );
+     const {siteConfig} = useDocusaurusContext();
+     return (
+
+          <Layout title={`Hello from ${siteConfig.title}`} description="Description will go into a meta tag in <head />">
+
+               <main className="front_landing">
+
+                    <div className="front_header">
+
+                         <h1 className="front_header_title">Kadena Documentation</h1>
+
+                         <span className="front_header_excerpt">Wecome to our developer docs, a comprehensive resource for building with our blockchain. Here, you'll find everything you need to accelerate your development process, from API references to best practices and detailed tutorials.</span>
+
+                         <a className="front_header_cta" href="./start">Get Started</a>
+
+                    </div>
+
+                    <div className="front_main">
+
+                         <ul className="front_main_options">
+
+                              <li className="front_main_option">
+
+                                   <a className="front_main_option_title" href="./intro/why-kadena">Introduction</a>
+
+                                   <span className="front_main_option_summary">Start here to learn the basics, including blockchain fundamentals and the core concepts of the Kadena network.</span>
+
+                              </li>
+
+                              <li className="front_main_option">
+
+                                   <a className="front_main_option_title" href="./pact/reference">Pact</a>
+
+                                   <span className="front_main_option_summary">Pact is an open-source, Turing-incomplete smart contract language. Pact focuses on facilitating transactional logic with the optimal mix of functionality in authorization, data management, and workflow.</span>
+
+                              </li>
+
+                              <li className="front_main_option">
+
+                                   <a className="front_main_option_title" href="./pact-api">Pact API</a>
+
+                                   <span className="front_main_option_summary">Pact is an open-source, Turing-incomplete smart contract language. Pact focuses on facilitating transactional logic with the optimal mix of functionality in authorization, data management, and workflow.</span>
+
+                              </li>
+
+                              <li className="front_main_option">
+
+                                   <a className="front_main_option_title" href="./chainweb-api">Chainweb API</a>
+
+                                   <span className="front_main_option_summary">Chainweb is a braided, parallelized Proof Of Work consensus mechanism that improves throughput and scalability in executing transactions on the blockchain while maintaining the security and integrity found in Bitcoin.</span>
+
+                              </li>
+
+                              <li className="front_main_option">
+
+                                   <a className="front_main_option_title" href="./guides">How-To Guides</a>
+
+                                   <span className="front_main_option_summary">Step-by-step instructions to offer clear and actionable insights to enhance your development experience.</span>
+
+                              </li>
+
+                              <li className="front_main_option">
+
+                                   <a className="front_main_option_title" href="./install">Installation</a>
+
+                                   <span className="front_main_option_summary">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+
+                              </li>
+
+                              <li className="front_main_option">
+
+                                   <a className="front_main_option_title" href="./resources/contributors">Resources</a>
+
+                                   <span className="front_main_option_summary">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+
+                              </li>
+
+                         </ul>
+
+                    </div>
+
+               </main>
+
+          </Layout>
+
+     );
 }

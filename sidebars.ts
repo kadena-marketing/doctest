@@ -28,6 +28,7 @@ const sidebars: SidebarsConfig = {
                type: 'category',
                label: 'Pact API',
                items: [
+                    'pact-api/pact-api',
                     {
                          type: "category",
                          label: "Batch polling for results",
@@ -130,6 +131,7 @@ const sidebars: SidebarsConfig = {
                type: 'category',
                label: 'Chainweb API',
                items: [
+                    'chainweb-api/chainweb-api',
                     {
                          type: "category",
                          label: "Block Endpoints",

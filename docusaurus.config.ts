@@ -94,7 +94,7 @@ const config: Config = {
           },
           footer: {
                style: "dark",
-               copyright: `Copyright © ${new Date().getFullYear()} <a href="https://kadena.io" target="_blank">Kadena LLC</a>`,
+               copyright: `Copyright © ${new Date().getFullYear()} - <a href="https://kadena.io" target="_blank">Kadena LLC</a>`,
           },
           languageTabs: [
                {

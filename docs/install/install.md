@@ -1,7 +1,15 @@
 ---
 title: Installation
-slug: /installation
+slug: /install
 ---
+
+<head>
+  <title>Installation</title>
+  <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
+</head>
+
+# Installation
+
 <!-- # Installing Pact on Different Operating Systems
 
 Pact is the smart contract language designed for **Kadena**’s blockchain platform. To start developing with **Pact**, you'll need to install it on your local machine. This section provides *step-by-step instructions* for installing **Pact** across various operating systems, ensuring that you can seamlessly integrate Pact into your development workflow regardless of whether you’re using **Windows. macOS, or Linux**.
@@ -30,7 +38,7 @@ export default function Installation() {
     'Windows': (
       <div>
         <h2>Installing Pact on Windows</h2>
-        <p>Steps to set up Pact on Windows using Windows Subsystem for Linux (WSL).</p>  
+        <p>Steps to set up Pact on Windows using Windows Subsystem for Linux (WSL).</p>
       </div>
     ),
   };

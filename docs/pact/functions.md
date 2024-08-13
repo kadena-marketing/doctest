@@ -1,3 +1,13 @@
+---
+title: Pact Functions
+slug: functions
+---
+
+<head>
+  <title>Pact: Functions</title>
+  <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
+</head>
+
 # Pact Functions
 
 Pact provides a variety of operators for performing calculations, comparisons, and logical operations. Here's a quick overview of the available operators:

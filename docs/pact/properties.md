@@ -1,5 +1,14 @@
-The Pact Property Checking System
-===
+---
+title: Property Checking System
+slug: properties
+---
+
+<head>
+  <title>Pact: The Pact Property Checking System</title>
+  <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
+</head>
+
+# The Pact Property Checking System
 
 ## What is it?
 

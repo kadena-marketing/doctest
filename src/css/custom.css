@@ -34,3 +34,5 @@
 
 
 /* GLOBAL */
+
+html:not(.toc-display) .theme-doc-toc-desktop { display: none; }

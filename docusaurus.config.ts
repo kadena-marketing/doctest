@@ -25,6 +25,7 @@ const config: Config = {
                "classic",
                {
                     docs: {
+                         routeBasePath: "/",
                          sidebarPath: require.resolve("./sidebars.ts"),
                          editUrl: "https://github.com/kadena-marketing/doctest/tree/main/",
                          docItemComponent: "@theme/ApiItem", // Derived from docusaurus-theme-openapi
@@ -93,8 +94,7 @@ const config: Config = {
           },
           footer: {
                style: "dark",
-
-               copyright: `Copyright © ${new Date().getFullYear()} Kadena LLC`,
+               copyright: `Copyright © ${new Date().getFullYear()} <a href="https://kadena.io" target="_blank">Kadena LLC</a>`,
           },
           languageTabs: [
                {
@@ -153,7 +153,7 @@ const config: Config = {
                          } satisfies OpenApiPlugin.Options,
                          pact: {  // Second API spec
                               specPath: "examples/pact.openapi.yaml",
-                              outputDir: "docs/pact",
+                              outputDir: "docs/pact-api",
                               sidebarOptions: {
                                    groupPathsBy: "tag",
                                    categoryLinkSource: "tag",

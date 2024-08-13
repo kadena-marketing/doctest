@@ -1,10 +1,16 @@
-Smart Contract Language
-===
+---
+title: Smart Contract Language
+slug: smart-contract-language
+---
+
+<head>
+  <title>Pact: Smart Contract Language</title>
+  <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
+</head>
+
+# Introduction
 
 Pact "Pacts" design doc. Pact version at time of writing is 2.2.3.
-
-Introduction
-===
 
 The Pact smart contract language features "pacts", a form of _coroutine_ that allows for
 orchestrating a sequence of transactions, as might be found in an escrow process.

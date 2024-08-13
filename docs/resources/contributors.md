@@ -1,7 +1,12 @@
 ---
-title: Contributors
-slug: /contributors
+title: How to Contribute
+slug: contributors
 ---
+
+<head>
+  <title>Resources: How to Contribute</title>
+  <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
+</head>
 
 # How to Contribute
 

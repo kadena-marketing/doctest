@@ -1,5 +1,16 @@
-Pact Reference
-===
+---
+title: Pact Reference
+slug: reference
+---
+
+<head>
+  <title>Pact: Pact Reference</title>
+  <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
+  <html className="toc-display" />
+</head>
+
+
+# Pact Reference
 
 This document is a reference for the Pact smart-contract language, designed for
 correct, transactional execution on a [high-performance blockchain](http://kadena.io). For more

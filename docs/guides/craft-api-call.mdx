@@ -1,0 +1,190 @@
+---
+title: Create API Calls
+slug: craft-api-call
+---
+
+<head>
+  <title>Making Blockchain Calls with Kadena</title>
+  <meta name="description" content="A guide to crafting blockchain calls using Traditional API, Kadena CLI, and Kadena.js" />
+</head>
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import CodeBlock from '@theme/CodeBlock';
+
+# Making Blockchain Calls with Kadena
+
+This guide provides instructions and examples for making blockchain calls using Kadena. We'll cover traditional API calls, Kadena CLI with YAML configuration, and Kadena.js.
+
+## Examples of Common Operations
+
+Here are some common operations you might want to perform on the Kadena blockchain:
+
+1. Check Account Balance
+2. Transfer KDA
+3. Deploy a Smart Contract
+4. Execute a Smart Contract Function
+
+Let's see how to perform these operations using different methods:
+
+<Tabs>
+  <TabItem value="api" label="Traditional API" default>
+    ### 1. Check Account Balance
+    ```bash
+    curl -X POST "https://api.chainweb.com/chainweb/0.0/mainnet01/chain/0/pact/api/v1/local" \
+         -H "Content-Type: application/json" \
+         -d '{
+           "command": "Your Pact code to check balance here"
+         }'
+    ```
+
+    ### 2. Transfer KDA
+    ```bash
+    curl -X POST "https://api.chainweb.com/chainweb/0.0/mainnet01/chain/0/pact/api/v1/send" \
+         -H "Content-Type: application/json" \
+         -d '{
+           "cmds": [{
+             "hash": "Your transaction hash",
+             "sigs": ["Your signature"],
+             "cmd": "Your signed command for KDA transfer"
+           }]
+         }'
+    ```
+
+    ### 3. Deploy a Smart Contract
+    ```bash
+    curl -X POST "https://api.chainweb.com/chainweb/0.0/mainnet01/chain/0/pact/api/v1/send" \
+         -H "Content-Type: application/json" \
+         -d '{
+           "cmds": [{
+             "hash": "Your transaction hash",
+             "sigs": ["Your signature"],
+             "cmd": "Your signed command to deploy the contract"
+           }]
+         }'
+    ```
+
+    ### 4. Execute a Smart Contract Function
+    ```bash
+    curl -X POST "https://api.chainweb.com/chainweb/0.0/mainnet01/chain/0/pact/api/v1/local" \
+         -H "Content-Type: application/json" \
+         -d '{
+           "command": "Your Pact code to execute the function"
+         }'
+    ```
+  </TabItem>
+  
+  <TabItem value="cli" label="Kadena CLI">
+    Kadena CLI uses YAML files for configuration. Here's the structure for different operations:
+
+    ### 1. Check Account Balance
+    ```yaml
+    # balance-check.yaml
+    # YAML configuration for checking balance
+    ```
+
+    To execute:
+    ```bash
+    kadena exec balance-check.yaml
+    ```
+
+    ### 2. Transfer KDA
+    ```yaml
+    # transfer-kda.yaml
+    # YAML configuration for KDA transfer
+    ```
+
+    To execute:
+    ```bash
+    kadena exec transfer-kda.yaml
+    ```
+
+    ### 3. Deploy a Smart Contract
+    ```yaml
+    # deploy-contract.yaml
+    # YAML configuration for deploying a smart contract
+    ```
+
+    To execute:
+    ```bash
+    kadena exec deploy-contract.yaml
+    ```
+
+    ### 4. Execute a Smart Contract Function
+    ```yaml
+    # execute-function.yaml
+    # YAML configuration for executing a smart contract function
+    ```
+
+    To execute:
+    ```bash
+    kadena exec execute-function.yaml
+    ```
+  </TabItem>
+  
+  <TabItem value="js" label="Kadena.js">
+    Here's the basic structure for using Kadena.js:
+
+    ### 1. Check Account Balance
+    ```javascript
+    import {Pact, createClient} from '@kadena/client'
+
+    async function getBalance(account: string): Promise<void> {
+  // `Pact.builder.execution` accepts a number of `Pact.modules.<module>.<fun>` calls
+  const transaction = Pact.builder
+    .execution(Pact.modules.coin['get-balance'](account))
+    .setMeta({ chainId: '1' })
+    .createTransaction();
+
+  // client creation is separate from the transaction builder
+  const staticClient = createClient('http://host.com/chain/0/pact');
+
+  const res = await staticClient.local(transaction, {
+    preflight: false,
+    signatureVerification: false,
+  });
+
+}
+
+getBalance(account).catch(console.error);
+```
+
+### 2. Transfer KDA
+
+```javascript
+    // 2. Transfer KDA
+    async function transferKDA(from, to, amount) {
+      // Kadena.js code to transfer KDA
+    }
+```
+### 3. Deploy a Smart Contract
+```javascript
+    
+    async function deployContract(contractCode) {
+      // Kadena.js code to deploy a contract
+    }
+```
+
+### 4. Execute a Smart Contract Function
+```javascript
+    async function executeFunction(functionName, args) {
+      // Kadena.js code to execute a contract function
+    }
+    ```
+  </TabItem>
+</Tabs>
+
+## Tips for Crafting Blockchain Calls
+
+1. **Use the Correct Chain ID**: Kadena is a multi-chain system. Ensure you're using the correct chain ID for your transaction.
+
+2. **Gas Management**: Always set appropriate gas limit and price to ensure your transaction is processed.
+
+3. **Nonce Handling**: For API calls, include a unique nonce to prevent duplicate transactions.
+
+4. **Error Handling**: Always check the response for any errors or unexpected results.
+
+5. **Security**: Never share your private keys. When using API calls, ensure you're using a secure connection (https).
+
+Remember, these are simplified examples. In a production environment, you'd need to handle signing, error checking, and other details more robustly.
+
+For more detailed information on specific endpoints and their parameters, refer to our [API documentation](/category/api-reference).

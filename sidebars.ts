@@ -470,7 +470,7 @@ const sidebars: SidebarsConfig = {
                       items: [
                            'guides/nodes/compaction',
                            'guides/nodes/configure',
-                           'guides/nodes/monitoring',
+                         //   'guides/nodes/monitoring',
                       ],
                  }
                ],
@@ -508,12 +508,12 @@ const sidebars: SidebarsConfig = {
                     slug: 'resources',
                },
                items: [
-                    'resources/changelogs',
+                    // 'resources/changelogs',
                     'resources/contributors',
                     {
                          type: 'link',
-                         label: 'Solutions Docs',
-                         href: 'https://docs.kadena.io/solutions',
+                         label: 'Product Docs',
+                         href: 'https://docs.kadena.io',
                     },
                ],
           }

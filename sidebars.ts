@@ -487,7 +487,7 @@ const sidebars: SidebarsConfig = {
                     'install/nodes',
                     {
                          type: 'category',
-                         label: 'Install Pact',
+                         label: 'Pact',
                          link: {
                               type: 'doc',
                               id: 'install/pact/pact',

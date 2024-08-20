@@ -1,12 +1,20 @@
 ---
 title: Installation
-slug: install
+id: install
 ---
+
+import DocCardList from '@theme/DocCardList';
 
 <head>
   <title>Installation</title>
   <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
 </head>
+
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+<DocCardList />
+
 
 # Installation
 

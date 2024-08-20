@@ -1,11 +1,16 @@
 ---
 title: Chainweb API
-slug: chainweb
+id: chainweb
 ---
+
+import DocCardList from '@theme/DocCardList';
 
 <head>
   <title>API: Chainweb</title>
   <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
 </head>
 
-# Chainweb API
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+<DocCardList />

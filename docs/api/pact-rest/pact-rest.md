@@ -1,11 +1,16 @@
 ---
 title: Pact REST API
-slug: pact-rest
+id: pact-rest
 ---
+
+import DocCardList from '@theme/DocCardList';
 
 <head>
   <title>API: Pact REST API</title>
   <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
 </head>
 
-# Pact API
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+<DocCardList />

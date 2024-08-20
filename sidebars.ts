@@ -8,8 +8,8 @@ const sidebars: SidebarsConfig = {
                type: 'category',
                label: 'Introduction',
                link: {
-                    type: 'generated-index',
-                    slug: 'intro',
+                    type: 'doc',
+                    id: 'intro/intro',
                },
                items: [
                     'intro/why-kadena',
@@ -20,8 +20,8 @@ const sidebars: SidebarsConfig = {
                type: 'category',
                label: 'Pact',
                link: {
-                    type: 'generated-index',
-                    slug: 'pact',
+                    type: 'doc',
+                    id: 'pact/pact',
                },
                items: [
                     'pact/reference',
@@ -36,16 +36,16 @@ const sidebars: SidebarsConfig = {
                type: 'category',
                label: 'API',
                link: {
-                    type: 'generated-index',
-                    slug: 'api',
+                    type: 'doc',
+                    id: 'api/api',
                },
                items: [
                     {
                          type: 'category',
                          label: 'Pact Rest API',
                          link: {
-                              type: 'generated-index',
-                              slug: 'pact-rest',
+                              type: 'doc',
+                              id: 'api/pact-rest/pact-rest',
                          },
                          items: [
                               {
@@ -150,8 +150,8 @@ const sidebars: SidebarsConfig = {
                          type: 'category',
                          label: 'Chainweb API',
                          link: {
-                              type: 'generated-index',
-                              slug: 'chainweb',
+                              type: 'doc',
+                              id: 'api/chainweb/chainweb',
                          },
                          items: [
                               {
@@ -454,8 +454,8 @@ const sidebars: SidebarsConfig = {
                type: 'category',
                label: 'How-To Guides',
                link: {
-                    type: 'generated-index',
-                    slug: 'guides',
+                    type: 'doc',
+                    id: 'guides/guides',
                },
                items: [
                     'guides/craft-api-call',
@@ -464,14 +464,14 @@ const sidebars: SidebarsConfig = {
                       type: 'category',
                       label: 'Nodes',
                       link: {
-                           type: 'generated-index',
-                           slug: 'guides/nodes',
-                      },
-                      items: [
+                         type: 'doc',
+                         id: 'guides/nodes/nodes',
+                    },
+                    items: [
                            'guides/nodes/compaction',
                            'guides/nodes/configure',
                          //   'guides/nodes/monitoring',
-                      ],
+                    ],
                  }
                ],
           },
@@ -479,8 +479,8 @@ const sidebars: SidebarsConfig = {
                type: 'category',
                label: 'Installation',
                link: {
-                    type: 'generated-index',
-                    slug: 'install',
+                    type: 'doc',
+                    id: 'install/install',
                },
                items: [
                     'install/devnet',
@@ -489,8 +489,8 @@ const sidebars: SidebarsConfig = {
                          type: 'category',
                          label: 'Install Pact',
                          link: {
-                              type: 'generated-index',
-                              slug: 'install/pact',
+                              type: 'doc',
+                              id: 'install/pact/pact',
                          },
                          items: [
                               'install/pact/linux',
@@ -504,8 +504,8 @@ const sidebars: SidebarsConfig = {
                type: 'category',
                label: 'Resources',
                link: {
-                    type: 'generated-index',
-                    slug: 'resources',
+                    type: 'doc',
+                    id: 'resources/resources',
                },
                items: [
                     // 'resources/changelogs',

@@ -1,9 +1,86 @@
 ---
-title: Nodes
+title: Installing Nodes
 slug: nodes
 ---
 
+import Link from '@docusaurus/Link';
+
 <head>
   <title>Installation: Nodes</title>
-  <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
+  <meta name="description" content="Learn about the importance of Kadena nodes and how to install them using GitHub or Docker." />
 </head>
+
+# Installing Kadena Nodes
+
+Nodes are a crucial component of the Kadena blockchain ecosystem. They play a vital role in maintaining the network's integrity, 
+processing transactions, and ensuring the decentralized nature of the blockchain. Understanding and working with nodes is essential 
+for developers, validators, and anyone looking to contribute to the Kadena network.
+
+## Why Are Nodes Important?
+
+1. **Network Participation**: Nodes allow you to actively participate in the Kadena network, contributing to its security and decentralization.
+2. **Development and Testing**: Running a local node is crucial for testing smart contracts and dApps in a controlled environment before deploying to the main network.
+3. **Data Verification**: Nodes independently verify all transactions and blocks, ensuring the integrity of the blockchain data.
+4. **Network Resilience**: A diverse network of nodes increases the blockchain's resistance to attacks and censorship.
+5. **API Access**: Nodes provide API endpoints for interacting with the blockchain, essential for building applications on Kadena.
+
+## Installing a Kadena Node
+
+We offer two primary methods for installing and running a Kadena node:
+
+<div className="row">
+  <div className="col col--6 margin-bottom--lg">
+    <div className="card">
+      <div className="card__header">
+        <h3>GitHub Repository</h3>
+      </div>
+      <div className="card__body">
+        <p>
+          Install and run a Kadena node from source code. Ideal for developers who want full control and customization options.
+        </p>
+      </div>
+      <div className="card__footer">
+        <Link
+          className="button button--secondary button--block"
+          to="https://github.com/kadena-io/chainweb-node?tab=readme-ov-file#installing-chainweb"
+        >
+          View on GitHub
+        </Link>
+      </div>
+    </div>
+  </div>
+  <div className="col col--6 margin-bottom--lg">
+    <div className="card">
+      <div className="card__header">
+        <h3>Docker Image</h3>
+      </div>
+      <div className="card__body">
+        <p>
+          Quick and easy setup using a pre-configured Docker image. Perfect for those who prefer containerized deployments.
+        </p>
+      </div>
+      <div className="card__footer">
+        <Link
+          className="button button--secondary button--block"
+          to="https://hub.docker.com/r/kadena/chainweb-node"
+        >
+          View on Docker Hub
+        </Link>
+      </div>
+    </div>
+  </div>
+</div>
+
+Choose the method that best suits your needs and technical expertise. Both options provide detailed instructions 
+for setup and configuration.
+
+## Next Steps
+
+After installing your node, consider exploring our documentation on:
+- Configuring your node for optimal performance
+- Connecting to the Kadena network
+- Using your node for development and testing
+
+By setting up and running a Kadena node, you're taking an important step in becoming an active participant in 
+the Kadena ecosystem. Whether you're developing, validating, or simply supporting the network, your node plays 
+a crucial role in the continued growth and success of Kadena.

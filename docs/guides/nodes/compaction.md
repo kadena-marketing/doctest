@@ -1,9 +1,9 @@
 ---
 
-title: Compact a Chainweb node database
+title: Compaction
 description: "Reduce the storage required by the Chainweb node database."
 menu: Deploy
-label: Compact a Chainweb node database
+label: Compaction
 order: 2
 layout: full
 tags: [pact, chainweb, network, node operator, developer]

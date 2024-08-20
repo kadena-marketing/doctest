@@ -76,49 +76,156 @@ Let's see how to perform these operations using different methods:
   <TabItem value="cli" label="Kadena CLI">
     Kadena CLI uses YAML files for configuration. Here's the structure for different operations:
 
-    ### 1. Check Account Balance
+      ### 1. Check Account Balance
     ```yaml
     # balance-check.yaml
     # YAML configuration for checking balance
+    code: |-
+      (coin.get-balance "your k: address")
+    meta:
+      chainId: "1"
+      sender: "your k: address"
+      gasLimit: 2000
+      gasPrice: 0.00000001
+      ttl: 7200
+    networkId: "mainnet01"
+    type: exec
     ```
 
     To execute:
     ```bash
     kadena exec balance-check.yaml
+    kadena tx add
     ```
+    select the YAML file path then 
+    ```bash
+    kadena tx test
+    ```
+    And select the transaction you just added. now you shall see the data with your account Balance
 
     ### 2. Transfer KDA
     ```yaml
     # transfer-kda.yaml
     # YAML configuration for KDA transfer
-    ```
 
+  code: |-
+    (coin.transfer "from k: account" "to k: account" 0.1)
+  data:
+  meta:
+    chainId: "1"
+    sender: "from k: account"
+    gasLimit: 2300
+    gasPrice: 0.000001
+    ttl: 600
+  signers:
+    - public: "from public Key"
+      caps:
+        - name: "coin.TRANSFER"
+          args: ["from k: account", "to k: account", 0.1]
+        - name: "coin.GAS"
+          args: []
+  networkId: "mainnet01"
+  type: exec
+    ```
     To execute:
     ```bash
     kadena exec transfer-kda.yaml
+    kadena tx add
     ```
-
+    select the YAML file path then 
+    ```bash
+    kadena tx sign
+    ```
+    then sign the transaction with wallet or key pair and it will generate a signed tx json file
+    then
+    ```bash
+    kadena tx test
+    ```
+    select the signed tx file to test if its showing success then
+    ```bash
+    kadena tx send
+    ```
+    and it will send the transaction to the blockchain
     ### 3. Deploy a Smart Contract
     ```yaml
     # deploy-contract.yaml
     # YAML configuration for deploying a smart contract
-    ```
-
+    
+    code: |-
+    (namespace 'free)
+    (module simplemodule GOV
+    (defcap GOV () true)
+      (defconst TEXT:string "Hello World")
+      (defun greet:string () TEXT)
+    )
+  data:
+    ks: {
+     keys`:` ["deployer-public-Key"],
+     pred`:` `"keys-all"`
+    }
+  meta:
+    chainId: "1"
+    sender: "senders k: account"
+    gasLimit: 80300
+    gasPrice: 0.000001
+    ttl: 600
+  signers:
+    - public: "deployer-public-Key"
+      caps:
+        - name: "coin.GAS"
+          args: []
+  networkId: "mainnet01"
+  type: exec
+      ```
     To execute:
     ```bash
     kadena exec deploy-contract.yaml
+    kadena tx add
     ```
-
+    select the YAML file path then 
+    ```bash
+    kadena tx sign
+    ```
+    then sign the transaction with wallet or key pair and it will generate a signed tx json file
+    then
+    ```bash
+    kadena tx test
+    ```
+    select the signed tx file to test if its showing success then
+    ```bash
+    kadena tx send
+    ```
+    and it will send the transaction to the blockchain
     ### 4. Execute a Smart Contract Function
     ```yaml
     # execute-function.yaml
     # YAML configuration for executing a smart contract function
+    code: |-
+    (free.simplemodule.greet)
+  data:
+    ks: {
+     keys: ["your public key"],
+     pred: "keys-all"
+    }
+  meta:
+    chainId: "1"
+    sender: "your k: address"
+    gasLimit: 80300
+    gasPrice: 0.000001
+    ttl: 600
+  networkId: "mainnet01"
+  type: exec
     ```
-
     To execute:
     ```bash
     kadena exec execute-function.yaml
+    kadena tx add
     ```
+    select the YAML file path then 
+    ```bash
+    kadena tx test
+    ```
+    And select the transaction you just added. now you shall see the data with "Hello World"
   </TabItem>
   
   <TabItem value="js" label="Kadena.js">

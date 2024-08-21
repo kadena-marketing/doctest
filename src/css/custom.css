@@ -174,7 +174,8 @@ code {
 .openapi-explorer__code-block-btn-group button:hover { border-color: var(--k-grey-lt); }
 
 .DocSearch-Modal,
-.DocSearch-Hit-source { background: #fff !important; }
+.DocSearch-Hit-source,
+.DocSearch-Form { background: #fff !important; }
 
 
 /* THEME - LIGHT */

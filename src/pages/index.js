@@ -32,7 +32,7 @@ export default function Home() {
 
                                    <a className="front_main_option_title" href="./intro">Introduction</a>
 
-                                   <span className="front_main_option_summary">Start here to learn the basics, including blockchain fundamentals and the core concepts of the Kadena network.</span>
+                                   <span className="front_main_option_summary">Start here to learn the basics, including blockchain fundamentals and the core concepts relating to the Kadena network.</span>
 
                               </li>
 
@@ -40,7 +40,7 @@ export default function Home() {
 
                                    <a className="front_main_option_title" href="./pact">Pact</a>
 
-                                   <span className="front_main_option_summary">Pact is an open-source, Turing-incomplete smart contract language. Pact focuses on facilitating transactional logic with the optimal mix of functionality in authorization, data management, and workflow.</span>
+                                   <span className="front_main_option_summary">PACT is an open-source, Turing-incomplete smart contract language. PACT is designed to make blockchain development more accessible, secure, and efficient.</span>
 
                               </li>
 
@@ -48,7 +48,7 @@ export default function Home() {
 
                                    <a className="front_main_option_title" href="./api">API</a>
 
-                                   <span className="front_main_option_summary">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+                                   <span className="front_main_option_summary">Explore our API documentation for the tools and guidelines to seamlessly integrate with our technology, both PACT and Chainweb.</span>
 
                               </li>
 
@@ -65,7 +65,7 @@ export default function Home() {
 
                                    <a className="front_main_option_title" href="./install">Installation</a>
 
-                                   <span className="front_main_option_summary">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+                                   <span className="front_main_option_summary">This section will walk you through the essential steps to set up your development environment, install Pact, and work with Kadena nodes.</span>
 
                               </li>
 
@@ -73,7 +73,7 @@ export default function Home() {
 
                                    <a className="front_main_option_title" href="./resources">Resources</a>
 
-                                   <span className="front_main_option_summary">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+                                   <span className="front_main_option_summary">Dive into our curated collection of resources to deepen your knowledge and engagement with Kadena's innovative blockchain technology.</span>
 
                               </li>
 

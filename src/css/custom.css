@@ -191,19 +191,34 @@ code {
 
 svg[class^='lightToggleIcon'] { color: var(--k-primary); }
 
-.card.Container_node_modules-\@docusaurus-theme-classic-lib-theme-DocCard-styles-module,
-.card.cardContainer_node_modules-\@docusaurus-theme-classic-lib-theme-DocCard-styles-module {
-     box-shadow: none;
-     border: none;
-     outline: 2px solid var(--k-grey-dk);
-     border-radius: 15px; }
+.cardGrid { margin-top: 25px; }
 
-     .card.Container_node_modules-\@docusaurus-theme-classic-lib-theme-DocCard-styles-module:hover,
-     .card.cardContainer_node_modules-\@docusaurus-theme-classic-lib-theme-DocCard-styles-module:hover,
-     .card.Container_node_modules-\@docusaurus-theme-classic-lib-theme-DocCard-styles-module:focus,
-     .card.cardContainer_node_modules-\@docusaurus-theme-classic-lib-theme-DocCard-styles-module:focus {
+     .cardContainer {
+          background: transparent;
           box-shadow: none;
-          outline: 2px solid var(--k-grey-dk); }
+          border: none;
+          outline: 2px solid var(--k-grey-dk);
+          border-radius: 15px;
+          padding: 20px !important; }
+
+          .cardContainer:hover,
+          .cardContainer:focus {
+               box-shadow: none;
+               outline: 2px solid var(--k-secondary) !important; }
+
+               .cardContainer h2.cardTitle { margin-bottom: 0; }
+               
+                    .cardContainer h2.cardTitle a {
+                         font-weight: 800;
+                         font-size: 22.5px;
+                         text-transform: uppercase;
+                         display: block;
+                         margin-bottom: 25px;
+                         line-height: 1.25;
+                         text-decoration: none;
+                         margin-bottom: 0; }
+
+                    .cardContainer h2.cardTitle a:hover { text-decoration: underline; }
 
 .footer { color: var(--k-primary); }
 
@@ -215,7 +230,6 @@ svg[class^='lightToggleIcon'] { color: var(--k-primary); }
      .pagination-nav__link { border: 1.5px solid var(--k-grey-dk); }
 
 .pagination-nav__link:hover { border-color: var(--k-secondary); }
-
 
 .openapi-tabs__code-item:hover,
 .openapi-tabs__code-item.active,
@@ -367,6 +381,8 @@ html[data-theme='dark'] .navbar .navbar__logo { content: url(../../static/img/ka
                     display: block;
                     margin-bottom: 25px;
                     line-height: 1.25; }
+
+                    .front_main_option_title:hover { text-underline-offset: 5px; }
 
                .front_main_option_summary {
                     font-weight: 400;

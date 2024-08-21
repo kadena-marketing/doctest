@@ -3,11 +3,16 @@ title: Quick Start Guide
 slug: /start
 ---
 
-Welcome to the quick start guide for our site. This guide will help you set up your environment, configure Devnet, and deploy a simple smart contract using Kadena-CLI.
+import Link from '@docusaurus/Link';
+import CodeBlock from '@theme/CodeBlock';
 
-## Environment Setup
+# Quick Start Guide for Kadena Development
 
-Before you start, ensure you have the following tools installed:
+Welcome to the Kadena development quick start guide! This guide will help you set up your environment, configure Devnet, and deploy a simple smart contract using Kadena-CLI.
+
+## Prerequisites
+
+Before you begin, ensure you have the following tools installed:
 
 - Node.js (version 18 or higher)
 - npm (Node Package Manager)
@@ -15,55 +20,56 @@ Before you start, ensure you have the following tools installed:
 
 You can download and install Node.js and npm from [nodejs.org](https://nodejs.org/).
 
-## Configure Devnet
+## Step 1: Install Pact
 
-To configure Devnet, follow these steps:
+<Link to="/install/pact/" className="button button--secondary button--lg">
+  Detailed Pact Installation Guide
+</Link>
 
-1. Clone the Kadena Devnet repository:
+Pact is Kadena's smart contract language. Follow our detailed guide to install Pact on your system.
 
-    ```sh
-    git clone https://github.com/kadena-io/devnet
-    cd devnet
-    ```
+## Step 2: Set Up Devnet
 
-2. Install dependencies:
+Devnet allows you to test your smart contracts in a local environment.
 
-    ```sh
-    npm install
-    ```
+<Link to="/install/devnet" className="button button--secondary button--lg">
+  Detailed Devnet Setup Guide
+</Link>
 
-3. Start the Devnet:
+Quick setup:
 
-    ```sh
-    npm start
-    ```
+<CodeBlock language="bash">
+{`git clone https://github.com/kadena-io/devnet
+cd devnet
+npm install
+npm start`}
+</CodeBlock>
 
-This will start a local Kadena Devnet instance that you can use for development and testing.
+This will start a local Kadena Devnet instance for development and testing.
 
-## Using Kadena-CLI
+## Step 3: Install and Configure Kadena-CLI
 
-Kadena-CLI is a tool that allows you to deploy and manage smart contracts on the Kadena blockchain.
+Kadena-CLI is a tool for deploying and managing smart contracts on the Kadena blockchain.
 
-1. Install Kadena-CLI:
+<Link to="/guides/kadena-cli" className="button button--secondary button--lg">
+  Comprehensive Kadena-CLI Guide
+</Link>
 
-    ```sh
-    npm install -g kadena-cli
-    ```
+Quick setup:
 
-2. Initialize Kadena-CLI:
+<CodeBlock language="bash">
+{`npm install -g kadena-cli
+kadena init`}
+</CodeBlock>
 
-    ```sh
-    kadena-cli init
-    ```
+Configure your Kadena-CLI settings by editing the `kadena-cli-config.json` file.
 
-3. Configure your Kadena-CLI settings by editing the `kadena-cli-config.json` file.
+## Step 4: Write a Simple Smart Contract
 
-## Sample Smart Contract in Pact
+Here's a basic TODO app smart contract written in Pact:
 
-Here is a simple TODO app smart contract written in Pact. This contract allows you to create, complete, and read TODO items.
-
-```pact
-(namespace "free")
+<CodeBlock language="pact">
+{`(namespace "free")
 
 (module todo GOV
   @doc "Simple TODO app module"
@@ -79,14 +85,14 @@ Here is a simple TODO app smart contract written in Pact. This contract allows y
 
   (defun create-todo (task:string id:integer)
     @doc "Create a new TODO item"
-        (insert todo-table (format "{}" [id])
-          {
-           "task": task
-          , "completed": false
-          }
-        )
-        (format "TODO item {} created with id {}" [task id])
-      )
+    (insert todo-table (format "{}" [id])
+      {
+       "task": task
+      , "completed": false
+      }
+    )
+    (format "TODO item {} created with id {}" [task id])
+  )
 
   (defun complete-todo (id:integer)
     @doc "Mark a TODO item as completed"
@@ -104,4 +110,23 @@ Here is a simple TODO app smart contract written in Pact. This contract allows y
       (keys todo-table)))
 )
 
-(create-table todo-table)
+(create-table todo-table)`}
+</CodeBlock>
+
+## Step 5: Deploy Your Smart Contract
+
+Use Kadena-CLI to deploy your smart contract to the Devnet:
+
+<CodeBlock language="bash">
+{`kadena deploy todo.pact`}
+</CodeBlock>
+
+## Next Steps
+
+Congratulations! You've set up your Kadena development environment and deployed your first smart contract. Here are some suggested next steps:
+
+1. Explore more complex Pact contracts in our [Pact Language Guide](/pact).
+2. Learn how to interact with your deployed contracts using [Kadena Tools](/guides/craft-api-call).
+3. Dive into [Chainweb API](/api) for low-level blockchain interactions.
+4. Join our [Discord community](https://discord.gg/kadena) for support and discussions.
+

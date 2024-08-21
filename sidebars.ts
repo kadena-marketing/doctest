@@ -470,7 +470,7 @@ const sidebars: SidebarsConfig = {
                     items: [
                            'guides/nodes/compaction',
                            'guides/nodes/configure',
-                         //   'guides/nodes/monitoring',
+                           'guides/nodes/monitoring',
                     ],
                  }
                ],

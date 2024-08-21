@@ -13,4 +13,4 @@ import DocCardList from '@theme/DocCardList';
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
-<DocCardList />
+<DocCardList className="doccards-list" />

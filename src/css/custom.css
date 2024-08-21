@@ -50,6 +50,8 @@ code {
 
      .code-selector { margin-bottom: 15px; }
 
+.doccards-list { margin-top: 25px; }
+
 .footer {
      background-color: transparent;
      border-top: 1px solid var(--ifm-toc-border-color);
@@ -172,6 +174,7 @@ code {
 .openapi-explorer__code-block-btn-group button:hover { border-color: var(--k-grey-lt); }
 
 
+
 /* THEME - LIGHT */
 
 :root {
@@ -196,9 +199,11 @@ svg[class^='lightToggleIcon'] { color: var(--k-primary); }
      border-radius: 15px; }
 
      .card.Container_node_modules-\@docusaurus-theme-classic-lib-theme-DocCard-styles-module:hover,
-     .card.cardContainer_node_modules-\@docusaurus-theme-classic-lib-theme-DocCard-styles-module:hover {
+     .card.cardContainer_node_modules-\@docusaurus-theme-classic-lib-theme-DocCard-styles-module:hover,
+     .card.Container_node_modules-\@docusaurus-theme-classic-lib-theme-DocCard-styles-module:focus,
+     .card.cardContainer_node_modules-\@docusaurus-theme-classic-lib-theme-DocCard-styles-module:focus {
           box-shadow: none;
-          outline-color: var(--k-secondary); }
+          outline: 2px solid var(--k-grey-dk); }
 
 .footer { color: var(--k-primary); }
 

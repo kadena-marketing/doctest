@@ -72,15 +72,15 @@ const config: Config = {
                          position: 'left'
                     },
                     {
-                         href: 'https://github.com/kadena-io',
-                         label: 'GitHub',
-                         position: 'left',
-                         className: 'header-github-link'
-                    },
-                    {
                          href: 'https://discord.com/invite/kadena',
                          label: 'Support',
                          position: 'left'
+                    },
+                    {
+                         href: 'https://github.com/kadena-io',
+                         label: 'GitHub',
+                         position: 'right',
+                         className: 'header-github-link'
                     },
                     /**{
                          type: 'docsVersionDropdown',

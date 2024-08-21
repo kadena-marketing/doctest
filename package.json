@@ -28,7 +28,8 @@
     "docusaurus-theme-openapi-docs": "3.0.1",
     "prism-react-renderer": "^2.3.0",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "yarn": "^1.22.22"
   },
   "browserslist": {
     "production": [

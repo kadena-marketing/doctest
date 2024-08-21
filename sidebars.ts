@@ -510,6 +510,7 @@ const sidebars: SidebarsConfig = {
                items: [
                     // 'resources/changelogs',
                     'resources/contributors',
+                    'resources/products',
                     {
                          type: 'link',
                          label: 'Product Docs',

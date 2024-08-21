@@ -510,11 +510,12 @@ const sidebars: SidebarsConfig = {
                items: [
                     // 'resources/changelogs',
                     'resources/contributors',
-                    //{
-                         //type: 'link',
-                         //label: 'Product Docs',
-                         //href: 'https://docs.kadena.io',
-                    //},
+                    'resources/products',
+                    {
+                         type: 'link',
+                         label: 'Product Docs',
+                         href: 'https://docs.kadena.io',
+                    },
                ],
           }
      ],

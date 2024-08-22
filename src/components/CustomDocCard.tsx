@@ -5,12 +5,12 @@ import { useCurrentSidebarCategory } from '@docusaurus/theme-common/internal';
 function CustomDocCard({ item }) {
   return (
     <article className="col col--6 margin-bottom--lg ">
-      <div className="card padding--lg cardContainer">
-        <h2 className="text--truncate cardTitle" title={item.label}>
-          <Link to={item.href} className="">
+      <div className="card padding--lg kadena-card-box">
+        <span className="text--truncate cardTitle">
+          <Link to={item.href} className="" title={item.label}>
             {item.label}
           </Link>
-        </h2>
+        </span>
         {item.description && (
           <p className="text--truncate cardDescription" title={item.description}>
             {item.description}

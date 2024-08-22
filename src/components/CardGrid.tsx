@@ -3,16 +3,16 @@ import Link from '@docusaurus/Link';
 
 export function Card({ title, description, to }) {
   return (
-    <div className="card">
-      <div className="card__header">
-        <h3>{title}</h3>
+    <div className="card kadena-card-cta">
+      <div className="card__header kadena-card-cta_header">
+        <span className="kadena-card-cta_title">{title}</span>
       </div>
-      <div className="card__body">
+      <div className="card__body kadena-card-cta_body">
         <p>{description}</p>
       </div>
-      <div className="card__footer">
+      <div className="card__footer kadena-card-cta_footer">
         <Link
-          className="button button--secondary button--block"
+          className="button button--secondary button--block kadena-card-cta_button"
           to={to}
         >
           Learn More

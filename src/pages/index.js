@@ -20,7 +20,7 @@ export default function Home() {
 
                          <span className="front_header_excerpt">Wecome to our enterprise developer docs, a comprehensive resource for building with our blockchain. Here, you'll find everything you need to accelerate your development process, from API references to best practices and detailed tutorials.</span>
 
-                         <a className="front_header_cta" href="./start">Get Started</a>
+                         <a className="kadena-button-cta front_header_cta" href="./start">Get Started</a>
 
                     </div>
 
@@ -28,7 +28,7 @@ export default function Home() {
 
                          <ul className="front_main_options">
 
-                              <li className="front_main_option">
+                              <li className="kadena-link-box front_main_option">
 
                                    <a className="front_main_option_title" href="./intro">Introduction</a>
 
@@ -36,7 +36,7 @@ export default function Home() {
 
                               </li>
 
-                              <li className="front_main_option">
+                              <li className="kadena-link-box front_main_option">
 
                                    <a className="front_main_option_title" href="./pact">Pact</a>
 
@@ -44,7 +44,7 @@ export default function Home() {
 
                               </li>
 
-                              <li className="front_main_option">
+                              <li className="kadena-link-box front_main_option">
 
                                    <a className="front_main_option_title" href="./api">API</a>
 
@@ -53,7 +53,7 @@ export default function Home() {
                               </li>
 
 
-                              <li className="front_main_option">
+                              <li className="kadena-link-box front_main_option">
 
                                    <a className="front_main_option_title" href="./guides">How-To Guides</a>
 
@@ -61,7 +61,7 @@ export default function Home() {
 
                               </li>
 
-                              <li className="front_main_option">
+                              <li className="kadena-link-box front_main_option">
 
                                    <a className="front_main_option_title" href="./install">Installation</a>
 
@@ -69,7 +69,7 @@ export default function Home() {
 
                               </li>
 
-                              <li className="front_main_option">
+                              <li className="kadena-link-box front_main_option">
 
                                    <a className="front_main_option_title" href="./resources">Resources</a>
 

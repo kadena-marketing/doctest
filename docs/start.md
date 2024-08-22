@@ -14,25 +14,25 @@ Welcome to the Kadena development quick start guide! This guide will help you se
 
 Before you begin, ensure you have the following tools installed:
 
+- Git
 - Node.js (version 18 or higher)
 - npm (Node Package Manager)
-- Git
 
 You can download and install Node.js and npm from [nodejs.org](https://nodejs.org/).
 
 ## Step 1: Install Pact
 
-<Link to="/install/pact/" className="button button--secondary button--lg">
+Pact is Kadena's smart contract language. Follow our detailed guide to install Pact on your system.
+
+<Link to="/install/pact/" className="kadena-link-box inline">
   Detailed Pact Installation Guide
 </Link>
-
-Pact is Kadena's smart contract language. Follow our detailed guide to install Pact on your system.
 
 ## Step 2: Set Up Devnet
 
 Devnet allows you to test your smart contracts in a local environment.
 
-<Link to="/install/devnet" className="button button--secondary button--lg">
+<Link to="/install/devnet" className="kadena-link-box inline">
   Detailed Devnet Setup Guide
 </Link>
 
@@ -51,7 +51,7 @@ This will start a local Kadena Devnet instance for development and testing.
 
 Kadena-CLI is a tool for deploying and managing smart contracts on the Kadena blockchain.
 
-<Link to="/guides/kadena-cli" className="button button--secondary button--lg">
+<Link to="/guides/kadena-cli" className="kadena-link-box inline">
   Comprehensive Kadena-CLI Guide
 </Link>
 

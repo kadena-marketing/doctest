@@ -9,7 +9,7 @@ import type * as OpenApiPlugin from "docusaurus-plugin-openapi-docs";
 const config: Config = {
      title: "Kadena Enterprise Documentation",
      tagline: "The Blockchain for Business",
-     url: "https://docs.kadena.io",
+     url: "https://enterprise-docs.kadena.io",
      favicon: "img/kadena-favicon.png",
      baseUrl: "/",
 
@@ -45,6 +45,11 @@ const config: Config = {
      ],
 
      themeConfig: {
+          image: "img/kadena-opengraph.png",
+          metadata: [
+               {name: 'keywords', content: 'kadena, kda, developer, docs, documentation, enterprise, institutional'},
+               {name: 'twitter:card', content: 'summary_large_image'},
+             ],
           announcementBar: {
                id: "announcement-bar_1",
                content: `<strong>This site is an alpha version and a work in progress, please visit our <a target="_blank" href="https://docs.kadena.io">live docs site</a>.</strong>`,

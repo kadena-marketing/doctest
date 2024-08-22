@@ -28,7 +28,7 @@ Let's see how to perform these operations using different methods:
 
 <Tabs>
   <TabItem value="api" label="Traditional API" default>
-    ### 1. Check Account Balance
+    **1. Check Account Balance**
     ```bash
     curl -X POST "https://api.chainweb.com/chainweb/0.0/mainnet01/chain/0/pact/api/v1/local" \
          -H "Content-Type: application/json" \
@@ -37,7 +37,7 @@ Let's see how to perform these operations using different methods:
          }'
     ```
 
-    ### 2. Transfer KDA
+    **2. Transfer KDA**
     ```bash
     curl -X POST "https://api.chainweb.com/chainweb/0.0/mainnet01/chain/0/pact/api/v1/send" \
          -H "Content-Type: application/json" \
@@ -50,7 +50,7 @@ Let's see how to perform these operations using different methods:
          }'
     ```
 
-    ### 3. Deploy a Smart Contract
+    **3. Deploy a Smart Contract**
     ```bash
     curl -X POST "https://api.chainweb.com/chainweb/0.0/mainnet01/chain/0/pact/api/v1/send" \
          -H "Content-Type: application/json" \
@@ -63,7 +63,7 @@ Let's see how to perform these operations using different methods:
          }'
     ```
 
-    ### 4. Execute a Smart Contract Function
+    **4. Execute a Smart Contract Function**
     ```bash
     curl -X POST "https://api.chainweb.com/chainweb/0.0/mainnet01/chain/0/pact/api/v1/local" \
          -H "Content-Type: application/json" \
@@ -72,11 +72,11 @@ Let's see how to perform these operations using different methods:
          }'
     ```
   </TabItem>
-  
+
   <TabItem value="cli" label="Kadena CLI">
     Kadena CLI uses YAML files for configuration. Here's the structure for different operations:
 
-      ### 1. Check Account Balance
+    **1. Check Account Balance**
     ```yaml
     # balance-check.yaml
     # YAML configuration for checking balance
@@ -97,13 +97,13 @@ Let's see how to perform these operations using different methods:
     kadena exec balance-check.yaml
     kadena tx add
     ```
-    select the YAML file path then 
+    select the YAML file path then
     ```bash
     kadena tx test
     ```
     And select the transaction you just added. now you shall see the data with your account Balance
 
-    ### 2. Transfer KDA
+    **2. Transfer KDA**
     ```yaml
     # transfer-kda.yaml
     # YAML configuration for KDA transfer
@@ -132,7 +132,7 @@ Let's see how to perform these operations using different methods:
     kadena exec transfer-kda.yaml
     kadena tx add
     ```
-    select the YAML file path then 
+    select the YAML file path then
     ```bash
     kadena tx sign
     ```
@@ -146,11 +146,12 @@ Let's see how to perform these operations using different methods:
     kadena tx send
     ```
     and it will send the transaction to the blockchain
-    ### 3. Deploy a Smart Contract
+
+    **3. Deploy a Smart Contract**
     ```yaml
     # deploy-contract.yaml
     # YAML configuration for deploying a smart contract
-    
+
     code: |-
     (namespace 'free)
     (module simplemodule GOV
@@ -182,7 +183,7 @@ Let's see how to perform these operations using different methods:
     kadena exec deploy-contract.yaml
     kadena tx add
     ```
-    select the YAML file path then 
+    select the YAML file path then
     ```bash
     kadena tx sign
     ```
@@ -196,7 +197,8 @@ Let's see how to perform these operations using different methods:
     kadena tx send
     ```
     and it will send the transaction to the blockchain
-    ### 4. Execute a Smart Contract Function
+
+    **4. Execute a Smart Contract Function**
     ```yaml
     # execute-function.yaml
     # YAML configuration for executing a smart contract function
@@ -221,17 +223,17 @@ Let's see how to perform these operations using different methods:
     kadena exec execute-function.yaml
     kadena tx add
     ```
-    select the YAML file path then 
+    select the YAML file path then
     ```bash
     kadena tx test
     ```
     And select the transaction you just added. now you shall see the data with "Hello World"
   </TabItem>
-  
+
   <TabItem value="js" label="Kadena.js">
     Here's the basic structure for using Kadena.js:
 
-    ### 1. Check Account Balance
+    **1. Check Account Balance**
     ```javascript
   import {Pact, createClient} from '@kadena/client'
 
@@ -255,7 +257,7 @@ Let's see how to perform these operations using different methods:
 getBalance(account).catch(console.error);
 ```
 
-### 2. Transfer KDA
+**2. Transfer KDA**
 
 ```javascript
   import { Pact, createClient } from '@kadena/client';
@@ -282,12 +284,12 @@ getBalance(account).catch(console.error);
       const signedTx = await signWithChainweaver(transaction); // Pick your preferred signing method
       const preflightResult = await client.preflight(signedTx);
       console.log('Preflight result:', preflightResult);
-      
+
       if (preflightResult.result.status === 'failure') {
         console.error('Preflight failed:', preflightResult.result.error.message);
         return preflightResult;
       }
-      
+
       const res = await client.submit(signedTx);
       console.log('Transaction submitted:', res);
       return res;
@@ -297,7 +299,7 @@ getBalance(account).catch(console.error);
   };
 transferKDA('your-from-account', 'your-to-account', 0.1).catch(console.error);
 ```
-### 3. Deploy a Smart Contract
+**3. Deploy a Smart Contract**
     ```javascript
   import { Pact, createClient, signWithChainweaver } from '@kadena/client';
 
@@ -326,12 +328,12 @@ transferKDA('your-from-account', 'your-to-account', 0.1).catch(console.error);
       const signedTx = await signWithChainweaver(transaction); // Pick your preferred signing method
       const preflightResult = await client.preflight(signedTx);
       console.log('Preflight result:', preflightResult);
-      
+
       if (preflightResult.result.status === 'failure') {
         console.error('Preflight failed:', preflightResult.result.error.message);
         return preflightResult;
       }
-      
+
       const res = await client.submit(signedTx);
       console.log('Contract deployed:', res);
       return res;
@@ -343,7 +345,7 @@ deployContract('your-deployer-account', contractCode).catch(console.error);
 
 ```
 
-### 4. Execute a Smart Contract Function
+**4. Execute a Smart Contract Function**
 ```javascript
 import { Pact, createClient } from '@kadena/client';
 

@@ -56,11 +56,6 @@ const config: Config = {
                },
                items: [
                     {
-                         label: "Home",
-                         position: "left",
-                         to: "/",
-                    },
-                    {
                          type: "doc",
                          docId: "start",
                          position: "left",

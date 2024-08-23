@@ -48,102 +48,12 @@ const sidebars: SidebarsConfig = {
                               id: 'api/pact-rest/pact-rest',
                          },
                          items: [
-                              {
-                                   type: "category",
-                                   label: "Batch polling for results",
-                                   link: {
-                                        type: "doc",
-                                        id: "api/pact-rest/endpoint-poll"
-                                   },
-                                   items: [
-                                        {
-                                             type: "doc",
-                                             id: "api/pact-rest/poll",
-                                             label: "poll",
-                                             className: "api-method post"
-                                        },
-                                   ],
-                              },
-                              {
-                                   type: "category",
-                                   label: "Blocking listen for single transaction result",
-                                   link: {
-                                        type: "doc",
-                                        id: "api/pact-rest/endpoint-listen"
-                                   },
-                                   items: [
-                                        {
-                                             type: "doc",
-                                             id: "api/pact-rest/listen",
-                                             label: "listen",
-                                             className: "api-method post"
-                                        },
-                                   ],
-                              },
-                              {
-                                   type: "category",
-                                   label: "Non-transactional execution",
-                                   link: {
-                                        type: "doc",
-                                        id: "api/pact-rest/endpoint-local"
-                                   },
-                                   items: [
-                                        {
-                                             type: "doc",
-                                             id: "api/pact-rest/local",
-                                             label: "local",
-                                             className: "api-method post"
-                                        },
-                                   ],
-                              },
-                              {
-                                   type: "category",
-                                   label: "Private transaction execution",
-                                   link: {
-                                        type: "doc",
-                                        id: "api/pact-rest/endpoint-private"
-                                   },
-                                   items: [
-                                        {
-                                             type: "doc",
-                                             id: "api/pact-rest/private",
-                                             label: "private",
-                                             className: "api-method post"
-                                        },
-                                   ],
-                              },
-                              {
-                                   type: "category",
-                                   label: "SPV proof creation for cross chain transaction",
-                                   link: {
-                                        type: "doc",
-                                        id: "api/pact-rest/endpoint-spv"
-                                   },
-                                   items: [
-                                        {
-                                        type: "doc",
-                                        id: "api/pact-rest/spv",
-                                        label: "spv",
-                                        className: "api-method post"
-                                        },
-                                   ],
-                              },
-                              {
-                                   type: "category",
-                                   label: "Transactional batch execution",
-                                   link: {
-                                        type: "doc",
-                                        id: "api/pact-rest/endpoint-send"
-                                   },
-                                   items: [
-                                        {
-                                             type: "doc",
-                                             id: "api/pact-rest/send",
-                                             label: "send",
-                                             className: "api-method post"
-                                        },
-                                   ],
-                              }
+                              "api/pact-rest/poll",
+                              "api/pact-rest/listen",
+                              "api/pact-rest/local",
+                              "api/pact-rest/private",
+                              "api/pact-rest/spv",
+                              "api/pact-rest/send"
                          ],
                     },
                     {
@@ -370,12 +280,6 @@ const sidebars: SidebarsConfig = {
                                    items: [
                                         {
                                              type: "doc",
-                                             id: "api/chainweb/configuration-of-chainweb-node",
-                                             label: "Configuration of Chainweb Node",
-                                             className: "api-method get",
-                                        },
-                                        {
-                                             type: "doc",
                                              id: "api/chainweb/start-a-backup-job",
                                              label: "Start a backup job",
                                              className: "api-method post",
@@ -403,13 +307,7 @@ const sidebars: SidebarsConfig = {
                                              id: "api/chainweb/blocks-event-stream",
                                              label: "Blocks Event Stream",
                                              className: "api-method get",
-                                        },
-                                        {
-                                             type: "doc",
-                                             id: "api/chainweb/blocks-event-stream",
-                                             label: "Blocks Event Stream",
-                                             className: "api-method get",
-                                        },
+                                        }
                                    ],
                               },
                               {

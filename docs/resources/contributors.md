@@ -31,7 +31,7 @@ We're excited that you're interested in contributing to our project! This guide 
 
 ## Code of Conduct
 
-Our project adheres to a Code of Conduct that we expect all contributors to follow. Please read [the full text](LINK_TO_CODE_OF_CONDUCT.md) so that you can understand what actions will and will not be tolerated.
+Our project adheres to a Code of Conduct that we expect all contributors to follow. Please read the code of conduct(work in progress) so that you can understand what actions will and will not be tolerated.
 
 ## Getting Started
 
@@ -53,7 +53,7 @@ Our project adheres to a Code of Conduct that we expect all contributors to foll
 
 ### Finding Issues to Work On
 
-- Check our [issue tracker](LINK_TO_ISSUE_TRACKER) for open issues.
+- Check our issue tracker for open issues.
 - Issues labeled "good first issue" are great for newcomers.
 - If you have an idea for a new feature, please open an issue to discuss it before starting work.
 
@@ -105,7 +105,7 @@ Our documentation is organized as follows:
 
 ### Contribution Workflow Diagram
 
-[We need to a visual representation of the contribution workflow here]
+[We are working on a visual representation of the contribution workflow]
 
 ### Types of Contributions
 
@@ -142,10 +142,11 @@ We use the [All Contributors](https://allcontributors.org/) specification to rec
 
 ### Contribution Rewards
 
-To show our appreciation, we offer the following rewards for significant contributions:
+More updates on this will be added shortly
+<!-- To show our appreciation, we offer the following rewards for significant contributions:
 - Contributor of the Month recognition
 - Exclusive project swag for major contributions
-- Opportunities to speak at project-related events
+- Opportunities to speak at project-related events -->
 
 ## Review Process
 
@@ -156,8 +157,7 @@ To show our appreciation, we offer the following rewards for significant contrib
 
 ## Community
 
-- Join our [Discord server](LINK_TO_DISCORD) for real-time discussions. (which link sshould we use)
-- Subscribe to our [mailing list](LINK_TO_MAILING_LIST) for updates. (do we even have one)
+- Join our [Discord server](https://discord.gg/kadena) for real-time discussions. 
 - Follow us on [Twitter](https://x.com/kadena_io) for announcements.
 
 Thank you for contributing to our project!

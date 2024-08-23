@@ -36,10 +36,10 @@ import TabItem from "@theme/TabItem";
   method={"post"}
   path={"/chain/{chain}/payload/outputs/batch"}
 >
-  
+
 </MethodEndpoint>
 
-
+<span className="apiEndPoint">payload/outputs/batch</span>
 
 Get Batch of Block Payload With Outputs
 
@@ -71,7 +71,7 @@ Get Batch of Block Payload With Outputs
         className={"paramsItem"}
         param={{"name":"chain","in":"path","description":"the id of the chain to which the request is sent","required":true,"schema":{"type":"integer","minimum":0,"example":0}}}
       >
-        
+
       </ParamsItem>
     </ul>
   </div>
@@ -103,11 +103,11 @@ Get Batch of Block Payload With Outputs
         <div
           style={{"marginTop":"1rem","marginBottom":"1rem"}}
         >
-          
-          
+
+
           An object used to do batch payload queries, with or without heights
-          
-          
+
+
         </div>
       </div><ul
         style={{"marginLeft":"1rem"}}
@@ -136,7 +136,7 @@ Get Batch of Block Payload With Outputs
                 qualifierMessage={undefined}
                 schema={"Block Payload Hash"}
               >
-                
+
               </SchemaItem><SchemaItem
                 collapsible={false}
                 name={"description"}
@@ -145,7 +145,7 @@ Get Batch of Block Payload With Outputs
                 qualifierMessage={undefined}
                 schema={"Base64Url (without padding) encoded block payload hash"}
               >
-                
+
               </SchemaItem><SchemaItem
                 collapsible={false}
                 name={"example"}
@@ -154,7 +154,7 @@ Get Batch of Block Payload With Outputs
                 qualifierMessage={undefined}
                 schema={"GpaWbHkHrCjRhY8hKE0qZ1WsBBaG3Y_zkFLV2sYumQA"}
               >
-                
+
               </SchemaItem><SchemaItem
                 collapsible={false}
                 name={"allOf"}
@@ -163,7 +163,7 @@ Get Batch of Block Payload With Outputs
                 qualifierMessage={undefined}
                 schema={[{"title":"SHA256 Hash","type":"string","description":"Base64Url (without padding) encoded SHA256 hash","pattern":"^[a-zA-Z0-9_-]{43}$","minLength":43,"maxLength":43,"example":"y3aWL72-3wAy7vL9wcegGXnstH0lHi-q-cfxkhD5JCw"}]}
               >
-                
+
               </SchemaItem><li>
                 <div
                   style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem"}}
@@ -183,7 +183,7 @@ Get Batch of Block Payload With Outputs
                 qualifierMessage={undefined}
                 schema={{"title":"Heights","description":"List of block heights","type":"array","items":{"type":"integer"}}}
               >
-                
+
               </SchemaItem><SchemaItem
                 collapsible={false}
                 name={"hashes"}
@@ -192,7 +192,7 @@ Get Batch of Block Payload With Outputs
                 qualifierMessage={undefined}
                 schema={{"title":"Hashes","description":"List of payload hashes","type":"array","items":{"title":"Block Payload Hash","description":"Base64Url (without padding) encoded block payload hash","example":"GpaWbHkHrCjRhY8hKE0qZ1WsBBaG3Y_zkFLV2sYumQA","allOf":[{"title":"SHA256 Hash","type":"string","description":"Base64Url (without padding) encoded SHA256 hash","pattern":"^[a-zA-Z0-9_-]{43}$","minLength":43,"maxLength":43,"example":"y3aWL72-3wAy7vL9wcegGXnstH0lHi-q-cfxkhD5JCw"}]}}}
               >
-                
+
               </SchemaItem>
             </TabItem>
           </SchemaTabs>
@@ -211,13 +211,13 @@ Get Batch of Block Payload With Outputs
         value={"200"}
       >
         <div>
-          
-          
+
+
           Array of the some or all of the requested block payloads with
           outputs. Result items maybe returned in any order.
-          
-          
-          
+
+
+
         </div><details
           style={{"textAlign":"left","marginBottom":"1rem"}}
           className={"openapi-markdown__details"}
@@ -251,10 +251,10 @@ Get Batch of Block Payload With Outputs
                   style={{"marginTop":".5rem","marginBottom":".5rem"}}
                 >
                   Example: 10.36.1.3:42988
-                  
+
                   Host and port of the client as observed by the remote node
-                  
-                  
+
+
                 </div>
               </div>
             </li><li
@@ -275,10 +275,10 @@ Get Batch of Block Payload With Outputs
                   style={{"marginTop":".5rem","marginBottom":".5rem"}}
                 >
                   Example: 1618597601
-                  
+
                   The time of the clock of the remote node
-                  
-                  
+
+
                 </div>
               </div>
             </li><li
@@ -299,10 +299,10 @@ Get Batch of Block Payload With Outputs
                   style={{"marginTop":".5rem","marginBottom":".5rem"}}
                 >
                   Example: 2.6
-                  
+
                   The version of the remote chainweb node
-                  
-                  
+
+
                 </div>
               </div>
             </li>
@@ -339,7 +339,7 @@ Get Batch of Block Payload With Outputs
                     </summary><div
                       style={{"textAlign":"left","marginLeft":"1rem"}}
                     >
-                      
+
                     </div><ul
                       style={{"marginLeft":"1rem"}}
                     >
@@ -357,7 +357,7 @@ Get Batch of Block Payload With Outputs
                         qualifierMessage={"**Possible values:** `>= 2`, `<= 2`"}
                         schema={{"type":"array","description":"Array of pairs of transactions and their outputs.\nSigned Pact transactions and outputs are base64Url-encoded without padding.\n","items":{"type":"array","minItems":2,"maxItems":2,"items":{"anyOf":[{"type":"string","pattern":"[a-zA-Z0-9_-]+","description":"Base64Url (without padding) encoded JSON text of a signed Pact transaction"},{"type":"string","pattern":"[a-zA-Z0-9_-]+","description":"Base64Url (without padding) encoded JSON text of a transaction output"}]}}}}
                       >
-                        
+
                       </SchemaItem><SchemaItem
                         collapsible={false}
                         name={"minerData"}
@@ -366,7 +366,7 @@ Get Batch of Block Payload With Outputs
                         qualifierMessage={"**Possible values:** Value must match regular expression `[a-zA-Z0-9_-]+`"}
                         schema={{"type":"string","pattern":"[a-zA-Z0-9_-]+","description":"Base64Url (without padding) encoded JSON text of the miner data of the payload"}}
                       >
-                        
+
                       </SchemaItem><SchemaItem
                         collapsible={false}
                         name={"transactionsHash"}
@@ -375,7 +375,7 @@ Get Batch of Block Payload With Outputs
                         qualifierMessage={"**Possible values:** `>= 43 characters` and `<= 43 characters`, Value must match regular expression `^[a-zA-Z0-9_-]{43}$`"}
                         schema={{"title":"SHA256 Hash","type":"string","description":"Base64Url (without padding) encoded SHA256 hash","pattern":"^[a-zA-Z0-9_-]{43}$","minLength":43,"maxLength":43,"example":"y3aWL72-3wAy7vL9wcegGXnstH0lHi-q-cfxkhD5JCw"}}
                       >
-                        
+
                       </SchemaItem><SchemaItem
                         collapsible={false}
                         name={"outputsHash"}
@@ -384,7 +384,7 @@ Get Batch of Block Payload With Outputs
                         qualifierMessage={"**Possible values:** `>= 43 characters` and `<= 43 characters`, Value must match regular expression `^[a-zA-Z0-9_-]{43}$`"}
                         schema={{"title":"SHA256 Hash","type":"string","description":"Base64Url (without padding) encoded SHA256 hash","pattern":"^[a-zA-Z0-9_-]{43}$","minLength":43,"maxLength":43,"example":"y3aWL72-3wAy7vL9wcegGXnstH0lHi-q-cfxkhD5JCw"}}
                       >
-                        
+
                       </SchemaItem><SchemaItem
                         collapsible={false}
                         name={"payloadHash"}
@@ -393,7 +393,7 @@ Get Batch of Block Payload With Outputs
                         qualifierMessage={"**Possible values:** `>= 43 characters` and `<= 43 characters`, Value must match regular expression `^[a-zA-Z0-9_-]{43}$`"}
                         schema={{"title":"SHA256 Hash","type":"string","description":"Base64Url (without padding) encoded SHA256 hash","pattern":"^[a-zA-Z0-9_-]{43}$","minLength":43,"maxLength":43,"example":"y3aWL72-3wAy7vL9wcegGXnstH0lHi-q-cfxkhD5JCw"}}
                       >
-                        
+
                       </SchemaItem><SchemaItem
                         collapsible={false}
                         name={"coinbase"}
@@ -402,7 +402,7 @@ Get Batch of Block Payload With Outputs
                         qualifierMessage={"**Possible values:** Value must match regular expression `[a-zA-Z0-9_-]+`"}
                         schema={{"type":"string","pattern":"[a-zA-Z0-9_-]+","description":"Base64Url (without padding) encoded JSON text of coinbase output of the block"}}
                       >
-                        
+
                       </SchemaItem><li>
                         <div
                           style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem"}}
@@ -420,7 +420,7 @@ Get Batch of Block Payload With Outputs
                     responseExample={"[\n  {\n    \"value\": {\n      \"transactions\": [],\n      \"minerData\": \"eyJhY2NvdW50IjoiYTFiMzE0MGNiN2NjODk1YzBlMDkxNzAyZWQwNTU3OWZiZTA1YzZlNjc0NWY4MmNlNjAzNzQ2YjQwMGM4MTU0OCIsInByZWRpY2F0ZSI6ImtleXMtYWxsIiwicHVibGljLWtleXMiOlsiYTFiMzE0MGNiN2NjODk1YzBlMDkxNzAyZWQwNTU3OWZiZTA1YzZlNjc0NWY4MmNlNjAzNzQ2YjQwMGM4MTU0OCJdfQ\",\n      \"transactionsHash\": \"nT0j4xw2woMkdXXaopdurXIn24OG-jNMqQzUGfxV_MA\",\n      \"outputsHash\": \"4pXRrZ2K0_V0iGAxQCKrKdLjQTBZHBOQS7P-47kdnhY\",\n      \"payloadHash\": \"GpaWbHkHrCjRhY8hKE0qZ1WsBBaG3Y_zkFLV2sYumQA\",\n      \"coinbase\": \"eyJnYXMiOjAsInJlc3VsdCI6eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6IldyaXRlIHN1Y2NlZWRlZCJ9LCJyZXFLZXkiOiJJa2hoV0VGQ2NURlFTMU5MYkdodVkwcHJNRjlOZERjMVgyeE1OMDVUTTNkSk5qSTNVV1pZV2w4NE5Xc2kiLCJsb2dzIjoiZ3Noak1kWFJrVGxKYmIxalZkQWJ6SVVDcGpQb1JBQ2pEbExzRzBXNkJEMCIsIm1ldGFEYXRhIjpudWxsLCJjb250aW51YXRpb24iOm51bGwsInR4SWQiOjEyNzIzNTB9\"\n    }\n  }\n]"}
                     language={"json"}
                   >
-                    
+
                   </ResponseSamples>
                 </TabItem><TabItem
                   label={"two"}
@@ -432,7 +432,7 @@ Get Batch of Block Payload With Outputs
                     responseExample={"{\n  \"value\": [\n    {\n      \"value\": {\n        \"transactions\": [],\n        \"minerData\": \"eyJhY2NvdW50IjoiYTFiMzE0MGNiN2NjODk1YzBlMDkxNzAyZWQwNTU3OWZiZTA1YzZlNjc0NWY4MmNlNjAzNzQ2YjQwMGM4MTU0OCIsInByZWRpY2F0ZSI6ImtleXMtYWxsIiwicHVibGljLWtleXMiOlsiYTFiMzE0MGNiN2NjODk1YzBlMDkxNzAyZWQwNTU3OWZiZTA1YzZlNjc0NWY4MmNlNjAzNzQ2YjQwMGM4MTU0OCJdfQ\",\n        \"transactionsHash\": \"nT0j4xw2woMkdXXaopdurXIn24OG-jNMqQzUGfxV_MA\",\n        \"outputsHash\": \"4pXRrZ2K0_V0iGAxQCKrKdLjQTBZHBOQS7P-47kdnhY\",\n        \"payloadHash\": \"GpaWbHkHrCjRhY8hKE0qZ1WsBBaG3Y_zkFLV2sYumQA\",\n        \"coinbase\": \"eyJnYXMiOjAsInJlc3VsdCI6eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6IldyaXRlIHN1Y2NlZWRlZCJ9LCJyZXFLZXkiOiJJa2hoV0VGQ2NURlFTMU5MYkdodVkwcHJNRjlOZERjMVgyeE1OMDVUTTNkSk5qSTNVV1pZV2w4NE5Xc2kiLCJsb2dzIjoiZ3Noak1kWFJrVGxKYmIxalZkQWJ6SVVDcGpQb1JBQ2pEbExzRzBXNkJEMCIsIm1ldGFEYXRhIjpudWxsLCJjb250aW51YXRpb24iOm51bGwsInR4SWQiOjEyNzIzNTB9\"\n      }\n    },\n    {\n      \"value\": {\n        \"transactions\": [\n          [\n            \"eyJoYXNoIjoiMi16Q3dmRFZZR010WHljd2pTLXRlNzh5U3l3T3JXcjNSdUhiQlJnNDdhRSIsInNpZ3MiOlt7InNpZyI6ImZiMTVkNzkyYTNkNDM1MDI5ODJmOGQ1MGUyMzA1NTI5OWEwZjdhMWRmMWE4YjUyMmE5NTMxNWUyZDljY2MyNmE1MzI4M2I5YTNhNDM5ZWE0ZGY4MGM1ZTIwMjg4NDhjNjFhMWY0MGM5OWIyOTYzOWM0NGNkYTgwMzBmYmViYjBjIn1dLCJjbWQiOiJ7XCJuZXR3b3JrSWRcIjpcIm1haW5uZXQwMVwiLFwicGF5bG9hZFwiOntcImV4ZWNcIjp7XCJkYXRhXCI6e30sXCJjb2RlXCI6XCIoY29pbi50cmFuc2ZlciBcXFwiZTc1NzU4ZGQyYTFjNTk2NDRjMjJlMDQyYzZlYzA3NTI2ZWE0ZTU3MTU0ZjlkYmMyMDc2ZThhODRhYzE5NGYzMlxcXCIgXFxcIjQ2NzdhMDllYTE2MDJlNGUwOWZlMDFlYjExOTZjZjQ3YzBmNDRhYTQ0YWFjOTAzZDVmNjFiZTdkYTM0MjUxMjhcXFwiIDMuNzc2KVwifX0sXCJzaWduZXJzXCI6W3tcInB1YktleVwiOlwiZTc1NzU4ZGQyYTFjNTk2NDRjMjJlMDQyYzZlYzA3NTI2ZWE0ZTU3MTU0ZjlkYmMyMDc2ZThhODRhYzE5NGYzMlwiLFwiY2xpc3RcIjpbe1wiYXJnc1wiOltdLFwibmFtZVwiOlwiY29pbi5HQVNcIn0se1wiYXJnc1wiOltcImU3NTc1OGRkMmExYzU5NjQ0YzIyZTA0MmM2ZWMwNzUyNmVhNGU1NzE1NGY5ZGJjMjA3NmU4YTg0YWMxOTRmMzJcIixcIjQ2NzdhMDllYTE2MDJlNGUwOWZlMDFlYjExOTZjZjQ3YzBmNDRhYTQ0YWFjOTAzZDVmNjFiZTdkYTM0MjUxMjhcIiwzLjc3Nl0sXCJuYW1lXCI6XCJjb2luLlRSQU5TRkVSXCJ9XX1dLFwibWV0YVwiOntcImNyZWF0aW9uVGltZVwiOjE2MDIzODI4MTQsXCJ0dGxcIjoyODgwMCxcImdhc0xpbWl0XCI6NjAwLFwiY2hhaW5JZFwiOlwiMFwiLFwiZ2FzUHJpY2VcIjoxLjBlLTUsXCJzZW5kZXJcIjpcImU3NTc1OGRkMmExYzU5NjQ0YzIyZTA0MmM2ZWMwNzUyNmVhNGU1NzE1NGY5ZGJjMjA3NmU4YTg0YWMxOTRmMzJcIn0sXCJub25jZVwiOlwiXFxcIjIwMjAtMTAtMTFUMDI6MjE6MTQuMTk0WlxcXCJcIn0ifQ\",\n            \"eyJnYXMiOjU3MiwicmVzdWx0Ijp7InN0YXR1cyI6InN1Y2Nlc3MiLCJkYXRhIjoiV3JpdGUgc3VjY2VlZGVkIn0sInJlcUtleSI6IjItekN3ZkRWWUdNdFh5Y3dqUy10ZTc4eVN5d09yV3IzUnVIYkJSZzQ3YUUiLCJsb2dzIjoiSU1ra1VFZmVGak45bFQxZ0gtX2ZNT1dDRklrU1d6aVNTZHF2eEo4dS16RSIsIm1ldGFEYXRhIjpudWxsLCJjb250aW51YXRpb24iOm51bGwsInR4SWQiOjEyNzIzNzJ9\"\n          ]\n        ],\n        \"minerData\": \"eyJhY2NvdW50IjoiYTFiMzE0MGNiN2NjODk1YzBlMDkxNzAyZWQwNTU3OWZiZTA1YzZlNjc0NWY4MmNlNjAzNzQ2YjQwMGM4MTU0OCIsInByZWRpY2F0ZSI6ImtleXMtYWxsIiwicHVibGljLWtleXMiOlsiYTFiMzE0MGNiN2NjODk1YzBlMDkxNzAyZWQwNTU3OWZiZTA1YzZlNjc0NWY4MmNlNjAzNzQ2YjQwMGM4MTU0OCJdfQ\",\n        \"transactionsHash\": \"lWcQRlj3MV7FSem8P4G-8GMRf1-O7zQqi_AwmWnk-N0\",\n        \"outputsHash\": \"9BzXZbhjSSevp4K0bYFqi1GdLjeX_DB-4u1T5Em8abs\",\n        \"payloadHash\": \"jcQOWz7K9qKnkUv4Z883D2ZjkFFGgccoSroWGaoogLM\",\n        \"coinbase\": \"eyJnYXMiOjAsInJlc3VsdCI6eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6IldyaXRlIHN1Y2NlZWRlZCJ9LCJyZXFLZXkiOiJJbkV4WDFkUk16SnliRmhCWW1KcU9WTnZkMXB2YmtabmNHRXdlRnBXUWtKdmNUWTJiRk0xY0RSQ1ZVVWkiLCJsb2dzIjoiSVc0N0QxTXFMVW9mRnNKbWpoWGdDZnhnb2Fzb0xTc05YZUFiOFRPb2NCNCIsIm1ldGFEYXRhIjpudWxsLCJjb250aW51YXRpb24iOm51bGwsInR4SWQiOjEyNzIzNzB9\"\n      }\n    }\n  ]\n}"}
                     language={"json"}
                   >
-                    
+
                   </ResponseSamples>
                 </TabItem><TabItem
                   label={"empty"}
@@ -444,7 +444,7 @@ Get Batch of Block Payload With Outputs
                     responseExample={"[]"}
                     language={"json"}
                   >
-                    
+
                   </ResponseSamples>
                 </TabItem>
               </SchemaTabs>
@@ -455,4 +455,3 @@ Get Batch of Block Payload With Outputs
     </ApiTabs>
   </div>
 </div>
-      

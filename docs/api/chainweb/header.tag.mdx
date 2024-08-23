@@ -5,7 +5,7 @@ description: "Block Header Endpoints"
 custom_edit_url: null
 ---
 
-
+import CustomDocCardList from '@site/src/components/CustomDocCard';
 
 These endpoints return block headers from the chain database.
 
@@ -24,13 +24,4 @@ Block headers are returned in three different formats specified in the `accept` 
 *   `application/octet-stream`, when supported by the endpoint, returns block
     headers as binary.
 
-
-
-
-```mdx-code-block
-import DocCardList from '@theme/DocCardList';
-import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
-
-<DocCardList items={useCurrentSidebarCategory().items}/>
-```
-      
+<CustomDocCardList />

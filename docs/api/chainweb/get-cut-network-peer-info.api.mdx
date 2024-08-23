@@ -36,10 +36,10 @@ import TabItem from "@theme/TabItem";
   method={"get"}
   path={"/cut/peer"}
 >
-  
+
 </MethodEndpoint>
 
-
+<span className="apiEndPoint">cut/peer</span>
 
 Get Cut-Network Peer Info
 
@@ -71,12 +71,12 @@ Get Cut-Network Peer Info
         className={"paramsItem"}
         param={{"name":"limit","in":"query","description":"Maximum number of records that may be returned. The actual number may be\nlower.\n","required":false,"schema":{"type":"integer","minimum":0}}}
       >
-        
+
       </ParamsItem><ParamsItem
         className={"paramsItem"}
         param={{"name":"next","in":"query","description":"The cursor for the next page. This value can be found as value of the\n`next` property of the previous page.\n","required":false,"schema":{"type":"string"}}}
       >
-        
+
       </ParamsItem>
     </ul>
   </div>
@@ -91,11 +91,11 @@ Get Cut-Network Peer Info
         value={"200"}
       >
         <div>
-          
-          
+
+
           Peers from the peer database of the remote node
-          
-          
+
+
         </div><details
           style={{"textAlign":"left","marginBottom":"1rem"}}
           className={"openapi-markdown__details"}
@@ -129,10 +129,10 @@ Get Cut-Network Peer Info
                   style={{"marginTop":".5rem","marginBottom":".5rem"}}
                 >
                   Example: 10.36.1.3:42988
-                  
+
                   Host and port of the client as observed by the remote node
-                  
-                  
+
+
                 </div>
               </div>
             </li><li
@@ -153,10 +153,10 @@ Get Cut-Network Peer Info
                   style={{"marginTop":".5rem","marginBottom":".5rem"}}
                 >
                   Example: 1618597601
-                  
+
                   The time of the clock of the remote node
-                  
-                  
+
+
                 </div>
               </div>
             </li><li
@@ -177,10 +177,10 @@ Get Cut-Network Peer Info
                   style={{"marginTop":".5rem","marginBottom":".5rem"}}
                 >
                   Example: 2.6
-                  
+
                   The version of the remote chainweb node
-                  
-                  
+
+
                 </div>
               </div>
             </li>
@@ -217,7 +217,7 @@ Get Cut-Network Peer Info
                     </summary><div
                       style={{"textAlign":"left","marginLeft":"1rem"}}
                     >
-                      
+
                     </div><ul
                       style={{"marginLeft":"1rem"}}
                     >
@@ -246,7 +246,7 @@ Get Cut-Network Peer Info
                               </span><span
                                 className={"openapi-schema__divider"}
                               >
-                                
+
                               </span><span
                                 className={"openapi-schema__required"}
                               >
@@ -259,11 +259,11 @@ Get Cut-Network Peer Info
                             <div
                               style={{"marginTop":".5rem","marginBottom":".5rem"}}
                             >
-                              
-                              
+
+
                               Array of peers
-                              
-                              
+
+
                             </div><li>
                               <div
                                 style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem","paddingBottom":".5rem"}}
@@ -278,7 +278,7 @@ Get Cut-Network Peer Info
                               qualifierMessage={"**Possible values:** Value must match regular expression `[a-zA-Z0-9_-]{43}`"}
                               schema={{"description":"The base64Url (without padding) encoded SHA256 fingerprint of the\nSSL certificate of the node. This can be null only if the node uses\nan official CA signed certificate\n","type":"string","nullable":true,"pattern":"[a-zA-Z0-9_-]{43}"}}
                             >
-                              
+
                             </SchemaItem><SchemaItem
                               collapsible={true}
                               className={"schemaItem"}
@@ -300,11 +300,11 @@ Get Cut-Network Peer Info
                                     </strong><span
                                       className={"openapi-schema__name"}
                                     >
-                                       
+
                                     </span><span
                                       className={"openapi-schema__divider"}
                                     >
-                                      
+
                                     </span><span
                                       className={"openapi-schema__required"}
                                     >
@@ -342,13 +342,13 @@ Get Cut-Network Peer Info
                                         <div
                                           style={{"marginTop":".5rem","marginBottom":".5rem"}}
                                         >
-                                          
-                                          
+
+
                                           A domain name or IP address. This must be a domain name only if
                                           the respective node is using a valid CA signed SSL certificate.
-                                          
-                                          
-                                          
+
+
+
                                         </div>
                                       </div><div>
                                         <span
@@ -366,7 +366,7 @@ Get Cut-Network Peer Info
                                     qualifierMessage={"**Possible values:** `>= 1` and `<= 65535`"}
                                     schema={{"description":"Port number","type":"integer","minimum":1,"maximum":65535}}
                                   >
-                                    
+
                                   </SchemaItem>
                                 </div>
                               </details>
@@ -387,7 +387,7 @@ Get Cut-Network Peer Info
                         qualifierMessage={undefined}
                         schema={{"description":"The number of items in the page. This number can be smaller but\nnever be larger than the number of requested items.\n","type":"integer","minimum":0,"items":{"description":"Items of the returned collection","type":"array"}}}
                       >
-                        
+
                       </SchemaItem><SchemaItem
                         collapsible={true}
                         className={"schemaItem"}
@@ -420,21 +420,21 @@ Get Cut-Network Peer Info
                             <div
                               style={{"marginTop":".5rem","marginBottom":".5rem"}}
                             >
-                              
-                              
+
+
                               **Possible values:** Value must match regular expression `^(inclusive|exclusive):.*$`
-                              
-                              
+
+
                             </div><div
                               style={{"marginTop":".5rem","marginBottom":".5rem"}}
                             >
-                              
-                              
+
+
                               A cursor that can be used to query the next page. It should be used
                               literally as value for the `next` parameter in a follow-up request.
-                              
-                              
-                              
+
+
+
                             </div>
                           </div><div>
                             <span
@@ -449,11 +449,11 @@ Get Cut-Network Peer Info
                                 <div
                                   style={{"marginTop":".5rem","marginBottom":".5rem"}}
                                 >
-                                  
-                                  
+
+
                                   string
-                                  
-                                  
+
+
                                 </div>
                               </TabItem>
                             </SchemaTabs>
@@ -470,7 +470,7 @@ Get Cut-Network Peer Info
                     responseExample={"{\n  \"value\": {\n    \"next\": \"inclusive:o1S4NNFhKWg8T1HEkmDvsTH9Ut9l3_qHRpp00yRKZIk\",\n    \"items\": [\n      \"AAAAAAAAAABRoiLHW7EFAB2lwAatTykipYZ3CZNPzLe-f5S-zUt8COtu0H12f_OZAwAFAAAAMpic85rur2MYf3zli8s8bHxTFjriFoMPTr6ZPs8sjxMKAAAAVBKuhU_hQmuvKlx88A5o-FH0rzNo59NsdxmOGNBQ-ycPAAAAMItdqgHZxf7j6l0oE8X-G9-VyMbnQmZrtSniuRe_EJ9CtyxsSb7daPIIYAaXMgSEsQ3dkxY5GjJjLwAAAAAAABqWlmx5B6wo0YWPIShNKmdVrAQWht2P85BS1drGLpkAAAAAADUJ-ARn7blgHgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQEIPAAAAAAAFAAAA-na5gFuxBQAFL-3CY4YuAJNGp9KhDkbrKkIPWYyq8WvtAaNPoUFWC16louSx8YN5\",\n      \"AAAAAAAAAAA0slHKW7EFAJNGp9KhDkbrKkIPWYyq8WvtAaNPoUFWC16louSx8YN5AwAFAAAAALcxv1ZiwwQ_QX9eOBZMbzIop6n7XtveS1FqOFwyvGMKAAAAC76ElC60qXSJQCHePpzzJxsCYvvrqvmkoHPyZnex-4QPAAAAKv0sz_rTANjoiJwMrdZFCJNFwdH0U_M5ouwMr3BXBfpCtyxsSb7daPIIYAaXMgSEsQ3dkxY5GjJjLwAAAAAAALJlIg1vY3w_9L63bePn1yk_5agvdEbIBBjm3adxc5xWAAAAAGzpBzdiVL9gHgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQUIPAAAAAAAFAAAA-na5gFuxBQALiBhXgqaHAb4VWug3oddEVy0X9y_jEkE2Kmi_vyGP5ovr-fDIz_Uf\"\n    ],\n    \"limit\": 2\n  }\n}"}
                     language={"json"}
                   >
-                    
+
                   </ResponseSamples>
                 </TabItem><TabItem
                   label={"Example"}
@@ -480,7 +480,7 @@ Get Cut-Network Peer Info
                     responseExample={"{\n  \"value\": {\n    \"next\": \"inclusive:3\",\n    \"items\": [\n      {\n        \"address\": {\n          \"hostname\": \"85.238.99.91\",\n          \"port\": 30004\n        },\n        \"id\": \"PRLmVUcc9AH3fyfMYiWeC4nV2i1iHwc0-aM7iAO8h18\"\n      },\n      {\n        \"address\": {\n          \"hostname\": \"us-w3.chainweb.com\",\n          \"port\": 443\n        },\n        \"id\": null\n      },\n      {\n        \"address\": {\n          \"hostname\": \"95.111.232.151\",\n          \"port\": 30004\n        },\n        \"id\": \"DguFKLFMxp12vfl1z3cQIJQlh8xOpeZuBkpJU9Y-VLo\"\n      }\n    ],\n    \"limit\": 3\n  }\n}"}
                     language={"json"}
                   >
-                    
+
                   </ResponseSamples>
                 </TabItem>
               </SchemaTabs>
@@ -491,4 +491,3 @@ Get Cut-Network Peer Info
     </ApiTabs>
   </div>
 </div>
-      

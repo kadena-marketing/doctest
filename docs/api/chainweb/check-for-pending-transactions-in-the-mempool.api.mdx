@@ -36,10 +36,10 @@ import TabItem from "@theme/TabItem";
   method={"post"}
   path={"/chain/{chain}/mempool/member"}
 >
-  
+
 </MethodEndpoint>
 
-
+<span className="apiEndPoint">mempool/member</span>
 
 Check for Pending Transactions in the Mempool
 
@@ -71,7 +71,7 @@ Check for Pending Transactions in the Mempool
         className={"paramsItem"}
         param={{"name":"chain","in":"path","description":"the id of the chain to which the request is sent","required":true,"schema":{"type":"integer","minimum":0,"example":0}}}
       >
-        
+
       </ParamsItem>
     </ul>
   </div>
@@ -107,11 +107,11 @@ Check for Pending Transactions in the Mempool
         <div
           style={{"marginTop":"1rem","marginBottom":"1rem"}}
         >
-          
-          
+
+
           Array of request keys
-          
-          
+
+
         </div>
       </div><ul
         style={{"marginLeft":"1rem"}}
@@ -125,18 +125,18 @@ Check for Pending Transactions in the Mempool
         </li><div
           style={{"marginTop":".5rem","marginBottom":".5rem"}}
         >
-          
-          
+
+
           string
-          
+
           <div
             style={{"paddingTop":"1rem"}}
           >
-            
-            
+
+
             **Possible values:** `>= 43 characters` and `<= 43 characters`, Value must match regular expression `^[a-zA-Z0-9_-]{43}$`
-            
-            
+
+
           </div>
         </div><li>
           <div
@@ -159,15 +159,15 @@ Check for Pending Transactions in the Mempool
         value={"200"}
       >
         <div>
-          
-          
+
+
           Array of boolean values that indicate whether the respective
           transaction is in the mempool.
-          
+
           The array has the same size as the request body.
-          
-          
-          
+
+
+
         </div><details
           style={{"textAlign":"left","marginBottom":"1rem"}}
           className={"openapi-markdown__details"}
@@ -201,10 +201,10 @@ Check for Pending Transactions in the Mempool
                   style={{"marginTop":".5rem","marginBottom":".5rem"}}
                 >
                   Example: 10.36.1.3:42988
-                  
+
                   Host and port of the client as observed by the remote node
-                  
-                  
+
+
                 </div>
               </div>
             </li><li
@@ -225,10 +225,10 @@ Check for Pending Transactions in the Mempool
                   style={{"marginTop":".5rem","marginBottom":".5rem"}}
                 >
                   Example: 1618597601
-                  
+
                   The time of the clock of the remote node
-                  
-                  
+
+
                 </div>
               </div>
             </li><li
@@ -249,10 +249,10 @@ Check for Pending Transactions in the Mempool
                   style={{"marginTop":".5rem","marginBottom":".5rem"}}
                 >
                   Example: 2.6
-                  
+
                   The version of the remote chainweb node
-                  
-                  
+
+
                 </div>
               </div>
             </li>
@@ -289,7 +289,7 @@ Check for Pending Transactions in the Mempool
                     </summary><div
                       style={{"textAlign":"left","marginLeft":"1rem"}}
                     >
-                      
+
                     </div><ul
                       style={{"marginLeft":"1rem"}}
                     >
@@ -302,11 +302,11 @@ Check for Pending Transactions in the Mempool
                       </li><div
                         style={{"marginTop":".5rem","marginBottom":".5rem"}}
                       >
-                        
-                        
+
+
                         boolean
-                        
-                        
+
+
                       </div><li>
                         <div
                           style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem"}}
@@ -324,7 +324,7 @@ Check for Pending Transactions in the Mempool
                     responseExample={"[\n  true\n]"}
                     language={"json"}
                   >
-                    
+
                   </ResponseSamples>
                 </TabItem><TabItem
                   label={"hit"}
@@ -336,7 +336,7 @@ Check for Pending Transactions in the Mempool
                     responseExample={"[\n  true\n]"}
                     language={"json"}
                   >
-                    
+
                   </ResponseSamples>
                 </TabItem><TabItem
                   label={"miss"}
@@ -348,7 +348,7 @@ Check for Pending Transactions in the Mempool
                     responseExample={"[\n  false\n]"}
                     language={"json"}
                   >
-                    
+
                   </ResponseSamples>
                 </TabItem><TabItem
                   label={"empty"}
@@ -360,7 +360,7 @@ Check for Pending Transactions in the Mempool
                     responseExample={"[]"}
                     language={"json"}
                   >
-                    
+
                   </ResponseSamples>
                 </TabItem>
               </SchemaTabs>
@@ -371,4 +371,3 @@ Check for Pending Transactions in the Mempool
     </ApiTabs>
   </div>
 </div>
-      

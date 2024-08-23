@@ -10,6 +10,7 @@ custom_edit_url: null
   <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
 </head>
 
+import CustomDocCardList from '@site/src/components/CustomDocCard';
 
 A cut represents a distributed state of a chainweb. It references one
 block header for each chain, such that those blocks are pairwise
@@ -19,12 +20,4 @@ Two blocks from two different chains are said to be concurrent if either
 one of them is an adjacent parent (is a direct dependency) of the other or
 if the blocks do not depend at all on each other.
 
-
-
-
-```mdx-code-block
-import DocCardList from '@theme/DocCardList';
-import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
-
-<DocCardList items={useCurrentSidebarCategory().items}/>
-```
+<CustomDocCardList />

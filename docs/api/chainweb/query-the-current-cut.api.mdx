@@ -36,10 +36,10 @@ import TabItem from "@theme/TabItem";
   method={"get"}
   path={"/cut"}
 >
-  
+
 </MethodEndpoint>
 
-
+<span className="apiEndPoint">cut</span>
 
 Query the current cut
 
@@ -71,7 +71,7 @@ Query the current cut
         className={"paramsItem"}
         param={{"name":"maxheight","in":"query","description":"Maximum cut height of the returned cut","required":false,"schema":{"type":"integer","minimum":0}}}
       >
-        
+
       </ParamsItem>
     </ul>
   </div>
@@ -86,11 +86,11 @@ Query the current cut
         value={"200"}
       >
         <div>
-          
-          
+
+
           The current cut
-          
-          
+
+
         </div><details
           style={{"textAlign":"left","marginBottom":"1rem"}}
           className={"openapi-markdown__details"}
@@ -124,10 +124,10 @@ Query the current cut
                   style={{"marginTop":".5rem","marginBottom":".5rem"}}
                 >
                   Example: 10.36.1.3:42988
-                  
+
                   Host and port of the client as observed by the remote node
-                  
-                  
+
+
                 </div>
               </div>
             </li><li
@@ -148,10 +148,10 @@ Query the current cut
                   style={{"marginTop":".5rem","marginBottom":".5rem"}}
                 >
                   Example: 1618597601
-                  
+
                   The time of the clock of the remote node
-                  
-                  
+
+
                 </div>
               </div>
             </li><li
@@ -172,10 +172,10 @@ Query the current cut
                   style={{"marginTop":".5rem","marginBottom":".5rem"}}
                 >
                   Example: 2.6
-                  
+
                   The version of the remote chainweb node
-                  
-                  
+
+
                 </div>
               </div>
             </li>
@@ -212,7 +212,7 @@ Query the current cut
                     </summary><div
                       style={{"textAlign":"left","marginLeft":"1rem"}}
                     >
-                      
+
                     </div><ul
                       style={{"marginLeft":"1rem"}}
                     >
@@ -246,11 +246,11 @@ Query the current cut
                             <div
                               style={{"marginTop":".5rem","marginBottom":".5rem"}}
                             >
-                              
-                              
+
+
                               Peer info object
-                              
-                              
+
+
                             </div><SchemaItem
                               collapsible={false}
                               name={"id"}
@@ -259,7 +259,7 @@ Query the current cut
                               qualifierMessage={"**Possible values:** Value must match regular expression `[a-zA-Z0-9_-]{43}`"}
                               schema={{"description":"The base64Url (without padding) encoded SHA256 fingerprint of the\nSSL certificate of the node. This can be null only if the node uses\nan official CA signed certificate\n","type":"string","nullable":true,"pattern":"[a-zA-Z0-9_-]{43}"}}
                             >
-                              
+
                             </SchemaItem><SchemaItem
                               collapsible={true}
                               className={"schemaItem"}
@@ -281,11 +281,11 @@ Query the current cut
                                     </strong><span
                                       className={"openapi-schema__name"}
                                     >
-                                       
+
                                     </span><span
                                       className={"openapi-schema__divider"}
                                     >
-                                      
+
                                     </span><span
                                       className={"openapi-schema__required"}
                                     >
@@ -323,13 +323,13 @@ Query the current cut
                                         <div
                                           style={{"marginTop":".5rem","marginBottom":".5rem"}}
                                         >
-                                          
-                                          
+
+
                                           A domain name or IP address. This must be a domain name only if
                                           the respective node is using a valid CA signed SSL certificate.
-                                          
-                                          
-                                          
+
+
+
                                         </div>
                                       </div><div>
                                         <span
@@ -347,7 +347,7 @@ Query the current cut
                                     qualifierMessage={"**Possible values:** `>= 1` and `<= 65535`"}
                                     schema={{"description":"Port number","type":"integer","minimum":1,"maximum":65535}}
                                   >
-                                    
+
                                   </SchemaItem>
                                 </div>
                               </details>
@@ -362,7 +362,7 @@ Query the current cut
                         qualifierMessage={undefined}
                         schema={{"description":"The cut height is the sum of the height of all blocks of the cut.\nUsage of this value should be avoided, because its semantics may\nchange in the future\n","type":"integer","minimum":0}}
                       >
-                        
+
                       </SchemaItem><SchemaItem
                         collapsible={false}
                         name={"weight"}
@@ -371,7 +371,7 @@ Query the current cut
                         qualifierMessage={"**Possible values:** Value must match regular expression `[a-zA-Z0-9_-]{43}`"}
                         schema={{"description":"The sum of the weights of all blocks in the cut","type":"string","pattern":"[a-zA-Z0-9_-]{43}"}}
                       >
-                        
+
                       </SchemaItem><SchemaItem
                         collapsible={true}
                         className={"schemaItem"}
@@ -397,7 +397,7 @@ Query the current cut
                               </span><span
                                 className={"openapi-schema__divider"}
                               >
-                                
+
                               </span><span
                                 className={"openapi-schema__required"}
                               >
@@ -410,13 +410,13 @@ Query the current cut
                             <div
                               style={{"marginTop":".5rem","marginBottom":".5rem"}}
                             >
-                              
-                              
+
+
                               An object that maps chain Ids to their respective block hash and
                               block height
-                              
-                              
-                              
+
+
+
                             </div><SchemaItem
                               collapsible={true}
                               className={"schemaItem"}
@@ -447,11 +447,11 @@ Query the current cut
                                   <div
                                     style={{"marginTop":".5rem","marginBottom":".5rem"}}
                                   >
-                                    
-                                    
+
+
                                     A block hash and the height of that block
-                                    
-                                    
+
+
                                   </div><SchemaItem
                                     collapsible={false}
                                     name={"hash"}
@@ -460,7 +460,7 @@ Query the current cut
                                     qualifierMessage={"**Possible values:** Value must match regular expression `[a-zA-Z0-9_-]{43}`"}
                                     schema={{"type":"string","pattern":"[a-zA-Z0-9_-]{43}"}}
                                   >
-                                    
+
                                   </SchemaItem><SchemaItem
                                     collapsible={false}
                                     name={"height"}
@@ -469,7 +469,7 @@ Query the current cut
                                     qualifierMessage={undefined}
                                     schema={{"type":"integer","minimum":0}}
                                   >
-                                    
+
                                   </SchemaItem>
                                 </div>
                               </details>
@@ -484,7 +484,7 @@ Query the current cut
                         qualifierMessage={undefined}
                         schema={{"type":"string"}}
                       >
-                        
+
                       </SchemaItem><SchemaItem
                         collapsible={false}
                         name={"id"}
@@ -493,7 +493,7 @@ Query the current cut
                         qualifierMessage={undefined}
                         schema={{"type":"string"}}
                       >
-                        
+
                       </SchemaItem>
                     </ul>
                   </details>
@@ -505,7 +505,7 @@ Query the current cut
                     responseExample={"{\n  \"value\": {\n    \"origin\": null,\n    \"height\": 30798466,\n    \"weight\": \"b0wYplmNiTBXCwAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\",\n    \"hashes\": {\n      \"0\": {\n        \"height\": 1539923,\n        \"hash\": \"qEaSmWt_tDcJC9AGbgWY9x12LW5VED7hGgfyz9x_S3w\"\n      },\n      \"1\": {\n        \"height\": 1539923,\n        \"hash\": \"TJuC6nfhamfD517gspAZmqD9umR71nAgttDOi1JbBHw\"\n      },\n      \"2\": {\n        \"height\": 1539924,\n        \"hash\": \"4ineCWfnO1rneWuBMLPzqTl2HF_sZpypT_3TEzf3VLc\"\n      },\n      \"3\": {\n        \"height\": 1539924,\n        \"hash\": \"ZEOMXB2ByqzL2HfYVKIZKAnoe4wIeJ2SaltnXDir59k\"\n      },\n      \"4\": {\n        \"height\": 1539923,\n        \"hash\": \"0g0rOoSznVW2BJDBmK0Lbxz22F-sxTZUNIrUs_Q8Ye4\"\n      },\n      \"5\": {\n        \"height\": 1539923,\n        \"hash\": \"5y_TL-clnF_wELMBKyJk0Sz8RVShw_bGQETJdrMkADA\"\n      },\n      \"6\": {\n        \"height\": 1539923,\n        \"hash\": \"YkQKv6P4_C4jRM3RqKK9FWPxIneeLzlkKQS9ATAQYRk\"\n      },\n      \"7\": {\n        \"height\": 1539923,\n        \"hash\": \"j_hJ9iiH_ATyeQeeRN3auGXjbBWiFgnTU0dYPIz8cKM\"\n      },\n      \"8\": {\n        \"height\": 1539924,\n        \"hash\": \"s7c3B55VbDsS6EJ-nc9S5k2kNbPOBGI8xxF3vUg4d4Q\"\n      },\n      \"9\": {\n        \"height\": 1539922,\n        \"hash\": \"bowQf63xSY9owHKhK1yGee2Q0Fn8yL_oCLaEUn-CGoA\"\n      },\n      \"10\": {\n        \"height\": 1539924,\n        \"hash\": \"uP-pHW4QKrV9fN1mlDGwKuaiIDlJW7xYSj1nW53EHM4\"\n      },\n      \"11\": {\n        \"height\": 1539924,\n        \"hash\": \"TIhegjZ0GEC73T4m0BVuFtfLNGuS56IUWEuf93AJ5UU\"\n      },\n      \"12\": {\n        \"height\": 1539923,\n        \"hash\": \"-j1qcAS9Fs-WQmc3WEhzZ96VojxnlIA2TFpfyIv31Zs\"\n      },\n      \"13\": {\n        \"height\": 1539923,\n        \"hash\": \"S-4TqMgWGlK1k33XRlU9w0Lfwr0RvkO5Jn78Au1OglM\"\n      },\n      \"14\": {\n        \"height\": 1539923,\n        \"hash\": \"xSuULf--S4TrgYNz82deaGhnPLWrg3pXkynGeUPUGwA\"\n      },\n      \"15\": {\n        \"height\": 1539923,\n        \"hash\": \"jsc9rugvcHXDiBAuoO9_j8R_b_jchtJJ8b5596i8wVg\"\n      },\n      \"16\": {\n        \"height\": 1539923,\n        \"hash\": \"qs1aEY8kSxfUBb_JRVswv5dYINRXBjGJteC-6RC1hjc\"\n      },\n      \"17\": {\n        \"height\": 1539924,\n        \"hash\": \"xzVBXaQxzlUfUrakDgppUubQBRXGh-Uy0HBdMNwCq_Y\"\n      },\n      \"18\": {\n        \"height\": 1539924,\n        \"hash\": \"4VOHPAqwioySYRycdl5MxfscQHwtlwwCAt7AySYQT98\"\n      },\n      \"19\": {\n        \"height\": 1539923,\n        \"hash\": \"1PrRg20XyQ_2cfgGOgNK9K-cqIJ1vO8-A-RJlfN5m00\"\n      }\n    },\n    \"id\": \"BBz7KeurYTeQ0hMGbwUbQC84cRbVcacoDQTye-3qkXI\",\n    \"instance\": \"mainnet01\"\n  }\n}"}
                     language={"json"}
                   >
-                    
+
                   </ResponseSamples>
                 </TabItem><TabItem
                   label={"Example"}
@@ -515,7 +515,7 @@ Query the current cut
                     responseExample={"{\n  \"value\": {\n    \"origin\": null,\n    \"height\": 30798466,\n    \"weight\": \"b0wYplmNiTBXCwAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\",\n    \"hashes\": {\n      \"0\": {\n        \"height\": 1539923,\n        \"hash\": \"qEaSmWt_tDcJC9AGbgWY9x12LW5VED7hGgfyz9x_S3w\"\n      },\n      \"1\": {\n        \"height\": 1539923,\n        \"hash\": \"TJuC6nfhamfD517gspAZmqD9umR71nAgttDOi1JbBHw\"\n      },\n      \"2\": {\n        \"height\": 1539924,\n        \"hash\": \"4ineCWfnO1rneWuBMLPzqTl2HF_sZpypT_3TEzf3VLc\"\n      },\n      \"3\": {\n        \"height\": 1539924,\n        \"hash\": \"ZEOMXB2ByqzL2HfYVKIZKAnoe4wIeJ2SaltnXDir59k\"\n      },\n      \"4\": {\n        \"height\": 1539923,\n        \"hash\": \"0g0rOoSznVW2BJDBmK0Lbxz22F-sxTZUNIrUs_Q8Ye4\"\n      },\n      \"5\": {\n        \"height\": 1539923,\n        \"hash\": \"5y_TL-clnF_wELMBKyJk0Sz8RVShw_bGQETJdrMkADA\"\n      },\n      \"6\": {\n        \"height\": 1539923,\n        \"hash\": \"YkQKv6P4_C4jRM3RqKK9FWPxIneeLzlkKQS9ATAQYRk\"\n      },\n      \"7\": {\n        \"height\": 1539923,\n        \"hash\": \"j_hJ9iiH_ATyeQeeRN3auGXjbBWiFgnTU0dYPIz8cKM\"\n      },\n      \"8\": {\n        \"height\": 1539924,\n        \"hash\": \"s7c3B55VbDsS6EJ-nc9S5k2kNbPOBGI8xxF3vUg4d4Q\"\n      },\n      \"9\": {\n        \"height\": 1539922,\n        \"hash\": \"bowQf63xSY9owHKhK1yGee2Q0Fn8yL_oCLaEUn-CGoA\"\n      },\n      \"10\": {\n        \"height\": 1539924,\n        \"hash\": \"uP-pHW4QKrV9fN1mlDGwKuaiIDlJW7xYSj1nW53EHM4\"\n      },\n      \"11\": {\n        \"height\": 1539924,\n        \"hash\": \"TIhegjZ0GEC73T4m0BVuFtfLNGuS56IUWEuf93AJ5UU\"\n      },\n      \"12\": {\n        \"height\": 1539923,\n        \"hash\": \"-j1qcAS9Fs-WQmc3WEhzZ96VojxnlIA2TFpfyIv31Zs\"\n      },\n      \"13\": {\n        \"height\": 1539923,\n        \"hash\": \"S-4TqMgWGlK1k33XRlU9w0Lfwr0RvkO5Jn78Au1OglM\"\n      },\n      \"14\": {\n        \"height\": 1539923,\n        \"hash\": \"xSuULf--S4TrgYNz82deaGhnPLWrg3pXkynGeUPUGwA\"\n      },\n      \"15\": {\n        \"height\": 1539923,\n        \"hash\": \"jsc9rugvcHXDiBAuoO9_j8R_b_jchtJJ8b5596i8wVg\"\n      },\n      \"16\": {\n        \"height\": 1539923,\n        \"hash\": \"qs1aEY8kSxfUBb_JRVswv5dYINRXBjGJteC-6RC1hjc\"\n      },\n      \"17\": {\n        \"height\": 1539924,\n        \"hash\": \"xzVBXaQxzlUfUrakDgppUubQBRXGh-Uy0HBdMNwCq_Y\"\n      },\n      \"18\": {\n        \"height\": 1539924,\n        \"hash\": \"4VOHPAqwioySYRycdl5MxfscQHwtlwwCAt7AySYQT98\"\n      },\n      \"19\": {\n        \"height\": 1539923,\n        \"hash\": \"1PrRg20XyQ_2cfgGOgNK9K-cqIJ1vO8-A-RJlfN5m00\"\n      }\n    },\n    \"id\": \"BBz7KeurYTeQ0hMGbwUbQC84cRbVcacoDQTye-3qkXI\",\n    \"instance\": \"mainnet01\"\n  }\n}"}
                     language={"json"}
                   >
-                    
+
                   </ResponseSamples>
                 </TabItem>
               </SchemaTabs>
@@ -526,4 +526,3 @@ Query the current cut
     </ApiTabs>
   </div>
 </div>
-      

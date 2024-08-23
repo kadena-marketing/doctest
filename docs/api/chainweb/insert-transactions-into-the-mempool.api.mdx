@@ -36,10 +36,10 @@ import TabItem from "@theme/TabItem";
   method={"put"}
   path={"/chain/{chain}/mempool/insert"}
 >
-  
+
 </MethodEndpoint>
 
-
+<span className="apiEndPoint">mempool/insert</span>
 
 Insert Transactions into the Mempool
 
@@ -71,7 +71,7 @@ Insert Transactions into the Mempool
         className={"paramsItem"}
         param={{"name":"chain","in":"path","description":"the id of the chain to which the request is sent","required":true,"schema":{"type":"integer","minimum":0,"example":0}}}
       >
-        
+
       </ParamsItem>
     </ul>
   </div>
@@ -107,11 +107,11 @@ Insert Transactions into the Mempool
         <div
           style={{"marginTop":"1rem","marginBottom":"1rem"}}
         >
-          
-          
+
+
           Array of strings of JSON encoded signed transactions
-          
-          
+
+
         </div>
       </div><ul
         style={{"marginLeft":"1rem"}}
@@ -125,11 +125,11 @@ Insert Transactions into the Mempool
         </li><div
           style={{"marginTop":".5rem","marginBottom":".5rem"}}
         >
-          
-          
+
+
           string
-          
-          
+
+
         </div><li>
           <div
             style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem"}}
@@ -151,11 +151,11 @@ Insert Transactions into the Mempool
         value={"200"}
       >
         <div>
-          
-          
+
+
           Transactions were inserted
-          
-          
+
+
         </div><details
           style={{"textAlign":"left","marginBottom":"1rem"}}
           className={"openapi-markdown__details"}
@@ -189,10 +189,10 @@ Insert Transactions into the Mempool
                   style={{"marginTop":".5rem","marginBottom":".5rem"}}
                 >
                   Example: 10.36.1.3:42988
-                  
+
                   Host and port of the client as observed by the remote node
-                  
-                  
+
+
                 </div>
               </div>
             </li><li
@@ -213,10 +213,10 @@ Insert Transactions into the Mempool
                   style={{"marginTop":".5rem","marginBottom":".5rem"}}
                 >
                   Example: 1618597601
-                  
+
                   The time of the clock of the remote node
-                  
-                  
+
+
                 </div>
               </div>
             </li><li
@@ -237,19 +237,18 @@ Insert Transactions into the Mempool
                   style={{"marginTop":".5rem","marginBottom":".5rem"}}
                 >
                   Example: 2.6
-                  
+
                   The version of the remote chainweb node
-                  
-                  
+
+
                 </div>
               </div>
             </li>
           </ul>
         </details><div>
-          
+
         </div>
       </TabItem>
     </ApiTabs>
   </div>
 </div>
-      

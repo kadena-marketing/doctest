@@ -36,10 +36,10 @@ import TabItem from "@theme/TabItem";
   method={"post"}
   path={"/chain/{chain}/hash/branch"}
 >
-  
+
 </MethodEndpoint>
 
-
+<span className="apiEndPoint">hash/branch</span>
 
 A page of block hashes from branches of the block chain in
 **descending** order.
@@ -77,7 +77,7 @@ lower bounds.
         className={"paramsItem"}
         param={{"name":"chain","in":"path","description":"the id of the chain to which the request is sent","required":true,"schema":{"type":"integer","minimum":0,"example":0}}}
       >
-        
+
       </ParamsItem>
     </ul>
   </div>
@@ -101,22 +101,22 @@ lower bounds.
         className={"paramsItem"}
         param={{"name":"limit","in":"query","description":"Maximum number of records that may be returned. The actual number may be\nlower.\n","required":false,"schema":{"type":"integer","minimum":0}}}
       >
-        
+
       </ParamsItem><ParamsItem
         className={"paramsItem"}
         param={{"name":"next","in":"query","description":"The cursor for the next page. This value can be found as value of the\n`next` property of the previous page.\n","required":false,"schema":{"type":"string"}}}
       >
-        
+
       </ParamsItem><ParamsItem
         className={"paramsItem"}
         param={{"name":"minheight","in":"query","description":"Minimum block height of the returned headers","required":false,"schema":{"type":"integer","minimum":0},"example":500000}}
       >
-        
+
       </ParamsItem><ParamsItem
         className={"paramsItem"}
         param={{"name":"maxheight","in":"query","description":"Maximum block height of the returned headers","required":false,"schema":{"type":"integer","minimum":0},"example":500000}}
       >
-        
+
       </ParamsItem>
     </ul>
   </div>
@@ -148,11 +148,11 @@ lower bounds.
         <div
           style={{"marginTop":"1rem","marginBottom":"1rem"}}
         >
-          
-          
+
+
           Upper and lower bounds of the queried branches
-          
-          
+
+
         </div>
       </div><ul
         style={{"marginLeft":"1rem"}}
@@ -165,7 +165,7 @@ lower bounds.
           qualifierMessage={undefined}
           schema={{"description":"No block hashes are returned that are predecessors of any\nblock with a hash from this array.\n","type":"array","items":{"title":"Block Hash","description":"Base64Url (without padding) encoded block hash","example":"QxGCAz5AY1Y41nh1yWtgqhKhZ9pPiPRagFdIKNqBH7","allOf":[{"title":"SHA256 Hash","type":"string","description":"Base64Url (without padding) encoded SHA256 hash","pattern":"^[a-zA-Z0-9_-]{43}$","minLength":43,"maxLength":43,"example":"y3aWL72-3wAy7vL9wcegGXnstH0lHi-q-cfxkhD5JCw"}]}}}
         >
-          
+
         </SchemaItem><SchemaItem
           collapsible={false}
           name={"upper"}
@@ -174,7 +174,7 @@ lower bounds.
           qualifierMessage={undefined}
           schema={{"description":"Returned block hashes are predecessors of a block with an\nhash from this array. This includes blocks with hashes from\nthis array.\n","type":"array","items":{"title":"Block Hash","description":"Base64Url (without padding) encoded block hash","example":"QxGCAz5AY1Y41nh1yWtgqhKhZ9pPiPRagFdIKNqBH7","allOf":[{"title":"SHA256 Hash","type":"string","description":"Base64Url (without padding) encoded SHA256 hash","pattern":"^[a-zA-Z0-9_-]{43}$","minLength":43,"maxLength":43,"example":"y3aWL72-3wAy7vL9wcegGXnstH0lHi-q-cfxkhD5JCw"}]}}}
         >
-          
+
         </SchemaItem>
       </ul>
     </details>
@@ -190,11 +190,11 @@ lower bounds.
         value={"200"}
       >
         <div>
-          
-          
+
+
           The requested block hashes
-          
-          
+
+
         </div><details
           style={{"textAlign":"left","marginBottom":"1rem"}}
           className={"openapi-markdown__details"}
@@ -228,10 +228,10 @@ lower bounds.
                   style={{"marginTop":".5rem","marginBottom":".5rem"}}
                 >
                   Example: 10.36.1.3:42988
-                  
+
                   Host and port of the client as observed by the remote node
-                  
-                  
+
+
                 </div>
               </div>
             </li><li
@@ -252,10 +252,10 @@ lower bounds.
                   style={{"marginTop":".5rem","marginBottom":".5rem"}}
                 >
                   Example: 1618597601
-                  
+
                   The time of the clock of the remote node
-                  
-                  
+
+
                 </div>
               </div>
             </li><li
@@ -276,10 +276,10 @@ lower bounds.
                   style={{"marginTop":".5rem","marginBottom":".5rem"}}
                 >
                   Example: 2.6
-                  
+
                   The version of the remote chainweb node
-                  
-                  
+
+
                 </div>
               </div>
             </li>
@@ -316,7 +316,7 @@ lower bounds.
                     </summary><div
                       style={{"textAlign":"left","marginLeft":"1rem"}}
                     >
-                      
+
                     </div><ul
                       style={{"marginLeft":"1rem"}}
                     >
@@ -328,7 +328,7 @@ lower bounds.
                         qualifierMessage={"**Possible values:** `>= 43 characters` and `<= 43 characters`, Value must match regular expression `^[a-zA-Z0-9_-]{43}$`"}
                         schema={{"description":"Array of block hashes","items":{"title":"Block Hash","description":"Base64Url (without padding) encoded block hash","example":true,"type":"string","pattern":"^[a-zA-Z0-9_-]{43}$","minLength":43,"maxLength":43}}}
                       >
-                        
+
                       </SchemaItem><SchemaItem
                         collapsible={false}
                         name={"limit"}
@@ -337,7 +337,7 @@ lower bounds.
                         qualifierMessage={undefined}
                         schema={{"description":"The number of items in the page. This number can be smaller but\nnever be larger than the number of requested items.\n","type":"integer","minimum":0,"items":{"description":"Items of the returned collection","type":"array"}}}
                       >
-                        
+
                       </SchemaItem><SchemaItem
                         collapsible={true}
                         className={"schemaItem"}
@@ -370,21 +370,21 @@ lower bounds.
                             <div
                               style={{"marginTop":".5rem","marginBottom":".5rem"}}
                             >
-                              
-                              
+
+
                               **Possible values:** Value must match regular expression `^(inclusive|exclusive):.*$`
-                              
-                              
+
+
                             </div><div
                               style={{"marginTop":".5rem","marginBottom":".5rem"}}
                             >
-                              
-                              
+
+
                               A cursor that can be used to query the next page. It should be used
                               literally as value for the `next` parameter in a follow-up request.
-                              
-                              
-                              
+
+
+
                             </div>
                           </div><div>
                             <span
@@ -399,11 +399,11 @@ lower bounds.
                                 <div
                                   style={{"marginTop":".5rem","marginBottom":".5rem"}}
                                 >
-                                  
-                                  
+
+
                                   string
-                                  
-                                  
+
+
                                 </div>
                               </TabItem>
                             </SchemaTabs>
@@ -420,7 +420,7 @@ lower bounds.
                     responseExample={"{\n  \"value\": {\n    \"next\": \"inclusive:o1S4NNFhKWg8T1HEkmDvsTH9Ut9l3_qHRpp00yRKZIk\",\n    \"items\": [\n      \"AAAAAAAAAABRoiLHW7EFAB2lwAatTykipYZ3CZNPzLe-f5S-zUt8COtu0H12f_OZAwAFAAAAMpic85rur2MYf3zli8s8bHxTFjriFoMPTr6ZPs8sjxMKAAAAVBKuhU_hQmuvKlx88A5o-FH0rzNo59NsdxmOGNBQ-ycPAAAAMItdqgHZxf7j6l0oE8X-G9-VyMbnQmZrtSniuRe_EJ9CtyxsSb7daPIIYAaXMgSEsQ3dkxY5GjJjLwAAAAAAABqWlmx5B6wo0YWPIShNKmdVrAQWht2P85BS1drGLpkAAAAAADUJ-ARn7blgHgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQEIPAAAAAAAFAAAA-na5gFuxBQAFL-3CY4YuAJNGp9KhDkbrKkIPWYyq8WvtAaNPoUFWC16louSx8YN5\",\n      \"AAAAAAAAAAA0slHKW7EFAJNGp9KhDkbrKkIPWYyq8WvtAaNPoUFWC16louSx8YN5AwAFAAAAALcxv1ZiwwQ_QX9eOBZMbzIop6n7XtveS1FqOFwyvGMKAAAAC76ElC60qXSJQCHePpzzJxsCYvvrqvmkoHPyZnex-4QPAAAAKv0sz_rTANjoiJwMrdZFCJNFwdH0U_M5ouwMr3BXBfpCtyxsSb7daPIIYAaXMgSEsQ3dkxY5GjJjLwAAAAAAALJlIg1vY3w_9L63bePn1yk_5agvdEbIBBjm3adxc5xWAAAAAGzpBzdiVL9gHgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQUIPAAAAAAAFAAAA-na5gFuxBQALiBhXgqaHAb4VWug3oddEVy0X9y_jEkE2Kmi_vyGP5ovr-fDIz_Uf\"\n    ],\n    \"limit\": 2\n  }\n}"}
                     language={"json"}
                   >
-                    
+
                   </ResponseSamples>
                 </TabItem><TabItem
                   label={"Example"}
@@ -430,7 +430,7 @@ lower bounds.
                     responseExample={"{\n  \"value\": {\n    \"next\": \"inclusive:o1S4NNFhKWg8T1HEkmDvsTH9Ut9l3_qHRpp00yRKZIk\",\n    \"items\": [\n      \"QxGCAz5AY1Y41nh1yWtgqhKhZ9pPiPRagFdIKNqBH74\",\n      \"RClyuyZAacwvPpmLXKbTwrIRXWeUSjiNhJVP2esH8KM\"\n    ],\n    \"limit\": 2\n  }\n}"}
                     language={"json"}
                   >
-                    
+
                   </ResponseSamples>
                 </TabItem>
               </SchemaTabs>
@@ -442,11 +442,11 @@ lower bounds.
         value={"404"}
       >
         <div>
-          
-          
+
+
           The requested block hashes could not be found
-          
-          
+
+
         </div><details
           style={{"textAlign":"left","marginBottom":"1rem"}}
           className={"openapi-markdown__details"}
@@ -480,10 +480,10 @@ lower bounds.
                   style={{"marginTop":".5rem","marginBottom":".5rem"}}
                 >
                   Example: 10.36.1.3:42988
-                  
+
                   Host and port of the client as observed by the remote node
-                  
-                  
+
+
                 </div>
               </div>
             </li><li
@@ -504,10 +504,10 @@ lower bounds.
                   style={{"marginTop":".5rem","marginBottom":".5rem"}}
                 >
                   Example: 1618597601
-                  
+
                   The time of the clock of the remote node
-                  
-                  
+
+
                 </div>
               </div>
             </li><li
@@ -528,10 +528,10 @@ lower bounds.
                   style={{"marginTop":".5rem","marginBottom":".5rem"}}
                 >
                   Example: 2.6
-                  
+
                   The version of the remote chainweb node
-                  
-                  
+
+
                 </div>
               </div>
             </li>
@@ -568,7 +568,7 @@ lower bounds.
                     </summary><div
                       style={{"textAlign":"left","marginLeft":"1rem"}}
                     >
-                      
+
                     </div><ul
                       style={{"marginLeft":"1rem"}}
                     >
@@ -580,7 +580,7 @@ lower bounds.
                         qualifierMessage={undefined}
                         schema={{"type":"string"}}
                       >
-                        
+
                       </SchemaItem><SchemaItem
                         collapsible={false}
                         name={"key"}
@@ -589,7 +589,7 @@ lower bounds.
                         qualifierMessage={"**Possible values:** `>= 43 characters` and `<= 43 characters`, Value must match regular expression `^[a-zA-Z0-9_-]{43}$`"}
                         schema={{"title":"SHA256 Hash","type":"string","description":"Base64Url (without padding) encoded SHA256 hash","pattern":"^[a-zA-Z0-9_-]{43}$","minLength":43,"maxLength":43,"example":"y3aWL72-3wAy7vL9wcegGXnstH0lHi-q-cfxkhD5JCw"}}
                       >
-                        
+
                       </SchemaItem>
                     </ul>
                   </details>
@@ -601,7 +601,7 @@ lower bounds.
                     responseExample={"{\n  \"reason\": \"string\",\n  \"key\": \"y3aWL72-3wAy7vL9wcegGXnstH0lHi-q-cfxkhD5JCw\"\n}"}
                     language={"json"}
                   >
-                    
+
                   </ResponseSamples>
                 </TabItem>
               </SchemaTabs>
@@ -612,4 +612,3 @@ lower bounds.
     </ApiTabs>
   </div>
 </div>
-      

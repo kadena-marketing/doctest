@@ -36,10 +36,10 @@ import TabItem from "@theme/TabItem";
   method={"put"}
   path={"/cut/peer"}
 >
-  
+
 </MethodEndpoint>
 
-
+<span className="apiEndPoint">cut/peer</span>
 
 Put Cut-Network Peer Info
 
@@ -79,13 +79,13 @@ Put Cut-Network Peer Info
         <div
           style={{"marginTop":"1rem","marginBottom":"1rem"}}
         >
-          
-          
+
+
           The peer that is added to the peer database of the cut P2P network of
           the remote host.
-          
-          
-          
+
+
+
         </div>
       </div><ul
         style={{"marginLeft":"1rem"}}
@@ -98,7 +98,7 @@ Put Cut-Network Peer Info
           qualifierMessage={"**Possible values:** Value must match regular expression `[a-zA-Z0-9_-]{43}`"}
           schema={{"description":"The base64Url (without padding) encoded SHA256 fingerprint of the\nSSL certificate of the node. This can be null only if the node uses\nan official CA signed certificate\n","type":"string","nullable":true,"pattern":"[a-zA-Z0-9_-]{43}"}}
         >
-          
+
         </SchemaItem><SchemaItem
           collapsible={true}
           className={"schemaItem"}
@@ -120,11 +120,11 @@ Put Cut-Network Peer Info
                 </strong><span
                   className={"openapi-schema__name"}
                 >
-                   
+
                 </span><span
                   className={"openapi-schema__divider"}
                 >
-                  
+
                 </span><span
                   className={"openapi-schema__required"}
                 >
@@ -162,13 +162,13 @@ Put Cut-Network Peer Info
                     <div
                       style={{"marginTop":".5rem","marginBottom":".5rem"}}
                     >
-                      
-                      
+
+
                       A domain name or IP address. This must be a domain name only if
                       the respective node is using a valid CA signed SSL certificate.
-                      
-                      
-                      
+
+
+
                     </div>
                   </div><div>
                     <span
@@ -186,7 +186,7 @@ Put Cut-Network Peer Info
                 qualifierMessage={"**Possible values:** `>= 1` and `<= 65535`"}
                 schema={{"description":"Port number","type":"integer","minimum":1,"maximum":65535}}
               >
-                
+
               </SchemaItem>
             </div>
           </details>
@@ -205,11 +205,11 @@ Put Cut-Network Peer Info
         value={"204"}
       >
         <div>
-          
-          
+
+
           The peer got added to the peer database of the remote node.
-          
-          
+
+
         </div><details
           style={{"textAlign":"left","marginBottom":"1rem"}}
           className={"openapi-markdown__details"}
@@ -243,10 +243,10 @@ Put Cut-Network Peer Info
                   style={{"marginTop":".5rem","marginBottom":".5rem"}}
                 >
                   Example: 10.36.1.3:42988
-                  
+
                   Host and port of the client as observed by the remote node
-                  
-                  
+
+
                 </div>
               </div>
             </li><li
@@ -267,10 +267,10 @@ Put Cut-Network Peer Info
                   style={{"marginTop":".5rem","marginBottom":".5rem"}}
                 >
                   Example: 1618597601
-                  
+
                   The time of the clock of the remote node
-                  
-                  
+
+
                 </div>
               </div>
             </li><li
@@ -291,33 +291,33 @@ Put Cut-Network Peer Info
                   style={{"marginTop":".5rem","marginBottom":".5rem"}}
                 >
                   Example: 2.6
-                  
+
                   The version of the remote chainweb node
-                  
-                  
+
+
                 </div>
               </div>
             </li>
           </ul>
         </details><div>
-          
+
         </div>
       </TabItem><TabItem
         label={"400"}
         value={"400"}
       >
         <div>
-          
-          
+
+
           The request is invalid. It is either malformed or the provided peer
           is not reachable.
-          
+
           Before the remote node adds a peer to its peer database it checks
           whether the peer can be reached via the provided address. If this
           check fails an error is returned.
-          
-          
-          
+
+
+
         </div><details
           style={{"textAlign":"left","marginBottom":"1rem"}}
           className={"openapi-markdown__details"}
@@ -351,10 +351,10 @@ Put Cut-Network Peer Info
                   style={{"marginTop":".5rem","marginBottom":".5rem"}}
                 >
                   Example: 10.36.1.3:42988
-                  
+
                   Host and port of the client as observed by the remote node
-                  
-                  
+
+
                 </div>
               </div>
             </li><li
@@ -375,10 +375,10 @@ Put Cut-Network Peer Info
                   style={{"marginTop":".5rem","marginBottom":".5rem"}}
                 >
                   Example: 1618597601
-                  
+
                   The time of the clock of the remote node
-                  
-                  
+
+
                 </div>
               </div>
             </li><li
@@ -399,10 +399,10 @@ Put Cut-Network Peer Info
                   style={{"marginTop":".5rem","marginBottom":".5rem"}}
                 >
                   Example: 2.6
-                  
+
                   The version of the remote chainweb node
-                  
-                  
+
+
                 </div>
               </div>
             </li>
@@ -439,7 +439,7 @@ Put Cut-Network Peer Info
                     </summary><div
                       style={{"textAlign":"left","marginLeft":"1rem"}}
                     >
-                      
+
                     </div><ul
                       style={{"marginLeft":"1rem"}}
                     >
@@ -454,7 +454,7 @@ Put Cut-Network Peer Info
                     responseExample={"Invalid hostaddress: IsNotReachable (PeerInfo {_peerId = Nothing, _peerAddr = HostAddress {_hostAddressHost = us-w1.chainweb.com, _hostAddressPort = 444}}) \"\\\"HttpExceptionRequest Request {\\\\n  host                 = \\\\\\\"us-w1.chainweb.com\\\\\\\"\\\\n  port                 = 444\\\\n  secure               = True\\\\n  requestHeaders       = [(\\\\\\\"X-Chainweb-Node-Version\\\\\\\",\\\\\\\"2.6\\\\\\\")]\\\\n  path                 = \\\\\\\"/chainweb/0.0/mainnet01/cut/peer\\\\\\\"\\\\n  queryString          = \\\\\\\"\\\\\\\"\\\\n  method               = \\\\\\\"GET\\\\\\\"\\\\n  proxy                = Nothing\\\\n  rawBody              = False\\\\n  redirectCount        = 10\\\\n  responseTimeout      = ResponseTimeoutMicro 2000000\\\\n  requestVersion       = HTTP/1.1\\\\n}\\\\n ConnectionTimeout\\\"\""}
                     language={"shell"}
                   >
-                    
+
                   </ResponseSamples>
                 </TabItem>
               </SchemaTabs>
@@ -465,4 +465,3 @@ Put Cut-Network Peer Info
     </ApiTabs>
   </div>
 </div>
-      

@@ -36,10 +36,10 @@ import TabItem from "@theme/TabItem";
   method={"get"}
   path={"/health-check"}
 >
-  
+
 </MethodEndpoint>
 
-
+<span className="apiEndPoint">health-check</span>
 
 Checks whether the chainweb-node is up and running and responding to API
 requests. In order to check the state of consensus the
@@ -57,11 +57,11 @@ requests. In order to check the state of consensus the
         value={"200"}
       >
         <div>
-          
-          
+
+
           The node is healthy
-          
-          
+
+
         </div><details
           style={{"textAlign":"left","marginBottom":"1rem"}}
           className={"openapi-markdown__details"}
@@ -95,10 +95,10 @@ requests. In order to check the state of consensus the
                   style={{"marginTop":".5rem","marginBottom":".5rem"}}
                 >
                   Example: 10.36.1.3:42988
-                  
+
                   Host and port of the client as observed by the remote node
-                  
-                  
+
+
                 </div>
               </div>
             </li><li
@@ -119,10 +119,10 @@ requests. In order to check the state of consensus the
                   style={{"marginTop":".5rem","marginBottom":".5rem"}}
                 >
                   Example: 1618597601
-                  
+
                   The time of the clock of the remote node
-                  
-                  
+
+
                 </div>
               </div>
             </li><li
@@ -143,10 +143,10 @@ requests. In order to check the state of consensus the
                   style={{"marginTop":".5rem","marginBottom":".5rem"}}
                 >
                   Example: 2.6
-                  
+
                   The version of the remote chainweb node
-                  
-                  
+
+
                 </div>
               </div>
             </li>
@@ -183,18 +183,18 @@ requests. In order to check the state of consensus the
                     </summary><div
                       style={{"textAlign":"left","marginLeft":"1rem"}}
                     >
-                      
+
                     </div><ul
                       style={{"marginLeft":"1rem"}}
                     >
                       <div
                         style={{"marginTop":".5rem","marginBottom":".5rem"}}
                       >
-                        
-                        
+
+
                         string
-                        
-                        
+
+
                       </div>
                     </ul>
                   </details>
@@ -206,7 +206,7 @@ requests. In order to check the state of consensus the
                     responseExample={"Health check OK."}
                     language={"shell"}
                   >
-                    
+
                   </ResponseSamples>
                 </TabItem>
               </SchemaTabs>
@@ -217,4 +217,3 @@ requests. In order to check the state of consensus the
     </ApiTabs>
   </div>
 </div>
-      

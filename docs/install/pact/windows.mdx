@@ -8,121 +8,112 @@ slug: windows
   <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
 </head>
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 import CodeBlock from '@theme/CodeBlock';
-import styles from '/src/styles/styles.module.css';
-import { Step } from '/src/styles/Step'
 
 # Installing Pact on Windows with WSL
 
 To install Pact on Windows, you'll need to set up Windows Subsystem for Linux (WSL) and use a Linux environment to install Pact. Follow these steps to get Pact up and running on your Windows machine.
 
-## Step 1: Install Windows Subsystem for Linux (WSL)
+## Install Windows Subsystem for Linux (WSL)
 
-1. **Enable WSL**
-   - Open PowerShell as Administrator and run the following command to enable WSL and install the default Linux distribution:
+### Enable WSL
 
-     ```powershell
-     wsl --install
-     ```
+- Open PowerShell as Administrator and run the following command to enable WSL and install the default Linux distribution:
 
-   - If the command does not automatically install Ubuntu, you can manually install it from the Microsoft Store.
+```powershell
+wsl --install
+```
 
-2. **Restart Your Computer**
-   - Restart your computer to complete the WSL installation.
+- If the command does not automatically install Ubuntu, you can manually install it from the Microsoft Store.
 
-3. **Install Ubuntu (Recommended)**
-   - Open the [Microsoft Store](https://www.microsoft.com/store/productId/9NBLGGH4QHMC) and search for "Ubuntu".
-   - Select the latest Ubuntu version (e.g., Ubuntu 22.04 LTS) and click "Install".
+### Restart Your Computer
 
-4. **Set Up Ubuntu**
-   - After installation, open Ubuntu from the Start menu and follow the on-screen instructions to complete the setup, including creating a user account.
+- Restart your computer to complete the WSL installation.
 
-   **Quick Tip:** For detailed WSL installation instructions and troubleshooting, use [this guide](https://learn.microsoft.com/en-us/windows/wsl/install).
+### Install Ubuntu (Recommended)
+
+- Open the [Microsoft Store](https://www.microsoft.com/store/productId/9NBLGGH4QHMC) and search for "Ubuntu".
+- Select the latest Ubuntu version (e.g., Ubuntu 22.04 LTS) and click "Install".
+
+### Set Up Ubuntu
+
+- After installation, open Ubuntu from the Start menu and follow the on-screen instructions to complete the setup, including creating a user account.
+
+**Quick Tip:** For detailed WSL installation instructions and troubleshooting, use [this guide](https://learn.microsoft.com/en-us/windows/wsl/install).
 
 ## Prerequisites
 
 Once WSL is set up with Ubuntu, ensure you have the following prerequisites installed within your Ubuntu environment:
 
-<Tabs>
-  <TabItem value="z3" label="Z3" default>
-    Install Z3, which is required by Pact:
+### Z3
 
-    ```bash
-    sudo apt update
-    sudo apt install z3
-    ```
+Install Z3, which is required by Pact:
 
-    Verify Z3 installation:
+```bash
+sudo apt update
+sudo apt install z3
+```
 
-    ```bash
-    z3 --version
-    ```
-  </TabItem>
-</Tabs>
+Verify Z3 installation:
+
+```bash
+z3 --version
+```
 
 ## Installation Steps
 
-<Tabs>
-  <TabItem value="binary" label="Download Binary" default>
-    <Step stepNumber="1" title="Download the Binary">
-      Download a pre-built binary from the [Pact Releases](https://github.com/kadena-io/pact/releases) page. Look for the latest release and download the appropriate `.tar.gz` file for Linux.
+### Step 1: Download the Binary
 
-    </Step>
+Download a pre-built binary from the [Pact Releases](https://github.com/kadena-io/pact/releases) page. Look for the latest release and download the appropriate `.tar.gz` file for Linux.
 
-    <Step stepNumber="2" title="Extract the Binary">
-      Extract the downloaded archive:
+### Step 2: Extract the Binary
 
-      ```bash
-      tar -xzf pact-<version>-linux-x86_64.tar.gz
-      ```
+     Extract the downloaded archive:
 
-      Navigate to the extracted directory:
+     ```bash
+     tar -xzf pact-<version>-linux-x86_64.tar.gz
+     ```
 
-      ```bash
-      cd pact-<version>-linux-x86_64
-      ```
-    </Step>
+     Navigate to the extracted directory:
 
-    <Step stepNumber="3" title="Place Binary in System Path">
-      Move the `pact` binary to a directory in your system PATH, or update your PATH variable. For example, add the directory to your PATH:
+     ```bash
+     cd pact-<version>-linux-x86_64
+     ```
+### Step 3: Place Binary in System Path
 
-      ```bash
-      export PATH="/path/to/pact-directory:$PATH"
-      ```
+     Move the `pact` binary to a directory in your system PATH, or update your PATH variable. For example, add the directory to your PATH:
 
-      To make this change permanent, add the above line to your `~/.bashrc` or `~/.zshrc` file:
+     ```bash
+     export PATH="/path/to/pact-directory:$PATH"
+     ```
 
-      ```bash
-      nano ~/.bashrc
-      # Add the line at the end of the file
-      export PATH="/path/to/pact-directory:$PATH"
-      # Save and exit
-      ```
+     To make this change permanent, add the above line to your `~/.bashrc` or `~/.zshrc` file:
 
-      Reload the shell configuration:
+     ```bash
+     nano ~/.bashrc
+     # Add the line at the end of the file
+     export PATH="/path/to/pact-directory:$PATH"
+     # Save and exit
+     ```
 
-      ```bash
-      source ~/.bashrc
-      ```
+     Reload the shell configuration:
 
-      **Note:** Replace `~/.bashrc` with `~/.zshrc` if you use Zsh.
+     ```bash
+     source ~/.bashrc
+     ```
 
-    </Step>
+     **Note:** Replace `~/.bashrc` with `~/.zshrc` if you use Zsh.
 
-    <Step stepNumber="4" title="Verify the Installation">
-      Verify the installation by checking the Pact version or ensuring the binary is in your PATH:
+### Step 4: Verify the Installation
 
-      ```bash
-      pact --version
-      echo $PATH
-      ```
+Verify the installation by checking the Pact version or ensuring the binary is in your PATH:
 
-      Ensure that the output includes the path to your `pact` binary.
-    </Step>
-  </TabItem>
-</Tabs>
+```bash
+pact --version
+echo $PATH
+```
+
+Ensure that the output includes the path to your `pact` binary.
 
 ## Usage
 
@@ -132,18 +123,19 @@ Once installed, you can start using Pact for smart contract development and test
 
 If you encounter issues:
 
-<Tabs>
-  <TabItem value="dependencies" label="Check Dependencies" default>
-    Ensure Z3 and Pact are correctly installed. Verify their versions with:
+### Check Dependencies
 
-    ```bash
-    z3 --version
-    pact --version
-    ```
-  </TabItem>
-  <TabItem value="github" label="Consult GitHub Issues">
-    Visit the [Pact GitHub Issues](https://github.com/kadena-io/pact/issues) page for common problems and solutions.
-  </TabItem>
-</Tabs>
+Ensure Z3 and Pact are correctly installed. Verify their versions with:
+
+```bash
+z3 --version
+pact --version
+```
+
+### Consult GitHub Issues
+
+Visit the [Pact GitHub Issues](https://github.com/kadena-io/pact/issues) page for common problems and solutions.
+
+---
 
 You are now ready to start developing with Pact on your Windows system using WSL. Enjoy coding!

@@ -57,7 +57,7 @@ This script does the following:
 
 ## Adding Notifications
 
-To add notifications, you can modify the `log_message` function to send emails or messages to services like Telegram. 
+To add notifications, you can modify the `log_message` function to send emails or messages to services like Telegram.
 Here's an example of how you might modify the function to send a Telegram message:
 
 ```bash
@@ -86,47 +86,54 @@ To run this script every 30 seconds, you can set up a cron job or a systemd time
 
 ### Using Cron
 
-1. Open your crontab file:
-   ```
-   crontab -e
-   ```
-2. Add the following line:
-   ```
-   * * * * * /path/to/your/script.sh; sleep 30; /path/to/your/script.sh
-   ```
-   This runs the script every minute and then again 30 seconds later.
+Open your crontab file:
+
+```
+crontab -e
+```
+
+Add the following line:
+
+```
+* * * * * /path/to/your/script.sh; sleep 30; /path/to/your/script.sh
+```
+
+This runs the script every minute and then again 30 seconds later.
 
 ### Using Systemd Timer
 
-1. Create a service file `/etc/systemd/system/chainweb-monitor.service`:
-   ```
-   [Unit]
-   Description=Chainweb Node Monitor
+Create a service file `/etc/systemd/system/chainweb-monitor.service`:
 
-   [Service]
-   ExecStart=/path/to/your/script.sh
+```
+[Unit]
+Description=Chainweb Node Monitor
 
-   [Install]
-   WantedBy=multi-user.target
-   ```
+[Service]
+ExecStart=/path/to/your/script.sh
 
-2. Create a timer file `/etc/systemd/system/chainweb-monitor.timer`:
-   ```
-   [Unit]
-   Description=Run Chainweb Node Monitor every 30 seconds
+[Install]
+WantedBy=multi-user.target
+```
 
-   [Timer]
-   OnBootSec=30
-   OnUnitActiveSec=30s
+Create a timer file `/etc/systemd/system/chainweb-monitor.timer`:
 
-   [Install]
-   WantedBy=timers.target
-   ```
+```
+[Unit]
+Description=Run Chainweb Node Monitor every 30 seconds
 
-3. Enable and start the timer:
-   ```
-   sudo systemctl enable chainweb-monitor.timer
-   sudo systemctl start chainweb-monitor.timer
-   ```
+[Timer]
+OnBootSec=30
+OnUnitActiveSec=30s
+
+[Install]
+WantedBy=timers.target
+```
+
+Enable and start the timer:
+
+```
+sudo systemctl enable chainweb-monitor.timer
+sudo systemctl start chainweb-monitor.timer
+```
 
 This setup will run your monitoring script every 30 seconds, providing real-time information about your Chainweb node's status and automatically attempting to restart it if issues are detected.

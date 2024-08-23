@@ -36,10 +36,10 @@ import TabItem from "@theme/TabItem";
   method={"get"}
   path={"/info"}
 >
-  
+
 </MethodEndpoint>
 
-
+<span className="apiEndPoint">info</span>
 
 Provides general information about the node and the chainweb version
 
@@ -54,11 +54,11 @@ Provides general information about the node and the chainweb version
         value={"200"}
       >
         <div>
-          
-          
+
+
           General information about the node and the chainweb version
-          
-          
+
+
         </div><details
           style={{"textAlign":"left","marginBottom":"1rem"}}
           className={"openapi-markdown__details"}
@@ -92,10 +92,10 @@ Provides general information about the node and the chainweb version
                   style={{"marginTop":".5rem","marginBottom":".5rem"}}
                 >
                   Example: 10.36.1.3:42988
-                  
+
                   Host and port of the client as observed by the remote node
-                  
-                  
+
+
                 </div>
               </div>
             </li><li
@@ -116,10 +116,10 @@ Provides general information about the node and the chainweb version
                   style={{"marginTop":".5rem","marginBottom":".5rem"}}
                 >
                   Example: 1618597601
-                  
+
                   The time of the clock of the remote node
-                  
-                  
+
+
                 </div>
               </div>
             </li><li
@@ -140,10 +140,10 @@ Provides general information about the node and the chainweb version
                   style={{"marginTop":".5rem","marginBottom":".5rem"}}
                 >
                   Example: 2.6
-                  
+
                   The version of the remote chainweb node
-                  
-                  
+
+
                 </div>
               </div>
             </li>
@@ -180,7 +180,7 @@ Provides general information about the node and the chainweb version
                     </summary><div
                       style={{"textAlign":"left","marginLeft":"1rem"}}
                     >
-                      
+
                     </div><ul
                       style={{"marginLeft":"1rem"}}
                     >
@@ -192,7 +192,7 @@ Provides general information about the node and the chainweb version
                         qualifierMessage={"**Possible values:** `>= 10`"}
                         schema={{"type":"integer","minimum":10,"example":20}}
                       >
-                        
+
                       </SchemaItem><SchemaItem
                         collapsible={false}
                         name={"nodeApiVersion"}
@@ -201,7 +201,7 @@ Provides general information about the node and the chainweb version
                         qualifierMessage={undefined}
                         schema={{"type":"string","example":"0.0"}}
                       >
-                        
+
                       </SchemaItem><SchemaItem
                         collapsible={false}
                         name={"nodeChains"}
@@ -210,7 +210,7 @@ Provides general information about the node and the chainweb version
                         qualifierMessage={undefined}
                         schema={{"type":"array","items":{"description":"Chain identifiers","type":"string"},"minItems":0,"example":["0"]}}
                       >
-                        
+
                       </SchemaItem><SchemaItem
                         collapsible={false}
                         name={"nodeVersion"}
@@ -219,7 +219,7 @@ Provides general information about the node and the chainweb version
                         qualifierMessage={"**Possible values:** [`test-singleton`, `development`, `mainnet01`, `testnet04`]"}
                         schema={{"type":"string","enum":["test-singleton","development","mainnet01","testnet04"],"example":"mainnet01"}}
                       >
-                        
+
                       </SchemaItem><SchemaItem
                         collapsible={false}
                         name={"nodeGraphHistory"}
@@ -228,7 +228,7 @@ Provides general information about the node and the chainweb version
                         qualifierMessage={"**Possible values:** `>= 1`"}
                         schema={{"description":"Array of all chain graphs indexed by the height of the first block with the repective\ngraph. Graphs are encoded as adjacency lists.\n","type":"array","uniqueItems":true,"minItems":1,"items":{"description":"A pair consisting of the height of the first block of a chain graph and the adjacency list of the graph.","type":"array","minItems":2,"maxItems":2,"items":{"oneOf":[{"description":"height of the first block of the graph","type":"integer","minimum":0},{"description":"adjacency list encoding of the chain graph.","type":"array","items":{"description":"A pair of the chain identifier and the list of chains adjacent to it.","minItems":2,"maxItems":2,"type":"array","items":{"oneOf":[{"description":"a chain identifier","type":"integer","minimum":0},{"description":"an adjacency list for that chain","type":"array","minItems":0,"items":{"type":"integer","minimum":0}}]}}}]}}}}
                       >
-                        
+
                       </SchemaItem>
                     </ul>
                   </details>
@@ -240,7 +240,7 @@ Provides general information about the node and the chainweb version
                     responseExample={"{\n  \"value\": {\n    \"nodeNumberOfChains\": 20,\n    \"nodeApiVersion\": \"0.0\",\n    \"nodeChains\": [\n      \"12\",\n      \"13\",\n      \"14\",\n      \"15\",\n      \"8\",\n      \"9\",\n      \"10\",\n      \"11\",\n      \"4\",\n      \"5\",\n      \"6\",\n      \"7\",\n      \"0\",\n      \"16\",\n      \"1\",\n      \"17\",\n      \"2\",\n      \"18\",\n      \"3\",\n      \"19\"\n    ],\n    \"nodeVersion\": \"mainnet01\",\n    \"nodeGraphHistory\": [\n      [\n        0,\n        [\n          [\n            0,\n            [\n              5,\n              2,\n              3\n            ]\n          ],\n          [\n            1,\n            [\n              4,\n              6,\n              3\n            ]\n          ],\n          [\n            2,\n            [\n              4,\n              7,\n              0\n            ]\n          ],\n          [\n            3,\n            [\n              8,\n              0,\n              1\n            ]\n          ],\n          [\n            4,\n            [\n              9,\n              1,\n              2\n            ]\n          ],\n          [\n            5,\n            [\n              9,\n              6,\n              0\n            ]\n          ],\n          [\n            6,\n            [\n              5,\n              7,\n              1\n            ]\n          ],\n          [\n            7,\n            [\n              8,\n              6,\n              2\n            ]\n          ],\n          [\n            8,\n            [\n              9,\n              7,\n              3\n            ]\n          ],\n          [\n            9,\n            [\n              8,\n              4,\n              5\n            ]\n          ]\n        ]\n      ],\n      [\n        852054,\n        [\n          [\n            0,\n            [\n              15,\n              10,\n              5\n            ]\n          ],\n          [\n            1,\n            [\n              11,\n              6,\n              16\n            ]\n          ],\n          [\n            2,\n            [\n              12,\n              7,\n              17\n            ]\n          ],\n          [\n            3,\n            [\n              13,\n              8,\n              18\n            ]\n          ],\n          [\n            4,\n            [\n              14,\n              9,\n              19\n            ]\n          ],\n          [\n            5,\n            [\n              8,\n              7,\n              0\n            ]\n          ],\n          [\n            6,\n            [\n              8,\n              9,\n              1\n            ]\n          ],\n          [\n            7,\n            [\n              9,\n              5,\n              2\n            ]\n          ],\n          [\n            8,\n            [\n              5,\n              6,\n              3\n            ]\n          ],\n          [\n            9,\n            [\n              4,\n              6,\n              7\n            ]\n          ],\n          [\n            10,\n            [\n              11,\n              0,\n              19\n            ]\n          ],\n          [\n            11,\n            [\n              12,\n              10,\n              1\n            ]\n          ],\n          [\n            12,\n            [\n              13,\n              11,\n              2\n            ]\n          ],\n          [\n            13,\n            [\n              12,\n              14,\n              3\n            ]\n          ],\n          [\n            14,\n            [\n              13,\n              15,\n              4\n            ]\n          ],\n          [\n            15,\n            [\n              14,\n              0,\n              16\n            ]\n          ],\n          [\n            16,\n            [\n              15,\n              1,\n              17\n            ]\n          ],\n          [\n            17,\n            [\n              16,\n              2,\n              18\n            ]\n          ],\n          [\n            18,\n            [\n              17,\n              3,\n              19\n            ]\n          ],\n          [\n            19,\n            [\n              10,\n              4,\n              18\n            ]\n          ]\n        ]\n      ]\n    ]\n  }\n}"}
                     language={"json"}
                   >
-                    
+
                   </ResponseSamples>
                 </TabItem><TabItem
                   label={"Example"}
@@ -250,7 +250,7 @@ Provides general information about the node and the chainweb version
                     responseExample={"{\n  \"value\": {\n    \"nodeNumberOfChains\": 20,\n    \"nodeApiVersion\": \"0.0\",\n    \"nodeChains\": [\n      \"12\",\n      \"13\",\n      \"14\",\n      \"15\",\n      \"8\",\n      \"9\",\n      \"10\",\n      \"11\",\n      \"4\",\n      \"5\",\n      \"6\",\n      \"7\",\n      \"0\",\n      \"16\",\n      \"1\",\n      \"17\",\n      \"2\",\n      \"18\",\n      \"3\",\n      \"19\"\n    ],\n    \"nodeVersion\": \"mainnet01\",\n    \"nodeGraphHistory\": [\n      [\n        0,\n        [\n          [\n            0,\n            [\n              5,\n              2,\n              3\n            ]\n          ],\n          [\n            1,\n            [\n              4,\n              6,\n              3\n            ]\n          ],\n          [\n            2,\n            [\n              4,\n              7,\n              0\n            ]\n          ],\n          [\n            3,\n            [\n              8,\n              0,\n              1\n            ]\n          ],\n          [\n            4,\n            [\n              9,\n              1,\n              2\n            ]\n          ],\n          [\n            5,\n            [\n              9,\n              6,\n              0\n            ]\n          ],\n          [\n            6,\n            [\n              5,\n              7,\n              1\n            ]\n          ],\n          [\n            7,\n            [\n              8,\n              6,\n              2\n            ]\n          ],\n          [\n            8,\n            [\n              9,\n              7,\n              3\n            ]\n          ],\n          [\n            9,\n            [\n              8,\n              4,\n              5\n            ]\n          ]\n        ]\n      ],\n      [\n        852054,\n        [\n          [\n            0,\n            [\n              15,\n              10,\n              5\n            ]\n          ],\n          [\n            1,\n            [\n              11,\n              6,\n              16\n            ]\n          ],\n          [\n            2,\n            [\n              12,\n              7,\n              17\n            ]\n          ],\n          [\n            3,\n            [\n              13,\n              8,\n              18\n            ]\n          ],\n          [\n            4,\n            [\n              14,\n              9,\n              19\n            ]\n          ],\n          [\n            5,\n            [\n              8,\n              7,\n              0\n            ]\n          ],\n          [\n            6,\n            [\n              8,\n              9,\n              1\n            ]\n          ],\n          [\n            7,\n            [\n              9,\n              5,\n              2\n            ]\n          ],\n          [\n            8,\n            [\n              5,\n              6,\n              3\n            ]\n          ],\n          [\n            9,\n            [\n              4,\n              6,\n              7\n            ]\n          ],\n          [\n            10,\n            [\n              11,\n              0,\n              19\n            ]\n          ],\n          [\n            11,\n            [\n              12,\n              10,\n              1\n            ]\n          ],\n          [\n            12,\n            [\n              13,\n              11,\n              2\n            ]\n          ],\n          [\n            13,\n            [\n              12,\n              14,\n              3\n            ]\n          ],\n          [\n            14,\n            [\n              13,\n              15,\n              4\n            ]\n          ],\n          [\n            15,\n            [\n              14,\n              0,\n              16\n            ]\n          ],\n          [\n            16,\n            [\n              15,\n              1,\n              17\n            ]\n          ],\n          [\n            17,\n            [\n              16,\n              2,\n              18\n            ]\n          ],\n          [\n            18,\n            [\n              17,\n              3,\n              19\n            ]\n          ],\n          [\n            19,\n            [\n              10,\n              4,\n              18\n            ]\n          ]\n        ]\n      ]\n    ]\n  }\n}"}
                     language={"json"}
                   >
-                    
+
                   </ResponseSamples>
                 </TabItem>
               </SchemaTabs>
@@ -261,4 +261,3 @@ Provides general information about the node and the chainweb version
     </ApiTabs>
   </div>
 </div>
-      

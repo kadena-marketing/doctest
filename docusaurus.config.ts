@@ -7,12 +7,13 @@ import type * as Plugin from "@docusaurus/types/src/plugin";
 import type * as OpenApiPlugin from "docusaurus-plugin-openapi-docs";
 
 const config: Config = {
-     title: "Kadena Docs",
-     tagline: "",
-     url: "https://docs.kadena.io",
+     title: "Kadena Enterprise Documentation",
+     tagline: "The Blockchain for Business",
+     url: "https://enterprise-docs.kadena.io",
      favicon: "img/kadena-favicon.png",
      baseUrl: "/",
 
+     onBrokenAnchors: "ignore",// due to outdated content references
      onBrokenLinks: "log",
      onBrokenMarkdownLinks: "warn",
 
@@ -37,11 +38,26 @@ const config: Config = {
                     theme: {
                          customCss: require.resolve("./src/css/custom.css"),
                     },
+                    gtag: {
+                         trackingID: 'GTM-WMSSTV5V',
+                    },
                } satisfies Preset.Options,
           ],
      ],
 
      themeConfig: {
+          image: "img/kadena-opengraph.png",
+          metadata: [
+               {name: 'keywords', content: 'kadena, kda, developer, docs, documentation, enterprise, institutional'},
+               {name: 'twitter:card', content: 'summary_large_image'},
+             ],
+          announcementBar: {
+               id: "announcement-bar_1",
+               content: `<strong>This site is an alpha version and a work in progress, please visit our <a target="_blank" href="https://docs.kadena.io">live docs site</a>.</strong>`,
+               backgroundColor: "#469279",
+               textColor: "#FFFFFF",
+               isCloseable: true,
+          },
           docs: {
                sidebar: {
                     hideable: false,
@@ -73,9 +89,8 @@ const config: Config = {
                     },
                     {
                          href: 'https://github.com/kadena-io',
-                         label: 'GitHub',
                          position: 'right',
-                         className: 'header-github-link'
+                         className: 'github-link-icon'
                     },
                     /**{
                          type: 'docsVersionDropdown',

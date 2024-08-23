@@ -5,7 +5,7 @@ description: "Block Hashes Endpoints"
 custom_edit_url: null
 ---
 
-
+import CustomDocCardList from '@site/src/components/CustomDocCard';
 
 These endpoints return block hashes from the chain database.
 
@@ -17,12 +17,4 @@ chain the `branch` endpoint can be used, which returns blocks in descending
 order starting from the leafs of branches of the block chain.
 
 
-
-
-```mdx-code-block
-import DocCardList from '@theme/DocCardList';
-import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
-
-<DocCardList items={useCurrentSidebarCategory().items}/>
-```
-      
+<CustomDocCardList />

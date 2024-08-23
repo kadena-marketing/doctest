@@ -36,10 +36,10 @@ import TabItem from "@theme/TabItem";
   method={"get"}
   path={"/header/updates"}
 >
-  
+
 </MethodEndpoint>
 
-
+<span className="apiEndPoint">header/updates</span>
 
 A source of server events that emits a `BlockHeader` event for each new
 block header that is added to the chain database of the remote node.
@@ -63,16 +63,16 @@ the client to reinitiate the stream.
         value={"200"}
       >
         <div>
-          
-          
+
+
           A stream of `BlockHeader` events. **This is not a JSON array**.
-          
+
           Events are separated by empty lines. Each event consists of an
           `event` property and a `data` property which are separated by
           newlines.
-          
-          
-          
+
+
+
         </div><details
           style={{"textAlign":"left","marginBottom":"1rem"}}
           className={"openapi-markdown__details"}
@@ -106,10 +106,10 @@ the client to reinitiate the stream.
                   style={{"marginTop":".5rem","marginBottom":".5rem"}}
                 >
                   Example: 10.36.1.3:42988
-                  
+
                   Host and port of the client as observed by the remote node
-                  
-                  
+
+
                 </div>
               </div>
             </li><li
@@ -130,10 +130,10 @@ the client to reinitiate the stream.
                   style={{"marginTop":".5rem","marginBottom":".5rem"}}
                 >
                   Example: 1618597601
-                  
+
                   The time of the clock of the remote node
-                  
-                  
+
+
                 </div>
               </div>
             </li><li
@@ -154,10 +154,10 @@ the client to reinitiate the stream.
                   style={{"marginTop":".5rem","marginBottom":".5rem"}}
                 >
                   Example: 2.6
-                  
+
                   The version of the remote chainweb node
-                  
-                  
+
+
                 </div>
               </div>
             </li>
@@ -194,7 +194,7 @@ the client to reinitiate the stream.
                     </summary><div
                       style={{"textAlign":"left","marginLeft":"1rem"}}
                     >
-                      
+
                     </div><ul
                       style={{"marginLeft":"1rem"}}
                     >
@@ -212,7 +212,7 @@ the client to reinitiate the stream.
                         qualifierMessage={"**Possible values:** [`BlockHeader`]"}
                         schema={{"type":"string","enum":["BlockHeader"]}}
                       >
-                        
+
                       </SchemaItem><SchemaItem
                         collapsible={true}
                         className={"schemaItem"}
@@ -234,7 +234,7 @@ the client to reinitiate the stream.
                               </strong><span
                                 className={"openapi-schema__name"}
                               >
-                                 
+
                               </span>
                             </span>
                           </summary><div
@@ -248,7 +248,7 @@ the client to reinitiate the stream.
                               qualifierMessage={undefined}
                               schema={{"type":"integer","minimum":0,"description":"Number of transactions in the block"}}
                             >
-                              
+
                             </SchemaItem><SchemaItem
                               collapsible={false}
                               name={"powHash"}
@@ -257,7 +257,7 @@ the client to reinitiate the stream.
                               qualifierMessage={undefined}
                               schema={{"type":"string","description":"A custom representation of the POW hash for use in the block explorer UI"}}
                             >
-                              
+
                             </SchemaItem><SchemaItem
                               collapsible={true}
                               className={"schemaItem"}
@@ -288,11 +288,11 @@ the client to reinitiate the stream.
                                   <div
                                     style={{"marginTop":".5rem","marginBottom":".5rem"}}
                                   >
-                                    
-                                    
+
+
                                     JSON Encoded Block Header
-                                    
-                                    
+
+
                                   </div><SchemaItem
                                     collapsible={false}
                                     name={"creationTime"}
@@ -301,7 +301,7 @@ the client to reinitiate the stream.
                                     qualifierMessage={undefined}
                                     schema={{"title":"POSIX Timestamp in Microseconds","type":"integer","description":"Microseconds since POSIX epoch","example":1602382624629329,"minimum":0}}
                                   >
-                                    
+
                                   </SchemaItem><SchemaItem
                                     collapsible={false}
                                     name={"parent"}
@@ -310,7 +310,7 @@ the client to reinitiate the stream.
                                     qualifierMessage={"**Possible values:** `>= 43 characters` and `<= 43 characters`, Value must match regular expression `^[a-zA-Z0-9_-]{43}$`"}
                                     schema={{"title":"SHA256 Hash","type":"string","description":"Base64Url (without padding) encoded SHA256 hash","pattern":"^[a-zA-Z0-9_-]{43}$","minLength":43,"maxLength":43,"example":"y3aWL72-3wAy7vL9wcegGXnstH0lHi-q-cfxkhD5JCw"}}
                                   >
-                                    
+
                                   </SchemaItem><SchemaItem
                                     collapsible={false}
                                     name={"height"}
@@ -319,7 +319,7 @@ the client to reinitiate the stream.
                                     qualifierMessage={undefined}
                                     schema={{"title":"Block Height","description":"The height of a block is the number of its predecessors in the block chain\n","type":"integer","minimum":0,"example":1000000}}
                                   >
-                                    
+
                                   </SchemaItem><SchemaItem
                                     collapsible={false}
                                     name={"hash"}
@@ -328,7 +328,7 @@ the client to reinitiate the stream.
                                     qualifierMessage={"**Possible values:** `>= 43 characters` and `<= 43 characters`, Value must match regular expression `^[a-zA-Z0-9_-]{43}$`"}
                                     schema={{"title":"SHA256 Hash","type":"string","description":"Base64Url (without padding) encoded SHA256 hash","pattern":"^[a-zA-Z0-9_-]{43}$","minLength":43,"maxLength":43,"example":"y3aWL72-3wAy7vL9wcegGXnstH0lHi-q-cfxkhD5JCw"}}
                                   >
-                                    
+
                                   </SchemaItem><SchemaItem
                                     collapsible={false}
                                     name={"chainId"}
@@ -337,7 +337,7 @@ the client to reinitiate the stream.
                                     qualifierMessage={undefined}
                                     schema={{"title":"Chain ID","description":"A Chainweb chain ID. In Kadena Chainweb chains are named by numbers\nstarting form 0. Valid values depend on the current graph at the\nrespective block height of the chainweb version.\n","type":"integer","minimum":0,"example":0}}
                                   >
-                                    
+
                                   </SchemaItem><SchemaItem
                                     collapsible={false}
                                     name={"weight"}
@@ -346,7 +346,7 @@ the client to reinitiate the stream.
                                     qualifierMessage={"**Possible values:** `>= 43 characters` and `<= 43 characters`, Value must match regular expression `^[a-zA-Z0-9_-]{43}$`"}
                                     schema={{"title":"Block Weight","description":"The POW weight of a block is the sum of the difficulties of the block\nand of all of its ancestors. The difficulty of a block is the maximum\ndifficulty divided by the target.\n\nIt represented as the base64Url (without padding) 256 bit little endian\nencoding of the numerical value.\n","type":"string","pattern":"^[a-zA-Z0-9_-]{43}$","minLength":43,"maxLength":43,"example":"iil_D0t2MGqjAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"}}
                                   >
-                                    
+
                                   </SchemaItem><SchemaItem
                                     collapsible={false}
                                     name={"featureFlags"}
@@ -355,7 +355,7 @@ the client to reinitiate the stream.
                                     qualifierMessage={undefined}
                                     schema={{"type":"integer","description":"A reserved value that must be 0."}}
                                   >
-                                    
+
                                   </SchemaItem><SchemaItem
                                     collapsible={false}
                                     name={"epochStart"}
@@ -364,7 +364,7 @@ the client to reinitiate the stream.
                                     qualifierMessage={undefined}
                                     schema={{"title":"POSIX Timestamp in Microseconds","type":"integer","description":"Microseconds since POSIX epoch","example":1602382624629329,"minimum":0}}
                                   >
-                                    
+
                                   </SchemaItem><SchemaItem
                                     collapsible={true}
                                     className={"schemaItem"}
@@ -390,7 +390,7 @@ the client to reinitiate the stream.
                                           </span><span
                                             className={"openapi-schema__divider"}
                                           >
-                                            
+
                                           </span><span
                                             className={"openapi-schema__required"}
                                           >
@@ -403,14 +403,14 @@ the client to reinitiate the stream.
                                         <div
                                           style={{"marginTop":".5rem","marginBottom":".5rem"}}
                                         >
-                                          
-                                          
+
+
                                           The block hashes of the adjacent parents of the block. This is
                                           represented as an associative array that maps the adjancent chain
                                           ids to the respective block hash.
-                                          
-                                          
-                                          
+
+
+
                                         </div><SchemaItem
                                           collapsible={true}
                                           className={"schemaItem"}
@@ -441,11 +441,11 @@ the client to reinitiate the stream.
                                               <div
                                                 style={{"marginTop":".5rem","marginBottom":".5rem"}}
                                               >
-                                                
-                                                
+
+
                                                 Base64Url (without padding) encoded block hash
-                                                
-                                                
+
+
                                               </div>
                                             </div>
                                           </details>
@@ -460,7 +460,7 @@ the client to reinitiate the stream.
                                     qualifierMessage={"**Possible values:** `>= 43 characters` and `<= 43 characters`, Value must match regular expression `^[a-zA-Z0-9_-]{43}$`"}
                                     schema={{"title":"SHA256 Hash","type":"string","description":"Base64Url (without padding) encoded SHA256 hash","pattern":"^[a-zA-Z0-9_-]{43}$","minLength":43,"maxLength":43,"example":"y3aWL72-3wAy7vL9wcegGXnstH0lHi-q-cfxkhD5JCw"}}
                                   >
-                                    
+
                                   </SchemaItem><SchemaItem
                                     collapsible={false}
                                     name={"chainwebVersion"}
@@ -469,7 +469,7 @@ the client to reinitiate the stream.
                                     qualifierMessage={"**Possible values:** [`test-singleton`, `development`, `mainnet01`, `testnet04`]"}
                                     schema={{"title":"Chainweb Version","description":"The version of the Chainweb network","enum":["test-singleton","development","mainnet01","testnet04"]}}
                                   >
-                                    
+
                                   </SchemaItem><SchemaItem
                                     collapsible={false}
                                     name={"target"}
@@ -478,7 +478,7 @@ the client to reinitiate the stream.
                                     qualifierMessage={"**Possible values:** `>= 43 characters` and `<= 43 characters`, Value must match regular expression `^[a-zA-Z0-9_-]{43}$`"}
                                     schema={{"title":"PoW Target","description":"The PoW target of a block represented as the base64Url (without\npadding) 256 bit little endian encoding of the numerical value.\n","type":"string","pattern":"^[a-zA-Z0-9_-]{43}$","minLength":43,"maxLength":43,"example":"2uMCnB4lWsErj9w1C1vAp1sHYd-sABf3kgcAAAAAAAA"}}
                                   >
-                                    
+
                                   </SchemaItem><SchemaItem
                                     collapsible={false}
                                     name={"nonce"}
@@ -487,7 +487,7 @@ the client to reinitiate the stream.
                                     qualifierMessage={"**Possible values:** `non-empty`, Value must match regular expression `[0-9]+`"}
                                     schema={{"title":"PoW Nonce","description":"PoW nonce of the block. This is computed by the miner such that the\nblock hash is smaller than the target.\n","type":"string","pattern":"[0-9]+","minLength":1}}
                                   >
-                                    
+
                                   </SchemaItem>
                                 </div>
                               </details>
@@ -499,7 +499,7 @@ the client to reinitiate the stream.
                               qualifierMessage={undefined}
                               schema={{"type":"string","description":"A custom representation of the POW target for use in the block explorer UI"}}
                             >
-                              
+
                             </SchemaItem>
                           </div>
                         </details>
@@ -520,7 +520,7 @@ the client to reinitiate the stream.
                     responseExample={"[\n  {\n    \"event\": \"BlockHeader\",\n    \"data\": {\n      \"txCount\": 0,\n      \"powHash\": \"string\",\n      \"header\": {\n        \"value\": {\n          \"creationTime\": 1602382624629329,\n          \"parent\": \"HaXABq1PKSKlhncJk0_Mt75_lL7NS3wI627QfXZ_85k\",\n          \"height\": 1000000,\n          \"hash\": \"k0an0qEORusqQg9ZjKrxa-0Bo0-hQVYLXqWi5LHxg3k\",\n          \"chainId\": 0,\n          \"weight\": \"NQn4BGftuWAeAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\",\n          \"featureFlags\": 0,\n          \"epochStart\": 1602381443331834,\n          \"adjacents\": {\n            \"5\": \"Mpic85rur2MYf3zli8s8bHxTFjriFoMPTr6ZPs8sjxM\",\n            \"10\": \"VBKuhU_hQmuvKlx88A5o-FH0rzNo59NsdxmOGNBQ-yc\",\n            \"15\": \"MItdqgHZxf7j6l0oE8X-G9-VyMbnQmZrtSniuRe_EJ8\"\n          },\n          \"payloadHash\": \"GpaWbHkHrCjRhY8hKE0qZ1WsBBaG3Y_zkFLV2sYumQA\",\n          \"chainwebVersion\": \"mainnet01\",\n          \"target\": \"QrcsbEm-3WjyCGAGlzIEhLEN3ZMWORoyYy8AAAAAAAA\",\n          \"nonce\": \"13095611958898437\"\n        }\n      },\n      \"target\": \"string\"\n    }\n  }\n]"}
                     language={"json"}
                   >
-                    
+
                   </ResponseSamples>
                 </TabItem><TabItem
                   label={"Example"}
@@ -530,7 +530,7 @@ the client to reinitiate the stream.
                     responseExample={"event:BlockHeader\ndata:{\"txCount\":0,\"powHash\":\"00000000000006e0b164858ee0fcbfd112f4242d5010ff33d3a43d2cc3c15177\",\"header\":{\"creationTime\":1619037443761924,\"parent\":\"qaUtvtXk75nXsWM9l6vkeGkQilZfE_YgzWkZm-7tLyE\",\"height\":1554652,\"hash\":\"okI4V9Pez5-UPw4nys2Nk9iIPz3-n30HCag5_NQptlo\",\"chainId\":6,\"weight\":\"d8mOCoZeFpajAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\",\"featureFlags\":0,\"epochStart\":1619035890499046,\"adjacents\":{\"1\":\"OTcNZsNMA-TZ9RTlfWqegFiE0ZkBYcy3JCzh23gmm9Y\",\"8\":\"nznrNdU8RWatTVlS8yTaVaxk8CT1ZjR4ZWta7GAaMDk\",\"9\":\"CanRK_wW8RjyA1X9xSEQCXymsnk3VERAJtAB2abrY_M\"},\"payloadHash\":\"cT86RaKJUyCZXKB3gYqX9A9SNway-lUBrHSvNr7_SaM\",\"chainwebVersion\":\"mainnet01\",\"target\":\"zklwTetkWv91YxYIRmXCt6kUHpEBpiN8gwcAAAAAAAA\",\"nonce\":\"3399765038640884059\"},\"target\":\"00000000000007837c23a601911e14a9b7c2654608166375ff5a64eb4d7049ce\"}\n\nevent:BlockHeader\ndata:{\"txCount\":0,\"powHash\":\"00000000000001c40ddfd6574f9962a443714f3817bbea773a55fec63c7d95c8\",\"header\":{\"creationTime\":1619037446256086,\"parent\":\"usmNftUR_mHpXOm8gCvtbZ50_9VaefaIVvcMdrKwc5A\",\"height\":1554652,\"hash\":\"SOfbK_kI_9BtgLemWmb3FWOgDCTxf1tPulKCq1ndmWA\",\"chainId\":18,\"weight\":\"i7XsQnkhY9yLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\",\"featureFlags\":0,\"epochStart\":1619035885828397,\"adjacents\":{\"19\":\"fQJ5JKQLdGEwZIoC5HrhJstk3Iibj_a2dfmJl9osG-o\",\"17\":\"L-GeIWZE4fMCICSpPptsfYpsLj3oO5eCiyJimclYJiY\",\"3\":\"V7m9ROQmJs2i1UI05t8J6rjkfg7m795esdsIjhqyqfc\"},\"payloadHash\":\"Ji7WisfH5IulPMcFglexGcVDnA59aS5k1YSE2_6L4t8\",\"chainwebVersion\":\"mainnet01\",\"target\":\"tvH4nBuGx3opw-50T8-i6ECi68IgpFLOjAcAAAAAAAA\",\"nonce\":\"9499180874660840183\"},\"target\":\"000000000000078cce52a420c2eba240e8a2cf4f74eec3297ac7861b9cf8f1b6\"}\n"}
                     language={"shell"}
                   >
-                    
+
                   </ResponseSamples>
                 </TabItem>
               </SchemaTabs>
@@ -541,4 +541,3 @@ the client to reinitiate the stream.
     </ApiTabs>
   </div>
 </div>
-      

@@ -55,5 +55,4 @@ pact> (^ 2 -3)
 ## See Also
 
 - [*](multiplication.md): Multiplication operator
-- [sqrt](sqrt.md): Square root function
 

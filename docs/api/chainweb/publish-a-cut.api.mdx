@@ -36,10 +36,10 @@ import TabItem from "@theme/TabItem";
   method={"put"}
   path={"/cut"}
 >
-  
+
 </MethodEndpoint>
 
-
+<span className="apiEndPoint">cut</span>
 
 Publish a cut to a Chainweb node.
 
@@ -89,11 +89,11 @@ P2P network.
         <div
           style={{"marginTop":"1rem","marginBottom":"1rem"}}
         >
-          
-          
+
+
           A cut with an origin property that is not `null`.
-          
-          
+
+
         </div>
       </div><ul
         style={{"marginLeft":"1rem"}}
@@ -123,7 +123,7 @@ P2P network.
                 </span><span
                   className={"openapi-schema__divider"}
                 >
-                  
+
                 </span><span
                   className={"openapi-schema__required"}
                 >
@@ -136,11 +136,11 @@ P2P network.
               <div
                 style={{"marginTop":".5rem","marginBottom":".5rem"}}
               >
-                
-                
+
+
                 Peer info object
-                
-                
+
+
               </div><SchemaItem
                 collapsible={false}
                 name={"id"}
@@ -149,7 +149,7 @@ P2P network.
                 qualifierMessage={"**Possible values:** Value must match regular expression `[a-zA-Z0-9_-]{43}`"}
                 schema={{"description":"The base64Url (without padding) encoded SHA256 fingerprint of the\nSSL certificate of the node. This can be null only if the node uses\nan official CA signed certificate\n","type":"string","nullable":true,"pattern":"[a-zA-Z0-9_-]{43}"}}
               >
-                
+
               </SchemaItem><SchemaItem
                 collapsible={true}
                 className={"schemaItem"}
@@ -171,11 +171,11 @@ P2P network.
                       </strong><span
                         className={"openapi-schema__name"}
                       >
-                         
+
                       </span><span
                         className={"openapi-schema__divider"}
                       >
-                        
+
                       </span><span
                         className={"openapi-schema__required"}
                       >
@@ -213,13 +213,13 @@ P2P network.
                           <div
                             style={{"marginTop":".5rem","marginBottom":".5rem"}}
                           >
-                            
-                            
+
+
                             A domain name or IP address. This must be a domain name only if
                             the respective node is using a valid CA signed SSL certificate.
-                            
-                            
-                            
+
+
+
                           </div>
                         </div><div>
                           <span
@@ -237,7 +237,7 @@ P2P network.
                       qualifierMessage={"**Possible values:** `>= 1` and `<= 65535`"}
                       schema={{"description":"Port number","type":"integer","minimum":1,"maximum":65535}}
                     >
-                      
+
                     </SchemaItem>
                   </div>
                 </details>
@@ -252,7 +252,7 @@ P2P network.
           qualifierMessage={undefined}
           schema={{"description":"The cut height is the sum of the height of all blocks of the cut.\nUsage of this value should be avoided, because its semantics may\nchange in the future\n","type":"integer","minimum":0}}
         >
-          
+
         </SchemaItem><SchemaItem
           collapsible={false}
           name={"weight"}
@@ -261,7 +261,7 @@ P2P network.
           qualifierMessage={"**Possible values:** Value must match regular expression `[a-zA-Z0-9_-]{43}`"}
           schema={{"description":"The sum of the weights of all blocks in the cut","type":"string","pattern":"[a-zA-Z0-9_-]{43}"}}
         >
-          
+
         </SchemaItem><SchemaItem
           collapsible={true}
           className={"schemaItem"}
@@ -287,7 +287,7 @@ P2P network.
                 </span><span
                   className={"openapi-schema__divider"}
                 >
-                  
+
                 </span><span
                   className={"openapi-schema__required"}
                 >
@@ -300,13 +300,13 @@ P2P network.
               <div
                 style={{"marginTop":".5rem","marginBottom":".5rem"}}
               >
-                
-                
+
+
                 An object that maps chain Ids to their respective block hash and
                 block height
-                
-                
-                
+
+
+
               </div><SchemaItem
                 collapsible={true}
                 className={"schemaItem"}
@@ -337,11 +337,11 @@ P2P network.
                     <div
                       style={{"marginTop":".5rem","marginBottom":".5rem"}}
                     >
-                      
-                      
+
+
                       A block hash and the height of that block
-                      
-                      
+
+
                     </div><SchemaItem
                       collapsible={false}
                       name={"hash"}
@@ -350,7 +350,7 @@ P2P network.
                       qualifierMessage={"**Possible values:** Value must match regular expression `[a-zA-Z0-9_-]{43}`"}
                       schema={{"type":"string","pattern":"[a-zA-Z0-9_-]{43}"}}
                     >
-                      
+
                     </SchemaItem><SchemaItem
                       collapsible={false}
                       name={"height"}
@@ -359,7 +359,7 @@ P2P network.
                       qualifierMessage={undefined}
                       schema={{"type":"integer","minimum":0}}
                     >
-                      
+
                     </SchemaItem>
                   </div>
                 </details>
@@ -374,7 +374,7 @@ P2P network.
           qualifierMessage={undefined}
           schema={{"type":"string"}}
         >
-          
+
         </SchemaItem><SchemaItem
           collapsible={false}
           name={"id"}
@@ -383,7 +383,7 @@ P2P network.
           qualifierMessage={undefined}
           schema={{"type":"string"}}
         >
-          
+
         </SchemaItem>
       </ul>
     </details>
@@ -399,11 +399,11 @@ P2P network.
         value={"204"}
       >
         <div>
-          
-          
+
+
           The cut was added to the cut processing pipeline of the remote node
-          
-          
+
+
         </div><details
           style={{"textAlign":"left","marginBottom":"1rem"}}
           className={"openapi-markdown__details"}
@@ -437,10 +437,10 @@ P2P network.
                   style={{"marginTop":".5rem","marginBottom":".5rem"}}
                 >
                   Example: 10.36.1.3:42988
-                  
+
                   Host and port of the client as observed by the remote node
-                  
-                  
+
+
                 </div>
               </div>
             </li><li
@@ -461,10 +461,10 @@ P2P network.
                   style={{"marginTop":".5rem","marginBottom":".5rem"}}
                 >
                   Example: 1618597601
-                  
+
                   The time of the clock of the remote node
-                  
-                  
+
+
                 </div>
               </div>
             </li><li
@@ -485,27 +485,27 @@ P2P network.
                   style={{"marginTop":".5rem","marginBottom":".5rem"}}
                 >
                   Example: 2.6
-                  
+
                   The version of the remote chainweb node
-                  
-                  
+
+
                 </div>
               </div>
             </li>
           </ul>
         </details><div>
-          
+
         </div>
       </TabItem><TabItem
         label={"401"}
         value={"401"}
       >
         <div>
-          
-          
+
+
           The requester is not a peer of this node, and thus not allowed to send it cuts
-          
-          
+
+
         </div><details
           style={{"textAlign":"left","marginBottom":"1rem"}}
           className={"openapi-markdown__details"}
@@ -539,10 +539,10 @@ P2P network.
                   style={{"marginTop":".5rem","marginBottom":".5rem"}}
                 >
                   Example: 10.36.1.3:42988
-                  
+
                   Host and port of the client as observed by the remote node
-                  
-                  
+
+
                 </div>
               </div>
             </li><li
@@ -563,10 +563,10 @@ P2P network.
                   style={{"marginTop":".5rem","marginBottom":".5rem"}}
                 >
                   Example: 1618597601
-                  
+
                   The time of the clock of the remote node
-                  
-                  
+
+
                 </div>
               </div>
             </li><li
@@ -587,19 +587,18 @@ P2P network.
                   style={{"marginTop":".5rem","marginBottom":".5rem"}}
                 >
                   Example: 2.6
-                  
+
                   The version of the remote chainweb node
-                  
-                  
+
+
                 </div>
               </div>
             </li>
           </ul>
         </details><div>
-          
+
         </div>
       </TabItem>
     </ApiTabs>
   </div>
 </div>
-      

@@ -36,10 +36,10 @@ import TabItem from "@theme/TabItem";
   method={"post"}
   path={"/chain/{chain}/mempool/lookup"}
 >
-  
+
 </MethodEndpoint>
 
-
+<span className="apiEndPoint">mempool/lookup</span>
 
 Lookup Pending Transactions in the Mempool
 
@@ -71,7 +71,7 @@ Lookup Pending Transactions in the Mempool
         className={"paramsItem"}
         param={{"name":"chain","in":"path","description":"the id of the chain to which the request is sent","required":true,"schema":{"type":"integer","minimum":0,"example":0}}}
       >
-        
+
       </ParamsItem>
     </ul>
   </div>
@@ -107,11 +107,11 @@ Lookup Pending Transactions in the Mempool
         <div
           style={{"marginTop":"1rem","marginBottom":"1rem"}}
         >
-          
-          
+
+
           Array of request keys
-          
-          
+
+
         </div>
       </div><ul
         style={{"marginLeft":"1rem"}}
@@ -125,18 +125,18 @@ Lookup Pending Transactions in the Mempool
         </li><div
           style={{"marginTop":".5rem","marginBottom":".5rem"}}
         >
-          
-          
+
+
           string
-          
+
           <div
             style={{"paddingTop":"1rem"}}
           >
-            
-            
+
+
             **Possible values:** `>= 43 characters` and `<= 43 characters`, Value must match regular expression `^[a-zA-Z0-9_-]{43}$`
-            
-            
+
+
           </div>
         </div><li>
           <div
@@ -159,12 +159,12 @@ Lookup Pending Transactions in the Mempool
         value={"200"}
       >
         <div>
-          
-          
+
+
           Array of lookup results for the respective transactions
-          
-          
-          
+
+
+
         </div><details
           style={{"textAlign":"left","marginBottom":"1rem"}}
           className={"openapi-markdown__details"}
@@ -198,10 +198,10 @@ Lookup Pending Transactions in the Mempool
                   style={{"marginTop":".5rem","marginBottom":".5rem"}}
                 >
                   Example: 10.36.1.3:42988
-                  
+
                   Host and port of the client as observed by the remote node
-                  
-                  
+
+
                 </div>
               </div>
             </li><li
@@ -222,10 +222,10 @@ Lookup Pending Transactions in the Mempool
                   style={{"marginTop":".5rem","marginBottom":".5rem"}}
                 >
                   Example: 1618597601
-                  
+
                   The time of the clock of the remote node
-                  
-                  
+
+
                 </div>
               </div>
             </li><li
@@ -246,10 +246,10 @@ Lookup Pending Transactions in the Mempool
                   style={{"marginTop":".5rem","marginBottom":".5rem"}}
                 >
                   Example: 2.6
-                  
+
                   The version of the remote chainweb node
-                  
-                  
+
+
                 </div>
               </div>
             </li>
@@ -286,7 +286,7 @@ Lookup Pending Transactions in the Mempool
                     </summary><div
                       style={{"textAlign":"left","marginLeft":"1rem"}}
                     >
-                      
+
                     </div><ul
                       style={{"marginLeft":"1rem"}}
                     >
@@ -304,7 +304,7 @@ Lookup Pending Transactions in the Mempool
                         qualifierMessage={"**Possible values:** [`Missing`, `Pending`]"}
                         schema={{"type":"string","enum":["Missing","Pending"]}}
                       >
-                        
+
                       </SchemaItem><SchemaItem
                         collapsible={false}
                         name={"contents"}
@@ -313,7 +313,7 @@ Lookup Pending Transactions in the Mempool
                         qualifierMessage={undefined}
                         schema={{"title":"Signed Transaction Text","type":"string","description":"Text of a JSON encoded signed Pact transaction","example":{"value":{"hash":"y3aWL72-3wAy7vL9wcegGXnstH0lHi-q-cfxkhD5JCw","sigs":[{"sig":"8ddc06b37c496f2cadc4f7412405a80faf3ab07482ff5553b9b5fcc73d1b4121275ad5948d9b4078e553b71f8b42eaf6b24135bf2fb4d5840c16bcdde0e35e0f"}],"cmd":"{\"networkId\":\"mainnet01\",\"payload\":{\"exec\":{\"data\":{\"account-keyset\":{\"pred\":\"keys-all\",\"keys\":[\"acc28032a1bb725b7ba0a3593ab86f393894fa6659281f3dfdfee0afe48559a2\"]}},\"code\":\"(coin.transfer-create \\\"60241f51ea34e05c61fbea9d\\\" \\\"acc28032a1bb725b7ba0a3593ab86f393894fa6659281f3dfdfee0afe48559a2\\\" (read-keyset \\\"account-keyset\\\") 5007.0000)\"}},\"signers\":[{\"pubKey\":\"acc28032a1bb725b7ba0a3593ab86f393894fa6659281f3dfdfee0afe48559a2\",\"clist\":[{\"args\":[\"60241f51ea34e05c61fbea9d\",\"acc28032a1bb725b7ba0a3593ab86f393894fa6659281f3dfdfee0afe48559a2\",5007],\"name\":\"coin.TRANSFER\"},{\"args\":[],\"name\":\"coin.GAS\"}]}],\"meta\":{\"creationTime\":1618949714,\"ttl\":300,\"gasLimit\":600,\"chainId\":\"0\",\"gasPrice\":1.0e-7,\"sender\":\"acc28032a1bb725b7ba0a3593ab86f393894fa6659281f3dfdfee0afe48559a2\"},\"nonce\":\"\\\"2021-04-20T20:16:13.645Z\\\"\"}"}}}}
                       >
-                        
+
                       </SchemaItem><li>
                         <div
                           style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem"}}
@@ -331,7 +331,7 @@ Lookup Pending Transactions in the Mempool
                     responseExample={"[\n  {\n    \"tag\": \"Missing\",\n    \"contents\": {\n      \"value\": {\n        \"hash\": \"y3aWL72-3wAy7vL9wcegGXnstH0lHi-q-cfxkhD5JCw\",\n        \"sigs\": [\n          {\n            \"sig\": \"8ddc06b37c496f2cadc4f7412405a80faf3ab07482ff5553b9b5fcc73d1b4121275ad5948d9b4078e553b71f8b42eaf6b24135bf2fb4d5840c16bcdde0e35e0f\"\n          }\n        ],\n        \"cmd\": \"{\\\"networkId\\\":\\\"mainnet01\\\",\\\"payload\\\":{\\\"exec\\\":{\\\"data\\\":{\\\"account-keyset\\\":{\\\"pred\\\":\\\"keys-all\\\",\\\"keys\\\":[\\\"acc28032a1bb725b7ba0a3593ab86f393894fa6659281f3dfdfee0afe48559a2\\\"]}},\\\"code\\\":\\\"(coin.transfer-create \\\\\\\"60241f51ea34e05c61fbea9d\\\\\\\" \\\\\\\"acc28032a1bb725b7ba0a3593ab86f393894fa6659281f3dfdfee0afe48559a2\\\\\\\" (read-keyset \\\\\\\"account-keyset\\\\\\\") 5007.0000)\\\"}},\\\"signers\\\":[{\\\"pubKey\\\":\\\"acc28032a1bb725b7ba0a3593ab86f393894fa6659281f3dfdfee0afe48559a2\\\",\\\"clist\\\":[{\\\"args\\\":[\\\"60241f51ea34e05c61fbea9d\\\",\\\"acc28032a1bb725b7ba0a3593ab86f393894fa6659281f3dfdfee0afe48559a2\\\",5007],\\\"name\\\":\\\"coin.TRANSFER\\\"},{\\\"args\\\":[],\\\"name\\\":\\\"coin.GAS\\\"}]}],\\\"meta\\\":{\\\"creationTime\\\":1618949714,\\\"ttl\\\":300,\\\"gasLimit\\\":600,\\\"chainId\\\":\\\"0\\\",\\\"gasPrice\\\":1.0e-7,\\\"sender\\\":\\\"acc28032a1bb725b7ba0a3593ab86f393894fa6659281f3dfdfee0afe48559a2\\\"},\\\"nonce\\\":\\\"\\\\\\\"2021-04-20T20:16:13.645Z\\\\\\\"\\\"}\"\n      }\n    }\n  }\n]"}
                     language={"json"}
                   >
-                    
+
                   </ResponseSamples>
                 </TabItem><TabItem
                   label={"hit"}
@@ -343,7 +343,7 @@ Lookup Pending Transactions in the Mempool
                     responseExample={"[\n  {\n    \"tag\": \"Pending\",\n    \"contents\": \"{\\\"hash\\\":\\\"y3aWL72-3wAy7vL9wcegGXnstH0lHi-q-cfxkhD5JCw\\\",\\\"sigs\\\":[{\\\"sig\\\":\\\"8ddc06b37c496f2cadc4f7412405a80faf3ab07482ff5553b9b5fcc73d1b4121275ad5948d9b4078e553b71f8b42eaf6b24135bf2fb4d5840c16bcdde0e35e0f\\\"}],\\\"cmd\\\":\\\"{\\\\\\\"networkId\\\\\\\":\\\\\\\"mainnet01\\\\\\\",\\\\\\\"payload\\\\\\\":{\\\\\\\"exec\\\\\\\":{\\\\\\\"data\\\\\\\":{\\\\\\\"account-keyset\\\\\\\":{\\\\\\\"pred\\\\\\\":\\\\\\\"keys-all\\\\\\\",\\\\\\\"keys\\\\\\\":[\\\\\\\"acc28032a1bb725b7ba0a3593ab86f393894fa6659281f3dfdfee0afe48559a2\\\\\\\"]}},\\\\\\\"code\\\\\\\":\\\\\\\"(coin.transfer-create \\\\\\\\\\\\\\\"60241f51ea34e05c61fbea9d\\\\\\\\\\\\\\\" \\\\\\\\\\\\\\\"acc28032a1bb725b7ba0a3593ab86f393894fa6659281f3dfdfee0afe48559a2\\\\\\\\\\\\\\\" (read-keyset \\\\\\\\\\\\\\\"account-keyset\\\\\\\\\\\\\\\") 5007.0000)\\\\\\\"}},\\\\\\\"signers\\\\\\\":[{\\\\\\\"pubKey\\\\\\\":\\\\\\\"acc28032a1bb725b7ba0a3593ab86f393894fa6659281f3dfdfee0afe48559a2\\\\\\\",\\\\\\\"clist\\\\\\\":[{\\\\\\\"args\\\\\\\":[\\\\\\\"60241f51ea34e05c61fbea9d\\\\\\\",\\\\\\\"acc28032a1bb725b7ba0a3593ab86f393894fa6659281f3dfdfee0afe48559a2\\\\\\\",5007],\\\\\\\"name\\\\\\\":\\\\\\\"coin.TRANSFER\\\\\\\"},{\\\\\\\"args\\\\\\\":[],\\\\\\\"name\\\\\\\":\\\\\\\"coin.GAS\\\\\\\"}]}],\\\\\\\"meta\\\\\\\":{\\\\\\\"creationTime\\\\\\\":1618949714,\\\\\\\"ttl\\\\\\\":300,\\\\\\\"gasLimit\\\\\\\":600,\\\\\\\"chainId\\\\\\\":\\\\\\\"0\\\\\\\",\\\\\\\"gasPrice\\\\\\\":1.0e-7,\\\\\\\"sender\\\\\\\":\\\\\\\"acc28032a1bb725b7ba0a3593ab86f393894fa6659281f3dfdfee0afe48559a2\\\\\\\"},\\\\\\\"nonce\\\\\\\":\\\\\\\"\\\\\\\\\\\\\\\"2021-04-20T20:16:13.645Z\\\\\\\\\\\\\\\"\\\\\\\"}\\\"}\"\n  }\n]"}
                     language={"json"}
                   >
-                    
+
                   </ResponseSamples>
                 </TabItem><TabItem
                   label={"miss"}
@@ -355,7 +355,7 @@ Lookup Pending Transactions in the Mempool
                     responseExample={"[\n  {\n    \"tag\": \"Missing\"\n  }\n]"}
                     language={"json"}
                   >
-                    
+
                   </ResponseSamples>
                 </TabItem><TabItem
                   label={"empty"}
@@ -367,7 +367,7 @@ Lookup Pending Transactions in the Mempool
                     responseExample={"[]"}
                     language={"json"}
                   >
-                    
+
                   </ResponseSamples>
                 </TabItem>
               </SchemaTabs>
@@ -378,4 +378,3 @@ Lookup Pending Transactions in the Mempool
     </ApiTabs>
   </div>
 </div>
-      

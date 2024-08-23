@@ -8,11 +8,8 @@ slug: linux
   <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
 </head>
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 import CodeBlock from '@theme/CodeBlock';
-import styles from '/src/styles/styles.module.css';
-import { Step } from '/src/styles/Step'
+
 
 # Installing Pact on Linux
 
@@ -22,84 +19,76 @@ To set up Pact on Linux, you'll need to download the binary and configure your s
 
 Before installing Pact, ensure you have the following prerequisites installed:
 
-<Tabs>
-  <TabItem value="z3" label="Z3" default>
-    Install Z3, which is required by Pact:
+### Z3
 
-    ```bash
-    sudo apt update
-    sudo apt install z3
-    ```
+Install Z3, which is required by Pact:
 
-    Verify Z3 installation:
+```bash
+sudo apt update
+sudo apt install z3
+```
 
-    ```bash
-    z3 --version
-    ```
-  </TabItem>
-</Tabs>
+Verify Z3 installation:
 
-## Installation Steps
+```bash
+z3 --version
+```
 
-<Tabs>
-  <TabItem value="binary" label="Download Binary" default>
-    <Step stepNumber="1" title="Download the Binary">
-      Download a pre-built binary from the [Pact Releases](https://github.com/kadena-io/pact/releases) page. Look for the latest release and download the appropriate `.tar.gz` file for Linux.
+## Installation
 
-    </Step>
+### Step 1: Download the Binary
 
-    <Step stepNumber="2" title="Extract the Binary">
-      Extract the downloaded archive:
+Download a pre-built binary from the [Pact Releases](https://github.com/kadena-io/pact/releases) page. Look for the latest release and download the appropriate `.tar.gz` file for Linux.
 
-      ```bash
-      tar -xzf pact-<version>-linux-x86_64.tar.gz
-      ```
+### Step 2: Extract the Binary
 
-      Navigate to the extracted directory:
+Extract the downloaded archive:
 
-      ```bash
-      cd pact-<version>-linux-x86_64
-      ```
-    </Step>
+```bash
+tar -xzf pact-<version>-linux-x86_64.tar.gz
+```
 
-    <Step stepNumber="3" title="Place Binary in System Path">
-      Move the `pact` binary to a directory in your system PATH, or update your PATH variable. For example, add the directory to your PATH:
+Navigate to the extracted directory:
 
-      ```bash
-      export PATH="/path/to/pact-directory:$PATH"
-      ```
+```bash
+cd pact-<version>-linux-x86_64
+```
 
-      To make this change permanent, add the above line to your `~/.bashrc` or `~/.zshrc` file:
+### Step 3: Place Binary in System Path
 
-      ```bash
-      nano ~/.bashrc
-      # Add the line at the end of the file
-      export PATH="/path/to/pact-directory:$PATH"
-      # Save and exit
-      ```
+Move the `pact` binary to a directory in your system PATH, or update your PATH variable. For example, add the directory to your PATH:
 
-      Reload the shell configuration:
+```bash
+export PATH="/path/to/pact-directory:$PATH"
+```
 
-      ```bash
-      source ~/.bashrc
-      ```
+To make this change permanent, add the above line to your `~/.bashrc` or `~/.zshrc` file:
 
-      **Note:** Replace `~/.bashrc` with `~/.zshrc` if you use Zsh.
+```bash
+nano ~/.bashrc
+# Add the line at the end of the file
+export PATH="/path/to/pact-directory:$PATH"
+# Save and exit
+```
 
-    </Step>
+Reload the shell configuration:
 
-    <Step stepNumber="4" title="Verify the Installation">
-      Verify the installation by checking the Pact version or ensuring the binary is in your PATH:
+```bash
+source ~/.bashrc
+```
 
-      ```bash
-      pact --version
-      echo $PATH
-      ```
+**Note:** Replace `~/.bashrc` with `~/.zshrc` if you use Zsh.
 
-      Ensure that the output includes the path to your `pact` binary.
-    </Step>
-  </TabItem>
-</Tabs>
+### Step 4: Verify the Installation
+
+Verify the installation by checking the Pact version or ensuring the binary is in your PATH:
+
+```bash
+pact --version
+echo $PATH
+```
+
+Ensure that the output includes the path to your `pact` binary.
 
 ## Usage
 
@@ -109,17 +98,18 @@ Once installed, you can start using Pact for smart contract development and test
 
 If you encounter issues:
 
-<Tabs>
-  <TabItem value="dependencies" label="Check Dependencies" default>
-    Ensure Z3 and Pact are correctly installed. Verify their versions with:
+### Check Dependencies
 
-    ```bash
-    pact --version
-    ```
-  </TabItem>
-  <TabItem value="github" label="Consult GitHub Issues">
-    Visit the [Pact GitHub Issues](https://github.com/kadena-io/pact/issues) page for common problems and solutions.
-  </TabItem>
-</Tabs>
+Ensure Z3 and Pact are correctly installed. Verify their versions with:
+
+```bash
+pact --version
+```
+
+### Consult GitHub Issues
+
+Visit the [Pact GitHub Issues](https://github.com/kadena-io/pact/issues) page for common problems and solutions.
+
+---
 
 You are now ready to start developing with Pact on your Linux system. Enjoy coding!

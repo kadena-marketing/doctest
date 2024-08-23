@@ -1560,38 +1560,97 @@ Read KEY from message data body as keyset `({ "keys": KEYLIST, "pred": PREDFUN }
 
 ### compose-capability {#compose-capability}
 
-*capability*&nbsp;` -> bool` *&rarr;*&nbsp;`bool`
+Use `compose-capability` to compose and grant capabilities in a nested structure to control the scope of how the capabilities are applied.
+By convention, capabilities are defined using all uppercase letters.
 
+With this function, you can define the specified `CAPABILITY` within the context of an outer `defcap` declaration.
+The function is only valid within the distinct `defcap` body of its outer capability, such that the `CAPABILITY` you specify for the `compose-capability` function is included when you call the `with-capability` function for its outer capability. 
 
-Specifies and requests grant of CAPABILITY which is an application of a 'defcap' production, only valid within a (distinct) 'defcap' body, as a way to compose CAPABILITY with the outer capability such that the scope of the containing 'with-capability' call will "import" this capability. Thus, a call to '(with-capability (OUTER-CAP) OUTER-BODY)', where the OUTER-CAP defcap calls '(compose-capability (INNER-CAP))', will result in INNER-CAP being granted in the scope of OUTER-BODY.
-```lisp
-(compose-capability (TRANSFER src dest))
+For example, if you call `(with-capability (OUTER-CAP) OUTER-BODY)` and the `OUTER-CAP` declaration includes the `(compose-capability (INNER-CAP))` function, the `INNER-CAP` capability is granted in the scope of the `OUTER-BODY` logic.
+
+### Basic syntax
+
+To compose and grant a specified `CAPABILITY` within an outer capability body, use the following syntax:
+
+```pact
+(compose-capability CAPABILITY)
 ```
+
+### Arguments
+
+Use the following argument to specify the `CAPABILITY` for the `compose-capability` Pact function.
+
+| Argument | Type | Description |
+| --- | --- | --- |
+| `CAPABILITY` | capability | Specifies the capability to include in the scope of an outer capability. |
+
+### Return values
+
+The `compose-capability` function returns a boolean value to indicate success or failure in requesting the grant of the specified `CAPABILITY`.
+
+### Examples
+
+The following example demonstrates how to use the `compose-capability` function within the body of the `TRANSFER` capability and include the DEBIT and CREDIT capabilities when the `with-capability` function is called:
+
+```pact
+(defcap TRANSFER:bool
+    ( id:string
+      sender:string
+      receiver:string
+      amount:decimal
+    )
+    @managed amount TRANSFER-mgr
+    (enforce-unit id amount)
+    (enforce (> amount 0.0) "Amount must be positive")
+    (compose-capability (DEBIT id sender))
+    (compose-capability (CREDIT id receiver))
+)
+...
+    (with-capability (TRANSFER id sender receiver amount)
+     ...
+    )
+```
+
 
 
 ### emit-event {#emit-event}
 
-*capability*&nbsp;` -> bool` *&rarr;*&nbsp;`bool`
+Use `emit-event` to emit a specified `CAPABILITY` as an event without evaluating the body of the capability. 
+This function fails if the specified `CAPABILITY` doesn't include the `@managed` or `@event` keyword in its declaration.
 
+By convention, capabilities are defined using all uppercase letters.
 
-Emit CAPABILITY as event without evaluating body of capability. Fails if CAPABILITY is not @managed or @event.
-```lisp
-(emit-event (TRANSFER "Bob" "Alice" 12.0))
+### Basic syntax
+
+To emit a `CAPABILITY` as an event without evaluating its body, use the following syntax:
+
+```pact
+(emit-event CAPABILITY)
 ```
 
+### Arguments
 
-### enforce-guard {#enforce-guard}
+Use the following argument to specify the `CAPABILITY` for the `emit-event` Pact function.
 
-*guard*&nbsp;`guard` *&rarr;*&nbsp;`bool`
+| Argument   | Type | Description                                       |
+|------------|------|---------------------------------------------------|
+| `CAPABILITY` | capability | Specifies the capability to emit as an event. |
 
-*keysetname*&nbsp;`string` *&rarr;*&nbsp;`bool`
+### Return values
 
+The `emit-event` function returns a boolean value indicating success or failure of emitting the event.
 
-Execute GUARD, or defined keyset KEYSETNAME, to enforce desired predicate logic.
-```lisp
-(enforce-guard 'admin-keyset)
-(enforce-guard row-guard)
+### Examples
+
+The following example demonstrates how to use the `emit-event` function to emit an event for the `TRANSFER` capability with the parameters `"Bob"`, `"Alice"`, and `12.0`:
+
+```pact
+pact> (emit-event (TRANSFER "Bob" "Alice" 12.0))
+true
 ```
+
+The function returns a boolean value indicating the success or failure of emitting the event.
+
 
 
 ### enforce-verifier {#enforce-verifier}
@@ -1607,34 +1666,163 @@ Enforce that a verifier is in scope.
 
 ### install-capability {#install-capability}
 
-*capability*&nbsp;` -> bool` *&rarr;*&nbsp;`string`
+Use `install-capability` to specify and provision a managed capability. 
+Managed capabilities are defined in `defcap` declarations that include the `@managed` keyword. The `@managed` keyword designates a single parameter to be managed by a specified management function.
+After a capability is installed, it must still be brought into scope using the `with-capability` function.
+When the capability is brought into scope, its management function is invoked to validate the request.
 
+The management function takes the type of the managed parameter, executes the logic required to validate the requested capability or perform the managed operation, and returns the new managed value that results from the request.
 
-Specifies, and provisions install of, a _managed_ CAPABILITY, defined in a `defcap` in which a `@managed` tag designates a single parameter to be managed by a specified function. After install, CAPABILITY must still be brought into scope using `with-capability`, at which time the `manager function` is invoked to validate the request. The manager function is of type `managed:<p> requested:<p> -> <p>`, where `<p>` indicates the type of the managed parameter, such that for `(defcap FOO (bar:string baz:integer) @managed baz FOO-mgr ...)`, the manager function would be `(defun FOO-mgr:integer (managed:integer requested:integer) ...)`. Any capability matching the `static` (non-managed) parameters will cause this function to be invoked with the current managed value and that of the requested capability. The function should perform whatever logic, presumably linear, to validate the request, and return the new managed value representing the `balance` of the request. NOTE that signatures scoped to a managed capability cause the capability to be automatically provisioned for install similarly to one installed with this function.
-```lisp
-(install-capability (PAY "alice" "bob" 10.0))
+Any capability that has static unmanaged parameters will invoke the management function with the current managed value and that of the requested capability. 
+
+Note that signatures scoped to a managed capability cause the capability to be automatically provisioned in a manner similar to how capabilities are installed with this function.
+
+By convention, capabilities are defined using all uppercase letters.
+
+### Basic syntax
+
+To specify and provision a managed capability, use the following syntax:
+
+```pact
+(install-capability CAPABILITY)
 ```
 
+### Arguments
 
-### require-capability {#require-capability}
+Use the following argument to specify the capability you want to install using the `install-capability` Pact function.
 
-*capability*&nbsp;` -> bool` *&rarr;*&nbsp;`bool`
+| Argument | Type | Description |
+| --- | --- | --- |
+| `CAPABILITY` | any | Specifies the capability to be installed. |
 
+### Return value
 
-Specifies and tests for existing grant of CAPABILITY, failing if not found in environment.
-```lisp
-(require-capability (TRANSFER src dest))
+The `install-capability` function returns a boolean value indicating the success or failure of the installation, along with a string message providing additional information.
+
+### Examples
+
+The following example demonstrates how to use the `install-capability` to install a capability named `coin>TRANSFER` with specified parameters:
+
+```pact
+(install-capability (coin.TRANSFER ESCROW_ID merchant merchant-payout))
+```
+
+The following example illustrates the definition for a capability with a management function and a managed parameter.
+
+```pact
+  (defcap TRANSFER:bool
+    ( id:string
+      sender:string
+      receiver:string
+      amount:decimal
+    )
+    @managed amount TRANSFER-mgr
+    (enforce-unit id amount)
+    (enforce (> amount 0.0) "Amount must be positive")
+    (compose-capability (DEBIT id sender))
+    (compose-capability (CREDIT id receiver))
+  )
+
+  (defun TRANSFER-mgr:decimal
+    ( managed:decimal
+      requested:decimal
+    )
+    (let ((newbal (- managed requested)))
+      (enforce (>= newbal 0.0)
+        (format "TRANSFER exceeded for balance {}" [managed]))
+      newbal)
+  )
 ```
 
 
 ### with-capability {#with-capability}
 
-*capability*&nbsp;` -> bool` *body*&nbsp;`[*]` *&rarr;*&nbsp;`<a>`
+Use `with-capability` to apply the access to a specific capability to execute a body of code.
+This function ensures that an elevated privilege—defined as a capability using a `defcap` code block—is present during the execution of the provided body of code. 
 
+You can only call the `with-capability` function in the same module that contains the corresponding `defcap` declaration. 
+If the token that grants permission to use the specified capability isn't found, the `with-capability`  evaluates the capability definition to install or grant the permission token. 
+The permission token is automatically revoked after executing the code body. 
+Nested `with-capability` calls for the same permission token detect the presence of the token and execute the body without reapplying the capability.
 
-Specifies and requests grant of _acquired_ CAPABILITY which is an application of a 'defcap' production. Given the unique token specified by this application, ensure that the token is granted in the environment during execution of BODY. 'with-capability' can only be called in the same module that declares the corresponding 'defcap', otherwise module-admin rights are required. If token is not present, the CAPABILITY is evaluated, with successful completion resulting in the installation/granting of the token, which will then be revoked upon completion of BODY. Nested 'with-capability' calls for the same token will detect the presence of the token, and will not re-apply CAPABILITY, but simply execute BODY. 'with-capability' cannot be called from within an evaluating defcap. Acquire of a managed capability results in emission of the equivalent event.
-```lisp
+By convention, capabilities are defined using all uppercase letters.
+
+### Basic syntax
+
+To request the grant of an acquired `CAPABILITY`, use the following syntax:
+
+```pact
+(with-capability CAPABILITY body)
+```
+
+### Arguments
+
+Use the following arguments to specify the name of the capability and the body of expressions to be executed using the `with-capability` Pact function.
+
+| Argument | Type | Description |
+| --- | --- | --- |
+| `CAPABILITY` | capability | Specifies the name of the capability to grant access to. |
+| `body` | any | Specifies the body of expressions to be executed using the granted capability. |
+
+### Return value
+
+The `with-capability` function returns the result of executing the provided body of code using the granted capability.
+
+### Examples
+
+The following example demonstrates how to use the `with-capability` function to request access to the `UPDATE-USERS` capability to execute the code that updates user information:
+
+```pact
 (with-capability (UPDATE-USERS id) (update users id { salary: new-salary }))
+```
+
+In this example, the `with-capability` function ensures that a sensitive operation can only be executed with an elevated permission granted using the `UPDATE-USERS `capability.
+
+
+### require-capability {#require-capability}
+
+Use `require-capability` to require a specific `CAPABILITY` to be granted before allowing the current body of code to be executed.
+If the required capability isn't found in the environment, the code fails to execute.
+
+By convention, capabilities are defined using all uppercase letters.
+
+### Basic syntax
+
+To test whether a specific `CAPABILITY` has been granted before executing a portion of code in a contract, use the following syntax:
+
+```pact
+(require-capability CAPABILITY)
+```
+
+### Arguments
+
+Use the following argument to specify the `CAPABILITY` to be tested for using the `require-capability` Pact function.
+
+| Argument | Type | Description |
+| --- | --- | --- |
+| `CAPABILITY` |  | Specifies the capability that must be granted before executing a certain portion of code. |
+
+### Return value
+
+The `require-capability` function returns a boolean value indicating whether the specified `CAPABILITY` exists in the environment.
+
+### Examples
+
+The following example demonstrates how to use the `require-capability` function to check whether the capability to transfer funds from one source to another has been granted:
+
+```pact
+(require-capability (TRANSFER src dest))
+```
+
+If the capability isn't found, the function fails.
+
+The following example uses the `require-capability` function to create a guard that ensure both the GAS and ALLOW_GAS capabilities have been granted:
+
+```pact
+(defun gas-payer-guard ()
+    (require-capability (GAS))
+    (require-capability (ALLOW_GAS))
+)
 ```
 
 ## SPV {#SPV}

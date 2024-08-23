@@ -50,5 +50,4 @@ pact> (abs -3.14)
 ## See Also
 
 - [-](subtraction.md): Subtraction and negation operator
-- [sqrt](sqrt.md): Square root function
 

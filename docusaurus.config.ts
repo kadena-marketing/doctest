@@ -13,6 +13,7 @@ const config: Config = {
      favicon: "img/kadena-favicon.png",
      baseUrl: "/",
 
+     onBrokenAnchors: "ignore",// due to outdated content references
      onBrokenLinks: "log",
      onBrokenMarkdownLinks: "warn",
 

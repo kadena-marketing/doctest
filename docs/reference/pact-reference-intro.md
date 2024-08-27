@@ -14,7 +14,8 @@ slug: reference
 
 This document is a reference for the Pact smart-contract language, designed for
 correct, transactional execution on a [high-performance blockchain](http://kadena.io). For more
-background, please see the [white paper](https://docs.kadena.io/basics/whitepapers/pact-smart-contract-language).
+background, please see the [white paper](https://docs.kadena.io/basics/whitepapers/pact-smart-contract-language)
+or the [pact home page](http://kadena.io/#pactModal).
 
 Copyright (c) 2016 - 2018, Stuart Popejoy. All Rights Reserved.
 
@@ -164,9 +165,9 @@ the command and all the signatures on stdout.
 Both `add-sig` and `combine-sigs` will output YAML if the output transaction
 hasn't accumulated enough signatures to be valid. If all the necessary
 signatures are present, then they will output JSON in final form that is ready
-to be sent to the blockchain on the `/send` endpoint. If you would like
+to be sent to the blockchain on the [`/send` endpoint](#send). If you would like
 to do a test run of the transaction, you can use the `-l` flag to generate
-output suitable for use with the `/local` endpoint.
+output suitable for use with the [`/local` endpoint](#local).
 
 The above example adds signatures in parallel, but the `add-sig` command can
 also be used to add signatures sequentially in separate steps or all at once in
@@ -212,8 +213,8 @@ the full command.
 
 ### Detached Signature Transaction Format
 
-The YAML input expected by `pact -u` is similar to the Public Blockchain YAML
-format described above with one major difference.
+The YAML input expected by `pact -u` is similar to the [Public Blockchain YAML
+format](#request-yaml-public-chain) described above with one major difference.
 Instead of the `keyPairs` field which requires both the public and secret keys,
 `pact -u` expects a `signers` field that only needs a public key. This allows
 signatures to be added on incrementally as described above without needing

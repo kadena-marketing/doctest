@@ -4,62 +4,32 @@ import type { SidebarsConfig } from "@docusaurus/plugin-content-docs";
 const sidebars: SidebarsConfig = {
      tutorialSidebar: [
           'start',
-          'developers',
           {
                type: 'category',
-               label: 'Get started with Pact',
+               label: 'Introduction',
                link: {
                     type: 'doc',
-                    id: 'get-started',
+                    id: 'intro/intro',
                },
                items: [
-               
-                    'get-started/get-started-intro',
-                    'get-started/install-pact',
-                    'get-started/basic-concepts',
-                    'get-started/lang-features',
-                    'get-started/modules',
-                    'get-started/database-model'
-                    ],
-               },
-          {
-               type: 'category',
-               label: 'Coding projects',
-               link: {
-               type: 'doc',
-               id: 'coding-projects/coding-projects',
-               },
-               items: [
-                    'coding-projects/test-projects',
-                    ],
+                    'intro/why-kadena',
+                    'intro/gas-fees'
+               ],
           },
           {
                type: 'category',
-               label: 'Reference',
+               label: 'Pact',
                link: {
-               type: 'doc',
-               id: 'reference/reference',
+                    type: 'doc',
+                    id: 'pact/pact',
                },
                items: [
-                    'reference/pact-lang-intro',
-                    'reference/pact-reference-intro',
-                    'reference/functions',
-                    'reference/builtin-functions',
-                    'reference/properties',
-                    'reference/smart-contract-language',
-                    {
-                         type: 'category',
-                         label: 'Operators',
-                         link: {
-                         type: 'doc',
-                         id: 'reference/operators',
-                         },
-                         items: [
-                              'reference/operators/absolute-value',
-                              'reference/operators/addition',
-                              'reference/operators/and'
-                         ]
-                    }
+                    'pact/reference',
+                    'pact/builtin-functions',
+                    //'pact/functions',
+                    'pact/properties',
+                    'pact/properties-api',
+                    'pact/smart-contract-language'
                ],
           },
           {
@@ -380,7 +350,7 @@ const sidebars: SidebarsConfig = {
           },
           {
                type: 'category',
-               label: 'How-to guides',
+               label: 'How-To Guides',
                link: {
                     type: 'doc',
                     id: 'guides/guides',
@@ -403,31 +373,41 @@ const sidebars: SidebarsConfig = {
                  }
                ],
           },
-
           {
                type: 'category',
-               label: 'Solution showcase',
+               label: 'Installation',
+               link: {
+                    type: 'doc',
+                    id: 'install/install',
+               },
+               items: [
+                    'install/devnet',
+                    'install/nodes',
+                    {
+                         type: 'category',
+                         label: 'Pact',
+                         link: {
+                              type: 'doc',
+                              id: 'install/pact/pact',
+                         },
+                         items: [
+                              'install/pact/linux',
+                              'install/pact/mac-brew',
+                              'install/pact/windows',
+                         ],
+                    }
+               ],
+          },
+          {
+               type: 'category',
+               label: 'Resources',
                link: {
                     type: 'doc',
                     id: 'resources/resources',
                },
                items: [
-                    {
-                         type: 'category',
-                         label: 'Introduction',
-                         link: {
-                              type: 'doc',
-                              id: 'resources/intro/intro',
-                         },
-                         items: [
-                              'resources/intro/why-kadena',
-                              'resources/intro/gas-fees'
-                         ],
-                    },
-          
                     // 'resources/changelogs',
                     'resources/contributors',
-                    'resources/glossary',
                     'resources/tools',
                     /*{
                          type: 'link',

@@ -1,6 +1,6 @@
 ---
 
-title: Reduce node storage
+title: Compaction
 description: "Use the compact program to reduce the storage required by the Chainweb node databases."
 menu: Deploy
 label: Compaction

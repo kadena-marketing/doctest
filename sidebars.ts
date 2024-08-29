@@ -30,7 +30,12 @@ const sidebars: SidebarsConfig = {
                id: 'coding-projects/coding-projects',
                },
                items: [
-                    'coding-projects/test-projects',
+                    'coding-projects/hello-world',
+                    'coding-projects/transfers',
+                    'coding-projects/pact-testing',
+                    'coding-projects/interaction',
+                    'coding-projects/wallets',
+                    'coding-projects/loans',
                     ],
           },
           {
@@ -45,7 +50,6 @@ const sidebars: SidebarsConfig = {
                     'reference/pact-reference-intro',
                     'reference/functions',
                     'reference/builtin-functions',
-                    'reference/properties',
                     'reference/smart-contract-language',
                     {
                          type: 'category',
@@ -437,6 +441,24 @@ const sidebars: SidebarsConfig = {
                ],
           }
      ],
+     powSidebar: [
+          {
+               type: 'category',
+               label: 'Proof-of-work consensus',
+               link: {
+                    type: 'doc',
+                    id: 'consensus',
+               },
+               items: [
+                    'consensus/chainweb',
+                    'consensus/operator',
+                    'consensus/configure-node',
+                    'consensus/compact',
+                    'consensus/monitor-node',
+                    'consensus/troubleshoot',
+                    ],
+               },
+     ]
 };
 
 export default sidebars;

@@ -2,7 +2,7 @@
 
 title: Reduce node storage
 description: "Reduce the storage required by the Chainweb node databases."
-menu: Deploy
+id: compact
 label: Reduce node storage
 sidebar_position: 5
 layout: full

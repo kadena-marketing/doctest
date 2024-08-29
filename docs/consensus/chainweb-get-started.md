@@ -1,9 +1,10 @@
 ---
 title: Get started as a Chainweb operator
 description: "Become a Chainweb node operator to support the Kadena network infrastructure."
-menu: Deploy
+id: operator
 label: Get started as a Chainweb operator
 sidebar_position: 3
+displayed_sidebar: powSidebar
 layout: full
 tags: [pact, chainweb, network, node operator, developer]
 ---

@@ -92,11 +92,11 @@ You can now write and execute a simple `greeting` smart contract using the Pact 
    pact
    ```
 
-2. Copy and paste the following simple `hello-world `module code, then press return:
+2. Copy and paste the following simple `greeting` module code, then press return:
 
    <CodeBlock language="pact">
    (namespace 'free)
-   (module hello-world GOVERNANCE
+   (module greeting GOVERNANCE
      (defcap GOVERNANCE () true)
      (defun say-hello(name:string)
        (format "Hello, {}! ~ from Kadena" [name])

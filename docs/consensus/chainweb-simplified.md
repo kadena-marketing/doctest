@@ -5,7 +5,7 @@ description: Learn about the Chainweb consensus protocol and the multi-chain net
 menu: Learn
 label: Chainweb simplified
 sidebar_position: 2
-layout: full
+displayed_sidebar: powSidebar
 tags: [consensus, nodes, chainweb, braided chain, network]
 ---
 

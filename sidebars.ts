@@ -4,13 +4,12 @@ import type { SidebarsConfig } from "@docusaurus/plugin-content-docs";
 const sidebars: SidebarsConfig = {
      tutorialSidebar: [
           'start',
-          'developers',
           {
                type: 'category',
-               label: 'Get started with Pact',
+               label: 'Developers',
                link: {
                     type: 'doc',
-                    id: 'get-started',
+                    id: 'developers',
                },
                items: [
                

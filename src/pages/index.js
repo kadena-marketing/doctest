@@ -20,7 +20,7 @@ export default function Home() {
 
                          <span className="front_header_excerpt">Welcome to Kadena enterprise developer docs, a comprehensive resource for building for the Kadena blockchain. Here, you'll find everything you need to accelerate your development process, from API references to best practices and detailed tutorials.</span>
 
-                         <a className="kadena-button-cta front_header_cta" href="./get-started">Get started</a>
+                         <a className="kadena-button-cta front_header_cta" href="./developers">Get started</a>
 
                     </div>
 

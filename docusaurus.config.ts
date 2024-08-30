@@ -7,7 +7,7 @@ import type * as Plugin from "@docusaurus/types/src/plugin";
 import type * as OpenApiPlugin from "docusaurus-plugin-openapi-docs";
 
 const config: Config = {
-     title: "Kadena Enterprise Documentation",
+     title: "Kadena Developer Documentation",
      tagline: "The Blockchain for Business",
      url: "https://enterprise-docs.kadena.io",
      favicon: "img/kadena-favicon.png",
@@ -73,7 +73,7 @@ const config: Config = {
                items: [
                     {
                          type: "doc",
-                         docId: "start",
+                         docId: "developers",
                          position: "left",
                          label: "Get Started",
                     },

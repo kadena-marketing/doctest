@@ -2,10 +2,8 @@
 title: Block endpoints
 description:
   Provides reference information for the chainweb-node service API block endpoints.
-menu: Chainweb API
-label: Block service endpoints
-order: 2
-layout: full
+id: service-api-block
+sidebar_position: 9
 tags: ['chainweb', 'node api', 'chainweb api', 'api reference']
 ---
 

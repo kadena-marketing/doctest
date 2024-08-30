@@ -2,9 +2,9 @@
 title: Block header endpoints
 description:
   Provides reference information for the chainweb-node block header endpoints.
-menu: Chainweb API
-label: Block header endpoints
-order: 2
+id: service-api-blockheader
+sidebar_position: 3
+
 layout: full
 tags: ['chainweb', 'node api', 'chainweb api', 'api reference', 'block header']
 ---

@@ -2,10 +2,8 @@
 title: Cut endpoints
 description:
   Provides reference information for the chainweb-node /cut endpoints.
-menu: Chainweb API
-label: Cut endpoints
-order: 2
-layout: full
+id: api-cut
+sidebar_position: 4
 tags: ['chainweb', 'node api', 'chainweb api', 'api reference', 'block height cut']
 ---
 

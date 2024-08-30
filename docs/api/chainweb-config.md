@@ -2,10 +2,8 @@
 title: Configuration endpoint
 description:
   Provides reference information for the chainweb-node config endpoint.
-menu: Chainweb API
-label: Config endpoint
-order: 2
-layout: full
+id: api-config
+sidebar_position: 3
 tags: ['chainweb', 'node api', 'chainweb api', 'api reference']
 ---
 

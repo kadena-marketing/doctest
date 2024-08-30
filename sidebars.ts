@@ -73,6 +73,18 @@ const sidebars: SidebarsConfig = {
                     id: 'api/api',
                },
                items: [
+                    'api/api-intro',
+                    'api/service-api-blockhash',
+                    'api/service-api-blockheader',
+                    'api/api-config',
+                    'api/api-cut',
+                    'api/api-mempool',
+                    'api/api-payload',
+                    'api/api-peer',
+                    'api/service-api-block',
+                    'api/service-api-mining',
+                    'api/service-api-misc',
+                    'api/service-api-rosetta',
                     {
                          type: 'category',
                          label: 'Pact Rest API',
@@ -454,7 +466,9 @@ const sidebars: SidebarsConfig = {
                     'consensus/configure-node',
                     'consensus/compact',
                     'consensus/monitor-node',
+                    'consensus/manage-node',
                     'consensus/troubleshoot',
+                    'consensus/validator'
                     ],
                },
      ]

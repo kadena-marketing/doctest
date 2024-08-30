@@ -1,26 +1,27 @@
 ---
-title: Chainweb REST API
+title: Kadena REST API
 description:
-  The Chainweb node API consists of two distinct sets of API endpoints. The peer-to-peer (P2P) API provides endpoints for nodes to communicate with each other. The Chainweb service API provides endpoints for clients interacting with nodes.
-menu: Chainweb API
+  "The Kadena API consists of three distinct sets of API endpoints: the Chainweb peer-to-peer (P2P) API, the Chainweb service API, and the Pact API."
+id: api-intro
 label: Introduction
-order: 2
+sidebar_position: 1
 layout: full
 tags: ['chainweb-node', 'rest api', 'chainweb api', 'node operators']
 ---
 
-# Chainweb node API
+# Kadena REST API
 
-As discussed in [Chainweb simplified](/learn/chainweb), Chainweb is a scalable proof-of-work (PoW) consensus algorithm. 
+As discussed in [Chainweb simplified](/consensus/chainweb), Chainweb is a scalable proof-of-work (PoW) consensus algorithm. 
 Chainweb extends the Bitcoin Nakamoto consensus algorithm, a protocol designed for a single chain, to handle consensus with transactions coming from multiple parallel chains. 
 Because Chainweb scales horizontally by using multiple chains, the Kadena network provides better transaction throughput with lower transaction fees than other proof-of-work blockchains.
 
-The Chainweb node API consists of two distinct APIs: the peer-to-peer (P2P) API and the service API. 
+The Chainweb node API consists of three distinct sets of endpoints:
 
-- The **peer-to-peer API** contains the RPC endpoints that nodes must expose to support consensus and the queueing and processing of transactions. The peer-to-peer endpoints are intended primarily for communication between Chainweb nodes and are typically more efficient than the service API endpoints for most use cases. 
+- The **peer-to-peer (P2) API** contains the RPC endpoints that nodes must expose to support consensus and the queueing and processing of transactions. The peer-to-peer endpoints are intended primarily for communication between Chainweb nodes and are typically more efficient than the service API endpoints for most use cases. 
 
-- The **service API** contains endpoints that can be used to connect to Chainweb nodes from clients outside of the blockchain network.
-How you connect to the endpoints in these two APIs depends on the configuration of the Chainweb node.
+- The **service API** contains endpoints that you can use to connect to Chainweb nodes from clients outside of the blockchain network.
+
+- The **Pact server API** contains endpoints that you can use to connect locally to a Pact server to simulate connecting to a Chainweb node.
 
 For more information about the peer-to-peer API and its endpoints, see [Peer-to-peer API](#peer-to-peer-api).
 For more information about the service API and its endpoints, see [Service API](#service-api).

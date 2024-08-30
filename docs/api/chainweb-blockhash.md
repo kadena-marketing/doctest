@@ -2,10 +2,8 @@
 title: Block hash endpoints
 description:
   Provides reference information for the chainweb-node block hash endpoints.
-menu: Chainweb API
-label: Block hash endpoints
-order: 2
-layout: full
+id: service-api-blockhash
+sidebar_position: 2
 tags: ['chainweb', 'node api', 'chainweb api', 'api reference', 'block hash']
 ---
 

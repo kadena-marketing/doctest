@@ -2,10 +2,8 @@
 title: Payload endpoints
 description:
   Provides reference information for the chainweb-node block payload endpoints.
-menu: Chainweb API
-label: Payload endpoints
-order: 2
-layout: full
+id: api-payload
+sidebar_position: 7
 tags: ['chainweb', 'node api', 'chainweb api', 'api reference']
 ---
 

@@ -103,7 +103,11 @@ Here's an example of piping into curl, hitting a pact server running on port 808
 $ pact -a tests/apireq.yaml -l | curl --data @- http://localhost:8080/api/v1/local
 {"status":"success","response":{"status":"success","data":3}}
 ```
+
+## Use kadena tx commands
  
+## Transaction types and request templates
+
 ### Request YAML file format {#request-yaml}
 Request yaml files takes two forms. An *execution* Request yaml file describes the [exec](https://api.chainweb.com/openapi/pact.html#tag/model-payload) payload.
 Meanwhile, a *continuation* Request yaml file describes the [cont](https://api.chainweb.com/openapi/pact.html#tag/model-payload) payload.
@@ -289,4 +293,3 @@ signers:
         args: ["bob", "alice", 0.1]
 type: exec
 ```
-

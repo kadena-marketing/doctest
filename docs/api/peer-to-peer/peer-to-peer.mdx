@@ -1,0 +1,62 @@
+---
+title: Peer-to-peer endpoints
+id: p2p-api
+---
+
+The **peer-to-peer (P2P) API** contains the RPC endpoints that Chainweb nodes must expose to establish blockchain consensus. 
+These endpoints enable nodes to communicate about transactions waiting in the transaction pool and the blocks being produced. 
+Although the peer-to-peer endpoints are intended primarily for communication between Chainweb nodes, they are also useful in providing low level insight into network operations, the progress of the blockchain, and node health.
+Peer-to-peer endpoints are typically more efficient than similar service API endpoints for most use cases.
+
+Each computer running `chainweb-node` serves peer-to-peer endpoints using the secure Hypertext Transfer Protocol (HTTPS) on a network interface and port that is available directly on the public internet.
+
+You can also make P2P API endpoints available for other clients by exposing the endpoints using reverse proxies, load balancers, authentication frameworks, or similar web technologies.
+
+## Key features and use cases
+
+The Chainweb API is essential for various blockchain operations and analysis:
+
+1. **Node Information**: Access detailed information about individual nodes in the network.
+2. **Block and Transaction Data**: Retrieve comprehensive data about blocks and transactions across Kadena's multi-chain architecture.
+3. **Network Statistics**: Gather real-time statistics about the Kadena network's performance and state.
+4. **Peer-to-Peer Network Interaction**: Manage and monitor connections between nodes in the Kadena network.
+5. **Chain-Specific Queries**: Perform targeted queries on specific chains within Kadena's parallel chain structure.
+6. **Mining Operations**: Access endpoints relevant for miners and mining pool operators.
+
+These features make the Chainweb API invaluable for developers building infrastructure tools, block explorers, analytics platforms, and other applications requiring deep blockchain data access.
+
+Each section provides detailed documentation, including endpoint descriptions, parameter explanations, and example requests and responses. Whether you're 
+developing blockchain analytics tools, managing nodes, or building advanced dApps, these resources will guide you through effectively utilizing the Chainweb API.
+
+## Getting started
+
+To begin using the Chainweb API:
+
+1. Familiarize yourself with Kadena's multi-chain architecture and consensus mechanism.
+2. Set up a Kadena node or connect to an existing node to access the API.
+3. Explore the documentation sections below to understand each API functionality.
+4. Start with basic queries to retrieve blockchain data before moving to more complex operations.
+
+Remember, the Chainweb API provides direct access to core blockchain data and operations. Always ensure you understand the implications of your API calls, 
+especially when interacting with live network data.
+
+## Endpoints
+
+The Chainweb peer-to-peer API includes endpoints to return information about the following aspects of the peer-to-peer network:
+
+- Distributed state using [`cut` endpoints](/api/peer-to-peer/get-cut)
+- Raw block payload using [`payload` endpoints](/api/peer-to-peer/get-payload)
+- Pending transaction using [`mempool` endpoints](/api/peer-to-peer/all-pending-mempool)
+- Peer-to-peer connections using [`peer` endpoints](/api/peer-to-peer/cut-peer)
+- Node configuration using the [`config` endpoint](/api/peer-to-peer/config)
+
+For peer-to-peer connections, Chainweb nodes have two separate communication channels with specialized independent peer-to-peer networks that different nodes can be part of:
+
+- The `/peer/cut` peer-to-peer network is responsible for communicating the consensus state across the distributed network nodes. 
+- The `/peer/mempool` peer-to-peer network is responsible for queuing and managing the pending transactions for each chain independently. 
+
+## Base URL
+
+The base URL for peer-to-peer API endpoints typically take the form of `<hostname>/chainweb/0.0/mainnet01` where the `<hostname>` is the IP address or domain name of a Chainweb node in the Kadena public blockchain network. 
+Similarly, the base URL for peer-to-peer endpoints in the Kadena test network is typically `<hostname>/chainweb/0.0/testnet04` where the `<hostname>` is the IP address or domain name of a Chainweb node in the Kadena test network.
+If you're running a local development environment, you can typically replace `<hostname>` with `localhost:8080` to connect to the API and specify `development` as the network name.

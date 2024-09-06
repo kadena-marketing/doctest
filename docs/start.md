@@ -8,7 +8,7 @@ import CodeBlock from '@theme/CodeBlock';
 
 <head>
   <title>Quick start</title>
-  <meta name="description" content="Learn how to set up a development environment and deploy your first smart contract on Kadena." />
+  <meta name="description" content="Learn how to set up a development environment and write a simple smart contract for the Kadena network." />
 </head>
 
 # Quick start for Kadena developers

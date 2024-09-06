@@ -1,153 +1,17 @@
 ---
-title: Block header endpoints
+title: GET block header by hash
 description:
   Provides reference information for the chainweb-node block header endpoints.
-id: service-api-blockheader
+id: get-block-header-by-hash
 sidebar_position: 3
-
-layout: full
 tags: ['chainweb', 'node api', 'chainweb api', 'api reference', 'block header']
 ---
 
-# Block header endpoints
+# Get block header by hash
 
-Block header endpoints return block headers from the chain database.
-Similar to the block service and block hash endpoints, block headers are generally returned in ascending order and include headers of orphaned blocks.
+You can request a specific block header by using the block header hash.
 
-If you only want to query for blocks that are included in the canonical branch of the chain, you can use the `/branch` endpoint.
-The `/branch` endpoint returns blocks in descending order starting from the leafs of branches of the block chain.
-
-Block headers are returned in three different formats depending on the content type specified in the Accept header of the request:
-
-- `application/json` returns block headers in as a base64Url-encoded strings without padding.
-- `application/json;blockheader-encoding=object` returns block headers as JSON-encoded objects.
-- `application/octet-stream` returns block headers as binary data if supported by the endpoint.
-
-## Get block headers
-
-Use `GET http://{baseURL}/chain/{chain}/header` to get block headers for the specified chain.
-This call returns a collection of block headers in ascending order that satisfies the query parameters. 
-All block headers that match the query criteria are returned from the chain database, including headers for orphaned blocks.
-
-### Path parameters
-
-| Parameter | Type | Description
-| :--------- | :---- | :-----------
-| chain&nbsp;(required) | integer&nbsp;>=&nbsp;0 | Specifies the chain identifier of the chain you want to send the request to. Valid values are 0 to 19. For example, to get block headers for the first chain (0), the request is `GET http://{baseURL}/chain/0/header`.
-
-### Query parameters
-
-| Parameter | Type | Description
-| --------- | ---- | -----------
-| limit | integer&nbsp;>=&nbsp;0 | Specifies the maximum number of records that should be returned. The actual number of records returned might be lower than the limit you set. For example: `limit=3`.
-| next | string | Specifies the cursor to retrieve the next page of results. This value can be found as the value of the next property of the previous page. For example: `"inclusive:qgsxD1G5m8dGZ4W9nMKBotU2I10ilURkRIE3_UKHlLM"`.
-| minheight	| integer&nbsp;>=&nbsp;0 | Specifies the minimum block height for the returned headers. For example: `minheight=4471908`.
-| maxheight | integer&nbsp;>=&nbsp;0 | Specifies the maximum block height for the returned headers. For example: `maxheight=4953816`.
-
-### Responses
-
-Requests to `http://{baseURL}/chain/{chain}/header` return the following response codes:
-
-- **200 OK** indicates that the request succeeded and returns a collection of block headers in **ascending** order. 
-  All block headers that match the specified criteria are returned from the chain database, including headers for orphaned blocks.
-- **404 Not Found** indicates that the `next` or `maxheight` parameter specifies a nonexistent block height.
-- **406 Not Acceptable** indicates that the endpoint can't generate content in the format specified by the Accept header.
-
-#### Response headers
-
-The response header parameters are the same for all successful and unsuccessful Chainweb node requests.
-
-| Parameter | Type | Description
-| --------- | ---- | -----------
-| x-peer-addr | string | Specifies the host address and port number of the client as observed by the remote Chainweb node. The host address can be a domain name or an IP address in IPv4 or IPv6 format. For example: `"10.36.1.3:42988"`.
-| x-server&#8209;timestamp | integer&nbsp;>=&nbsp;0 | Specifies the clock time of the remote Chainweb node using the UNIX epoch timestamp. For example: `1618597601`.
-| x&#8209;chainweb&#8209;node&#8209;version	| string | Specifies the version of the remote Chainweb node. For example: `"2.23"`.
-
-#### Successful response schemas
-
-The format of the information returned in the response depends on the content type specified in the Accept header of the request.
-
-| Parameter | Type | Description
-| --------- | ---- | -----------
-| items&nbsp;(required) | Array&nbsp;of&nbsp;block&nbsp;headers | Returns an array of block headers as base64Url-encoded strings (`application/json`), JSON-encoded objects (`application/json;blockheader-encoding=object`), or a binary data stream (`application/octet-stream`, if supported).
-| limit&nbsp;(required) | integer&nbsp;>=&nbsp;0 | Specifies the number of items in the page. This number can be smaller but never be larger than the number of requested items.
-| next&nbsp;(required) | string&nbsp;or&nbsp;null | Returns a cursor that can be used in a follow up request to query the next page. It should be used literally as the value for the `next` parameter in the follow-up request. It can be specified as inclusive or exclusive.
-
-#### Not found response schema
-
-If you specified `application/json` in the Accept header of the request and there are no results matching the request criteria, the response returns the following:
-
-| Parameter | Type | Description |
-| --------- | ---- | ----------- |
-| key | string | Specifies the base64Url-encoded block hash (without padding). The block hash consists of 43 characters from the `^`a-zA-Z0-9_-`{43}$` character set. |
-| reason | string | Provides a placeholder for specifying the reason that no block headers were found. |
-
-### Examples
-
-You can send a request to the Kadena test network—testnet04—and chain 18 by calling the testnet service endpoint like this:
-
-```Postman
-GET http://api.testnet.chainweb.com/chainweb/0.0/testnet04/chain/18/header?limit=5
-```
-
-With the Accept header set to `application/json`, this request returns five items in the response body and each item is a base64Url-encoded string like this:
-
-```json
-{
-    "limit": 5,
-    "items": [
-        "AAAAAAAAAAAIfWWp5I0FACxINuh5jyNOJ9Ty5BpWjH7nOcJNC4ascVq1RHEaS5T1AwADAAAA_rvcGOcdozdWaDSgaRFc_fK1n5v41BFIHF4Ji0RCGs4RAAAAb5qGjOICdYykrSpEbBSgAQDqJFEliNDBN-Bp9eyZw5kTAAAAdJruo-NqQ_vbBAP-sMWPuZNC3ehk2BIMawncfRFFdXc1kiSWlbrG6NI-tfeDKFcid_HE5LokOORb8ZsbAAAAAB1PmYXX7EAok638Y7W5K-TB5o6LpDreiDagdr7mIhd4EgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPBMFAAAAAAAHAAAACH1lqeSNBQAAAAAAAAAAAFbA3wN38oaSnT0filswQEZoeYbbgS50Hu2V3CyKYUms",
-        "AAAAAAAAAACnVe9fhKsFAFbA3wN38oaSnT0filswQEZoeYbbgS50Hu2V3CyKYUmsAwADAAAA-nw1FP5zeHNTfxRXb4U7Z_IiExcRKgefyvIVhEBEF3ARAAAAtOerMVBv5NcJjh4c40W22FZ89poibtBlz-yQl4NM7lwTAAAAScaDZyeTNseqh6bdbG0bu_2BT83afeMrR9pxf68T8rw1kiSWlbrG6NI-tfeDKFcid_HE5LokOORb8ZsbAAAAANoTQUjcrRtfjAK0a8hc_oRTV1lvahJao40s6dnbmrR1EgAAAImntEUJAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPRMFAAAAAAAHAAAACH1lqeSNBQAXGvYWMKPbAZPdgSp72jVyf9n9IawNW_JStBvp8LmEbQKa86PTswSj",
-        "AAAAAAAAAACeppxmhKsFAJPdgSp72jVyf9n9IawNW_JStBvp8LmEbQKa86PTswSjAwADAAAAGfiTtZIOPkAZfgk9SF6Ri5Mty3ymlnbpxguTInfwuyERAAAAPLMckdi4615Uc-5qnL-uI_9QHrrDvkqP5vtGL3SnfGwTAAAARLK7tXaFwXh9JC_qMRSLQlUiLYV781yNQNYBhz1cGfI1kiSWlbrG6NI-tfeDKFcid_HE5LokOORb8ZsbAAAAAHxcyWdHz5kWWtGO3cUDYihBW1qFxrxgoNH1W0sBwZ8AEgAAABJPaYsSAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPhMFAAAAAAAHAAAAp1XvX4SrBQCkvcyyiYdKAwdPQ5YCRqIO84OtNU6YWI2dybKXPASclW6PYATjBzpg",
-        "AAAAAAAAAADgcapnhKsFAAdPQ5YCRqIO84OtNU6YWI2dybKXPASclW6PYATjBzpgAwADAAAAIvi7WXbV6o5HlKPSNWgNN3CdSaeYIgP23BAoSBucT_gRAAAATAJAFT7ZYf1ol4nIznTnhoQdG9PwKo5ZfhnAxbxPgqATAAAAvZfSTL7OYc912dvEAhpCBjQ7IGP74za9IHHmLgD49Y01kiSWlbrG6NI-tfeDKFcid_HE5LokOORb8ZsbAAAAAHesXvpjWbiPH_MwqlCOtihcQVcSdvLOdutoSuEQFCr5EgAAAJv2HdEbAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPxMFAAAAAAAHAAAAp1XvX4SrBQAy7ocBFa4RAGX0L4EevnQdIKnSPxZZYfFecQiw7cS7YdP8fqU58nyh",
-        "AAAAAAAAAABqJjNrhKsFAGX0L4EevnQdIKnSPxZZYfFecQiw7cS7YdP8fqU58nyhAwADAAAADGVzBBRQHue9CWN2zwsfTR5t6qn2s64Ew9RA6eQy7vIRAAAASUBHlEIk97kFTiHDyS1upRDi2VAe-tgpKh3_bfK0boYTAAAAk9Oei1NEPxkvZoJUqhfrXqAE66QUdmw0uZ5SzYVdaSM1kiSWlbrG6NI-tfeDKFcid_HE5LokOORb8ZsbAAAAAE02n0jPaODQLeBQfN5ntrOw-oVAjJcx_wqtrrFDciDeEgAAACSe0hYlAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQBMFAAAAAAAHAAAAp1XvX4SrBQC_AS9h_w0AgGKAeHC4PMYNKXwiIHa7zV4NXA88HqdtEemDTfocbETG"
-    ],
-    "next": "inclusive:WHNaP_33KC47YeYCdwidTtc7qspkihlEikqT9_7TqAA"
-}
-```
-
-With the Accept header set to `application/json;blockheader-encoding=object`, each item in the response body is a JSON-encoded object like this:
-
-```json
-{
-    "limit": 1,
-    "items": [
-        {
-            "nonce": "0",
-            "creationTime": 1563388117613832,
-            "parent": "LEg26HmPI04n1PLkGlaMfuc5wk0LhqxxWrVEcRpLlPU",
-            "adjacents": {
-                "17": "b5qGjOICdYykrSpEbBSgAQDqJFEliNDBN-Bp9eyZw5k",
-                "19": "dJruo-NqQ_vbBAP-sMWPuZNC3ehk2BIMawncfRFFdXc",
-                "3": "_rvcGOcdozdWaDSgaRFc_fK1n5v41BFIHF4Ji0RCGs4"
-            },
-            "target": "NZIklpW6xujSPrX3gyhXInfxxOS6JDjkW_GbGwAAAAA",
-            "payloadHash": "HU-ZhdfsQCiTrfxjtbkr5MHmjoukOt6INqB2vuYiF3g",
-            "chainId": 18,
-            "weight": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            "height": 332604,
-            "chainwebVersion": "testnet04",
-            "epochStart": 1563388117613832,
-            "featureFlags": 0,
-            "hash": "VsDfA3fyhpKdPR-KWzBARmh5htuBLnQe7ZXcLIphSaw"
-        }
-    ],
-    "next": "inclusive:k92BKnvaNXJ_2f0hrA1b8lK0G-nwuYRtAprzo9OzBKM"
-}
-```
-
-If there are no results matching the request criteria, the response body indicates the reason no results matching the request criteria were found. 
-For example:
-
-```json
-{
-  "key": "QxGCAz5AY1Y41nh1yWtgqhKhZ9pPiPRagFdIKNqBH7",
-  "reason": "key not found"
-
-}
-```
-
-## Get block header by hash
+## Request format
 
 Use `GET http://{baseURL}/chain/{chain}/header/{blockHash}` to get a block header by using its hash.
 
@@ -158,7 +22,7 @@ Use `GET http://{baseURL}/chain/{chain}/header/{blockHash}` to get a block heade
 | chain&nbsp;(required) | integer&nbsp;>=&nbsp;0 | Specifies the chain identifier of the chain you want to send the request to. Valid values are 0 to 19. For example, to get block headers for the first chain (0), the request is `GET http://{baseURL}/chain/0/header/{blockHash}`.
 | blockHash&nbsp;(required) | string | Specifies the block hash of a block. The block hash consists of 43 characters from the `a-zA-Z0-9_-` character set. For example: `k0an0qEORusqQg9ZjKrxa-0Bo0-hQVYLXqWi5LHxg3k`.
 
-### Responses
+## Responses
 
 Requests to `http://{baseURL}/chain/{chain}/header/{blockHash}` return the following response codes:
 
@@ -166,7 +30,7 @@ Requests to `http://{baseURL}/chain/{chain}/header/{blockHash}` return the follo
 - **404 Not Found** indicates that no block header with the specified block hash was found.
 - **406 Not Acceptable** indicates the endpoint can't generate content in the format specified by the Accept header.
 
-#### Response headers
+### Response headers
 
 The response header parameters are the same for all successful and unsuccessful Chainweb node requests.
 
@@ -176,11 +40,11 @@ The response header parameters are the same for all successful and unsuccessful 
 | x-server&#8209;timestamp | integer&nbsp;>=&nbsp;0 | Specifies the clock time of the remote Chainweb node using the UNIX epoch timestamp. For example: `1618597601`.
 | x&#8209;chainweb&#8209;node&#8209;version	| string | Specifies the version of the remote Chainweb node. For example: `"2.23"`.
 
-#### Successful response schemas
+### Successful response schemas
 
 The format of the information returned in the response depends on the content type specified in the Accept header of the request.
 
-#### Not found response schema
+### Not found response schema
 
 If you specified `application/json` in the Accept header of the request and there are no results matching the request criteria, the response returns the following:
 
@@ -189,7 +53,7 @@ If you specified `application/json` in the Accept header of the request and ther
 | key | string | Specifies the base64Url-encoded block hash (without padding). The block hash consists of 43 characters from the `a-zA-Z0-9_-` character set. |
 | reason | string | Provides a placeholder for specifying the reason that no block headers were found. |
 
-### Examples
+## Examples
 
 You can send a request to the Kadena main network—mainnet01—and chain 4 by calling the service endpoint like this:
 

@@ -2,7 +2,7 @@
 title: Maintenance and other services endpoints
 description:
   Provides reference information for the endpoints you can use to query or update information about the chainweb-node configuration, backups, health check, and other services.
-id: service-api-misc
+id: misc
 sidebar_position: 11
 tags: ['chainweb', 'node api', 'chainweb api', 'api reference']
 ---

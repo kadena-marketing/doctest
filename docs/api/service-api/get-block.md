@@ -1,15 +1,15 @@
 ---
-title: Block endpoints
+title: GET block
 description:
   Provides reference information for the chainweb-node service API block endpoints.
-id: service-api-block
+id: get-block
 sidebar_position: 9
 tags: ['chainweb', 'node api', 'chainweb api', 'api reference']
 ---
 
-# Block service endpoints
+# Get block header and payload
 
-Block service API endpoints return whole blocks—headers and payloads—from the chain database.
+You can use the `/block` API endpointsto  return whole blocks—headers and payloads—from the chain database.
 Generally, blocks are returned in **ascending** order and include orphaned blocks.
 
 If you only want to query blocks that are included in the winning branch of the chain, you can call the `branch` endpoints.
@@ -17,9 +17,9 @@ Branch endpoints return blocks in **descending** order starting from the leafs o
 
 Blocks are returned in only one format, with block headers and payloads in JSON encoding.
 
-## Get whole blocks
+## Request format
 
-Use GET The blocks are returned in ascending order.
+Use `GET http://{baseURL}/chain/{chain}/block` to return blocks matching the request criteria in ascending order.
 All blocks that match the criteria are returned from the chain database, including orphaned blocks.
 
 ### Path parameters
@@ -37,14 +37,14 @@ All blocks that match the criteria are returned from the chain database, includi
 | minheight	| integer&nbsp;>=&nbsp;0 | Specifies the minimum block height for the blocks to return. For example: `minheight=4471908`.
 | maxheight | integer&nbsp;>=&nbsp;0 | Specifies the maximum block height for the blocks to return. For example: `maxheight=4953816`.
 
-### Responses
+## Responses
 
 Requests to `GET http://{baseURL}/chain/{chain}/block` can return the following response codes:
 
 - **200 OK** indicates that the request succeeded. The response body includes all of the blocks matching the criteria specified, including any orphaned blocks.
 - **404 Not Found** indicates that no blocks matching the request criteria were found or that the `next` or `maxheight` parameter wasn't valid.
 
-#### Response header
+### Response header
 
 The response header parameters are the same for all successful and unsuccessful Chainweb node requests.
 
@@ -54,7 +54,7 @@ The response header parameters are the same for all successful and unsuccessful 
 | x-server&#8209;timestamp | integer&nbsp;>=&nbsp;0 | Specifies the clock time of the remote Chainweb node using the UNIX epoch timestamp. For example: `1618597601`.
 | x&#8209;chainweb&#8209;node&#8209;version	| string | Specifies the version of the remote Chainweb node. For example: `"2.23"`.
 
-#### Successful response schema
+### Successful response schema
 
 If the request is successful, the response returns `application/json` content with the following:
 
@@ -64,7 +64,7 @@ If the request is successful, the response returns `application/json` content wi
 | limit&nbsp;(required) | integer&nbsp;>=&nbsp;0 | Specifies the maximum number of items in the page. This number can be smaller but never larger than the number of requested items.
 | next&nbsp;(required) | string&nbsp;or&nbsp;null | Returns a value that can be used to query the next page. You can use this value for the `next` parameter in a follow-up request. The format for this parameter consists of two parts. The first part of the string can be `inclusive`, `exclusive` or null. The second part is the value that calls the next page of results or null if there are no more results to query.
 
-### Examples
+## Examples
 
 You can send a request to the Kadena main network—mainnet01—and chain 19 by calling the main network service endpoint like this:
 

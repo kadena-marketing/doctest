@@ -2,7 +2,7 @@
 title: Rosetta endpoints
 description:
   Provides reference information for the chainweb-node block endpoints.
-id: service-api-rosetta
+id: rosetta
 sidebar_position: 12
 tags: ['chainweb', 'node api', 'chainweb api', 'api reference']
 ---

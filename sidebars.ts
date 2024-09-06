@@ -74,20 +74,9 @@ const sidebars: SidebarsConfig = {
                },
                items: [
                     'api/api-intro',
-                    'api/service-api-blockhash',
-                    'api/service-api-blockheader',
-                    'api/api-config',
-                    'api/api-cut',
-                    'api/api-mempool',
-                    'api/api-payload',
-                    'api/api-peer',
-                    'api/service-api-block',
-                    'api/service-api-mining',
-                    'api/service-api-misc',
-                    'api/service-api-rosetta',
                     {
                          type: 'category',
-                         label: 'Pact Rest API',
+                         label: 'Pact API',
                          link: {
                               type: 'doc',
                               id: 'api/pact-rest/pact-rest',
@@ -103,293 +92,46 @@ const sidebars: SidebarsConfig = {
                     },
                     {
                          type: 'category',
-                         label: 'Chainweb API',
+                         label: 'Peer-to-peer API',
                          link: {
                               type: 'doc',
-                              id: 'api/chainweb/chainweb',
+                              id: 'api/peer-to-peer/p2p-api',
                          },
                          items: [
-                              {
-                                   type: "category",
-                                   label: "Block Endpoints",
-                                   link: {
-                                        type: "doc",
-                                        id: "api/chainweb/block",
-                                   },
-                                   items: [
-                                        {
-                                             type: "doc",
-                                             id: "api/chainweb/get-block",
-                                             label: "Get Block",
-                                             className: "api-method get",
-                                        },
-                                        {
-                                             type: "doc",
-                                             id: "api/chainweb/get-block-branches",
-                                             label: "Get Block Branches",
-                                             className: "api-method post",
-                                        },
-                                   ],
-                              },
-                              {
-                                   type: "category",
-                                   label: "Block Hashes Endpoints",
-                                   link: {
-                                        type: "doc",
-                                        id: "api/chainweb/blockhash",
-                                   },
-                                   items: [
-                                        {
-                                             type: "doc",
-                                             id: "api/chainweb/get-block-hashes",
-                                             label: "Get Block Hashes",
-                                             className: "api-method get",
-                                        },
-                                        {
-                                             type: "doc",
-                                             id: "api/chainweb/get-block-hash-branches",
-                                             label: "Get Block Hash Branches",
-                                             className: "api-method post",
-                                        },
-                                   ],
-                              },
-                              {
-                                   type: "category",
-                                   label: "Block Header Endpoints",
-                                   link: {
-                                        type: "doc",
-                                        id: "api/chainweb/header",
-                                   },
-                                   items: [
-                                        {
-                                             type: "doc",
-                                             id: "api/chainweb/get-block-headers",
-                                             label: "Get Block Headers",
-                                             className: "api-method get",
-                                        },
-                                        {
-                                             type: "doc",
-                                             id: "api/chainweb/get-block-header-by-hash",
-                                             label: "Get Block Header by Hash",
-                                             className: "api-method get",
-                                        },
-                                        {
-                                             type: "doc",
-                                             id: "api/chainweb/get-block-header-branches",
-                                             label: "Get Block Header Branches",
-                                             className: "api-method post",
-                                        },
-                                   ],
-                              },
-                              {
-                                   type: "category",
-                                   label: "Block Payload Endpoints",
-                                   link: {
-                                        type: "doc",
-                                        id: "api/chainweb/payload",
-                                   },
-                                   items: [
-                                        {
-                                             type: "doc",
-                                             id: "api/chainweb/get-block-payload",
-                                             label: "Get Block Payload",
-                                             className: "api-method get",
-                                        },
-                                        {
-                                             type: "doc",
-                                             id: "api/chainweb/get-batch-of-block-payload",
-                                             label: "Get Batch of Block Payload",
-                                             className: "api-method post",
-                                        },
-                                        {
-                                             type: "doc",
-                                             id: "api/chainweb/get-block-payload-with-outputs",
-                                             label: "Get Block Payload With Outputs",
-                                             className: "api-method get",
-                                        },
-                                        {
-                                             type: "doc",
-                                             id: "api/chainweb/get-batch-of-block-payload-with-outputs",
-                                             label: "Get Batch of Block Payload With Outputs",
-                                             className: "api-method post",
-                                        },
-                                   ],
-                              },
-                              {
-                                   type: "category",
-                                   label: "Config Endpoint",
-                                   link: {
-                                        type: "doc",
-                                        id: "api/chainweb/config",
-                                   },
-                                   items: [
-                                        {
-                                             type: "doc",
-                                             id: "api/chainweb/configuration-of-chainweb-node",
-                                             label: "Configuration of Chainweb Node",
-                                             className: "api-method get",
-                                        },
-                                   ],
-                              },
-                              {
-                                   type: "category",
-                                   label: "Cut Endpoints",
-                                   link: {
-                                        type: "doc",
-                                        id: "api/chainweb/cut",
-                                   },
-                                   items: [
-                                        {
-                                             type: "doc",
-                                             id: "api/chainweb/query-the-current-cut",
-                                             label: "Query the current cut",
-                                             className: "api-method get",
-                                        },
-                                        {
-                                             type: "doc",
-                                             id: "api/chainweb/publish-a-cut",
-                                             label: "Publish a cut",
-                                             className: "api-method put",
-                                        },
-                                   ],
-                              },
-                              {
-                                   type: "category",
-                                   label: "Mempool P2P Endpoints",
-                                   link: {
-                                        type: "doc",
-                                        id: "api/chainweb/mempool",
-                                   },
-                                   items: [
-                                        {
-                                             type: "doc",
-                                             id: "api/chainweb/get-pending-transactions-from-the-mempool",
-                                             label: "Get Pending Transactions from the Mempool",
-                                             className: "api-method post",
-                                        },
-                                        {
-                                             type: "doc",
-                                             id: "api/chainweb/check-for-pending-transactions-in-the-mempool",
-                                             label: "Check for Pending Transactions in the Mempool",
-                                             className: "api-method post",
-                                        },
-                                        {
-                                             type: "doc",
-                                             id: "api/chainweb/lookup-pending-transactions-in-the-mempool",
-                                             label: "Lookup Pending Transactions in the Mempool",
-                                             className: "api-method post",
-                                        },
-                                        {
-                                             type: "doc",
-                                             id: "api/chainweb/insert-transactions-into-the-mempool",
-                                             label: "Insert Transactions into the Mempool",
-                                             className: "api-method put",
-                                        },
-                                   ],
-                              },
-                              {
-                                   type: "category",
-                                   label: "Mining Endpoints",
-                                   link: {
-                                        type: "doc",
-                                        id: "api/chainweb/mining",
-                                   },
-                                   items: [
-                                        {
-                                             type: "doc",
-                                             id: "api/chainweb/get-mining-work",
-                                             label: "Get Mining Work",
-                                             className: "api-method get",
-                                        },
-                                        {
-                                             type: "doc",
-                                             id: "api/chainweb/solved-mining-work",
-                                             label: "Solved Mining Work",
-                                             className: "api-method post",
-                                        },
-                                        {
-                                             type: "doc",
-                                             id: "api/chainweb/notification-of-updated-work",
-                                             label: "Notification of Updated Work",
-                                             className: "api-method get",
-                                        },
-                                   ],
-                              },
-                              {
-                                   type: "category",
-                                   label: "Miscellaneous Endpoints",
-                                   link: {
-                                        type: "doc",
-                                        id: "api/chainweb/misc",
-                                   },
-                                   items: [
-                                        {
-                                             type: "doc",
-                                             id: "api/chainweb/start-a-backup-job",
-                                             label: "Start a backup job",
-                                             className: "api-method post",
-                                        },
-                                        {
-                                             type: "doc",
-                                             id: "api/chainweb/check-the-status-of-a-backup-job",
-                                             label: "Check the status of a backup job",
-                                             className: "api-method get",
-                                        },
-                                        {
-                                             type: "doc",
-                                             id: "api/chainweb/health-check",
-                                             label: "Health Check",
-                                             className: "api-method get",
-                                        },
-                                        {
-                                             type: "doc",
-                                             id: "api/chainweb/general-node-info",
-                                             label: "General Node Info",
-                                             className: "api-method get",
-                                        },
-                                        {
-                                             type: "doc",
-                                             id: "api/chainweb/blocks-event-stream",
-                                             label: "Blocks Event Stream",
-                                             className: "api-method get",
-                                        }
-                                   ],
-                              },
-                              {
-                                   type: "category",
-                                   label: "Peer Endpoints",
-                                   link: {
-                                        type: "doc",
-                                        id: "api/chainweb/peer",
-                                   },
-                                   items: [
-                                        {
-                                             type: "doc",
-                                             id: "api/chainweb/get-cut-network-peer-info",
-                                             label: "Get Cut-Network Peer Info",
-                                             className: "api-method get",
-                                        },
-                                        {
-                                             type: "doc",
-                                             id: "api/chainweb/put-cut-network-peer-info",
-                                             label: "Put Cut-Network Peer Info",
-                                             className: "api-method put",
-                                        },
-                                        {
-                                             type: "doc",
-                                             id: "api/chainweb/get-chain-mempool-network-peer-info",
-                                             label: "Get Chain Mempool-Network Peer Info",
-                                             className: "api-method get",
-                                        },
-                                        {
-                                             type: "doc",
-                                             id: "api/chainweb/put-chain-mempool-network-peer-info",
-                                             label: "Put Chain Mempool-Network Peer Info",
-                                             className: "api-method put",
-                                        },
-                                   ],
-                              },
+                              "api/peer-to-peer/get-cut",
+                              "api/peer-to-peer/publish-cut",
+                              "api/peer-to-peer/get-payload",
+                              "api/peer-to-peer/all-pending-mempool",
+                              "api/peer-to-peer/boolean-tx-mempool",
+                              "api/peer-to-peer/lookup-tx-mempool",
+                              "api/peer-to-peer/insert-tx-mempool",
+                              "api/peer-to-peer/api-get-cut-peers",
+                              "api/peer-to-peer/api-add-cut-peers",
+                              "api/peer-to-peer/api-get-mempool-peers",
+                              "api/peer-to-peer/api-add-mempool-peers",
+                              "api/peer-to-peer/api-config",
                          ],
+                    },
+                    {
+                         type: "category",
+                         label: "Service API",
+                         link: {
+                              type: "doc",
+                              id: "api/service-api/service-api",
+                              },
+                              items: [
+                                   "api/service-api/get-block",
+                                   "api/service-api/get-block-branch",
+                                   "api/service-api/get-block-hash",
+                                   "api/service-api/get-block-hash-branch",
+                                   "api/service-api/get-block-header",
+                                   "api/service-api/get-block-header-by-hash",
+                                   "api/service-api/get-block-header-branch",
+                                   'api/service-api/mining',
+                                   'api/service-api/misc',
+                                   'api/service-api/rosetta',
+                    
+                              ],
                     },
                ],
           },
@@ -462,6 +204,8 @@ const sidebars: SidebarsConfig = {
                },
                items: [
                     'consensus/chainweb',
+                    'consensus/tx-lifecycle',
+                    'consensus/node-types',
                     'consensus/operator',
                     'consensus/configure-node',
                     'consensus/compact',

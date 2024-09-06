@@ -13,7 +13,7 @@ Use `GET https://{hostname}/config` to return configuration information for a Ch
 The configuration details are returned as a JSON object with sensitive information removed from the result. 
 The JSON schema depends on the version of the `chainweb-node` software running on the node and is not part of the stable `chainweb-node` API.
 
-### Responses
+## Responses
 
 Requests to the `/config` endpoint return the following response code:
 
@@ -33,7 +33,7 @@ The response header parameters are the same for all successful and unsuccessful 
 
 The content of the JSON schema depends on the version of the `chainweb-node` software running on the node and is not part of the stable `chainweb-node` API.
 
-### Examples
+## Examples
 
 You can send a request to a Kadena main network bootstrap node by calling the `/config` endpoint.
 For example:

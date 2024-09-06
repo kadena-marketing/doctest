@@ -1,36 +1,36 @@
 ---
-title: Cut endpoints
+title: Query the current state
 description:
-  Provides reference information for the chainweb-node /cut endpoints.
-id: api-cut
-sidebar_position: 4
+  Use the GET /cut endpoint to return the cut height for a Chainweb node.
+id: get-cut
+sidebar_position: 2
 tags: ['chainweb', 'node api', 'chainweb api', 'api reference', 'block height cut']
 ---
 
-# Cut endpoints
+# Query the current state
 
-A **cut** represents a distributed state from a chainweb node. 
-It references one block header for each chain, such that those blocks are pairwise concurrent.
+In the Kadena network, a **cut height** represents the distributed state from a Chainweb node. 
+Each cut height—much like a database snapshot or a block height—references one block header for each chain, compared with concurrent blocks on other chains.
 
-Two blocks from two different chains are said to be concurrent if either one of them is an adjacent parent (is a direct dependency) of the other or if the blocks do not depend at all on each other.
+Two blocks from two different chains are considered concurrent if either block is an adjacent parent and a direct dependency of the other or if the blocks do not depend at all on each other.
 
-## Query the current cut
+## Request format
 
-Use `GET https://{baseURL}/cut` to query a Chainweb node for the current cut.
+Use `GET https://{baseURL}/cut` to query a Chainweb node for the current cut height on all chains.
 
-### Query parameters
+You can specify the following optional query parameter for the request:
 
 | Parameter | Type | Description
 | --------- | ---- | -----------
 | maxheight | integer >= 0 | Maximum cut height of the returned cut.
 
-### Responses
+## Responses
 
 Requests to `GET https://{baseURL}/cut` return the following response code:
 
 - **200 OK** indicates that the request succeeded and the response body returns the blockchain state for each chain at the specified block height. 
 
-#### Response header
+### Response header
 
 The response header parameters are the same for all successful and unsuccessful Chainweb node requests.
 
@@ -40,7 +40,7 @@ The response header parameters are the same for all successful and unsuccessful 
 | x-server&#8209;timestamp | integer&nbsp;>=&nbsp;0 | Specifies the clock time of the remote Chainweb node using the UNIX epoch timestamp. For example: `1618597601`.
 | x&#8209;chainweb&#8209;node&#8209;version	| string | Specifies the version of the remote Chainweb node. For example: `"2.23"`.
 
-#### Response schema
+### Response schema
 
 The response returns `application/json` content with the following information:
 

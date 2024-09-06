@@ -1,34 +1,19 @@
 ---
-title: Pact Reference
+title: Pact concepts
 slug: reference
 ---
 
 <head>
-  <title>Pact: Pact Reference</title>
+  <title>Pact server and transaction signing</title>
   <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
   <html className="toc-display" />
 </head>
 
 
-# Pact Reference
+# Pact concepts
 
-This document is a reference for the Pact smart-contract language, designed for
-correct, transactional execution on a [high-performance blockchain](http://kadena.io). For more
-background, please see the [white paper](https://docs.kadena.io/basics/whitepapers/pact-smart-contract-language)
-or the [pact home page](http://kadena.io/#pactModal).
-
-Copyright (c) 2016 - 2018, Stuart Popejoy. All Rights Reserved.
-
-
-## Rest API
-See (https://api.chainweb.com/openapi/pact.html) for latest OpenAPI docs.
-
-### Pact built-in server
-Pact ships with a built-in HTTP server and SQLite backend.
+The Pact command-line interpreter includes its own built-in HTTP server and SQLite backend.
 To start up the server issue `pact -s config.yaml`, with a suitable config.
-
-### `pact-lang-api` JS Library
-The `pact-lang-api` JS library is [available via npm](https://www.npmjs.com/package/pact-lang-api) for web development.
 
 
 ### API request formatter

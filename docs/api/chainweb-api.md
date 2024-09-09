@@ -11,7 +11,7 @@ tags: ['chainweb-node', 'rest api', 'chainweb api', 'node operators']
 
 # Kadena REST API
 
-As discussed in [Chainweb simplified](/consensus/chainweb), Chainweb is a scalable proof-of-work (PoW) consensus algorithm. 
+As discussed in [Chainweb overview](/consensus/chainweb), Chainweb is a scalable proof-of-work (PoW) consensus algorithm. 
 Chainweb extends the Bitcoin Nakamoto consensus algorithm, a protocol designed for a single chain, to handle consensus with transactions coming from multiple parallel chains. 
 Because Chainweb scales horizontally by using multiple chains, the Kadena network provides better transaction throughput with lower transaction fees than other proof-of-work blockchains.
 
@@ -19,9 +19,15 @@ The Chainweb node API consists of three distinct sets of endpoints:
 
 - The **Pact server API** contains endpoints that you can use to connect locally to a Pact built-in HTTP server to simulate connecting to a Chainweb node to sign, submit, and check the status of transactions.
 
-- The **peer-to-peer (P2P) API** contains the RPC endpoints that nodes must expose to support consensus and the queueing and processing of transactions. The peer-to-peer endpoints are intended primarily for communication between Chainweb nodes and are typically more efficient than the service API endpoints for most use cases. 
+- The **peer-to-peer API** contains the RPC endpoints that nodes must expose to support consensus and the queueing and processing of transactions. 
+  The peer-to-peer endpoints are intended primarily for communication between Chainweb nodes.
+  These endpoints are typically more efficient than the service API endpoints for most use cases. 
+  However, peer-to-peer endpoints only expose features that are required for the the peer-to-eer network to function.
+  For most use cases, you should send API requests to service API endpoints.
 
-- The **service API** contains endpoints that you can use to connect to Chainweb nodes from clients outside of the blockchain network.
+- The **service API** allows querying and control of Chainweb nodes by clients outside of the blockchain network.
+  Node operators must explicitly enable access to the service API and expose its endpoints on a different network interface than the peer-to-peer API.
+  The specific service API endpoints that are exposed for any node depend on the node configuration settings.
 
 For more information about the peer-to-peer API and its endpoints, see [Peer-to-peer API](#peer-to-peer-api).
 For more information about the service API and its endpoints, see [Service API](#service-api).

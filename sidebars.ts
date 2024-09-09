@@ -73,7 +73,6 @@ const sidebars: SidebarsConfig = {
                     id: 'api/api',
                },
                items: [
-                    'api/api-intro',
                     {
                          type: 'category',
                          label: 'Pact API',

@@ -3,6 +3,14 @@ title: Sign and submit transactions
 id: howto-sign-submit-tx
 ---
 
+<head>
+  <title>Sign and submit transactions</title>
+  <meta name="description" content="A guide to crafting blockchain calls using Traditional API, Kadena CLI, and Kadena.js" />
+</head>
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import CodeBlock from '@theme/CodeBlock';
+
 # Sign and submit transactions
 
 There are several ways you can sign and submit transactions.
@@ -109,28 +117,9 @@ To use the built-in Pact server:
 
 ## Use a curl command directly
 
-Here's an example of piping into curl, hitting a pact server running on port 8080:
-
-
-curl -X POST "http://api.chainweb.com/chainweb/0.0/testnet04/chain/1/pact/api/v1/local" \
-     -H "Content-Type: application/json" \
-     -d '{
-       "exec": {
-         "data": {
-           "name": "Pistolas",
-           "language": "Pact",
-         },
-         "code": "(+ 1 2)"
-       },
-       "meta": {
-         "chainId": "",
-         "sender": "",
-         "gasLimit": 0,
-         "gasPrice": 0.0,
-         "ttl": 0
-       }
-     }'
-
+<CodeBlock>
+test
+</CodeBlock>
 
 ## Use kadena tx commands
 
@@ -256,8 +245,6 @@ cat tx-unsigned.yaml | pact add-sig bob-key.yaml > tx-signed-bob.yaml
 
 # Combine the signatures into a fully signed transaction ready to send to the blockchain
 pact combine-sigs tx-signed-alice.yaml tx-signed-bob.yaml > tx-final.json
-
-```
 
 The `add-sig` command takes the output of `pact -u` on standard input and one or
 more key files as command line arguments. It adds the appropriate signatures to

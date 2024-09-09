@@ -1,6 +1,6 @@
 ---
 title: Sign and submit transactions
-id: sign-submit-tx
+id: howto-sign-submit-tx
 ---
 
 # Sign and submit transactions
@@ -95,24 +95,61 @@ To use the built-in Pact server:
    {"hash":"RRkPaHkAlAYMOgCxVtIiR20B8aEl4U4FGLNuFMbmSXg","sigs":[{"sig":"47e66eeec37991ad49b162401ab777a8dc9e872090f0a1552ee080931450891d321ab6fd3907d0aa1395d3816a74a8c08dd1be5d2871dc2398dd5d2851cbc60d"}],"cmd":"{\"networkId\":null,\"payload\":{\"exec\":{\"data\":{\"name\":\"Stuart\",\"language\":\"Pact\"},\"code\":\"(+ 1 2)\"}},\"signers\":[{\"pubKey\":\"ba54b224d1924dd98403f5c751abdd10de6cd81b0121800bf7bdbdcfaec7388d\"}],\"meta\":{\"creationTime\":0,\"ttl\":0,\"gasLimit\":0,\"chainId\":\"\",\"gasPrice\":0,\"sender\":\"\"},\"nonce\":\"2024-09-06 20:24:45.82271 UTC\"}"}
    ```
 
-## Use a curl command
+1. Send the API request to the Pact built-in HTTP server running on port 8081—as configured in the `pact-config.yaml` file for this example—by running the following command:
+   
+   ```bash
+   pact --apireq my-api-request.yaml --local | curl --json @- http://localhost:8081/api/v1/local
+   ```
+   
+   This command returns the transaction result with output similar to the following:
+
+   ```bash
+   {"gas":0,"result":{"status":"success","data":3},"reqKey":"q4HW4wP1FCj3RQRvhILQHaqU8tmMqHPp-nDJdw6CwK8","logs":"wsATyGqckuIvlm89hhd2j4t6RMkCrcwJe_oeCYr7Th8","metaData":null,"continuation":null,"txId":null}
+   ```
+
+## Use a curl command directly
 
 Here's an example of piping into curl, hitting a pact server running on port 8080:
 
-```shell
-$ pact -a tests/apireq.yaml -l | curl --data @- http://localhost:8080/api/v1/local
-{"status":"success","response":{"status":"success","data":3}}
-```
+
+curl -X POST "http://api.chainweb.com/chainweb/0.0/testnet04/chain/1/pact/api/v1/local" \
+     -H "Content-Type: application/json" \
+     -d '{
+       "exec": {
+         "data": {
+           "name": "Pistolas",
+           "language": "Pact",
+         },
+         "code": "(+ 1 2)"
+       },
+       "meta": {
+         "chainId": "",
+         "sender": "",
+         "gasLimit": 0,
+         "gasPrice": 0.0,
+         "ttl": 0
+       }
+     }'
+
 
 ## Use kadena tx commands
- 
+
+
 ## Transaction types and request templates
 
-### Request YAML file format {#request-yaml}
-Request yaml files takes two forms. An *execution* Request yaml file describes the [exec](https://api.chainweb.com/openapi/pact.html#tag/model-payload) payload.
-Meanwhile, a *continuation* Request yaml file describes the [cont](https://api.chainweb.com/openapi/pact.html#tag/model-payload) payload.
+As discussed in Transaction models, there are two type of transactions:
 
-#### YAML exec command request
+- Transactions that are completed in a single execution step are executed (exec) transactions.
+- Transaction that are completed using more than one step are continued (cont) transactions.
+
+To handle these two transaction types, there are two API request formats that you can define in YAML files: 
+
+- For transactions that are executed in a single step, the YAML API request describes the [exec](https://api.chainweb.com/openapi/pact.html#tag/model-payload) payload for the transaction.
+- For transactions that are executed in more than one step, the YAML API request describes the [cont](https://api.chainweb.com/openapi/pact.html#tag/model-payload) payload for the transaction.
+
+
+### Template for exec transaction requests
+
 The execution request yaml for a public blockchain takes the following keys:
 
 ```yaml
@@ -139,7 +176,7 @@ The execution request yaml for a public blockchain takes the following keys:
   type: exec
 ```
 
-#### YAML Continuation command request
+### Template for cont transaction requests
 
 The continuation request yaml for a public blockchain takes the following keys:
 
@@ -169,25 +206,50 @@ The continuation request yaml for a public blockchain takes the following keys:
   type: cont
 ```
 
-Note that the optional "proof" field only makes sense when using cross-chain continuations.
+Note that the proof field is optional and only used for transactions that are completed as cross-chain continuations.
 
-Signing Transactions
----
+## Sign transactions
 
-As of Pact 3.5.0, the `pact` command line tool now has several commands to
-facilitate signing transactions. Here's a full script showing how these commands
-can be used to prepare an unsigned version of the transaction and add signatures
-to it. This transcript assumes that the details of the transaction has been
+The `pact` command-line program includes several commands that enable you to sign transactions from the command line. 
+The following example illustrates how to use pact command to prepare an unsigned version of a transaction and add signatures to it. 
+
+1. Prepare transaction details as an API request manually using a YAML file or using `kadena tx` commands.
 specified in a file called `tx.yaml`.
 
-```
-# At some earlier time generate and save some public/private key pairs.
-pact -g > alice-key.yaml
-pact -g > bob-key.yaml
+1. Generate and save the public and secret keys for the `alice` test accounts by running the following command:
+   
+   ```bash
+   pact --genkey > alice-key.yaml
+   ```
+   
+   This command writes the public and secret key to the alice-key.yaml file.
+   For example:
 
-# Convert a transaction into an unsigned prepared form that is signatures can be added to
-pact -u tx.yaml > tx-unsigned.yaml
+   ```yaml
+   public: 24f00ba35e894899710b699ce718f7f7439402e13e775167290026914ab32472
+   secret: a2880862a6452ad3e84e8df7d51f7dec4c6fd4da2c8b5e42999548414b5641cf
+   ```
 
+1. Generate and save the public and secret keys for the `bob` test accounts by running the following command:
+   
+   ```bash
+   pact --genkey > bob-key.yaml
+   ```
+   
+   This command writes the public and secret key to the `bob-key.yaml` file.
+   For example:
+
+   ```bash
+   public: e6519fb36c0ae6e65efee11344c50ea44b822cc84d9cd4ff85cae62635e8221a
+   secret: 1e2801fe6a6e203b81459fcfee97f19c6e8a586c320bcfc9aeaa695d8bff9660
+   ```
+
+2. Convert the transaction request you created into an unsigned transaction that you can add signatures to by running the following command:
+   
+   ```bash
+   pact --unsigned tx.yaml > tx-unsigned.yaml
+   ```
+   
 # Sign the prepared transaction with one or more keys
 cat tx-unsigned.yaml | pact add-sig alice-key.yaml > tx-signed-alice.yaml
 cat tx-unsigned.yaml | pact add-sig bob-key.yaml > tx-signed-bob.yaml

@@ -142,6 +142,10 @@ const sidebars: SidebarsConfig = {
                     id: 'guides/guides',
                },
                items: [
+                    'guides/howto-create-accounts',
+                    'guides/howto-fund-accounts',
+                    'guides/howto-get-balances',
+                    'guides/howto-sign-submit-tx',
                     'guides/craft-api-call',
                     'guides/kadena-cli',
                     {

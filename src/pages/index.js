@@ -16,11 +16,11 @@ export default function Home() {
 
                     <div className="front_header">
 
-                         <h1 className="front_header_title">Kadena Documentation</h1>
+                         <h1 className="front_header_title">Kadena Developer Documentation</h1>
 
-                         <span className="front_header_excerpt">Wecome to our enterprise developer docs, a comprehensive resource for building with our blockchain. Here, you'll find everything you need to accelerate your development process, from API references to best practices and detailed tutorials.</span>
+                         <span className="front_header_excerpt">Welcome to Kadena developer-focused documentation. Kadena Developer Docs provide everything you need to start building for the Kadena blockchain, accelerate your development process, and deploy your applications on the Kadena network. From introductory tutorials to comprehensive API documentation, we've got you covered.</span>
 
-                         <a className="kadena-button-cta front_header_cta" href="./start">Get Started</a>
+                         <a className="kadena-button-cta front_header_cta" href="./developers">Get started</a>
 
                     </div>
 
@@ -30,17 +30,17 @@ export default function Home() {
 
                               <li className="kadena-link-box front_main_option">
 
-                                   <a className="front_main_option_title" href="./intro">Introduction</a>
+                                   <a className="front_main_option_title" href="./start">Quick start</a>
 
-                                   <span className="front_main_option_summary">Start here to learn the basics, including blockchain fundamentals and the core concepts relating to the Kadena network.</span>
+                                   <span className="front_main_option_summary">Start here to set up your development environment and build your first project.</span>
 
                               </li>
 
                               <li className="kadena-link-box front_main_option">
 
-                                   <a className="front_main_option_title" href="./pact">Pact</a>
+                                   <a className="front_main_option_title" href="./developers">Developers</a>
 
-                                   <span className="front_main_option_summary">PACT is an open-source, Turing-incomplete smart contract language. PACT is designed to make blockchain development more accessible, secure, and efficient.</span>
+                                   <span className="front_main_option_summary">Learn how to write smart contracts for the Kadena blockchain using the Pact smart contract programming language. </span>
 
                               </li>
 
@@ -48,35 +48,64 @@ export default function Home() {
 
                                    <a className="front_main_option_title" href="./api">API</a>
 
-                                   <span className="front_main_option_summary">Explore our API documentation for the tools and guidelines to seamlessly integrate with our technology, both PACT and Chainweb.</span>
+                                   <span className="front_main_option_summary">Connect to API endpoints to interact with the Kadena blockchain network and Chainweb nodes.</span>
 
                               </li>
 
 
                               <li className="kadena-link-box front_main_option">
 
-                                   <a className="front_main_option_title" href="./guides">How-To Guides</a>
+                                   <a className="front_main_option_title" href="./guides">How-to guides</a>
 
-                                   <span className="front_main_option_summary">Step-by-step instructions to offer clear and actionable insights to enhance your development experience.</span>
-
-                              </li>
-
-                              <li className="kadena-link-box front_main_option">
-
-                                   <a className="front_main_option_title" href="./install">Installation</a>
-
-                                   <span className="front_main_option_summary">This section will walk you through the essential steps to set up your development environment, install Pact, and work with Kadena nodes.</span>
+                                   <span className="front_main_option_summary">Follow the examples in the How-to guides to learn patterns for how to perform common tasks.</span>
 
                               </li>
 
                               <li className="kadena-link-box front_main_option">
 
-                                   <a className="front_main_option_title" href="./resources">Resources</a>
+                                   <a className="front_main_option_title" href="./reference/builtin-functions">Built-in functions</a>
 
-                                   <span className="front_main_option_summary">Dive into our curated collection of resources to deepen your knowledge and engagement with Kadena's innovative blockchain technology.</span>
+                                   <span className="front_main_option_summary">Get fast access to Pact built-in functions to perform many types of common programming tasks.</span>
 
                               </li>
 
+                              <li className="kadena-link-box front_main_option">
+
+                                   <a className="front_main_option_title" href="./resources">Solution showcase</a>
+
+                                   <span className="front_main_option_summary">Explore a curated collection of tools, products, and resources that highlight what you can do with Kadena blockchain technology.</span>
+
+                              </li>
+                         </ul>
+                    </div>
+
+<hr>
+</hr>
+                   <div className="front_main">
+
+                        <ul className="front_main_options">
+
+                              <li className="kadena-link-box front_main_option">
+
+                                  <a className="front_main_option_title" href="./consensus">Proof-of-Work consensus</a>
+
+                                  <span className="front_main_option_summary">Learn about the Proof-of-Work consensus protocol—Chainweb—that powers the Kadena network and how to become a node operator or miner.</span>
+
+                              </li>
+                              <li className="kadena-link-box front_main_option">
+
+                                  <a className="front_main_option_title" href="./academy">Academy resources</a>
+
+                                  <span className="front_main_option_summary">Browse modules and take courses to build your skill set through videos, hands-on exercises, and sample projects.</span>
+
+                              </li>
+                              <li className="kadena-link-box front_main_option">
+
+                                  <a className="front_main_option_title" href="./community">Community resources</a>
+
+                                  <span className="front_main_option_summary">See what the community is up to and how to contribute.</span>
+
+                              </li>
                          </ul>
 
                     </div>

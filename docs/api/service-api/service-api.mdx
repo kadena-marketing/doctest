@@ -1,0 +1,39 @@
+---
+title: Service API endpoints
+id: service-api
+---
+
+The Chainweb service API includes endpoints that expose functionality of the Chainweb node to clients other than computers running the `chainweb-node` software.
+For example, other clients might include mining pools, decentralized services, web applications, exchanges, wallets, and so on.
+
+If you're a node operator, you can enable service API endpoints using configuration settings for the Chainweb node. 
+The endpoints are served on a separate port over the unencrypted Hypertext Transfer Protocol (HTTP). 
+As a node operator, you can also choose to expose the endpoints locally or through reverse proxies, load balancers, authentication frameworks, and other similar web technologies.
+
+### Endpoints
+
+The Chainweb service API includes the following endpoints:
+
+- [Block service endpoints](/reference/chainweb-api/service-block)
+- [Block hash endpoints](/reference/chainweb-api/blockhash)
+- [Block header endpoints](/reference/chainweb-api/blockheader)
+- [Mining service endpoints](/reference/chainweb-api/mining)
+- [Pact REST API endpoints](/reference/rest-api)
+- [Rosetta endpoints](/reference/chainweb-api/rosetta)
+- [Maintenance and other services endpoints](/reference/chainweb-api/misc)
+
+### Base URL
+
+Because the service API is configurable for individual nodes, the base URL for service API endpoints can vary.
+For bootstrap nodes, service API endpoints typically take the form of `api.<hostname>/chainweb/0.0/mainnet01` where the `<hostname>` is the IP address or domain name of a Chainweb node in the Kadena public blockchain network. 
+Similarly, the base URL for service API endpoints in the Kadena test network is typically `api.testnet.<hostname>/chainweb/0.0/testnet04` where the `<hostname>` is the IP address or domain name of a Chainweb node in the Kadena test network.
+If you're running a local development environment, you can typically replace `<hostname>` with `localhost:8080` to connect to the API and, if necessary, specify `development` as the network name.
+
+Note that the Pact endpoints for any given chain identifier use the route prefix `/chain/{chainId}/pact/` in addition to the base URL.
+For more information about Pact endpoints, see the [Pact REST API](/reference/rest-api) or the [Pact OpenAPI](https://api.chainweb.com/openapi/pact.html) specification.
+
+### Resource consumption and vulnerability
+
+Some service API endpoints can require considerable resources on the server side,
+Service API endpoints are also more vulnerable to denial-of-service (DOS) attacks.
+In most cases, you should avoid exposing service endpoints to the public internet and use firewall rules or access controls to prevent unauthorized access. 

@@ -38,17 +38,17 @@ export default function Home() {
 
                               <li className="kadena-link-box front_main_option">
 
-                                   <a className="front_main_option_title" href="./developers">Developers</a>
+                                   <a className="front_main_option_title" href="./developers">Smart contract developers</a>
 
-                                   <span className="front_main_option_summary">Learn how to write smart contracts for the Kadena blockchain using the Pact smart contract programming language. </span>
+                                   <span className="front_main_option_summary">Learn how to write smart contracts using the Pact smart contract programming language. </span>
 
                               </li>
 
                               <li className="kadena-link-box front_main_option">
 
-                                   <a className="front_main_option_title" href="./api">API</a>
+                                   <a className="front_main_option_title" href="./api">API reference</a>
 
-                                   <span className="front_main_option_summary">Connect to API endpoints to interact with the Kadena blockchain network and Chainweb nodes.</span>
+                                   <span className="front_main_option_summary">Connect to API endpoints to interact with smart contracts and the Kadena blockchain network.</span>
 
                               </li>
 
@@ -63,7 +63,7 @@ export default function Home() {
 
                               <li className="kadena-link-box front_main_option">
 
-                                   <a className="front_main_option_title" href="./reference/builtin-functions">Built-in functions</a>
+                                   <a className="front_main_option_title" href="./reference/builtin-functions">Function reference</a>
 
                                    <span className="front_main_option_summary">Get fast access to Pact built-in functions to perform many types of common programming tasks.</span>
 
@@ -73,7 +73,7 @@ export default function Home() {
 
                                    <a className="front_main_option_title" href="./resources">Solution showcase</a>
 
-                                   <span className="front_main_option_summary">Explore a curated collection of tools, products, and resources that highlight what you can do with Kadena blockchain technology.</span>
+                                   <span className="front_main_option_summary">Explore a curated collection of tools and resources that highlight building with Kadena blockchain technology.</span>
 
                               </li>
                          </ul>
@@ -89,14 +89,14 @@ export default function Home() {
 
                                   <a className="front_main_option_title" href="./consensus">Proof-of-Work consensus</a>
 
-                                  <span className="front_main_option_summary">Learn about the Proof-of-Work consensus protocol—Chainweb—that powers the Kadena network and how to become a node operator or miner.</span>
+                                  <span className="front_main_option_summary">Learn about the Proof-of-Work consensus protocol that powers the Kadena network and how to become a node operator or miner.</span>
 
                               </li>
                               <li className="kadena-link-box front_main_option">
 
                                   <a className="front_main_option_title" href="./academy">Academy resources</a>
 
-                                  <span className="front_main_option_summary">Browse modules and take courses to build your skill set through videos, hands-on exercises, and sample projects.</span>
+                                  <span className="front_main_option_summary">Browse modules and take courses to build your skill set using video demos, hands-on exercises, and sample projects.</span>
 
                               </li>
                               <li className="kadena-link-box front_main_option">

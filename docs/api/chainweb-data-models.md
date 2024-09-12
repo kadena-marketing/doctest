@@ -2,8 +2,7 @@
 title: Data models
 description:
   Summarizes the data models used for different elements and attributes in Chainweb nodes.
-menu: Chainweb API
-label: Data models
+id: data-models
 order: 2
 layout: full
 tags: ['chainweb', 'node api', 'chainweb api', 'api reference']

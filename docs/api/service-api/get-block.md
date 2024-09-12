@@ -9,10 +9,10 @@ tags: ['chainweb', 'node api', 'chainweb api', 'api reference']
 
 # Get block header and payload
 
-You can use the `/block` API endpointsto  return whole blocks—headers and payloads—from the chain database.
+You can use the `/block` API endpoint to return full blocks—that is, headers and payloads—from the chain database.
 Generally, blocks are returned in **ascending** order and include orphaned blocks.
 
-If you only want to query blocks that are included in the winning branch of the chain, you can call the `branch` endpoints.
+If you only want to retrieve blocks that are included in the winning branch of the chain, you can call the `/block/branch` endpoint.
 Branch endpoints return blocks in **descending** order starting from the leafs of branches of the block chain.
 
 Blocks are returned in only one format, with block headers and payloads in JSON encoding.

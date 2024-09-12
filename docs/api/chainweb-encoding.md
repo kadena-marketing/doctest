@@ -3,7 +3,7 @@ title: Binary encoding
 description:
   Provides reference information for the chainweb-node block header binary encoding.
 menu: Chainweb API
-label: Binary encoding
+id: binary-encoding
 order: 2
 layout: full
 tags: ['chainweb', 'node api', 'chainweb api', 'api reference']

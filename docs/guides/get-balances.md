@@ -1,17 +1,17 @@
 ---
-title: Get balances
+title: Check an account balances
 id: howto-get-balances
 ---
 
 <head>
-  <title>Making Blockchain Calls with Kadena</title>
+  <title>Check an account balance</title>
   <meta name="description" content="A guide to crafting blockchain calls using Traditional API, Kadena CLI, and Kadena.js" />
 </head>
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import CodeBlock from '@theme/CodeBlock';
 
-# Making Blockchain Calls with Kadena
+# Check an account balance
 
 This guide provides instructions and examples for making blockchain calls using Kadena. We'll cover traditional API calls, Kadena CLI with YAML configuration, and Kadena.js.
 

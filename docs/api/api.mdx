@@ -5,6 +5,11 @@ id: api
 
 import CustomDocCardList from '@site/src/components/CustomDocCard';
 
+<head>
+  <title>Kadena REST API</title>
+  <meta name="description" content="The Kadena REST API consists of three main types of API endpoints. The Pact API provides endpoints for interacting with smart contracts, including signing, submitting, and checking transactions. The peer-to-peer (P2P) API provides endpoints for nodes to communicate with each other. The service API provides endpoints for querying and interacting with nodes from clients outside of the blockchain network." />
+</head>
+
 # Kadena REST API
 
 As discussed in [Chainweb overview](/consensus/chainweb), Chainweb is a scalable proof-of-work (PoW) consensus algorithm. 
@@ -19,7 +24,7 @@ The Chainweb node API consists of three distinct sets of endpoints:
   The peer-to-peer endpoints are intended primarily for communication between Chainweb nodes.
   These endpoints are typically more efficient than the service API endpoints for most use cases. 
   However, peer-to-peer endpoints only expose features that are required for the peer-to-peer network to function.
-  For most use cases, you should send API requests to service API endpoints.
+  For most use cases, you should send API requests to Pact API endpoints or service API endpoints.
 
 - The **service API** allows querying and control of Chainweb nodes by clients outside of the blockchain network.
   Node operators must explicitly enable access to the service API and expose its endpoints on a different network interface than the peer-to-peer API.
@@ -49,13 +54,13 @@ Each computer running `chainweb-node` must expose these endpoints using the secu
 
 You can also make P2P API endpoints available for other clients by exposing the endpoints using reverse proxies, load balancers, authentication frameworks, or similar web technologies.
 However, you should keep in mind that peer-to-peer endpoints only expose features that are required for the peer-to-eer network to function.
-For most use cases, you should send API requests to service API endpoints.
+For most use cases, you should send API requests to Pact API endpoints or service API endpoints.
 
 ### Endpoints
 
 The Chainweb peer-to-peer API includes the following endpoints:
 
-- [Cut endpoints](/reference/chainweb-api/cut)
+- [State cut height endpoints](/reference/chainweb-api/cut)
 - [Payload endpoints](/reference/chainweb-api/payload)
 - [Mempool endpoints](/reference/chainweb-api/mempool)
 - [Peer endpoints](/reference/chainweb-api/peer)
@@ -72,12 +77,13 @@ If you're running a local development environment, you can typically replace `<h
 The Chainweb service API includes endpoints that expose the functionality of the Chainweb node to clients other than computers running the `chainweb-node` software.
 For example, other clients might include mining pools, decentralized services, web applications, exchanges, wallets, and so on.
 
-Service API endpoints enable you to query and retreive information about node activity and chain-specific operations.For example, service API endpoints enable you can perform the following command tasks:
+Service API endpoints enable you to query and retreive information about node activity and chain-specific operations. 
+For example, service API endpoints enable you can perform the following common tasks:
 
-- Query block and transaction information
-- Retrieve network stats and node status
-- Interact with the peer-to-peer network
-- Access chain-specific data in Kadena's multi-chain architecture
+- Query block and transaction information.
+- Retrieve network statisticss and node status.
+- Interact with the peer-to-peer network.
+- Access chain-specific data in Kadena's multi-chain architecture.
 
 If you're a node operator, you can enable service API endpoints using configuration settings for the Chainweb node. 
 The endpoints are served on a separate port over the unencrypted Hypertext Transfer Protocol (HTTP). 
@@ -85,15 +91,20 @@ As a node operator, you can also choose to expose the endpoints locally or throu
 
 ### Endpoints
 
-The Chainweb service API includes the following endpoints:
+The service API includes endpoints for requesting the following types of information:
 
-- [Full block endpoints](/reference/chainweb-api/service-block)
-- [Block hash endpoints](/reference/chainweb-api/blockhash)
-- [Block header endpoints](/reference/chainweb-api/blockheader)
-- [Mining service endpoints](/reference/chainweb-api/mining)
-- [Pact REST API endpoints](/reference/rest-api)
-- [Rosetta endpoints](/reference/chainweb-api/rosetta)
-- [Maintenance and other services endpoints](/reference/chainweb-api/misc)
+- Raw full blocks
+- Blocks by block hash
+- Block headers
+- Block header update events
+- Trnsaction status
+- Node health and general information
+
+The service API also includes endpoints for the following types of jobs:
+
+- Starting and checking the status of database backup jobs
+- Requesting new work and posting solutions for miners
+- Integrating with Rosetta
 
 ### Base URL
 
@@ -102,8 +113,9 @@ For bootstrap nodes, service API endpoints typically take the form of `api.<host
 Similarly, the base URL for service API endpoints in the Kadena test network is typically `api.testnet.<hostname>/chainweb/0.0/testnet04` where the `<hostname>` is the IP address or domain name of a Chainweb node in the Kadena test network.
 If you're running a local development environment, you can typically replace `<hostname>` with `localhost:8080` to connect to the API and, if necessary, specify `development` as the network name.
 
-Note that the Pact endpoints for any given chain identifier use the route prefix `/chain/{chainId}/pact/` in addition to the base URL.
-For more information about Pact endpoints, see the [Pact REST API](/reference/rest-api) or the [Pact OpenAPI](https://api.chainweb.com/openapi/pact.html) specification.
+Note that if you send requests to Pact endpoints through the service API to query information from a specific chain, you should include the chain identifier in the route prefix.
+For example, the URL should include `/chain/{chainId}/pact/` in addition to the base URL.
+For more information about Pact endpoints, see the [Pact API](/reference/rest-api).
 
 ### Resource consumption and vulnerability
 
@@ -113,18 +125,18 @@ Generally, endpoints of the service API are more vulnerable to DOS attacks.
 ## Data models
 
 Data models summarize the parameters that define important Chainweb node elements.
-You can view the [data models](/reference/chainweb-api/data-models) for the following Chainweb node features.
+You can view the [data models](./data-models) for the following Chainweb node features.
 
-- [Cut data](/reference/chainweb-api/data-models#cut-modelh464607198)
-- [Block header](/reference/chainweb-api/data-models#block-header-modelh1621557545)
-- [Payload](/reference/chainweb-api/data-models#payload-modelh1436683818)
-- [Payload with outputs](/reference/chainweb-api/data-models#payload-with-outputs-modelh509052678)
-- [Peer information](/reference/chainweb-api/data-models#peer-information-modelh-1716301923)
-- [Chainweb node information](/reference/chainweb-api/data-models#chainweb-node-information-modelh-1581301161)
-- [Collection page](/reference/chainweb-api/data-models#collection-page-modelh1516574970)
-- [Miner information](/reference/chainweb-api/data-models#miner-information-modelh-192276614)
-- [Mining update event stream](/reference/chainweb-api/data-models#mining-update-event-stream-modelh-1942514890)
+- [Cut data](./data-models#cut-model)
+- [Block header](./data-models#block-header-model)
+- [Payload](./data-models#payload-model)
+- [Payload with outputs](./data-models#payload-with-outputs-model)
+- [Peer information](./data-models#peer-information-model)
+- [Chainweb node information](./data-models#chainweb-node-information-model)
+- [Collection page](./data-models#collection-page-model)
+- [Miner information](./data-models#miner-information-model)
+- [Mining update event stream](./data-models#mining-update-event-stream-model)
 
 ## Binary encoding
 
-For technical details about binary encoding and calculated values, see [Binary encoding](/reference/chainweb-api/binary-encoding).
+For technical details about binary encoding and calculated values, see [Binary encoding](./binary-encoding).

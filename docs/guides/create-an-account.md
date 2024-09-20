@@ -1,15 +1,8 @@
 ---
 title: Create new accounts
+description: "How to create a new Kadena account without transferring any digital assets into it using the coin contract function s, Kadena CLI, and Kadena client library functions."
 id: howto-create-accounts
 ---
-
-<head>
-  <title>Create new accounts</title>
-  <meta name="description" content="A guide to crafting blockchain calls using Traditional API, Kadena CLI, and Kadena.js" />
-</head>
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import CodeBlock from '@theme/CodeBlock';
 
 # Create new accounts
 

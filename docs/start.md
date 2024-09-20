@@ -95,7 +95,6 @@ You can now write and execute a simple `greeting` smart contract using the Pact 
 2. Copy and paste the following simple `greeting` module code, then press return:
 
    <CodeBlock language="pact">
-   (namespace 'free)
    (module greeting GOVERNANCE
      (defcap GOVERNANCE () true)
      (defun say-hello(name:string)
@@ -110,7 +109,7 @@ You can now write and execute a simple `greeting` smart contract using the Pact 
    "Loaded module hello-world, hash f1yyXqj5HstOni1QdZmuagUJXbu72VmYiwXua7Vp4-0"
    </CodeBlock>
 
-1. Call the `say-hello` function with a string similar to the following:
+3. Call the `say-hello` function with a string similar to the following:
 
    <CodeBlock language="pact">
    (say-hello "Pistolas")

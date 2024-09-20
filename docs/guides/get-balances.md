@@ -1,116 +1,129 @@
 ---
-title: Check an account balances
+title: Check account balances
+description: "How to check account balances for existing account using an API call to the coin contract get-balance function, Kadena command-line interface, and Kadena client library functions."
 id: howto-get-balances
 ---
 
-<head>
-  <title>Check an account balance</title>
-  <meta name="description" content="A guide to crafting blockchain calls using Traditional API, Kadena CLI, and Kadena.js" />
-</head>
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import CodeBlock from '@theme/CodeBlock';
+# Check account balances
 
-# Check an account balance
+This guide provides instructions and examples for checking an account balance using an API call, Kadena CLI with YAML configuration, and the Kadena client TypeScript library.
 
-This guide provides instructions and examples for making blockchain calls using Kadena. We'll cover traditional API calls, Kadena CLI with YAML configuration, and Kadena.js.
+## Using a YAML request and curl
 
-## Examples of common operations
+One way yu can get an account balance is by calling the `get-balance` function that's defined in the `coin` contract deployed on the Kadena public main or test network.
+To make this call, you need to know the following information:
 
-Here are some common operations you might want to perform on the Kadena blockchain:
+-  The account name for the account you want to look up.
+-  The network identifier where you want to check the account balance.
+-  The specific chain identifier for the balance you want to check.
 
-- Check account balance
-- Transfer assets
-- Deploy a smart contract
-- Execute a smart contract function
+For this example, you can create the request using the YAML execution file format, convert the request to JSON, then submit the API request using a `curl` command.
 
-Let's see how to perform these operations using different methods:
+You could also submit the request using Postman or other tools than enable you to call API endpoints.
 
-<Tabs>
-  <TabItem value="api" label="Traditional API" default>
-    **1. Check Account Balance**
-    ```bash
-    curl -X POST "https://api.chainweb.com/chainweb/0.0/testnet04/chain/1/pact/api/v1/local" \
+To get an account balance:
+
+1. Open a terminal on your local computer.
+
+2. Check that you have `curl` installed by running the following command:
+   
+   ```bash
+   which curl
+   ```
+
+   You should see the path to the file similar to the following:
+   
+   ```bash
+   /usr/bin/curl
+   ```
+   
+3. Create a YAML execution request in a `get-balance.yaml` file with content similar to the following:
+   
+   ```yaml
+   code: (coin.get-balance "k:4fe7981d36997c2a327d0d3ce961d3ae0b2d38185ac5e5cd98ad90140bc284d0")
+   data: {}
+   sigs:
+     - public: "4fe7981d36997c2a327d0d3ce961d3ae0b2d38185ac5e5cd98ad90140bc284d0"
+       caps: []
+   
+   networkId: testnet04
+   publicMeta:
+       chainId: "1"
+       sender: "k:4fe7981d36997c2a327d0d3ce961d3ae0b2d38185ac5e5cd98ad90140bc284d0"
+       gasLimit: 100000,
+       gasPrice: 0.0000001,
+       ttl: 7200,
+   type: exec
+   ```
+
+   As you can see in this example:
+   
+   - The transaction request calls the `coin.get-balance` function.
+   - The account name is `k:4fe7981d36997c2a327d0d3ce961d3ae0b2d38185ac5e5cd98ad90140bc284d0`.
+   - The network identifier is `testnet04`.
+   - The chain identifier for the account balance is chain `1`.
+   
+   The `gasLimit`, `gasPrice`, and `ttl` values represent reasonable settings.
+
+4. Convert the YAML execution request to a JSON object with proper formatting using the `pact --apireq` command with a command similar to the following:
+   
+   ```bash
+   pact --apireq get-balance.yaml --local
+   ```
+   
+   This command displays the resulting JSON as standard output.
+   For example:
+   
+   ```bash
+   {"hash":"8bZdo6EG-WVl5CqQLcsAkYOchf_dujjdqsrsNYRQDXw","sigs":[],"cmd":"{\"networkId\":\"testnet04\",\"payload\":{\"exec\":{\"data\":{},\"code\":\"(coin.get-balance \\\"k:4fe7981d36997c2a327d0d3ce961d3ae0b2d38185ac5e5cd98ad90140bc284d0\\\")\"}},\"signers\":[],\"meta\":{\"creationTime\":1726864470,\"ttl\":7800,\"gasLimit\":100000,\"chainId\":\"1\",\"gasPrice\":1.0e-7,\"sender\":\"k:4fe7981d36997c2a327d0d3ce961d3ae0b2d38185ac5e5cd98ad90140bc284d0\"},\"nonce\":\"2024-09-20 20:34:30.276972 UTC\"}"}
+   ```
+
+   Alternatively, you can save the result from the `pact --apireq` command in a file with a command similar to the following:
+
+      ```bash
+   pact --apireq get-balance.yaml --local > get-balance.json
+   ```
+
+   Copy the output from the `pact --apireq` command to pass as the request body in the next step.
+
+5. Connect to the Pact `/local` endpoint for the appropriate network with a command similar to the following:
+
+   ```bash
+   curl -X POST "https://api.testnet.chainweb.com/chainweb/0.0/testnet04/chain/1/pact/api/v1/local" \
      -H "Content-Type: application/json" \
-     -d '{
-       "exec": {
-         "data": {},
-         "code": "(coin.get-balance \"k:f1e12312e4ee8c156b041c3bcc7e422e7d15cb2ddce58c6ff16742770916cfaa\")"
-       },
-       "meta": {
-         "chainId": "1",
-         "sender": "k:f1e12312e4ee8c156b041c3bcc7e422e7d15cb2ddce58c6ff16742770916cfaa",
-         "gasLimit": 100000,
-         "gasPrice": 0.0000001,
-         "ttl": 7200
-       }
-     }'
+     -d '{"hash":"8bZdo6EG-WVl5CqQLcsAkYOchf_dujjdqsrsNYRQDXw","sigs":[],"cmd":"{\"networkId\":\"testnet04\",\"payload\":{\"exec\":{\"data\":{},\"code\":\"(coin.get-balance \\\"k:4fe7981d36997c2a327d0d3ce961d3ae0b2d38185ac5e5cd98ad90140bc284d0\\\")\"}},\"signers\":[],\"meta\":{\"creationTime\":1726864470,\"ttl\":7800,\"gasLimit\":100000,\"chainId\":\"1\",\"gasPrice\":1.0e-7,\"sender\":\"k:4fe7981d36997c2a327d0d3ce961d3ae0b2d38185ac5e5cd98ad90140bc284d0\"},\"nonce\":\"2024-09-20 20:34:30.276972 UTC\"}"}'
     ```
 
-    **2. Transfer KDA**
-    ```bash
-    curl -X POST "https://api.chainweb.com/chainweb/0.0/testnet04/chain/1/pact/api/v1/send" \
-     -H "Content-Type: application/json" \
-     -d '{
-       "cmds": [{
-         "hash": "YOUR_TRANSACTION_HASH",
-         "sigs": ["YOUR_SIGNATURE"],
-         "cmd": "{\"networkId\":\"testnet04\",\"payload\":{\"exec\":{\"data\":{\"amount\":10.0,\"receiver\":\"k:receiver_public_key\"},\
-         "code\":\"(coin.transfer \\\"k:f1e12312e4ee8c156b041c3bcc7e422e7d15cb2ddce58c6ff16742770916cfaa\\\" \\\"k:receiver_public_key\\\"
-          10.0)\"}},\"signers\":[{\"pubKey\":\"f1e12312e4ee8c156b041c3bcc7e422e7d15cb2ddce58c6ff16742770916cfaa\",\"clist\":
-          [{\"args\":[\"k:f1e12312e4ee8c156b041c3bcc7e422e7d15cb2ddce58c6ff16742770916cfaa\",\"k:receiver_public_key\",10.0],\"name\":
-          \"coin.TRANSFER\"}]}],\"meta\":{\"creationTime\":1724384042,\"ttl\":7200,\"gasLimit\":100000,\"chainId\":\"1\",\"gasPrice\":
-          1.0e-7,\"sender\":\"k:f1e12312e4ee8c156b041c3bcc7e422e7d15cb2ddce58c6ff16742770916cfaa\"},\"nonce\":\"2024-08-23 03:34:02.198258 UTC\"}"
-       }]
-     }'
-    ```
+    The command returns output similar to the following:
 
-    **3. Deploy a Smart Contract**
-    ```bash
-    curl -X POST "https://api.chainweb.com/chainweb/0.0/testnet04/chain/1/pact/api/v1/send" \
-     -H "Content-Type: application/json" \
-     -d '{
-       "cmds": [{
-         "hash": "YOUR_TRANSACTION_HASH",
-         "sigs": ["YOUR_SIGNATURE"],
-         "cmd": "{\"networkId\":\"testnet04\",\"payload\":{\"exec\":{\"data\":{},\"code\":\"(namespace \'free)\n(define-keyset \'free.vote-testing-keyset 
-         (read-keyset \'vote))\n(module vote-testing \'free.vote-testing-keyset\n  (defschema vote\n    voter:string\n    option:string)\n  (deftable votes:{vote})\n 
-         (defun vote (poll-id:string option:string)\n    (insert votes (format \"{}-{}\" [poll-id (at \'sender (chain-data))])\n      { \"voter\": (at \'sender (chain-data))\n
-                 \"option\": option\n      }\n    )\n  )\n)\"}},\"signers\":[{\"pubKey\":\"f1e12312e4ee8c156b041c3bcc7e422e7d15cb2ddce58c6ff16742770916cfaa\",\
-                 "clist\":[{\"args\":[],\"name\":\"coin.GAS\"}]}],\"meta\":{\"creationTime\":1724384042,\"ttl\":7200,\"gasLimit\":100000,\"chainId\":\"1\",\
-                 "gasPrice\":1.0e-7,\"sender\":\"k:f1e12312e4ee8c156b041c3bcc7e422e7d15cb2ddce58c6ff16742770916cfaa\"},\"nonce\":\"2024-08-23 03:34:02.198258 UTC\"}"
-       }]
-     }'
+    ```json
+    {
+      "gas":20,
+      "result":{
+        "status":"success",
+        "data":20
+        },
+      "reqKey":"8bZdo6EG-WVl5CqQLcsAkYOchf_dujjdqsrsNYRQDXw","logs":"wsATyGqckuIvlm89hhd2j4t6RMkCrcwJe_oeCYr7Th8",
+      "metaData":{
+        "publicMeta":{
+          "creationTime":1726864470,
+          "ttl":7800,
+          "gasLimit":100000,
+          "chainId":"1",
+          "gasPrice":1.0e-7,"sender":"k:4fe7981d36997c2a327d0d3ce961d3ae0b2d38185ac5e5cd98ad90140bc284d0"},
+      "blockTime":1726864883870724,"prevBlockHash":"mBRDF6NQwF_bvo4vHaF-5aS384lCYx1UB2Nj1pBfaeM",
+      "blockHeight":4662494},
+      "continuation":null,
+      "txId":null
+    }
     ```
+    
+    In this example, the account `k:4fe7981d36997c2a327d0d3ce961d3ae0b2d38185ac5e5cd98ad90140bc284d0` has a balance of `20` coins on chain `1` of the Kadena `testnet04` network.
 
-    **4. Execute a Smart Contract Function**
-    ```bash
-    curl -X POST "https://api.chainweb.com/chainweb/0.0/testnet04/chain/1/pact/api/v1/local" \
-     -H "Content-Type: application/json" \
-     -d '{
-       "exec": {
-         "data": {
-           "vote": {
-             "keys": ["f1e12312e4ee8c156b041c3bcc7e422e7d15cb2ddce58c6ff16742770916cfaa"],
-             "pred": "keys-all"
-           }
-         },
-         "code": "(free.vote-testing.vote \"vote1\" \"optionb\")"
-       },
-       "meta": {
-         "chainId": "1",
-         "sender": "k:f1e12312e4ee8c156b041c3bcc7e422e7d15cb2ddce58c6ff16742770916cfaa",
-         "gasLimit": 100000,
-         "gasPrice": 0.0000001,
-         "ttl": 7200
-       },
-       "networkId": "testnet04"
-     }'
-    ```
-  </TabItem>
+## Using a YAML request and kadena-cli commands
 
-  <TabItem value="cli" label="Kadena CLI">
-    Kadena CLI uses YAML files for configuration. Here's the structure for different operations:
+You can also use YAML execution requests and transaction templates to check account balances using Kadena CLI commands.
+Here's the structure for different operations:
 
     **1. Check Account Balance**
     ```yaml
@@ -139,137 +152,11 @@ Let's see how to perform these operations using different methods:
     ```
     And select the transaction you just added. now you shall see the data with your account Balance
 
-    **2. Transfer KDA**
-    ```yaml
-    # transfer-kda.yaml
-    # YAML configuration for KDA transfer
+    
+## Using the Kadena client library
 
-  code: |-
-    (coin.transfer "from k: account" "to k: account" 0.1)
-  data:
-  meta:
-    chainId: "1"
-    sender: "from k: account"
-    gasLimit: 2300
-    gasPrice: 0.000001
-    ttl: 600
-  signers:
-    - public: "from public Key"
-      caps:
-        - name: "coin.TRANSFER"
-          args: ["from k: account", "to k: account", 0.1]
-        - name: "coin.GAS"
-          args: []
-  networkId: "mainnet01"
-  type: exec
-    ```
-    To execute:
-    ```bash
-    kadena exec transfer-kda.yaml
-    kadena tx add
-    ```
-    select the YAML file path then
-    ```bash
-    kadena tx sign
-    ```
-    then sign the transaction with wallet or key pair and it will generate a signed tx json file
-    then
-    ```bash
-    kadena tx test
-    ```
-    select the signed tx file to test if its showing success then
-    ```bash
-    kadena tx send
-    ```
-    and it will send the transaction to the blockchain
+Here's the basic structure for using Kadena.js:
 
-    **3. Deploy a Smart Contract**
-    ```yaml
-    # deploy-contract.yaml
-    # YAML configuration for deploying a smart contract
-
-    code: |-
-    (namespace 'free)
-    (module simplemodule GOV
-    (defcap GOV () true)
-      (defconst TEXT:string "Hello World")
-      (defun greet:string () TEXT)
-    )
-  data:
-    ks: {
-     keys`:` ["deployer-public-Key"],
-     pred`:` `"keys-all"`
-    }
-  meta:
-    chainId: "1"
-    sender: "senders k: account"
-    gasLimit: 80300
-    gasPrice: 0.000001
-    ttl: 600
-  signers:
-    - public: "deployer-public-Key"
-      caps:
-        - name: "coin.GAS"
-          args: []
-  networkId: "mainnet01"
-  type: exec
-      ```
-    To execute:
-    ```bash
-    kadena exec deploy-contract.yaml
-    kadena tx add
-    ```
-    select the YAML file path then
-    ```bash
-    kadena tx sign
-    ```
-    then sign the transaction with wallet or key pair and it will generate a signed tx json file
-    then
-    ```bash
-    kadena tx test
-    ```
-    select the signed tx file to test if its showing success then
-    ```bash
-    kadena tx send
-    ```
-    and it will send the transaction to the blockchain
-
-    **4. Execute a Smart Contract Function**
-    ```yaml
-    # execute-function.yaml
-    # YAML configuration for executing a smart contract function
-    code: |-
-    (free.simplemodule.greet)
-  data:
-    ks: {
-     keys: ["your public key"],
-     pred: "keys-all"
-    }
-  meta:
-    chainId: "1"
-    sender: "your k: address"
-    gasLimit: 80300
-    gasPrice: 0.000001
-    ttl: 600
-  networkId: "mainnet01"
-  type: exec
-    ```
-    To execute:
-    ```bash
-    kadena exec execute-function.yaml
-    kadena tx add
-    ```
-    select the YAML file path then
-    ```bash
-    kadena tx test
-    ```
-    And select the transaction you just added. now you shall see the data with "Hello World"
-  </TabItem>
-
-  <TabItem value="js" label="Kadena.js">
-    Here's the basic structure for using Kadena.js:
-
-    **1. Check Account Balance**
     ```javascript
   import {Pact, createClient} from '@kadena/client'
 
@@ -293,142 +180,3 @@ Let's see how to perform these operations using different methods:
 getBalance(account).catch(console.error);
 ```
 
-**2. Transfer KDA**
-
-```javascript
-  import { Pact, createClient } from '@kadena/client';
-
-  const transferKDA = async (from, to, amount, pubKey) => {
-    const client = createClient('https://api.chainweb.com/chainweb/0.0/mainnet01/chain/1/pact');
-
-    const transaction = Pact.builder
-      .execution(`(coin.transfer "${from}" "${to}" ${amount})`)
-      .addSigner(pubKey, (signFor) => [
-        signFor('coin.TRANSFER', from, to, amount),
-        signFor('coin.GAS'),
-      ])
-      .setMeta({
-        chainId: '1',
-        gasLimit: 2500,
-        gasPrice: 0.000001,
-        sender: from,
-      })
-      .setNetworkId('mainnet01')
-      .createTransaction();
-
-    try {
-      const signedTx = await signWithChainweaver(transaction); // Pick your preferred signing method
-      const preflightResult = await client.preflight(signedTx);
-      console.log('Preflight result:', preflightResult);
-
-      if (preflightResult.result.status === 'failure') {
-        console.error('Preflight failed:', preflightResult.result.error.message);
-        return preflightResult;
-      }
-
-      const res = await client.submit(signedTx);
-      console.log('Transaction submitted:', res);
-      return res;
-    } catch (error) {
-      console.error('Error transferring KDA:', error);
-    }
-  };
-transferKDA('your-from-account', 'your-to-account', 0.1).catch(console.error);
-```
-**3. Deploy a Smart Contract**
-    ```javascript
-  import { Pact, createClient, signWithChainweaver } from '@kadena/client';
-
-   async function deployContract(deployer, pubKey) {
-     const pactClient = createClient('https://api.chainweb.com/chainweb/0.0/mainnet01/chain/0/pact');
-
-     const tx = Pact.builder
-        .execution(`
-                  (namespace 'free)
-                  (module simplemodule GOV
-                    (defcap GOV () true)
-                    (defconst TEXT:string "Hello World")
-                    (defun greet:string () TEXT)
-                  )`)
-        .addSigner(pubKey, (signFor) => [signFor('coin.GAS')])
-        .setMeta({
-          chainId: '1',
-          gasLimit: 80300,
-          gasPrice: 0.000001,
-          sender: deployer,
-        })
-        .setNetworkId('mainnet01')
-        .createTransaction();
-
-    try {
-      const signedTx = await signWithChainweaver(transaction); // Pick your preferred signing method
-      const preflightResult = await client.preflight(signedTx);
-      console.log('Preflight result:', preflightResult);
-
-      if (preflightResult.result.status === 'failure') {
-        console.error('Preflight failed:', preflightResult.result.error.message);
-        return preflightResult;
-      }
-
-      const res = await client.submit(signedTx);
-      console.log('Contract deployed:', res);
-      return res;
-    } catch (error) {
-      console.error('Error deploying contract:', error);
-    }
-};
-deployContract('your-deployer-account', contractCode).catch(console.error);
-
-```
-
-**4. Execute a Smart Contract Function**
-```javascript
-import { Pact, createClient } from '@kadena/client';
-
-const client = createClient(
-  'https://api.chainweb.com/chainweb/0.0/mainnet01/chain/1/pact');
-
-const command = async (functionName) => {
-  const unsignedTransaction = Pact.builder
-    .execution(functionName)
-    .setMeta({
-      chainId: '1',
-      gasLimit: 2500,
-    })
-    .setNetworkId('mainnet01')
-    .createTransaction();
-
-  try {
-    const res = await client.dirtyRead(unsignedTransaction);
-    if (res.result?.data) {
-      console.log(res.result.data);
-      return res.result.data;
-    } else {
-      console.log('No data returned:', res);
-    }
-  } catch (error) {
-    console.error('Error with dirtyRead or data processing:', error);
-  }
-};
-
-command('(free.simplemodule.greet)').catch(console.error);
-
-    ```
-  </TabItem>
-</Tabs>
-
-## Tips for Crafting Blockchain Calls
-
-1. **Use the Correct Chain ID**: Kadena is a multi-chain system. Ensure you're using the correct chain ID for your transaction.
-
-2. **Gas Management**: Always set appropriate gas limit and price to ensure your transaction is processed.
-
-3. **Nonce Handling**: For API calls, include a unique nonce to prevent duplicate transactions.
-
-4. **Error Handling**: Always check the response for any errors or unexpected results.
-
-5. **Security**: Never share your private keys. When using API calls, ensure you're using a secure connection (https).
-
-Remember, these are simplified examples. In a production environment, you'd need to handle signing, error checking, and other details more robustly.
-
-For more detailed information on specific endpoints and their parameters, refer to our [API documentation](/api/pact-rest).

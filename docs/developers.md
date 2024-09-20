@@ -1,5 +1,5 @@
 ---
-title: Developers
+title: Smart contracts
 id: developers
 description: "The Kadena Developers content provides a roadmap for learning how to write smart contracts and frontend user interfaces for applications that run on the Kadena blockchain network."
 menu: Developers
@@ -10,7 +10,7 @@ tags: [pact, typescript, account, transactions, utils]
 ---
 
 <head>
-  <title>Developers</title>
+  <title>Smart contract developers</title>
   <meta name="description" content="The Kadena Developers content provides a roadmap for learning how to write smart contracts and frontend user interfaces for applications that run on the Kadena blockchain network." />
 </head>
 

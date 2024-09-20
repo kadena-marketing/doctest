@@ -15,44 +15,38 @@ tags:
   ]
 ---
 
-# Hello World
+# Hello, World! revisited
 
-Welcome to this Hello World with Pact Tutorial!
+In the [Quick start](../start), you were introduced to a simple `greeting` module. 
+Modules provide the basic foundation for all Pact smart contracts. 
+The greeting module defined a single function—one very much like the traditional Hello, World! program you see when learning any new programming language.
 
-In this tutorial, you'll learn how to create, deploy, and run functions on a
-Hello World smart contract with Pact.
+In the `hello-world` project folder, you'll take a closer look at the hello-world module, extend its functionality, and deploy it on the local development network.
 
-**Topics covered in this tutorial**
 
 - Hello World Overview
 - Write the Smart Contract
 - Deploy to the Testnet
 - Call the Deployed Contract
 
-The goal of this tutorial is to help you get familiar with the essential Pact
-concepts needed to write, deploy, and run a smart contract. Learning these
-concepts will help you to create more complex smart contracts later in the
-series.
+## Get the starter code
 
-:::note Key Takeaway
+To get started:
 
-It’s simple to create and deploy a Hello World smart contract with Pact. You can
-deploy smart contracts from the online editor, call its functions, and view the
-output from the REPL.
+1. Open a terminal shell on your computer.
 
-:::
+2. Clone the `pact-coding-projects` repository by running the following command:
+   
+   ```bash
+   git@github.com:kadena-docs/pact-coding-projects.git
+   ```
 
-## Hello World with Pact Tutorial
-
-https://www.youtube.com/watch?v=bUqJJ3q-OLM
-
-Subscribe to our
-[YouTube channel](https://www.youtube.com/channel/UCB6-MaxD2hlcGLL70ukHotA) to
-access the latest Pact tutorials.
-
-## Hello World Overview
-
-To get started, navigate to the Pact online editor at
+3. Change to the 00-hello-world directory by running the following command:
+   
+   ```bash
+   cd pact-coding-projects/00-hello-world
+   ```
+navigate to the Pact online editor at
 [pact.kadena.io](http://pact.kadena.io). Once on the site, you can open the
 “Hello World” module. To do this, navigate to the module explorer on the tool
 panel and open the “Hello World” example.

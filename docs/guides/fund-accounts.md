@@ -1,15 +1,8 @@
 ---
 title: Fund onchain accounts
+description: "How to create a new Kadena account by transferring digital assets into it using the coin contract function, Kadena CLI, and Kadena client library."
 id: howto-fund-accounts
 ---
-
-<head>
-  <title>Fund onchain accounts</title>
-  <meta name="description" content="A guide to crafting blockchain calls using Traditional API, Kadena CLI, and Kadena.js" />
-</head>
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import CodeBlock from '@theme/CodeBlock';
 
 # Fund onchain accounts
 
